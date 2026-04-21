@@ -1,0 +1,252 @@
+﻿{
+    "rules": [
+        {
+            "rule_id": "malaria_001",
+            "condition": { "disease": "malaria", "age_months": null, "weight_kg": null },
+            "claim_type": "dose",
+            "parameter": "klorokuin sulfat",
+            "constraint": { "min": 25, "max": 25, "unit": "mg/kg_total_dose" },
+            "metadata": { "source": "Buku PPM IDAI Jilid I", "section": "Tata Laksana", "page": 180 }
+        },
+        {
+            "rule_id": "malaria_002",
+            "condition": { "disease": "malaria", "age_months": null, "weight_kg": null },
+            "claim_type": "dose",
+            "parameter": "klorokuin sulfat",
+            "constraint": { "min": 10, "max": 10, "unit": "mg/kg/dose" },
+            "metadata": { "source": "Buku PPM IDAI Jilid I", "section": "Tata Laksana", "page": 180 }
+        },
+        {
+            "rule_id": "malaria_003",
+            "condition": { "disease": "malaria", "age_months": null, "weight_kg": null },
+            "claim_type": "dose",
+            "parameter": "klorokuin sulfat",
+            "constraint": { "min": 5, "max": 5, "unit": "mg/kg/dose" },
+            "metadata": { "source": "Buku PPM IDAI Jilid I", "section": "Tata Laksana", "page": 180 }
+        },
+        {
+            "rule_id": "malaria_004",
+            "condition": { "disease": "malaria", "age_months": null, "weight_kg": null },
+            "claim_type": "frequency",
+            "parameter": "klorokuin sulfat",
+            "constraint": { "min": 1, "max": 1, "unit": "times/day" },
+            "metadata": { "source": "Buku PPM IDAI Jilid I", "section": "Tata Laksana", "page": 181 }
+        },
+        {
+            "rule_id": "malaria_005",
+            "condition": { "disease": "malaria", "age_months": null, "weight_kg": null },
+            "claim_type": "duration",
+            "parameter": "klorokuin sulfat",
+            "constraint": { "min": 3, "max": 3, "unit": "days" },
+            "metadata": { "source": "Buku PPM IDAI Jilid I", "section": "Tata Laksana", "page": 180 }
+        },
+        {
+            "rule_id": "malaria_006",
+            "condition": { "disease": "malaria", "age_months": null, "weight_kg": null },
+            "claim_type": "dose",
+            "parameter": "kina dihidroklorid",
+            "constraint": { "min": 1, "max": 1, "unit": "mg_garam/kg/dose" },
+            "metadata": { "source": "Buku PPM IDAI Jilid I", "section": "Tata Laksana", "page": 180 }
+        },
+        {
+            "rule_id": "malaria_007",
+            "condition": { "disease": "malaria", "age_months": null, "weight_kg": null },
+            "claim_type": "frequency",
+            "parameter": "kina dihidroklorid",
+            "constraint": { "min": 3, "max": 3, "unit": "times/day" },
+            "metadata": { "source": "Buku PPM IDAI Jilid I", "section": "Tata Laksana", "page": 180 }
+        },
+        {
+            "rule_id": "malaria_008",
+            "condition": { "disease": "malaria", "age_months": null, "weight_kg": null },
+            "claim_type": "duration",
+            "parameter": "kina dihidroklorid",
+            "constraint": { "min": 7, "max": 7, "unit": "days" },
+            "metadata": { "source": "Buku PPM IDAI Jilid I", "section": "Tata Laksana", "page": 181 }
+        },
+        {
+            "rule_id": "malaria_009",
+            "condition": { "disease": "malaria", "age_months": null, "weight_kg": null },
+            "claim_type": "dose",
+            "parameter": "kuinin sulfat",
+            "constraint": { "min": 10, "max": 10, "unit": "mg/kg/dose" },
+            "metadata": { "source": "Buku PPM IDAI Jilid I", "section": "Tata Laksana", "page": 181 }
+        },
+        {
+            "rule_id": "malaria_010",
+            "condition": { "disease": "malaria", "age_months": null, "weight_kg": null },
+            "claim_type": "frequency",
+            "parameter": "kuinin sulfat",
+            "constraint": { "min": 3, "max": 3, "unit": "times/day" },
+            "metadata": { "source": "Buku PPM IDAI Jilid I", "section": "Tata Laksana", "page": 181 }
+        },
+        {
+            "rule_id": "malaria_011",
+            "condition": { "disease": "malaria", "age_months": null, "weight_kg": null },
+            "claim_type": "duration",
+            "parameter": "kuinin sulfat",
+            "constraint": { "min": 7, "max": 7, "unit": "days" },
+            "metadata": { "source": "Buku PPM IDAI Jilid I", "section": "Tata Laksana", "page": 181 }
+        },
+        {
+            "rule_id": "malaria_012",
+            "condition": { "disease": "malaria", "age_months": null, "weight_kg": null },
+            "claim_type": "dose",
+            "parameter": "tetrasiklin",
+            "constraint": { "min": 5, "max": 5, "unit": "mg/kg/dose" },
+            "metadata": { "source": "Buku PPM IDAI Jilid I", "section": "Tata Laksana", "page": 181 }
+        },
+        {
+            "rule_id": "malaria_013",
+            "condition": { "disease": "malaria", "age_months": null, "weight_kg": null },
+            "claim_type": "frequency",
+            "parameter": "tetrasiklin",
+            "constraint": { "min": 4, "max": 4, "unit": "times/day" },
+            "metadata": { "source": "Buku PPM IDAI Jilid I", "section": "Tata Laksana", "page": 181 }
+        },
+        {
+            "rule_id": "malaria_014",
+            "condition": { "disease": "malaria", "age_months": null, "weight_kg": null },
+            "claim_type": "duration",
+            "parameter": "tetrasiklin",
+            "constraint": { "min": 7, "max": 7, "unit": "days" },
+            "metadata": { "source": "Buku PPM IDAI Jilid I", "section": "Tata Laksana", "page": 181 }
+        },
+        {
+            "rule_id": "malaria_015",
+            "condition": { "disease": "malaria falciparum", "age_months": null, "weight_kg": null },
+            "claim_type": "dose",
+            "parameter": "primakuin fosfat",
+            "constraint": { "min": 0.5, "max": 0.75, "unit": "mg_basa/kg" },
+            "metadata": { "source": "Buku PPM IDAI Jilid I", "section": "Tata Laksana", "page": 181 }
+        },
+        {
+            "rule_id": "malaria_016",
+            "condition": { "disease": "malaria falciparum", "age_months": null, "weight_kg": null },
+            "claim_type": "frequency",
+            "parameter": "primakuin fosfat",
+            "constraint": { "min": 1, "max": 1, "unit": "times/day" },
+            "metadata": { "source": "Buku PPM IDAI Jilid I", "section": "Tata Laksana", "page": 181 }
+        },
+        {
+            "rule_id": "malaria_017",
+            "condition": { "disease": "malaria falciparum", "age_months": null, "weight_kg": null },
+            "claim_type": "duration",
+            "parameter": "primakuin fosfat",
+            "constraint": { "min": 1, "max": 1, "unit": "days" },
+            "metadata": { "source": "Buku PPM IDAI Jilid I", "section": "Tata Laksana", "page": 181 }
+        },
+        {
+            "rule_id": "malaria_018",
+            "condition": { "disease": "malaria vivax", "age_months": null, "weight_kg": null },
+            "claim_type": "dose",
+            "parameter": "primakuin fosfat",
+            "constraint": { "min": 0.25, "max": 0.25, "unit": "mg/kg" },
+            "metadata": { "source": "Buku PPM IDAI Jilid I", "section": "Tata Laksana", "page": 181 }
+        },
+        {
+            "rule_id": "malaria_019",
+            "condition": { "disease": "malaria vivax", "age_months": null, "weight_kg": null },
+            "claim_type": "frequency",
+            "parameter": "primakuin fosfat",
+            "constraint": { "min": 1, "max": 1, "unit": "times/day" },
+            "metadata": { "source": "Buku PPM IDAI Jilid I", "section": "Tata Laksana", "page": 181 }
+        },
+        {
+            "rule_id": "malaria_020",
+            "condition": { "disease": "malaria vivax", "age_months": null, "weight_kg": null },
+            "claim_type": "duration",
+            "parameter": "primakuin fosfat",
+            "constraint": { "min": 5, "max": 14, "unit": "days" },
+            "metadata": { "source": "Buku PPM IDAI Jilid I", "section": "Tata Laksana", "page": 181 }
+        },
+        {
+            "rule_id": "malaria_021",
+            "condition": { "disease": "malaria malariae", "age_months": null, "weight_kg": null },
+            "claim_type": "dose",
+            "parameter": "primakuin fosfat",
+            "constraint": { "min": 0.25, "max": 0.25, "unit": "mg/kg" },
+            "metadata": { "source": "Buku PPM IDAI Jilid I", "section": "Tata Laksana", "page": 181 }
+        },
+        {
+            "rule_id": "malaria_022",
+            "condition": { "disease": "malaria malariae", "age_months": null, "weight_kg": null },
+            "claim_type": "frequency",
+            "parameter": "primakuin fosfat",
+            "constraint": { "min": 1, "max": 1, "unit": "times/day" },
+            "metadata": { "source": "Buku PPM IDAI Jilid I", "section": "Tata Laksana", "page": 181 }
+        },
+        {
+            "rule_id": "malaria_023",
+            "condition": { "disease": "malaria malariae", "age_months": null, "weight_kg": null },
+            "claim_type": "duration",
+            "parameter": "primakuin fosfat",
+            "constraint": { "min": 5, "max": 14, "unit": "days" },
+            "metadata": { "source": "Buku PPM IDAI Jilid I", "section": "Tata Laksana", "page": 181 }
+        },
+        {
+            "rule_id": "malaria_024",
+            "condition": { "disease": "malaria ovale", "age_months": null, "weight_kg": null },
+            "claim_type": "dose",
+            "parameter": "primakuin fosfat",
+            "constraint": { "min": 0.25, "max": 0.25, "unit": "mg/kg" },
+            "metadata": { "source": "Buku PPM IDAI Jilid I", "section": "Tata Laksana", "page": 181 }
+        },
+        {
+            "rule_id": "malaria_025",
+            "condition": { "disease": "malaria ovale", "age_months": null, "weight_kg": null },
+            "claim_type": "frequency",
+            "parameter": "primakuin fosfat",
+            "constraint": { "min": 1, "max": 1, "unit": "times/day" },
+            "metadata": { "source": "Buku PPM IDAI Jilid I", "section": "Tata Laksana", "page": 181 }
+        },
+        {
+            "rule_id": "malaria_026",
+            "condition": { "disease": "malaria ovale", "age_months": null, "weight_kg": null },
+            "claim_type": "duration",
+            "parameter": "primakuin fosfat",
+            "constraint": { "min": 5, "max": 14, "unit": "days" },
+            "metadata": { "source": "Buku PPM IDAI Jilid I", "section": "Tata Laksana", "page": 181 }
+        },
+        {
+            "rule_id": "malaria_027",
+            "condition": { "disease": "malaria", "age_months": "< 12", "weight_kg": null },
+            "claim_type": "dose",
+            "parameter": "pirimetamin sulfadoksin",
+            "constraint": { "min": 0.25, "max": 0.25, "unit": "tablet" },
+            "metadata": { "source": "Buku PPM IDAI Jilid I", "section": "Tata Laksana", "page": 182 }
+        },
+        {
+            "rule_id": "malaria_028",
+            "condition": { "disease": "malaria", "age_months": "12 - 36", "weight_kg": null },
+            "claim_type": "dose",
+            "parameter": "pirimetamin sulfadoksin",
+            "constraint": { "min": 0.5, "max": 0.5, "unit": "tablet" },
+            "metadata": { "source": "Buku PPM IDAI Jilid I", "section": "Tata Laksana", "page": 182 }
+        },
+        {
+            "rule_id": "malaria_029",
+            "condition": { "disease": "malaria", "age_months": "48 - 96", "weight_kg": null },
+            "claim_type": "dose",
+            "parameter": "pirimetamin sulfadoksin",
+            "constraint": { "min": 1, "max": 1, "unit": "tablet" },
+            "metadata": { "source": "Buku PPM IDAI Jilid I", "section": "Tata Laksana", "page": 182 }
+        },
+        {
+            "rule_id": "malaria_030",
+            "condition": { "disease": "malaria", "age_months": "108 - 168", "weight_kg": null },
+            "claim_type": "dose",
+            "parameter": "pirimetamin sulfadoksin",
+            "constraint": { "min": 2, "max": 2, "unit": "tablet" },
+            "metadata": { "source": "Buku PPM IDAI Jilid I", "section": "Tata Laksana", "page": 182 }
+        },
+        {
+            "rule_id": "malaria_031",
+            "condition": { "disease": "malaria", "age_months": "> 168", "weight_kg": null },
+            "claim_type": "dose",
+            "parameter": "pirimetamin sulfadoksin",
+            "constraint": { "min": 3, "max": 3, "unit": "tablet" },
+            "metadata": { "source": "Buku PPM IDAI Jilid I", "section": "Tata Laksana", "page": 182 }
+        }
+    ]
+}
