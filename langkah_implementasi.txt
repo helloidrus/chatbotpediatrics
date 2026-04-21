@@ -21,3 +21,9 @@ ctrl + c
 #   oleh kode aktif saat ini
 
 
+
+update github
+git add .
+git commit -m "update"
+git push
+
