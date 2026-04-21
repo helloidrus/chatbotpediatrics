@@ -1,0 +1,8 @@
+.env
+.env.*
+!.env.example
+.env1/
+__pycache__/
+*.pyc
+index/
+data/processed/
