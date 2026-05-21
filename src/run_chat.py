@@ -1,7 +1,11 @@
 from src.pipeline import Pipeline
 
 def main():
-    pipeline = Pipeline()
+    try:
+        pipeline = Pipeline()
+    except RuntimeError as exc:
+        print(f"Setup error: {exc}")
+        return
 
     while True:
         query = input("\nAsk: ").strip()
@@ -11,10 +15,14 @@ def main():
             print("Bye.")
             break
 
-        result = pipeline.run(query) # Run the full pipeline: LLM -> RAG -> RAG+Rule
+        try:
+            result = pipeline.run(query) # Run the full pipeline: LLM -> RAG -> RAG+Rule
+        except RuntimeError as exc:
+            print(f"Runtime error: {exc}")
+            continue
 
-        print("\nLLM Response:")
-        print(result["llm_response"])
+        # print("\nLLM Response:")
+        # print(result["llm_response"])
 
         print("\nRAG Response:")
         print(result["rag_response"])

@@ -1,0 +1,440 @@
+{
+  "claim_type": {
+    "dose": [
+      "dose",
+      "dosage",
+      "dosis"
+    ],
+    "frequency": [
+      "frequency",
+      "frekuensi"
+    ],
+    "duration": [
+      "duration",
+      "durasi",
+      "lama"
+    ],
+    "contraindication": [
+      "contraindication",
+      "kontraindikasi"
+    ]
+  },
+
+  "route": {
+    "oral": [
+      "by_mouth",
+      "diminum",
+      "enteral",
+      "mulut",
+      "oral",
+      "p.o.",
+      "per_oral",
+      "per_os",
+      "po"
+    ],
+    "oral_ngt": [
+      "oral_ngt",
+      "sonde",
+      "ngt",
+      "nasogastric_tube",
+      "nasogastrik",
+      "nasogastrik_tube"
+    ],
+    "iv": [
+      "iv",
+      "intravena",
+      "intra_vena",
+      "i.v."
+    ],
+    "iv_infusion": [
+      "iv_infusion",
+      "iv_drip",
+      "drip",
+      "infus",
+      "infus_iv",
+      "infus_intravena",
+      "continuous_infusion",
+      "infus_kontinu"
+    ],
+    "iv_bolus": [
+      "iv_bolus",
+      "bolus",
+      "bolus_iv",
+      "bolus_intravena"
+    ],
+    "im": [
+      "im",
+      "intramuskular",
+      "intramuscular",
+      "i.m."
+    ],
+    "sc": [
+      "sc",
+      "subkutan",
+      "subcutan",
+      "subcutaneous",
+      "s.c."
+    ],
+    "rektal": [
+      "rektal",
+      "rectal",
+      "per_rektal",
+      "pr"
+    ],
+    "inhalasi": [
+      "inhalasi",
+      "hirup",
+      "inhalation",
+      "nebulisasi",
+      "nebulizer"
+    ],
+    "intranasal": [
+      "intranasal",
+      "semprot_hidung",
+      "nasal",
+      "intranasal_spray"
+    ],
+    "intratracheal": [
+      "intratracheal",
+      "intratrakeal",
+      "endotrakeal",
+      "endotracheal"
+    ],
+    "any": [
+      "any",
+      "bebas",
+      "semua"
+    ],
+    "io": [
+      "io",
+      "intraoseal",
+      "intraosseous",
+      "akses_tulang"
+    ] 
+  },
+
+  "phase": {
+    "initial": [
+      "initial",
+      "awal",
+      "fase_awal",
+      "inisial",
+      "initial_phase",
+      "loading",
+      "loading_dose"
+    ],
+    "continuation": [
+      "continuation",
+      "lanjutan",
+      "fase_lanjutan",
+      "continued",
+      "follow_up"
+    ],
+    "maintenance": [
+      "maintenance",
+      "rumatan",
+      "pemeliharaan",
+      "maintenance_phase"
+    ],
+    "acute": [
+      "acute",
+      "akut",
+      "fase_akut",
+      "acute_phase"
+    ],
+    "intensive": [
+      "intensive",
+      "intensif",
+      "fase_intensif",
+      "intensive_phase"
+    ],
+    "fase_stabilisasi": [
+      "stabilisasi", 
+      "stabilization", 
+      "tahap_awal_mep"
+    ],
+    "fase_transisi": [
+      "transisi", 
+      "transition"
+    ],
+    "fase_rehabilitasi": [
+      "rehabilitasi", 
+      "rehabilitation", 
+      "tumbuh_kejar"
+    ]
+  },
+
+  "severity": {
+    "ringan": [
+      "ringan",
+      "mild",
+      "derajat_ringan"
+    ],
+    "sedang": [
+      "sedang",
+      "moderate",
+      "derajat_sedang"
+    ],
+    "ringan_sedang": [
+      "ringan_sedang",
+      "moderate_severe",
+      "mild_moderate",
+      "ringan_hingga_sedang",
+      "ringan_sampai_sedang",
+      "ringan-sedang",
+      "dehidrasi_ringan_sedang"
+    ],
+    "berat": [
+      "berat",
+      "sedang_berat",
+      "severe",
+      "derajat_berat",
+      "dehidrasi_berat",
+      "berat_sekali",
+      "dehidrasi_berat",
+      "ancaman_henti_napas",
+      "status_konvulsivus"
+    ],
+    "besar": [
+      "besar",
+      "large",
+      "pirau_besar"
+    ],
+    "tersangka": [
+      "tersangka",
+      "suspek",
+      "suspected"
+    ],
+    "refrakter": [
+      "refrakter",
+      "refractory",
+      "refraktori"
+    ],
+    "resisten_cairan": [
+      "resisten_cairan",
+      "resisten_terhadap_cairan",
+      "tidak_respons_cairan",
+      "fluid_refractory"
+    ]
+  },
+
+  "parameter": {
+    "amoksisilin": [
+      "amoksisilin",
+      "amoxicillin"
+    ],
+    "ampisilin": [
+      "ampisilin",
+      "ampicillin"
+    ],
+    "azithromisin": [
+      "azithromisin",
+      "azithromycin"
+    ],
+    "seftriakson": [
+      "seftriakson",
+      "ceftriaxone"
+    ],
+    "sefotaksim": [
+      "sefotaksim",
+      "cefotaxime"
+    ],
+    "klindamisin": [
+      "klindamisin",
+      "clindamycin",
+      "klindamycin"
+    ],
+    "kloramfenikol": [
+      "kloramfenikol",
+      "chloramphenicol"
+    ],
+    "kotrimoksasol": [
+      "kotrimoksasol",
+      "kotrimoxazole",
+      "cotrimoxazole"
+    ],
+    "metronidazol": [
+      "metronidazol",
+      "metronidazole"
+    ],
+    "gentamisin": [
+      "gentamisin",
+      "gentamicin"
+    ],
+    "isoniazid": [
+      "isoniazid",
+      "isoniazide"
+    ],
+    "rifampisin": [
+      "rifampisin",
+      "rifampicin",
+      "rifampin"
+    ],
+    "pirazinamid": [
+      "pirazinamid",
+      "pyrazinamide"
+    ],
+    "etambutol": [
+      "etambutol",
+      "ethambutol"
+    ],
+    "streptomisin": [
+      "streptomisin",
+      "streptomycin"
+    ],
+    "parasetamol": [
+      "parasetamol",
+      "paracetamol",
+      "acetaminophen"
+    ],
+    "zink": [
+      "zink",
+      "zinc",
+      "zinc_sulfate"
+    ],
+    "new oralit": [
+      "new oralit",
+      "ors",
+      "oralit",
+      "oral_rehydration_solution"
+    ],
+    "rehidrasi oral hipoosmolar": [
+      "rehidrasi oral hipoosmolar",
+      "larutan_rehidrasi_oral",
+      "rho",
+      "oralit_hipoosmolar"
+    ],
+    "ringer laktat": [
+      "ringer laktat",
+      "rl",
+      "ringer_lactate",
+      "ringer_laktat"
+    ],
+    "ringer asetat": [
+      "ringer asetat",
+      "ra",
+      "ringer_acetate",
+      "ringer_asetat"
+    ],
+    "nacl 0,9%": [
+      "nacl 0,9%",
+      "normal_saline",
+      "saline",
+      "nacl_0.9%",
+      "nacl_0,9"
+    ],
+    "oksigen": [
+      "oksigen",
+      "oxygen",
+      "o2"
+    ]
+  },
+
+  "complication": {
+    "bronkopneumonia": [
+      "bronkopneumonia",
+      "bronchopneumonia",
+      "pneumonia_bronkial"
+    ],
+    "ensefalopati": [
+      "ensefalopati",
+      "encephalopathy",
+      "ensefalopati_tifoid"
+    ],
+    "refraktori": [
+      "refraktori",
+      "refrakter",
+      "refractory"
+    ],
+    "rawat_inap": [
+      "rawat_inap",
+      "hospitalisasi",
+      "inpatient"
+    ],
+    "rawat_jalan": [
+      "rawat_jalan",
+      "outpatient"
+    ]
+  },
+
+  "disease": {
+    "alergi_susu_sapi": [
+      "alergi_susu_sapi",
+      "cow_milk_allergy",
+      "cma"
+    ],
+    "anemia_defisiensi_besi": [
+      "anemia_defisiensi_besi",
+      "anemia_besi",
+      "iron_deficiency_anemia"
+    ],
+    "bayi_berat_lahir_rendah": [
+      "bayi_berat_lahir_rendah",
+      "bblr",
+      "low_birth_weight"
+    ],
+    "campak": [
+      "campak",
+      "measles"
+    ],
+    "diare_akut": [
+      "diare_akut",
+      "diare",
+      "acute_diarrhea",
+      "gastroenteritis_akut"
+    ],
+    "demam_tifoid": [
+      "demam_tifoid",
+      "tifoid",
+      "typhoid_fever"
+    ],
+    "infeksi_virus_dengue": [
+      "infeksi_virus_dengue",
+      "dengue",
+      "dbd",
+      "dd",
+      "ds",
+      "demam_berdarah_dengue",
+      "infeksi_dengue"
+    ],
+    "infeksi_saluran_kemih": [
+      "infeksi_saluran_kemih",
+      "isk",
+      "uti"
+    ],
+    "pneumonia": [
+      "pneumonia",
+      "pneumoni",
+      "bronkopneumonia"
+    ],
+    "asma": [
+      "asma",
+      "asthma"
+    ],
+    "serangan_asma_akut": [
+      "serangan_asma_akut",
+      "serangan_asma",
+      "acute_asthma_attack"
+    ],
+    "kejang_akut": [
+      "kejang_akut",
+      "kejang",
+      "acute_seizure",
+      "status_epileptikus"
+    ],
+    "kejang_demam": [
+      "kejang_demam",
+      "febrile_seizure"
+    ],
+    "tuberkulosis": [
+      "tuberkulosis",
+      "tb",
+      "tbc",
+      "tuberculosis"
+    ],
+    "malnutrisi_energi_protein": [
+      "malnutrisi_energi_protein",
+      "mep"
+    ]
+  }
+}

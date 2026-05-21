@@ -1,16 +1,18 @@
 import json
+import time
 from pathlib import Path
-from src.retrieval.retriever import Retriever
-from src.llm.generator import Generator
+
 from src.verification.claim_extractor import extract_claims
 from src.verification.decision_layer import apply_decision
-from src.verification.rule_engine import (verify_claims, load_rules)
-import time
+from src.verification.rule_engine import load_rules, verify_claims
 
 
 class Pipeline:
     ## --- INITIALIZATION ---
     def __init__(self, debug=True):
+        from src.llm.generator import Generator
+        from src.retrieval.retriever import Retriever
+
         self.debug = debug
         self.retriever = Retriever()
         self.generator = Generator()
@@ -36,11 +38,11 @@ class Pipeline:
         return retrieved_docs, scores, context
     
     #-- LLM GENERATION ---
-    def run_llm(self, query):
-        start = time.time()
-        llm_response = self.generator.generate(query)
-        self._debug_print("LLM generation time:", time.time() - start)
-        return llm_response
+    # def run_llm(self, query):
+    #     start = time.time()
+    #     llm_response = self.generator.generate(query)
+    #     self._debug_print("LLM generation time:", time.time() - start)
+    #     return llm_response
 
     #-- RAG GENERATION ---
     def run_rag(self, query):
@@ -74,13 +76,14 @@ class Pipeline:
         self._debug_print("Decision application time:", time.time() - start)
 
         # Debug output
-        self._debug_print("\n=== CLAIM EXTRACTION PROMPT ===\n", claim_extraction),
+        self._debug_print("\n=== CLAIM EXTRACTION RAW ===\n", claim_extraction)
         self._debug_print("\n=== EXTRACTED CLAIMS ===\n", json.dumps(claim_doc, indent=2, ensure_ascii=False))
-        self._debug_print("\n=== VIOLATIONS ===\n", violations)
-        self._debug_print("\n=== DECISION ===\n", decision)
+        self._debug_print("\n=== VIOLATIONS ===\n", json.dumps(violations, indent=2, ensure_ascii=False))
+        self._debug_print("\n=== DECISION ===\n", json.dumps(decision, indent=2, ensure_ascii=False))
 
         return {
             **rag_result,
+            "claims": claim_doc,
             "verified_response": verified_response,
             "violations": violations,
             "decision": decision,
@@ -88,9 +91,9 @@ class Pipeline:
     
     # --- MAIN PIPELINE METHOD ---
     def run(self, query):
-        llm_response = self.run_llm(query)
+        # llm_response = self.run_llm(query)
         rag_rule_result = self.run_rag_rule(query)
         return {
-            "llm_response": llm_response,
+            # "llm_response": llm_response,
             **rag_rule_result,
         }
