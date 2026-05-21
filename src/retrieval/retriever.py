@@ -1,7 +1,5 @@
-import faiss
 import numpy as np
 import pickle
-from sentence_transformers import SentenceTransformer
 
 
 class Retriever:
@@ -9,6 +7,21 @@ class Retriever:
                  index_path="index/faiss.index",
                  chunks_path="index/chunks.pkl",
                  embedding_model="BAAI/bge-m3"):
+        try:
+            import faiss
+        except ImportError as exc:
+            raise RuntimeError(
+                "Package 'faiss' is not installed. Install it first, for example: "
+                "pip install faiss-cpu"
+            ) from exc
+
+        try:
+            from sentence_transformers import SentenceTransformer
+        except ImportError as exc:
+            raise RuntimeError(
+                "Package 'sentence-transformers' is not installed. Install it first, "
+                "for example: pip install sentence-transformers"
+            ) from exc
 
         self.model = SentenceTransformer(embedding_model) # Load the embedding model
         self.index = faiss.read_index(index_path) # Load the FAISS index

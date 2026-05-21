@@ -1,9 +1,11 @@
+from dotenv import load_dotenv
 import os
 
 from openai import OpenAI
 
+load_dotenv()
 
-groq_api_key = os.getenv("GROQ_API_KEY")
+groq_api_key = os.getenv("GROQ_API_KEY","").strip()
 if not groq_api_key:
     raise RuntimeError("GROQ_API_KEY environment variable is not set.")
 
@@ -31,80 +33,78 @@ class Generator:
         return response.choices[0].message.content
 
     # --- PUBLIC METHODS ---
+    # Metode utama untuk menghasilkan jawaban berdasarkan pertanyaan dan konteks
     def generate(self, query, context=""):
-        prompt = f"""
-        Anda adalah asisten kesehatan anak.
+        system_prompt = """
+        Anda adalah asisten kesehatan anak berbasis pedoman klinis.
+        """
+
+        user_prompt = f"""
         Jawab pertanyaan dengan singkat, jelas, dan sesuai dengan pedoman klinis pediatri.
+        
         Context:
         {context}
+
         Question:
         {query}
+
         Answer in Indonesian:
         """
         return self._chat(
-            system_prompt="Anda adalah asisten kesehatan anak berbasis pedoman klinis.",
-            user_prompt=prompt,
+            system_prompt=system_prompt,
+            user_prompt=user_prompt,
         )
 
     # Metode khusus untuk ekstraksi klaim dari jawaban LLM
     def generate_claim_extraction(self, answer_text):
         system_prompt = """
-        Anda adalah sistem ekstraksi fakta klinis pediatri.
+        Ekstrak fakta klinis pediatri ke JSON. Tanpa markdown, tanpa inferensi, hanya yang eksplisit tertulis.
 
-        Tugas Anda adalah mengekstrak fakta yang eksplisit dari teks medis ke dalam SATU objek JSON yang valid.
+        ATURAN:
+        - Setiap kondisi unik maka buat entry terpisah.
+        - Jika phase, severity, dan complication tidak disebutkan verbatim maka null.
+        - Satu obat + satu kondisi maka satu set claims.
+        - Ekstrak masing-masing dose, frequency, interval, atau duration sebagai claim terpisah.
+        - Jika field tidak disebut maka null.
+        - parameter adalah nama obat persis seperti di teks, tanpa disingkat atau dinormalisasi.
+        - Jika claim_type: dose maka dose_context harus diisi.
+        - Jika nilai tunggal maka min=max, jika rentang isi keduanya.
+        - Unit wajib diisi jika value_min atau value_max tidak null.
+        - Jika claim_type: contraindication maka prohibited: true dan lainnya null.
+        - evidence_text: kutipan verbatim dari teks.
 
-        Aturan ekstraksi:
-        - Ekstrak hanya informasi yang tertulis eksplisit di teks.
-        - Jangan menebak, jangan menambahkan inferensi, dan jangan melengkapi nilai yang tidak ada.
-        - Hanya ekstrak field berikut:
-          - condition.age_months
-          - condition.weight_kg
-          - condition.disease
-          - claims
-        - Hanya izinkan claim_type: dose, frequency, duration.
-        - parameter harus berupa nama obat yang eksplisit di teks.
-        - value_min dan value_max harus berupa angka atau null.
-        - unit harus berupa string singkat atau null.
-        - setiap claim wajib memiliki "evidence_text" berupa kutipan teks asli.
+        ENUM:
+        - severity: ringan|ringan-sedang|sedang|berat|besar|resisten_cairan|tersangka|refrakter
+        - phase: initial|continuation|acute|intensive|maintenance
+        - complication: malnutrisi|ensefalopati|bronkopneumonia|meningitis|gangguan_fungsi_jantung|hamil_trimester_akhir|hipernatremia|refraktori|krisis_hipertensi|rawat_inap|rawat_jalan|perdarahan_saluran_kemih|asma_atau_gagal_jantung|efusi_perikardium
+        - claim_type: dose|frequency|duration|interval|contraindication
+        - route: oral|iv|im|sc|rektal|inhalasi|intranasal|intratracheal|oral_ngt|iv_bolus|iv_infusion
+        - dose_context: per_dose|per_day|per_hour|per_week|total_dose
 
-        Aturan normalisasi:
-        - Jika hanya ada satu nilai, isi value_min dan value_max dengan angka yang sama.
-        - Jika ada rentang, isi value_min dan value_max sesuai batas bawah dan batas atas.
-        - Jika tidak ada angka yang jelas, jangan buat claim tersebut.
-        - Jika umur atau berat badan tidak disebutkan, isi null.
-        - Jika penyakit tidak disebutkan, isi null.
-
-        Format output:
+        OUTPUT:
         {
-          "condition": { "disease": null, "age_months": null, "weight_kg": null },
-          "claims": [
-            {
-              "claim_type": "dose|frequency|duration",
-              "parameter": "string",
-              "value_min": null,
-              "value_max": null,
-              "unit": "string"
-              "evidence_text": "string"
-            }
-          ]
+        "entries": [{
+            "condition": {
+                "disease": string,
+                "age_month_min": float, "age_month_max": float,
+                "weight_kg_min": float, "weight_kg_max": float,
+                "phase": string, "severity": string, "complication": string },
+            "claims": [{
+                "claim_type": string, "parameter": string, "route": string,
+                "value_min": float, "value_max": float, "unit": string, "dose_context": string, "prohibited": true,
+                "evidence_text": string }]
+            }]
         }
 
-        Aturan output:
-        - Keluarkan HANYA SATU objek JSON.
-        - Jangan tambahkan narasi, penjelasan, markdown, atau code fence.
-        - Output harus dimulai dengan { dan diakhiri dengan }.
         """
 
-        user_prompt = f"""
-        Ekstrak fakta dari teks berikut:
-
-        {answer_text}
-        """
+        user_prompt = f"TEXT:{answer_text}"
+        
         return self._chat(
             system_prompt=system_prompt,
             user_prompt=user_prompt,
             temperature=0,
-            max_tokens=700,
+            max_tokens=999,
         )
 
     # Metode untuk meregenerasi jawaban berdasarkan pelanggaran pedoman
@@ -127,14 +127,25 @@ class Generator:
             guideline_facts.append(fact)
         guideline_facts_text = "\n".join(guideline_facts)
         user_prompt = f"""
-            Jawaban sebelumnya tidak sepenuhnya sesuai dengan pedoman klinis pediatri.
-            Jawaban sebelumnya:
-            {original_answer}
-            Gunakan fakta guideline berikut:
-            {guideline_facts_text}
-            Tulis ulang jawaban singkat yang sepenuhnya sesuai dengan pedoman medis pediatri.
-            """
+        Jawaban sebelumnya:
+        {original_answer}
+
+        Koreksi guideline:
+        {guideline_facts_text}
+
+        Tulis ulang jawaban final dalam bahasa Indonesia.
+
+        Aturan:
+        - Pertahankan singkatnya.
+        - Ubah hanya bagian yang salah.
+        - Tanpa permintaan maaf, pembuka, penjelasan, atau proses verifikasi.
+        - Keluarkan hanya jawaban final.
+        """
         return self._chat(
-            system_prompt="Anda adalah asisten kesehatan anak berbasis pedoman klinis.",
+            system_prompt=(
+                "Anda editor klinis pediatri."
+                "Perbaiki jawaban agar sesuai guideline dengan perubahan seminimal mungkin."
+            ),
             user_prompt=user_prompt,
+            temperature=0,
         )

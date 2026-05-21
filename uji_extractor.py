@@ -12,7 +12,7 @@ rules = load_rules(str(rules_path))
 
 rag_text = """
 
-Durasi pengobatan dengan klorokuin sulfat untuk malaria pada anak adalah 4 hari.
+Pada malaria klorokuin sulfat oral diberikan 3 kali sehari, yaitu 10 mg/kgbb pada hari ke-1 dan 2, serta 5 mg/kgbb pada hari ke-3.
 
 """
 
@@ -25,9 +25,9 @@ rag_text_verified, decision = apply_decision(
     generator=pipeline.generator,
 )
 
-print("\n--- CLAIM EXTRACTION ---")
+print("\n--- CLAIM RAW ---")
 print(claim_extraction)
-print("\n--- CLAIM DOCUMENT ---")
+print("\n--- CLAIM NORMALIZED ---")
 print(json.dumps(claim_doc, indent=2, ensure_ascii=False))
 print("\n--- RULE ENGINE ---")
 print(json.dumps(violations, indent=2, ensure_ascii=False)) 

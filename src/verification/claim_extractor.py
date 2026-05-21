@@ -1,291 +1,265 @@
+from __future__ import annotations
+
 import json
+import logging
 import re
+from pathlib import Path
+from typing import Any
 
-EMPTY_CLAIM = {
-    "condition": {"age_months": None, "weight_kg": None, "disease": None},
-    "claims": [],
-}
+logger = logging.getLogger(__name__)
 
-DISEASE_MAP = {
-    "malaria": "malaria",
-    "malaria tanpa komplikasi": "malaria",
-    "malaria uncomplicated": "malaria",
-    "malaria ringan": "malaria",
-    "malaria berat": "malaria berat",
-    "severe malaria": "malaria berat",
-    "malaria falciparum berat": "malaria berat",
-    "malaria falciparum": "malaria falciparum",
-    "plasmodium falciparum": "malaria falciparum",
-    "p falciparum": "malaria falciparum",
-    "p. falciparum": "malaria falciparum",
-    "malaria falciparum resisten klorokuin": "p. falciparum yang resisten terhadap klorokuin",
-    "malaria falciparum resisten terhadap klorokuin": "p. falciparum yang resisten terhadap klorokuin",
-    "plasmodium falciparum resisten klorokuin": "p. falciparum yang resisten terhadap klorokuin",
-    "plasmodium falciparum yang resisten terhadap klorokuin": "p. falciparum yang resisten terhadap klorokuin",
-    "p falciparum resisten klorokuin": "p. falciparum yang resisten terhadap klorokuin",
-    "p. falciparum resisten klorokuin": "p. falciparum yang resisten terhadap klorokuin",
-    "p falciparum yang resisten terhadap klorokuin": "p. falciparum yang resisten terhadap klorokuin",
-    "malaria vivax": "malaria vivax, malariae, dan ovale",
-    "plasmodium vivax": "malaria vivax, malariae, dan ovale",
-    "p vivax": "malaria vivax, malariae, dan ovale",
-    "p. vivax": "malaria vivax, malariae, dan ovale",
-    "malaria malariae": "malaria vivax, malariae, dan ovale",
-    "plasmodium malariae": "malaria vivax, malariae, dan ovale",
-    "p malariae": "malaria vivax, malariae, dan ovale",
-    "p. malariae": "malaria vivax, malariae, dan ovale",
-    "malaria ovale": "malaria vivax, malariae, dan ovale",
-    "plasmodium ovale": "malaria vivax, malariae, dan ovale",
-    "p ovale": "malaria vivax, malariae, dan ovale",
-    "p. ovale": "malaria vivax, malariae, dan ovale",
-    "malaria vivax, malariae, dan ovale": "malaria vivax, malariae, dan ovale",
-}
-
-CLAIM_TYPES = {"dose", "frequency", "duration"}
-
-PARAMETER_MAP = {
-    "klorokuin": "klorokuin sulfat",
-    "chloroquine": "klorokuin sulfat",
-    "chloroquine sulfate": "klorokuin sulfat",
-    "klorokuin sulfat": "klorokuin sulfat",
-    "kina": "kina dihidroklorid",
-    "kina dihidroklorida": "kina dihidroklorid",
-    "kina dihidroklorid": "kina dihidroklorid",
-    "quinine dihydrochloride": "kina dihidroklorid",
-    "kuinin": "kuinin sulfat",
-    "quinine": "kuinin sulfat",
-    "quinine sulfate": "kuinin sulfat",
-    "kuinin sulfat": "kuinin sulfat",
-    "tetrasiklin": "tetrasiklin",
-    "tetracycline": "tetrasiklin",
-    "primakuin": "primakuin fosfat",
-    "primaquine": "primakuin fosfat",
-    "primaquine phosphate": "primakuin fosfat",
-    "primakuin fosfat": "primakuin fosfat",
-}
-
-UNIT_MAP = {
-    "mg per kg": "mg/kg",
-    "mg/kg bb": "mg/kg",
-    "mg/kgbb": "mg/kg",
-    "mg per kg bb": "mg/kg",
-    "mg per kilogram": "mg/kg",
-    "mg/kg berat badan": "mg/kg",
-    "mg/kg/hari": "mg/kg/day",
-    "mg/kgbb/hari": "mg/kg/day",
-    "mg/kgbb/hr": "mg/kg/day",
-    "mg/kgbb per hari": "mg/kg/day",
-    "mg per kg per hari": "mg/kg/day",
-    "mg/kg bb/hari": "mg/kg/day",
-    "mg/kg bb per hari": "mg/kg/day",
-    "mg/kg/day": "mg/kg/day",
-    "mg/kg/dosis": "mg/kg/dose",
-    "mg/kg bb/dosis": "mg/kg/dose",
-    "mg/kgbb/dosis": "mg/kg/dose",
-    "mg per kg per dosis": "mg/kg/dose",
-    "mg per kg tiap dosis": "mg/kg/dose",
-    "mg/kg dose": "mg/kg/dose",
-    "mg/kg per dose": "mg/kg/dose",
-    "mg garam/kg/dosis": "mg_garam/kg/dose",
-    "mg garam/kg/dose": "mg_garam/kg/dose",
-    "mg garam per kg per dosis": "mg_garam/kg/dose",
-    "mg garam per kg tiap dosis": "mg_garam/kg/dose",
-    "mg basa/kg": "mg_basa/kg",
-    "mg basa per kg": "mg_basa/kg",
-    "mg basa/kg bb": "mg_basa/kg",
-    "mg basa/kgbb": "mg_basa/kg",
-    "mg/kg total dosis": "mg/kg_total_dose",
-    "mg/kg total dose": "mg/kg_total_dose",
-    "mg/kg bb total dosis": "mg/kg_total_dose",
-    "mg/kg bb total dose": "mg/kg_total_dose",
-    "mg/kgbb total dosis": "mg/kg_total_dose",
-    "mg/kgbb total dose": "mg/kg_total_dose",
-    "mg total/kg": "mg/kg_total_dose",
-    "mg per kg total dosis": "mg/kg_total_dose",
-    "mg per kg total dose": "mg/kg_total_dose",
-    "kali per hari": "times/day",
-    "kali sehari": "times/day",
-    "kali / hari": "times/day",
-    "x per hari": "times/day",
-    "x/hari": "times/day",
-    "x / hari": "times/day",
-    "dd": "times/day",
-    "times/day": "times/day",
-    "jam": "hours",
-    "hour": "hours",
-    "hours": "hours",
-    "hari": "days",
-    "day": "days",
-    "days": "days",
-}
-
-# Metode untuk mengekstrak klaim dari teks jawaban
-def _extract_json_object(text):
-    if not text:
-        return None
-
-    decoder = json.JSONDecoder()
-    for index, char in enumerate(text):
-        if char != "{":
-            continue
-        try:
-            parsed, _ = decoder.raw_decode(text[index:])
-        except json.JSONDecodeError:
-            continue
-        if isinstance(parsed, dict):
-            return parsed
-    return None
-
-# Metode parsing condition dari JSON mentah
-def parse_condition(raw_condition):
-    if not isinstance(raw_condition, dict):
-        return {}
-
-    return {
-        "disease": raw_condition.get("disease"),
-        "age_months": raw_condition.get("age_months"),
-        "weight_kg": raw_condition.get("weight_kg"),
-    }
-
-# Metode parsing klaim dari JSON mentah
-def parse_claim(raw_claim):
-    if not isinstance(raw_claim, dict):
-        return None
-
-    return {
-        "claim_type": raw_claim.get("claim_type"),
-        "parameter": raw_claim.get("parameter"),
-        "value_min": raw_claim.get("value_min"),
-        "value_max": raw_claim.get("value_max"),
-        "unit": raw_claim.get("unit"),
-        "evidence_text": raw_claim.get("evidence_text"),
-    }
-
-# Metode untuk parsing dokumen klaim lengkap dari teks jawaban
-def parse_claim_document(text):
-    data = _extract_json_object(text)
-    if not isinstance(data, dict):
-        return None
-
-    raw_claims = data.get("claims")
-    parsed_claims = []
-    if isinstance(raw_claims, list):
-        parsed_claims = [claim for item in raw_claims if (claim := parse_claim(item))]
-
-    return {
-        "condition": parse_condition(data.get("condition")),
-        "claims": parsed_claims,
-    }
- 
-# End of parsing methods
+ONTOLOGY_PATH = Path(__file__).with_name("ontology.json")
 
 
+# ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
 
-# Metode normalisasi string
-def _norm_str(value):
-    return str(value).lower().strip() if value else None
-
-# Metode normalisasi nilai numerik
-def _norm_float(value):
+def _canonical_text(value: Any) -> str | None:
+    """Normalise any value to a lowercase, underscore-separated string."""
     if value is None:
+        return None
+    normalized = str(value).strip().lower().replace("-", "_")
+    normalized = re.sub(r"\s+", "_", normalized)
+    return normalized or None
+
+
+def _to_float_or_none(value: Any) -> float | None:
+    if value is None or value == "":
         return None
     try:
         if isinstance(value, str):
-            value = float(value.strip().replace(",", "."))
-        else:
-            value = float(value)
-        return int(value) if value.is_integer() else value
+            value = value.strip().replace(",", ".")
+        return float(value)
     except (TypeError, ValueError):
+        logger.warning("Nilai numerik tidak valid dan diabaikan: %r", value)
         return None
 
-# Metode normalisasi usia dalam bulan
-def _norm_age_months(value):
+
+def _normalize_with_alias(
+    value: Any,
+    aliases: dict[str, str],
+    *,
+    valid_set: set[str] | None = None,
+    field_name: str = "unknown",
+) -> str | None:
+    key = _canonical_text(value)
+    if key is None:
+        return None
+
+    resolved = aliases.get(key, key)
+    if valid_set is not None and resolved not in valid_set:
+        logger.warning("Nilai %r tidak valid untuk field %s; diabaikan.", value, field_name)
+        return None
+
+    return resolved
+
+
+def _normalize_claim_type(value: Any) -> str | None:
+    resolved = _normalize_with_alias(
+        value,
+        CLAIM_TYPE_ALIASES,
+        valid_set=VALID_CLAIM_TYPE,
+        field_name="claim_type",
+    )
+    if resolved is None:
+        logger.warning("claim_type tidak valid atau hilang: %r", value)
+    return resolved
+
+
+def _clean_unit(value: Any) -> str | None:
     if value is None:
         return None
-    if isinstance(value, (int, float)):
-        return int(value)
+    unit = str(value).strip().lower()
+    unit = re.sub(r"\s+", " ", unit)
+    unit = unit.replace(" / ", "/").replace(" /", "/").replace("/ ", "/")
+    return unit.replace(" ", "") or None
 
-    match = re.search(r"(\d+(?:[.,]\d+)?)\s*(tahun|th|bulan|bln)?", str(value).lower())
-    if not match:
+
+def _drop_none(value: Any) -> Any:
+    if isinstance(value, dict):
+        return {
+            key: cleaned
+            for key, item in value.items()
+            if (cleaned := _drop_none(item)) is not None
+        }
+    if isinstance(value, list):
+        return [_drop_none(item) for item in value]
+    return value
+
+
+# ---------------------------------------------------------------------------
+# Ontology loading
+# ---------------------------------------------------------------------------
+
+def _load_ontology(path: Path = ONTOLOGY_PATH) -> dict[str, dict[str, list[str]]]:
+    try:
+        with open(path, encoding="utf-8-sig") as fh:
+            data = json.load(fh)
+    except FileNotFoundError:
+        logger.error("File ontology alias tidak ditemukan: %s", path)
+        return {}
+    except json.JSONDecodeError as exc:
+        logger.error("Gagal membaca ontology alias %s: %s", path, exc)
+        return {}
+
+    if not isinstance(data, dict):
+        logger.error("Isi ontology alias harus berupa object JSON.")
+        return {}
+
+    ontology: dict[str, dict[str, list[str]]] = {}
+    for group_name, group_value in data.items():
+        if not isinstance(group_value, dict):
+            logger.warning("Grup ontology %s bukan object; diabaikan.", group_name)
+            continue
+        ontology[group_name] = {
+            str(canonical): [str(a) for a in aliases]
+            for canonical, aliases in group_value.items()
+            if isinstance(aliases, list)
+        }
+    return ontology
+
+
+def _build_alias_map(groups: dict[str, list[str]]) -> dict[str, str]:
+    alias_map: dict[str, str] = {}
+    for canonical, aliases in groups.items():
+        key = _canonical_text(canonical)
+        if key:
+            alias_map[key] = canonical
+        for alias in aliases:
+            alias_key = _canonical_text(alias)
+            if alias_key:
+                alias_map[alias_key] = canonical
+    return alias_map
+
+
+ONTOLOGY = _load_ontology()
+
+CLAIM_TYPE_ALIASES = _build_alias_map(ONTOLOGY.get("claim_type", {}))
+ROUTE_ALIASES      = _build_alias_map(ONTOLOGY.get("route", {}))
+PHASE_ALIASES      = _build_alias_map(ONTOLOGY.get("phase", {}))
+SEVERITY_ALIASES   = _build_alias_map(ONTOLOGY.get("severity", {}))
+PARAMETER_ALIASES  = _build_alias_map(ONTOLOGY.get("parameter", {}))
+COMPLICATION_ALIASES = _build_alias_map(ONTOLOGY.get("complication", {}))
+DISEASE_ALIASES    = _build_alias_map(ONTOLOGY.get("disease", {}))
+
+# Valid sets derived directly from the ontology — no duplication needed.
+VALID_CLAIM_TYPE = set(ONTOLOGY.get("claim_type", {}))
+VALID_ROUTE    = set(ONTOLOGY.get("route", {}))
+VALID_PHASE    = set(ONTOLOGY.get("phase", {}))
+VALID_SEVERITY = set(ONTOLOGY.get("severity", {}))
+
+
+# ---------------------------------------------------------------------------
+# JSON extraction
+# ---------------------------------------------------------------------------
+
+def _extract_json_object(text: str) -> dict | None:
+    # Strip optional markdown code fence.
+    text = re.sub(r"^```(?:json)?\s*", "", text.strip(), flags=re.IGNORECASE)
+    text = re.sub(r"\s*```$", "", text).strip()
+
+    decoder = json.JSONDecoder()
+    for i, ch in enumerate(text):
+        if ch != "{":
+            continue
+        try:
+            parsed, _ = decoder.raw_decode(text[i:])
+            if isinstance(parsed, dict):
+                return parsed
+        except json.JSONDecodeError:
+            continue
+
+    logger.error("Tidak menemukan object JSON valid dari output LLM. Input awal: %r", text[:300])
+    return None
+
+
+# ---------------------------------------------------------------------------
+# Parsing
+# ---------------------------------------------------------------------------
+
+def _parse_condition(raw: Any) -> dict:
+    raw = raw if isinstance(raw, dict) else {}
+    return {
+        "disease":        _normalize_with_alias(raw.get("disease"), DISEASE_ALIASES),
+        "age_month_min":  _to_float_or_none(raw.get("age_month_min")),
+        "age_month_max":  _to_float_or_none(raw.get("age_month_max")),
+        "weight_kg_min":  _to_float_or_none(raw.get("weight_kg_min")),
+        "weight_kg_max":  _to_float_or_none(raw.get("weight_kg_max")),
+        "phase":    _normalize_with_alias(raw.get("phase"),    PHASE_ALIASES,    valid_set=VALID_PHASE,    field_name="phase"),
+        "severity": _normalize_with_alias(raw.get("severity"), SEVERITY_ALIASES, valid_set=VALID_SEVERITY, field_name="severity"),
+        "complication": _normalize_with_alias(raw.get("complication"), COMPLICATION_ALIASES),
+    }
+
+
+def _parse_claim(raw: Any, condition: dict) -> dict | None:
+    if not isinstance(raw, dict):
+        logger.warning("Claim bukan dict; dilewati: %r", raw)
         return None
 
-    amount = float(match.group(1).replace(",", "."))
-    unit = match.group(2)
-    return int(amount * 12) if unit in {"tahun", "th"} else int(amount)
-
-# Metode normalisasi nama penyakit
-def normalize_disease(raw_disease):
-    disease = _norm_str(raw_disease)
-    if not disease:
+    claim_type = _normalize_claim_type(raw.get("claim_type"))
+    if claim_type is None:
+        logger.warning("Klaim dilewati karena claim_type tidak valid: %r", raw)
         return None
-    return DISEASE_MAP.get(disease, disease)
 
-# Metode normalisasi nama parameter obat
-def normalize_parameter(raw_parameter):
-    parameter = _norm_str(raw_parameter)
+    parameter = _normalize_with_alias(raw.get("parameter"), PARAMETER_ALIASES)
     if not parameter:
-        return None
-    parameter = re.sub(r"\b(iv|oral|po|injeksi|infus)\b", "", parameter).strip()
-    return PARAMETER_MAP.get(parameter, parameter)
-
-# Metode normalisasi kondisi klinis
-def normalize_condition(parsed_condition):
-    return {
-        "disease": normalize_disease(parsed_condition.get("disease")),
-        "age_months": _norm_age_months(parsed_condition.get("age_months")),
-        "weight_kg": _norm_float(parsed_condition.get("weight_kg")),
-    }
-
-# Metode normalisasi klaim
-def normalize_claim(parsed_claim):
-    claim_type = _norm_str(parsed_claim.get("claim_type"))
-    parameter = normalize_parameter(parsed_claim.get("parameter"))
-    value_min = _norm_float(parsed_claim.get("value_min"))
-    value_max = _norm_float(parsed_claim.get("value_max"))
-    unit = UNIT_MAP.get(_norm_str(parsed_claim.get("unit")), _norm_str(parsed_claim.get("unit")))
-    evidence_text = parsed_claim.get("evidence_text")
-
-    if claim_type not in CLAIM_TYPES:
-        return None
-    if value_min is None and value_max is None:
-        return None
-    if unit is None:
-        return None
-    if claim_type == "dose" and not parameter:
+        logger.warning("Klaim dilewati karena field parameter kosong: %r", raw)
         return None
 
-    if value_min is None:
-        value_min = value_max
-    if value_max is None:
-        value_max = value_min
-
-    normalized_claim = {
-        "claim_type": claim_type,
-        "parameter": parameter,
-        "constraint": {
-            "min": value_min,
-            "max": value_max,
-            "unit": unit,
-        },
-    }
-    if evidence_text:
-        normalized_claim["evidence_text"] = evidence_text
-    return normalized_claim
-
-# End of normalization methods
+    return _drop_none({
+        "condition":     condition,
+        "claim_type":    claim_type,
+        "parameter":     parameter,
+        "route":         _normalize_with_alias(raw.get("route"), ROUTE_ALIASES, valid_set=VALID_ROUTE, field_name="route"),
+        "value_min":     _to_float_or_none(raw.get("value_min")),
+        "value_max":     _to_float_or_none(raw.get("value_max")),
+        "unit":          _clean_unit(raw.get("unit")),
+        "dose_context":  _canonical_text(raw.get("dose_context")),
+        # contraindication claims are always prohibited; others follow the raw flag.
+        "prohibited":    True if (claim_type == "contraindication" or raw.get("prohibited") is True) else None,
+        "evidence_text": str(raw.get("evidence_text") or ""),
+    })
 
 
+def _parse_entry(entry: dict) -> list[dict]:
+    condition = _parse_condition(entry.get("condition"))
+    claims_raw = entry.get("claims") or []
+    if not isinstance(claims_raw, list):
+        logger.warning("Field claims bukan list; entry dilewati: %r", entry)
+        return []
 
-# Metode utama untuk mengekstrak dan menormalisasi klaim dari teks jawaban LLM
-def extract_claims(text):
-    parsed_document = parse_claim_document(text)
-    if not parsed_document:
-        return EMPTY_CLAIM.copy()
+    return [
+        claim
+        for raw_claim in claims_raw
+        if (claim := _parse_claim(raw_claim, condition)) is not None
+    ]
 
-    return {
-        "condition": normalize_condition(parsed_document["condition"]),
-        "claims": [
-            normalized_claim
-            for claim in parsed_document["claims"]
-            if (normalized_claim := normalize_claim(claim))
-        ],
-    }
+
+# ---------------------------------------------------------------------------
+# Public API
+# ---------------------------------------------------------------------------
+
+def extract_claims(llm_json_output: str) -> list[dict]:
+    """Return normalised claims extracted from an LLM JSON output string."""
+    if not llm_json_output:
+        return []
+
+    data = _extract_json_object(llm_json_output)
+    if data is None:
+        return []
+
+    entries = data.get("entries")
+    if not isinstance(entries, list):
+        logger.warning("Output LLM tidak memiliki field 'entries' berbentuk list.")
+        return []
+
+    all_claims = [
+        claim
+        for entry in entries
+        if isinstance(entry, dict)
+        for claim in _parse_entry(entry)
+    ]
+
+    logger.info("Total klaim berhasil diekstrak: %d", len(all_claims))
+    return all_claims
