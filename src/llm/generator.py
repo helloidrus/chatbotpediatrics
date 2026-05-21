@@ -65,13 +65,14 @@ class Generator:
         - Jika phase, severity, dan complication tidak disebutkan verbatim maka null.
         - Satu obat + satu kondisi maka satu set claims.
         - Ekstrak masing-masing dose, frequency, interval, atau duration sebagai claim terpisah.
-        - Jika field tidak disebut maka null.
+        - Isi null hanya untuk field schema yang tidak disebut eksplisit di teks.
+        - parameter harus atomik, hanya satu obat/cairan per field.
         - parameter adalah nama obat persis seperti di teks, tanpa disingkat atau dinormalisasi.
         - Jika claim_type: dose maka dose_context harus diisi.
         - Jika nilai tunggal maka min=max, jika rentang isi keduanya.
         - Unit wajib diisi jika value_min atau value_max tidak null.
         - Jika claim_type: contraindication maka prohibited: true dan lainnya null.
-        - evidence_text: kutipan verbatim dari teks.
+        - evidence_text harus berupa kutipan verbatim pendek yang langsung mendukung claim.
 
         ENUM:
         - severity: ringan|ringan-sedang|sedang|berat|besar|resisten_cairan|tersangka|refrakter
@@ -79,7 +80,7 @@ class Generator:
         - complication: malnutrisi|ensefalopati|bronkopneumonia|meningitis|gangguan_fungsi_jantung|hamil_trimester_akhir|hipernatremia|refraktori|krisis_hipertensi|rawat_inap|rawat_jalan|perdarahan_saluran_kemih|asma_atau_gagal_jantung|efusi_perikardium
         - claim_type: dose|frequency|duration|interval|contraindication
         - route: oral|iv|im|sc|rektal|inhalasi|intranasal|intratracheal|oral_ngt|iv_bolus|iv_infusion
-        - dose_context: per_dose|per_day|per_hour|per_week|total_dose
+        - dose_context: per_dosis|per_hari|per_jam|per_menit|total_dosis
 
         OUTPUT:
         {
