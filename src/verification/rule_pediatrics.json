@@ -5,10 +5,10 @@
       "condition": {
         "disease": "string",
         "phase": "string",
-        "age_month_min": 0,
-        "age_month_max": 0,
-        "weight_kg_min": 0,
-        "weight_kg_max": 0,
+        "age_month_min": "float",
+        "age_month_max": "float",
+        "weight_kg_min": "float",
+        "weight_kg_max": "float",
         "severity": "string",
         "complication": "string"
       },
@@ -16,11 +16,11 @@
         "claim_type": "string",
         "parameter": "string",
         "route": "string",
-        "value_min": 0,
-        "value_max": 0,
+        "value_min": "float",
+        "value_max": "float",
         "unit": "string",
         "dose_context": "string",
-        "prohibited": true
+        "prohibited": "boolean"
       },
       "metadata": {
         "source": "string",
