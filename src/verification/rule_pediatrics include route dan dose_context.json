@@ -15,9 +15,11 @@
       "claim": {
         "claim_type": "string",
         "parameter": "string",
+        "route": "string",
         "value_min": "float",
         "value_max": "float",
         "unit": "string",
+        "dose_context": "string",
         "prohibited": "boolean"
       },
       "metadata": {
@@ -35,9 +37,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "new oralit",
+        "route": "oral",
         "value_min": 5,
         "value_max": 10,
-        "unit": "mL/kgbb/kali"
+        "unit": "mL/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -55,6 +59,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "new oralit",
+        "route": "oral",
         "value_min": 50,
         "value_max": 100,
         "unit": "mL"
@@ -75,6 +80,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "new oralit",
+        "route": "oral",
         "value_min": 100,
         "value_max": 200,
         "unit": "mL"
@@ -94,9 +100,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "rehidrasi oral hipoosmolar",
+        "route": "oral",
         "value_min": 75,
         "value_max": 75,
-        "unit": "mL/kgbb/total"
+        "unit": "mL/kgbb/total",
+        "dose_context": "total_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -113,6 +121,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "rehidrasi oral hipoosmolar",
+        "route": "oral",
         "value_min": 3,
         "value_max": 3,
         "unit": "jam"
@@ -132,9 +141,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "rehidrasi oral hipoosmolar",
+        "route": "oral",
         "value_min": 5,
         "value_max": 10,
-        "unit": "mL/kgbb/kali"
+        "unit": "mL/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -153,9 +164,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "rehidrasi",
+        "route": "iv",
         "value_min": 200,
         "value_max": 200,
-        "unit": "mL/kgbb/hari"
+        "unit": "mL/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -174,9 +187,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "rehidrasi",
+        "route": "iv",
         "value_min": 175,
         "value_max": 175,
-        "unit": "mL/kgbb/hari"
+        "unit": "mL/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -194,9 +209,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "rehidrasi",
+        "route": "iv",
         "value_min": 135,
         "value_max": 135,
-        "unit": "mL/kgbb/hari"
+        "unit": "mL/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -213,6 +230,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "ringer laktat",
+        "route": "iv",
         "value_min": 100,
         "value_max": 100,
         "unit": "mL/kgbb"
@@ -232,6 +250,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "ringer asetat",
+        "route": "iv",
         "value_min": 100,
         "value_max": 100,
         "unit": "mL/kgbb"
@@ -254,6 +273,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "ringer laktat",
+        "route": "iv",
         "value_min": 30,
         "value_max": 30,
         "unit": "mL/kgbb"
@@ -276,6 +296,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "ringer asetat",
+        "route": "iv",
         "value_min": 30,
         "value_max": 30,
         "unit": "mL/kgbb"
@@ -298,6 +319,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "ringer laktat",
+        "route": "iv",
         "value_min": 1,
         "value_max": 1,
         "unit": "jam"
@@ -320,6 +342,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "ringer asetat",
+        "route": "iv",
         "value_min": 1,
         "value_max": 1,
         "unit": "jam"
@@ -342,6 +365,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "ringer laktat",
+        "route": "iv",
         "value_min": 70,
         "value_max": 70,
         "unit": "mL/kgbb"
@@ -364,6 +388,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "ringer asetat",
+        "route": "iv",
         "value_min": 70,
         "value_max": 70,
         "unit": "mL/kgbb"
@@ -386,6 +411,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "ringer laktat",
+        "route": "iv",
         "value_min": 5,
         "value_max": 5,
         "unit": "jam"
@@ -408,6 +434,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "ringer asetat",
+        "route": "iv",
         "value_min": 5,
         "value_max": 5,
         "unit": "jam"
@@ -429,6 +456,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "ringer laktat",
+        "route": "iv",
         "value_min": 30,
         "value_max": 30,
         "unit": "mL/kgbb"
@@ -450,6 +478,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "ringer asetat",
+        "route": "iv",
         "value_min": 30,
         "value_max": 30,
         "unit": "mL/kgbb"
@@ -471,6 +500,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "ringer laktat",
+        "route": "iv",
         "value_min": 0.5,
         "value_max": 0.5,
         "unit": "jam"
@@ -492,6 +522,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "ringer asetat",
+        "route": "iv",
         "value_min": 0.5,
         "value_max": 0.5,
         "unit": "jam"
@@ -513,6 +544,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "ringer laktat",
+        "route": "iv",
         "value_min": 70,
         "value_max": 70,
         "unit": "mL/kgbb"
@@ -534,6 +566,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "ringer asetat",
+        "route": "iv",
         "value_min": 70,
         "value_max": 70,
         "unit": "mL/kgbb"
@@ -555,6 +588,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "ringer laktat",
+        "route": "iv",
         "value_min": 2.5,
         "value_max": 2.5,
         "unit": "jam"
@@ -576,6 +610,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "ringer asetat",
+        "route": "iv",
         "value_min": 2.5,
         "value_max": 2.5,
         "unit": "jam"
@@ -594,6 +629,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "zink",
+        "route": "oral",
         "value_min": 10,
         "value_max": 14,
         "unit": "hari"
@@ -613,9 +649,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "zink",
+        "route": "oral",
         "value_min": 10,
         "value_max": 10,
-        "unit": "mg/hari"
+        "unit": "mg/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -632,9 +670,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "zink",
+        "route": "oral",
         "value_min": 20,
         "value_max": 20,
-        "unit": "mg/hari"
+        "unit": "mg/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -650,9 +690,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "metronidazol",
+        "route": "oral",
         "value_min": 50,
         "value_max": 50,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -668,6 +710,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "metronidazol",
+        "route": "oral",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -686,9 +729,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "penisilin g",
+        "route": "iv",
         "value_min": 50000,
         "value_max": 50000,
-        "unit": "IU/kgbb/kali"
+        "unit": "IU/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -705,9 +750,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "penisilin g",
+        "route": "iv",
         "value_min": 0,
         "value_max": 4000000,
-        "unit": "IU/kali"
+        "unit": "IU/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -724,6 +771,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "penisilin g",
+        "route": "iv",
         "value_min": 6,
         "value_max": 6,
         "unit": "kali/hari"
@@ -743,6 +791,7 @@
       "claim": {
         "claim_type": "interval",
         "parameter": "penisilin g",
+        "route": "iv",
         "value_min": 4,
         "value_max": 4,
         "unit": "jam"
@@ -762,9 +811,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "ampisilin",
+        "route": "iv",
         "value_min": 100,
         "value_max": 100,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -781,6 +832,7 @@
       "claim": {
         "claim_type": "interval",
         "parameter": "ampisilin",
+        "route": "iv",
         "value_min": 6,
         "value_max": 6,
         "unit": "jam"
@@ -801,9 +853,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "kloramfenikol",
+        "route": "iv",
         "value_min": 100,
         "value_max": 100,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -821,6 +875,7 @@
       "claim": {
         "claim_type": "interval",
         "parameter": "kloramfenikol",
+        "route": "iv",
         "value_min": 6,
         "value_max": 6,
         "unit": "jam"
@@ -841,9 +896,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "seftriakson",
+        "route": "iv",
         "value_min": 50,
         "value_max": 50,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -861,9 +918,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "seftriakson",
+        "route": "iv",
         "value_min": 1,
         "value_max": 2000,
-        "unit": "mg/kali"
+        "unit": "mg/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -881,6 +940,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "seftriakson",
+        "route": "iv",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -900,9 +960,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "cefuroxime",
+        "route": "iv",
         "value_min": 50,
         "value_max": 50,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -919,9 +981,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "cefuroxime",
+        "route": "iv",
         "value_min": 1,
         "value_max": 2000,
-        "unit": "mg/kali"
+        "unit": "mg/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -938,6 +1002,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "cefuroxime",
+        "route": "iv",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -957,9 +1022,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "clindamycin",
+        "route": "iv",
         "value_min": 10,
         "value_max": 10,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -976,9 +1043,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "clindamycin",
+        "route": "iv",
         "value_min": 0,
         "value_max": 1200,
-        "unit": "mg/kali"
+        "unit": "mg/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -995,6 +1064,7 @@
       "claim": {
         "claim_type": "interval",
         "parameter": "clindamycin",
+        "route": "iv",
         "value_min": 6,
         "value_max": 6,
         "unit": "jam"
@@ -1014,9 +1084,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "eritromisin",
+        "route": "iv",
         "value_min": 10,
         "value_max": 10,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -1033,9 +1105,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "eritromisin",
+        "route": "iv",
         "value_min": 0,
         "value_max": 1000,
-        "unit": "mg/kali"
+        "unit": "mg/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -1052,6 +1126,7 @@
       "claim": {
         "claim_type": "interval",
         "parameter": "eritromisin",
+        "route": "iv",
         "value_min": 6,
         "value_max": 6,
         "unit": "jam"
@@ -1072,6 +1147,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "ampisilin",
+        "route": "iv",
         "value_min": 3,
         "value_max": 3,
         "unit": "hari"
@@ -1091,9 +1167,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "ringer laktat",
+        "route": "iv_bolus",
         "value_min": 10,
         "value_max": 20,
-        "unit": "mL/kgbb/kali"
+        "unit": "mL/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -1110,6 +1188,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "ringer laktat",
+        "route": "iv",
         "value_min": 30,
         "value_max": 30,
         "unit": "menit"
@@ -1129,9 +1208,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "dekstran",
+        "route": "iv",
         "value_min": 20,
         "value_max": 30,
-        "unit": "mL/kgbb/jam"
+        "unit": "mL/kgbb/jam",
+        "dose_context": "per_jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -1148,9 +1229,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "dekstran",
+        "route": "iv",
         "value_min": 0,
         "value_max": 1500,
-        "unit": "mL/hari"
+        "unit": "mL/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -1168,9 +1251,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "cairan",
+        "route": "iv",
         "value_min": 10,
         "value_max": 10,
-        "unit": "mL/kgbb/jam"
+        "unit": "mL/kgbb/jam",
+        "dose_context": "per_jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -1188,6 +1273,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "cairan",
+        "route": "iv",
         "value_min": 1,
         "value_max": 4,
         "unit": "jam"
@@ -1207,9 +1293,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "oksigen",
+        "route": "inhalasi",
         "value_min": 2,
         "value_max": 4,
-        "unit": "l/menit"
+        "unit": "l/menit",
+        "dose_context": "per_menit"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -1226,6 +1314,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "darah segar",
+        "route": "iv",
         "value_min": 10,
         "value_max": 10,
         "unit": "mL/kgbb"
@@ -1248,9 +1337,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "cairan oral",
+        "route": "oral",
         "value_min": 1.5,
         "value_max": 2,
-        "unit": "lt/hari"
+        "unit": "lt/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -1270,9 +1361,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "cairan oral",
+        "route": "oral",
         "value_min": 1,
         "value_max": 2,
-        "unit": "lt/hari"
+        "unit": "lt/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -1290,9 +1383,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "cairan",
+        "route": "iv",
         "value_min": 10,
         "value_max": 15,
-        "unit": "mL/kgbb/jam"
+        "unit": "mL/kgbb/jam",
+        "dose_context": "per_jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -1309,9 +1404,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "dekstran",
+        "route": "iv",
         "value_min": 10,
         "value_max": 20,
-        "unit": "mL/kgbb/jam"
+        "unit": "mL/kgbb/jam",
+        "dose_context": "per_jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -1328,9 +1425,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "dekstran",
+        "route": "iv",
         "value_min": 0,
         "value_max": 30,
-        "unit": "mL/kgbb/jam"
+        "unit": "mL/kgbb/jam",
+        "dose_context": "per_jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -1347,9 +1446,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "isoniazid",
+        "route": "oral",
         "value_min": 5,
         "value_max": 15,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -1366,9 +1467,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "isoniazid",
+        "route": "oral",
         "value_min": 0,
         "value_max": 300,
-        "unit": "mg/hari"
+        "unit": "mg/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -1385,9 +1488,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "rifampisin",
+        "route": "oral",
         "value_min": 10,
         "value_max": 15,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -1404,9 +1509,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "rifampisin",
+        "route": "oral",
         "value_min": 0,
         "value_max": 600,
-        "unit": "mg/hari"
+        "unit": "mg/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -1423,9 +1530,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "pirazinamid",
+        "route": "oral",
         "value_min": 25,
         "value_max": 35,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -1442,9 +1551,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "pirazinamid",
+        "route": "oral",
         "value_min": 1,
         "value_max": 2000,
-        "unit": "mg/hari"
+        "unit": "mg/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -1461,9 +1572,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "etambutol",
+        "route": "oral",
         "value_min": 15,
         "value_max": 20,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -1480,9 +1593,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "etambutol",
+        "route": "oral",
         "value_min": 0,
         "value_max": 2500,
-        "unit": "mg/hari"
+        "unit": "mg/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -1499,9 +1614,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "streptomisin",
+        "route": "im",
         "value_min": 15,
         "value_max": 30,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -1518,9 +1635,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "streptomisin",
+        "route": "im",
         "value_min": 0,
         "value_max": 1000,
-        "unit": "mg/hari"
+        "unit": "mg/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -1537,9 +1656,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "prednison",
+        "route": "oral",
         "value_min": 1,
         "value_max": 2,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -1556,6 +1677,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "prednison",
+        "route": "oral",
         "value_min": 0,
         "value_max": 1,
         "unit": "bulan"
@@ -1575,6 +1697,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "isoniazid",
+        "route": "oral",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -1595,6 +1718,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "isoniazid",
+        "route": "oral",
         "value_min": 2,
         "value_max": 2,
         "unit": "bulan"
@@ -1615,6 +1739,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "isoniazid",
+        "route": "oral",
         "value_min": 4,
         "value_max": 6,
         "unit": "bulan"
@@ -1636,6 +1761,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "isoniazid",
+        "route": "oral",
         "value_min": 7,
         "value_max": 10,
         "unit": "bulan"
@@ -1655,6 +1781,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "rifampisin",
+        "route": "oral",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -1675,6 +1802,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "rifampisin",
+        "route": "oral",
         "value_min": 2,
         "value_max": 2,
         "unit": "bulan"
@@ -1695,6 +1823,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "rifampisin",
+        "route": "oral",
         "value_min": 4,
         "value_max": 4,
         "unit": "bulan"
@@ -1716,6 +1845,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "rifampisin",
+        "route": "oral",
         "value_min": 7,
         "value_max": 10,
         "unit": "bulan"
@@ -1735,6 +1865,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "pirazinamid",
+        "route": "oral",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -1755,6 +1886,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "pirazinamid",
+        "route": "oral",
         "value_min": 2,
         "value_max": 2,
         "unit": "bulan"
@@ -1774,6 +1906,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "etambutol",
+        "route": "oral",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -1794,6 +1927,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "etambutol",
+        "route": "oral",
         "value_min": 2,
         "value_max": 2,
         "unit": "bulan"
@@ -1813,6 +1947,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "streptomisin",
+        "route": "im",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -1833,6 +1968,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "streptomisin",
+        "route": "im",
         "value_min": 2,
         "value_max": 2,
         "unit": "bulan"
@@ -1852,6 +1988,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "prednison",
+        "route": "oral",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -1871,6 +2008,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "prednison",
+        "route": "oral",
         "value_min": 2,
         "value_max": 2,
         "unit": "minggu"
@@ -1890,6 +2028,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "kotrimoksasol",
+        "route": "oral",
         "value_min": 5,
         "value_max": 5,
         "unit": "hari"
@@ -1909,6 +2048,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "ampisilin",
+        "route": "iv",
         "value_min": 2,
         "value_max": 2,
         "unit": "hari"
@@ -1928,6 +2068,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "ampisilin",
+        "route": "oral",
         "value_min": 7,
         "value_max": 7,
         "unit": "hari"
@@ -1947,6 +2088,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "gentamisin",
+        "route": "im",
         "value_min": 7,
         "value_max": 7,
         "unit": "hari"
@@ -1967,6 +2109,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "vitamin a",
+        "route": "oral",
         "value_min": 50000,
         "value_max": 50000,
         "unit": "IU"
@@ -1988,6 +2131,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "vitamin a",
+        "route": "oral",
         "value_min": 100000,
         "value_max": 100000,
         "unit": "IU"
@@ -2008,6 +2152,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "vitamin a",
+        "route": "oral",
         "value_min": 200000,
         "value_max": 200000,
         "unit": "IU"
@@ -2027,6 +2172,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "asam folat",
+        "route": "oral",
         "value_min": 1,
         "value_max": 5,
         "unit": "mg"
@@ -2046,6 +2192,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "asam folat",
+        "route": "oral",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -2066,9 +2213,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "energi",
+        "route": "oral",
         "value_min": 80,
         "value_max": 100,
-        "unit": "kkal/kgbb/hari"
+        "unit": "kkal/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -2086,9 +2235,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "protein",
+        "route": "oral",
         "value_min": 1,
         "value_max": 1.5,
-        "unit": "g/kgbb/hari"
+        "unit": "g/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -2106,9 +2257,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "cairan",
+        "route": "oral",
         "value_min": 100,
         "value_max": 130,
-        "unit": "mL/kgbb/hari"
+        "unit": "mL/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -2126,9 +2279,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "energi",
+        "route": "oral",
         "value_min": 100,
         "value_max": 150,
-        "unit": "kkal/kgbb/hari"
+        "unit": "kkal/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -2146,9 +2301,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "protein",
+        "route": "oral",
         "value_min": 2,
         "value_max": 3,
-        "unit": "g/kgbb/hari"
+        "unit": "g/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -2166,9 +2323,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "energi",
+        "route": "oral",
         "value_min": 150,
         "value_max": 220,
-        "unit": "kkal/kgbb/hari"
+        "unit": "kkal/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -2186,9 +2345,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "protein",
+        "route": "oral",
         "value_min": 4,
         "value_max": 6,
-        "unit": "g/kgbb/hari"
+        "unit": "g/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -2205,9 +2366,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "parasetamol",
+        "route": "oral",
         "value_min": 10,
         "value_max": 15,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -2224,6 +2387,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "parasetamol",
+        "route": "oral",
         "value_min": 4,
         "value_max": 5,
         "unit": "kali/hari"
@@ -2243,9 +2407,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "ibuprofen",
+        "route": "oral",
         "value_min": 5,
         "value_max": 10,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -2262,6 +2428,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "ibuprofen",
+        "route": "oral",
         "value_min": 3,
         "value_max": 4,
         "unit": "kali/hari"
@@ -2281,6 +2448,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "diazepam",
+        "route": "oral",
         "value_min": 0.3,
         "value_max": 0.3,
         "unit": "mg/kgbb"
@@ -2300,6 +2468,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "diazepam",
+        "route": "oral",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -2319,6 +2488,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "diazepam",
+        "route": "rektal",
         "value_min": 0.5,
         "value_max": 0.5,
         "unit": "mg/kgbb"
@@ -2338,6 +2508,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "diazepam",
+        "route": "rektal",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -2358,9 +2529,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "fenobarbital",
+        "route": "oral",
         "value_min": 3,
         "value_max": 4,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -2377,6 +2550,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "fenobarbital",
+        "route": "oral",
         "value_min": 1,
         "value_max": 2,
         "unit": "kali/hari"
@@ -2396,6 +2570,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "fenobarbital",
+        "route": "oral",
         "value_min": 1,
         "value_max": 1,
         "unit": "tahun"
@@ -2415,9 +2590,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "asam valproat",
+        "route": "oral",
         "value_min": 15,
         "value_max": 40,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -2434,6 +2611,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "asam valproat",
+        "route": "oral",
         "value_min": 2,
         "value_max": 3,
         "unit": "kali/hari"
@@ -2453,6 +2631,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "asam valproat",
+        "route": "oral",
         "value_min": 1,
         "value_max": 1,
         "unit": "tahun"
@@ -2472,9 +2651,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "ampisilin",
+        "route": "iv",
         "value_min": 100,
         "value_max": 100,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -2492,6 +2673,7 @@
       "claim": {
         "claim_type": "interval",
         "parameter": "ampisilin",
+        "route": "iv",
         "value_min": 12,
         "value_max": 12,
         "unit": "jam"
@@ -2512,6 +2694,7 @@
       "claim": {
         "claim_type": "interval",
         "parameter": "ampisilin",
+        "route": "iv",
         "value_min": 6,
         "value_max": 8,
         "unit": "jam"
@@ -2531,6 +2714,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "seftriakson",
+        "route": "iv",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -2550,6 +2734,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "sefotaksim",
+        "route": "iv",
         "value_min": 3,
         "value_max": 4,
         "unit": "kali/hari"
@@ -2569,9 +2754,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "gentamisin",
+        "route": "iv",
         "value_min": 5,
         "value_max": 5,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -2589,6 +2776,7 @@
       "claim": {
         "claim_type": "interval",
         "parameter": "gentamisin",
+        "route": "iv",
         "value_min": 12,
         "value_max": 12,
         "unit": "jam"
@@ -2609,6 +2797,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "gentamisin",
+        "route": "iv",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -2628,9 +2817,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "seftriakson",
+        "route": "iv",
         "value_min": 75,
         "value_max": 75,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -2647,6 +2838,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "seftriakson",
+        "route": "iv",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -2666,9 +2858,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "amoksisilin",
+        "route": "oral",
         "value_min": 20,
         "value_max": 40,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -2685,6 +2879,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "amoksisilin",
+        "route": "oral",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -2704,6 +2899,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "sefiksim",
+        "route": "oral",
         "value_min": 4,
         "value_max": 4,
         "unit": "mg/kgbb"
@@ -2723,6 +2919,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "sefiksim",
+        "route": "oral",
         "value_min": 2,
         "value_max": 2,
         "unit": "kali/hari"
@@ -2742,6 +2939,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "nitrofurantoin",
+        "route": "oral",
         "value_min": 6,
         "value_max": 7,
         "unit": "mg/kgbb"
@@ -2761,6 +2959,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "nitrofurantoin",
+        "route": "oral",
         "value_min": 4,
         "value_max": 4,
         "unit": "kali/hari"
@@ -2780,9 +2979,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "sulfisoksazole",
+        "route": "oral",
         "value_min": 120,
         "value_max": 150,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -2799,6 +3000,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "sulfisoksazole",
+        "route": "oral",
         "value_min": 3,
         "value_max": 4,
         "unit": "kali/hari"
@@ -2818,6 +3020,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "trimetoprim",
+        "route": "oral",
         "value_min": 6,
         "value_max": 12,
         "unit": "mg/kgbb"
@@ -2837,6 +3040,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "trimetoprim",
+        "route": "oral",
         "value_min": 4,
         "value_max": 4,
         "unit": "kali/hari"
@@ -2856,6 +3060,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "sulfametoksazole",
+        "route": "oral",
         "value_min": 30,
         "value_max": 60,
         "unit": "mg/kgbb"
@@ -2875,6 +3080,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "sulfametoksazole",
+        "route": "oral",
         "value_min": 3,
         "value_max": 4,
         "unit": "kali/hari"
@@ -2894,9 +3100,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "kloramfenikol",
+        "route": "oral",
         "value_min": 50,
         "value_max": 100,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -2913,6 +3121,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "kloramfenikol",
+        "route": "oral",
         "value_min": 4,
         "value_max": 4,
         "unit": "kali/hari"
@@ -2932,6 +3141,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "kloramfenikol",
+        "route": "oral",
         "value_min": 10,
         "value_max": 14,
         "unit": "hari"
@@ -2951,9 +3161,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "kloramfenikol",
+        "route": "iv",
         "value_min": 50,
         "value_max": 100,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -2970,6 +3182,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "kloramfenikol",
+        "route": "iv",
         "value_min": 4,
         "value_max": 4,
         "unit": "kali/hari"
@@ -2989,6 +3202,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "kloramfenikol",
+        "route": "iv",
         "value_min": 10,
         "value_max": 14,
         "unit": "hari"
@@ -3008,9 +3222,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "amoksisilin",
+        "route": "oral",
         "value_min": 100,
         "value_max": 100,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -3027,6 +3243,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "amoksisilin",
+        "route": "oral",
         "value_min": 10,
         "value_max": 10,
         "unit": "hari"
@@ -3046,9 +3263,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "amoksisilin",
+        "route": "iv",
         "value_min": 100,
         "value_max": 100,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -3065,6 +3284,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "amoksisilin",
+        "route": "iv",
         "value_min": 10,
         "value_max": 10,
         "unit": "hari"
@@ -3084,9 +3304,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "kotrimoksasol",
+        "route": "oral",
         "value_min": 6,
         "value_max": 6,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -3103,6 +3325,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "kotrimoksasol",
+        "route": "oral",
         "value_min": 10,
         "value_max": 10,
         "unit": "hari"
@@ -3122,9 +3345,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "seftriakson",
+        "route": "iv",
         "value_min": 80,
         "value_max": 80,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -3141,6 +3366,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "seftriakson",
+        "route": "iv",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -3160,6 +3386,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "seftriakson",
+        "route": "iv",
         "value_min": 5,
         "value_max": 5,
         "unit": "hari"
@@ -3179,9 +3406,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "sefiksim",
+        "route": "oral",
         "value_min": 10,
         "value_max": 10,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -3198,6 +3427,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "sefiksim",
+        "route": "oral",
         "value_min": 2,
         "value_max": 2,
         "unit": "kali/hari"
@@ -3217,6 +3447,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "sefiksim",
+        "route": "oral",
         "value_min": 10,
         "value_max": 10,
         "unit": "hari"
@@ -3237,9 +3468,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "deksametason",
+        "route": "iv",
         "value_min": 1,
         "value_max": 3,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -3257,6 +3490,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "deksametason",
+        "route": "iv",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -3277,6 +3511,7 @@
       "claim": {
         "claim_type": "interval",
         "parameter": "beta_agonis",
+        "route": "oral",
         "value_min": 4,
         "value_max": 6,
         "unit": "jam"
@@ -3297,9 +3532,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "metil-prednisolon",
+        "route": "oral",
         "value_min": 0.5,
         "value_max": 1,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -3317,6 +3554,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "metil-prednisolon",
+        "route": "oral",
         "value_min": 3,
         "value_max": 5,
         "unit": "hari"
@@ -3338,9 +3576,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "oksigen",
+        "route": "inhalasi",
         "value_min": 2,
         "value_max": 4,
-        "unit": "l/menit"
+        "unit": "l/menit",
+        "dose_context": "per_menit"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -3359,6 +3599,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "aminofilin",
+        "route": "iv",
         "value_min": 6,
         "value_max": 8,
         "unit": "mg/kgbb"
@@ -3379,6 +3620,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "aminofilin",
+        "route": "iv",
         "value_min": 20,
         "value_max": 30,
         "unit": "menit"
@@ -3400,9 +3642,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "aminofilin",
+        "route": "iv",
         "value_min": 0.5,
         "value_max": 1,
-        "unit": "mg/kgbb/jam"
+        "unit": "mg/kgbb/jam",
+        "dose_context": "per_jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -3419,6 +3663,7 @@
       "claim": {
         "claim_type": "interval",
         "parameter": "beta_agonis",
+        "route": "oral",
         "value_min": 4,
         "value_max": 6,
         "unit": "jam"
@@ -3438,6 +3683,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "beta_agonis",
+        "route": "oral",
         "value_min": 24,
         "value_max": 48,
         "unit": "jam"
@@ -3458,9 +3704,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "besi elemental",
+        "route": "oral",
         "value_min": 3,
         "value_max": 3,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -3478,9 +3726,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "besi elemental",
+        "route": "oral",
         "value_min": 4,
         "value_max": 6,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -3497,6 +3747,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "besi elemental",
+        "route": "oral",
         "value_min": 2,
         "value_max": 3,
         "unit": "bulan"
@@ -3518,9 +3769,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "besi elemental",
+        "route": "oral",
         "value_min": 1,
         "value_max": 1,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -3540,9 +3793,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "besi elemental",
+        "route": "oral",
         "value_min": 2,
         "value_max": 2,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -3562,9 +3817,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "besi elemental",
+        "route": "oral",
         "value_min": 3,
         "value_max": 3,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -3583,9 +3840,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "besi elemental",
+        "route": "oral",
         "value_min": 4,
         "value_max": 4,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -3601,6 +3860,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "vitamin a",
+        "route": "oral",
         "value_min": 100000,
         "value_max": 100000,
         "unit": "IU"
@@ -3621,6 +3881,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "vitamin a",
+        "route": "oral",
         "value_min": 1500,
         "value_max": 1500,
         "unit": "IU"
@@ -3641,6 +3902,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "vitamin a",
+        "route": "oral",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -3661,9 +3923,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "kloramfenikol",
+        "route": "iv",
         "value_min": 75,
         "value_max": 75,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -3681,6 +3945,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "kloramfenikol",
+        "route": "iv",
         "value_min": 7,
         "value_max": 10,
         "unit": "hari"
@@ -3701,9 +3966,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "ampisilin",
+        "route": "iv",
         "value_min": 100,
         "value_max": 100,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -3721,6 +3988,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "ampisilin",
+        "route": "iv",
         "value_min": 7,
         "value_max": 10,
         "unit": "hari"
@@ -3742,9 +4010,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "deksametason",
+        "route": "iv",
         "value_min": 1,
         "value_max": 1,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -3763,9 +4033,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "deksametason",
+        "route": "iv",
         "value_min": 0.5,
         "value_max": 0.5,
-        "unit": "g/kgbb/hari"
+        "unit": "g/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -3783,6 +4055,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "deksametason",
+        "route": "iv",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -3803,9 +4076,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "kloramfenikol",
+        "route": "iv",
         "value_min": 75,
         "value_max": 75,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -3823,6 +4098,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "kloramfenikol",
+        "route": "iv",
         "value_min": 7,
         "value_max": 10,
         "unit": "hari"
@@ -3843,9 +4119,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "ampisilin",
+        "route": "iv",
         "value_min": 100,
         "value_max": 100,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -3863,6 +4141,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "ampisilin",
+        "route": "iv",
         "value_min": 7,
         "value_max": 10,
         "unit": "hari"
@@ -3883,9 +4162,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "oksigen",
+        "route": "inhalasi",
         "value_min": 2,
         "value_max": 2,
-        "unit": "l/menit"
+        "unit": "l/menit",
+        "dose_context": "per_menit"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -3902,6 +4183,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "parafin liquid",
+        "route": "oral",
         "value_min": 15,
         "value_max": 30,
         "unit": "mL/tahun"
@@ -3921,9 +4203,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "parafin liquid",
+        "route": "oral",
         "value_min": 0,
         "value_max": 240,
-        "unit": "mL/hari"
+        "unit": "mL/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -3940,9 +4224,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "polietilen glikol",
+        "route": "oral_ngt",
         "value_min": 20,
         "value_max": 20,
-        "unit": "mL/kgbb/jam"
+        "unit": "mL/kgbb/jam",
+        "dose_context": "per_jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -3959,6 +4245,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "polietilen glikol",
+        "route": "oral_ngt",
         "value_min": 1000,
         "value_max": 1000,
         "unit": "mL/jam"
@@ -3978,6 +4265,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "polietilen glikol",
+        "route": "oral_ngt",
         "value_min": 4,
         "value_max": 4,
         "unit": "jam"
@@ -3997,6 +4285,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "enema fosfat hipertonik",
+        "route": "rektal",
         "value_min": 3,
         "value_max": 3,
         "unit": "mL/kgbb"
@@ -4016,6 +4305,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "enema fosfat hipertonik",
+        "route": "rektal",
         "value_min": 1,
         "value_max": 2,
         "unit": "kali/hari"
@@ -4035,6 +4325,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "enema fosfat hipertonik",
+        "route": "rektal",
         "value_min": 0,
         "value_max": 6,
         "unit": "kali/total"
@@ -4054,6 +4345,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "enema garam fisiologis",
+        "route": "rektal",
         "value_min": 600,
         "value_max": 1000,
         "unit": "mL"
@@ -4073,6 +4365,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "parafin liquid",
+        "route": "oral",
         "value_min": 120,
         "value_max": 120,
         "unit": "mL"
@@ -4092,6 +4385,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "enema gliserin",
+        "route": "rektal",
         "value_min": 2,
         "value_max": 5,
         "unit": "mL"
@@ -4112,9 +4406,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "laktulosa",
+        "route": "oral",
         "value_min": 1,
         "value_max": 3,
-        "unit": "mL/kgbb/hari"
+        "unit": "mL/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -4132,6 +4428,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "laktulosa",
+        "route": "oral",
         "value_min": 2,
         "value_max": 2,
         "unit": "kali/hari"
@@ -4152,9 +4449,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "sorbitol",
+        "route": "oral",
         "value_min": 1,
         "value_max": 3,
-        "unit": "mL/kgbb/hari"
+        "unit": "mL/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -4172,6 +4471,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "sorbitol",
+        "route": "oral",
         "value_min": 2,
         "value_max": 2,
         "unit": "kali/hari"
@@ -4192,9 +4492,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "parafin liquid",
+        "route": "oral",
         "value_min": 1,
         "value_max": 3,
-        "unit": "mL/kgbb/hari"
+        "unit": "mL/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -4212,9 +4514,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "magnesium hidroksida",
+        "route": "oral",
         "value_min": 1,
         "value_max": 3,
-        "unit": "mL/kgbb/hari"
+        "unit": "mL/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -4231,9 +4535,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "cisapride",
+        "route": "oral",
         "value_min": 0.2,
         "value_max": 0.2,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -4250,6 +4556,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "cisapride",
+        "route": "oral",
         "value_min": 3,
         "value_max": 4,
         "unit": "kali/hari"
@@ -4269,6 +4576,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "cisapride",
+        "route": "oral",
         "value_min": 4,
         "value_max": 5,
         "unit": "minggu"
@@ -4288,9 +4596,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "klorfeniramin maleat",
+        "route": "oral",
         "value_min": 0.25,
         "value_max": 0.25,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -4307,6 +4617,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "klorfeniramin maleat",
+        "route": "oral",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -4326,9 +4637,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "simetidin",
+        "route": "oral",
         "value_min": 5,
         "value_max": 5,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -4345,6 +4658,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "simetidin",
+        "route": "oral",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -4364,6 +4678,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "adrenalin 1:1000",
+        "route": "im",
         "value_min": 0.01,
         "value_max": 0.01,
         "unit": "mL/kgbb"
@@ -4383,6 +4698,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "adrenalin 1:1000",
+        "route": "im",
         "value_min": 0.3,
         "value_max": 0.3,
         "unit": "mL"
@@ -4402,9 +4718,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "setirizin",
+        "route": "oral",
         "value_min": 0.25,
         "value_max": 0.25,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -4422,6 +4740,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "setirizin",
+        "route": "oral",
         "value_min": 2,
         "value_max": 2,
         "unit": "kali/hari"
@@ -4442,6 +4761,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "setirizin",
+        "route": "oral",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -4463,6 +4783,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "fexofenadin",
+        "route": "oral",
         "value_min": 30,
         "value_max": 30,
         "unit": "mg"
@@ -4483,6 +4804,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "fexofenadin",
+        "route": "oral",
         "value_min": 60,
         "value_max": 60,
         "unit": "mg"
@@ -4502,6 +4824,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "fexofenadin",
+        "route": "oral",
         "value_min": 2,
         "value_max": 2,
         "unit": "kali/hari"
@@ -4523,6 +4846,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "loratadin",
+        "route": "oral",
         "value_min": 5,
         "value_max": 5,
         "unit": "mg"
@@ -4543,6 +4867,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "loratadin",
+        "route": "oral",
         "value_min": 10,
         "value_max": 10,
         "unit": "mg"
@@ -4562,6 +4887,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "loratadin",
+        "route": "oral",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -4583,6 +4909,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "desloratadin",
+        "route": "oral",
         "value_min": 1,
         "value_max": 1,
         "unit": "mg"
@@ -4604,6 +4931,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "desloratadin",
+        "route": "oral",
         "value_min": 1.25,
         "value_max": 1.25,
         "unit": "mg"
@@ -4625,6 +4953,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "desloratadin",
+        "route": "oral",
         "value_min": 2.5,
         "value_max": 2.5,
         "unit": "mg"
@@ -4645,6 +4974,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "desloratadin",
+        "route": "oral",
         "value_min": 5,
         "value_max": 5,
         "unit": "mg"
@@ -4664,6 +4994,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "desloratadin",
+        "route": "oral",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -4683,9 +5014,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "hydroxizine",
+        "route": "oral",
         "value_min": 0.5,
         "value_max": 2,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -4702,6 +5035,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "hydroxizine",
+        "route": "oral",
         "value_min": 3,
         "value_max": 4,
         "unit": "kali/hari"
@@ -4721,9 +5055,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "diphenhydramin",
+        "route": "oral",
         "value_min": 1,
         "value_max": 2,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -4740,6 +5076,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "diphenhydramin",
+        "route": "oral",
         "value_min": 3,
         "value_max": 4,
         "unit": "kali/hari"
@@ -4760,9 +5097,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "simetidin",
+        "route": "oral",
         "value_min": 10,
         "value_max": 20,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -4780,9 +5119,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "simetidin",
+        "route": "oral",
         "value_min": 20,
         "value_max": 40,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -4799,6 +5140,7 @@
       "claim": {
         "claim_type": "interval",
         "parameter": "simetidin",
+        "route": "oral",
         "value_min": 6,
         "value_max": 12,
         "unit": "jam"
@@ -4820,9 +5162,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "ranitidine",
+        "route": "oral",
         "value_min": 5,
         "value_max": 10,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -4841,6 +5185,7 @@
       "claim": {
         "claim_type": "interval",
         "parameter": "ranitidine",
+        "route": "oral",
         "value_min": 12,
         "value_max": 12,
         "unit": "jam"
@@ -4860,6 +5205,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "vitamin k1",
+        "route": "im",
         "value_min": 1,
         "value_max": 1,
         "unit": "mg"
@@ -4879,6 +5225,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "vitamin k1",
+        "route": "im",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali"
@@ -4898,9 +5245,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "vitamin k1",
+        "route": "oral",
         "value_min": 2,
         "value_max": 2,
-        "unit": "mg/kali"
+        "unit": "mg/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -4917,6 +5266,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "vitamin k1",
+        "route": "oral",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali"
@@ -4936,6 +5286,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "pemberian minum",
+        "route": "oral",
         "value_min": 8,
         "value_max": 24,
         "unit": "kali/hari"
@@ -4957,9 +5308,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "pemberian minum",
+        "route": "oral",
         "value_min": 0,
         "value_max": 10,
-        "unit": "mL/kgbb/hari"
+        "unit": "mL/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -4977,6 +5330,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "peningkatan minum",
+        "route": "oral",
         "value_min": 0.5,
         "value_max": 1,
         "unit": "mL"
@@ -4997,6 +5351,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "peningkatan minum",
+        "route": "oral",
         "value_min": 1,
         "value_max": 1,
         "unit": "jam"
@@ -5019,9 +5374,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "pemberian minum",
+        "route": "oral",
         "value_min": 0,
         "value_max": 10,
-        "unit": "mL/kgbb/hari"
+        "unit": "mL/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5040,6 +5397,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "peningkatan minum",
+        "route": "oral",
         "value_min": 1,
         "value_max": 2,
         "unit": "mL"
@@ -5061,6 +5419,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "peningkatan minum",
+        "route": "oral",
         "value_min": 2,
         "value_max": 2,
         "unit": "jam"
@@ -5083,9 +5442,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "pemberian minum",
+        "route": "oral",
         "value_min": 0,
         "value_max": 10,
-        "unit": "mL/kgbb/hari"
+        "unit": "mL/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5104,6 +5465,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "peningkatan minum",
+        "route": "oral",
         "value_min": 2,
         "value_max": 4,
         "unit": "mL"
@@ -5125,6 +5487,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "peningkatan minum",
+        "route": "oral",
         "value_min": 3,
         "value_max": 3,
         "unit": "jam"
@@ -5145,9 +5508,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "pemberian minum",
+        "route": "oral",
         "value_min": 0,
         "value_max": 10,
-        "unit": "mL/kgbb/hari"
+        "unit": "mL/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5164,6 +5529,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "peningkatan minum",
+        "route": "oral",
         "value_min": 3,
         "value_max": 5,
         "unit": "mL"
@@ -5183,6 +5549,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "peningkatan minum",
+        "route": "oral",
         "value_min": 3,
         "value_max": 3,
         "unit": "jam"
@@ -5202,9 +5569,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "fosfat",
+        "route": "oral",
         "value_min": 2,
         "value_max": 3,
-        "unit": "mmol/kgbb/hari"
+        "unit": "mmol/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5221,6 +5590,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "fosfat",
+        "route": "oral",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -5242,9 +5612,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "ampisilin",
+        "route": "iv",
         "value_min": 50,
         "value_max": 50,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5263,6 +5635,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "ampisilin",
+        "route": "iv",
         "value_min": 2,
         "value_max": 2,
         "unit": "kali/hari"
@@ -5283,9 +5656,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "ampisilin",
+        "route": "iv",
         "value_min": 50,
         "value_max": 50,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5303,6 +5678,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "ampisilin",
+        "route": "iv",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -5324,9 +5700,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "ampisilin",
+        "route": "iv",
         "value_min": 100,
         "value_max": 100,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5345,6 +5723,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "ampisilin",
+        "route": "iv",
         "value_min": 2,
         "value_max": 2,
         "unit": "kali/hari"
@@ -5366,9 +5745,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "ampisilin",
+        "route": "iv",
         "value_min": 100,
         "value_max": 100,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5387,6 +5768,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "ampisilin",
+        "route": "iv",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -5408,9 +5790,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "sefotaksim",
+        "route": "iv",
         "value_min": 50,
         "value_max": 50,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5429,6 +5813,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "sefotaksim",
+        "route": "iv",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -5449,6 +5834,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "sefotaksim",
+        "route": "iv",
         "value_min": 4,
         "value_max": 4,
         "unit": "kali/hari"
@@ -5469,9 +5855,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "sefotaksim",
+        "route": "iv",
         "value_min": 50,
         "value_max": 50,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5491,9 +5879,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "sefotaksim",
+        "route": "iv",
         "value_min": 50,
         "value_max": 50,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5513,6 +5903,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "sefotaksim",
+        "route": "iv",
         "value_min": 4,
         "value_max": 4,
         "unit": "kali/hari"
@@ -5534,6 +5925,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "sefotaksim",
+        "route": "iv",
         "value_min": 4,
         "value_max": 4,
         "unit": "kali/hari"
@@ -5556,9 +5948,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "gentamisin",
+        "route": "iv",
         "value_min": 3,
         "value_max": 3,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5578,6 +5972,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "gentamisin",
+        "route": "iv",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -5600,9 +5995,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "gentamisin",
+        "route": "iv",
         "value_min": 5,
         "value_max": 5,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5622,6 +6019,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "gentamisin",
+        "route": "iv",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -5642,9 +6040,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "gentamisin",
+        "route": "iv",
         "value_min": 7.5,
         "value_max": 7.5,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5662,6 +6062,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "gentamisin",
+        "route": "iv",
         "value_min": 2,
         "value_max": 2,
         "unit": "kali/hari"
@@ -5681,6 +6082,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "formula susu terhidrolisat ekstensif",
+        "route": "oral",
         "value_min": 2,
         "value_max": 4,
         "unit": "minggu"
@@ -5700,6 +6102,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "formula asam amino",
+        "route": "oral",
         "value_min": 2,
         "value_max": 4,
         "unit": "minggu"
@@ -5719,9 +6122,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "klorokuin sulfat",
+        "route": "oral",
         "value_min": 25,
         "value_max": 25,
-        "unit": "mg/kgbb"
+        "unit": "mg/kgbb",
+        "dose_context": "total_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5738,9 +6143,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "klorokuin sulfat",
+        "route": "oral",
         "value_min": 5,
         "value_max": 10,
-        "unit": "mg/kgbb"
+        "unit": "mg/kgbb",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5757,6 +6164,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "klorokuin sulfat",
+        "route": "oral",
         "value_min": 3,
         "value_max": 3,
         "unit": "hari"
@@ -5776,9 +6184,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "kina dihidroklorid",
+        "route": "iv",
         "value_min": 1,
         "value_max": 1,
-        "unit": "mggaram/kgbb/kali"
+        "unit": "mggaram/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5795,6 +6205,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "kina dihidroklorid",
+        "route": "iv",
         "value_min": 4,
         "value_max": 4,
         "unit": "jam"
@@ -5814,6 +6225,7 @@
       "claim": {
         "claim_type": "interval",
         "parameter": "kina dihidroklorid",
+        "route": "iv",
         "value_min": 8,
         "value_max": 8,
         "unit": "jam"
@@ -5833,6 +6245,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "kina dihidroklorid",
+        "route": "iv",
         "value_min": 7,
         "value_max": 7,
         "unit": "hari"
@@ -5853,9 +6266,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "kuinin sulfat",
+        "route": "oral",
         "value_min": 10,
         "value_max": 10,
-        "unit": "mg/kgbb"
+        "unit": "mg/kgbb",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5873,6 +6288,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "kuinin sulfat",
+        "route": "oral",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -5893,6 +6309,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "kuinin sulfat",
+        "route": "oral",
         "value_min": 7,
         "value_max": 7,
         "unit": "hari"
@@ -5913,9 +6330,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "tetrasiklin",
+        "route": "oral",
         "value_min": 5,
         "value_max": 5,
-        "unit": "mg/kgbb"
+        "unit": "mg/kgbb",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5933,6 +6352,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "tetrasiklin",
+        "route": "oral",
         "value_min": 4,
         "value_max": 4,
         "unit": "kali/hari"
@@ -5953,6 +6373,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "tetrasiklin",
+        "route": "oral",
         "value_min": 7,
         "value_max": 7,
         "unit": "hari"
@@ -5973,9 +6394,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "primakuin fosfat",
+        "route": "oral",
         "value_min": 0.5,
         "value_max": 0.75,
-        "unit": "mgbasa/kgbb"
+        "unit": "mgbasa/kgbb",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5993,6 +6416,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "primakuin fosfat",
+        "route": "oral",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali"
@@ -6013,6 +6437,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "primakuin fosfat",
+        "route": "oral",
         "value_min": 1,
         "value_max": 1,
         "unit": "hari"
@@ -6032,9 +6457,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "primakuin fosfat",
+        "route": "oral",
         "value_min": 0.25,
         "value_max": 0.25,
-        "unit": "mg/kgbb"
+        "unit": "mg/kgbb",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -6051,6 +6478,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "primakuin fosfat",
+        "route": "oral",
         "value_min": 5,
         "value_max": 14,
         "unit": "hari"
@@ -6070,9 +6498,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "primakuin fosfat",
+        "route": "oral",
         "value_min": 0.25,
         "value_max": 0.25,
-        "unit": "mg/kgbb"
+        "unit": "mg/kgbb",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -6089,6 +6519,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "primakuin fosfat",
+        "route": "oral",
         "value_min": 5,
         "value_max": 14,
         "unit": "hari"
@@ -6108,9 +6539,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "primakuin fosfat",
+        "route": "oral",
         "value_min": 0.25,
         "value_max": 0.25,
-        "unit": "mg/kgbb"
+        "unit": "mg/kgbb",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -6127,6 +6560,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "primakuin fosfat",
+        "route": "oral",
         "value_min": 5,
         "value_max": 14,
         "unit": "hari"
@@ -6147,6 +6581,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "pirimetamin sulfadoksin",
+        "route": "oral",
         "value_min": 0.25,
         "value_max": 0.25,
         "unit": "tablet"
@@ -6168,6 +6603,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "pirimetamin sulfadoksin",
+        "route": "oral",
         "value_min": 0.5,
         "value_max": 0.5,
         "unit": "tablet"
@@ -6189,6 +6625,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "pirimetamin sulfadoksin",
+        "route": "oral",
         "value_min": 1,
         "value_max": 1,
         "unit": "tablet"
@@ -6210,6 +6647,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "pirimetamin sulfadoksin",
+        "route": "oral",
         "value_min": 2,
         "value_max": 2,
         "unit": "tablet"
@@ -6230,6 +6668,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "pirimetamin sulfadoksin",
+        "route": "oral",
         "value_min": 3,
         "value_max": 3,
         "unit": "tablet"
@@ -6250,9 +6689,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "prednison",
+        "route": "oral",
         "value_min": 60,
         "value_max": 60,
-        "unit": "mg/m2/hari"
+        "unit": "mg/m2/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -6270,9 +6711,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "prednison",
+        "route": "oral",
         "value_min": 2,
         "value_max": 2,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -6290,9 +6733,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "prednison",
+        "route": "oral",
         "value_min": 80,
         "value_max": 80,
-        "unit": "mg/hari"
+        "unit": "mg/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -6310,6 +6755,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "prednison",
+        "route": "oral",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -6330,6 +6776,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "prednison",
+        "route": "oral",
         "value_min": 4,
         "value_max": 4,
         "unit": "minggu"
@@ -6350,9 +6797,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "prednison",
+        "route": "oral",
         "value_min": 40,
         "value_max": 40,
-        "unit": "mg/m2/hari"
+        "unit": "mg/m2/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -6370,9 +6819,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "prednison",
+        "route": "oral",
         "value_min": 60,
         "value_max": 60,
-        "unit": "mg/hari"
+        "unit": "mg/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -6390,6 +6841,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "prednison",
+        "route": "oral",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali"
@@ -6410,6 +6862,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "prednison",
+        "route": "oral",
         "value_min": 4,
         "value_max": 8,
         "unit": "minggu"
@@ -6429,9 +6882,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "siklofosfamid",
+        "route": "oral",
         "value_min": 2,
         "value_max": 3,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -6448,9 +6903,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "furosemid",
+        "route": "oral",
         "value_min": 1,
         "value_max": 2,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -6467,9 +6924,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "spironolakton",
+        "route": "oral",
         "value_min": 2,
         "value_max": 3,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -6486,6 +6945,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "albumin 20-25%",
+        "route": "iv",
         "value_min": 1,
         "value_max": 1,
         "unit": "g/kgbb"
@@ -6505,6 +6965,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "albumin 20-25%",
+        "route": "iv",
         "value_min": 2,
         "value_max": 4,
         "unit": "jam"
@@ -6524,6 +6985,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "furosemid",
+        "route": "iv",
         "value_min": 1,
         "value_max": 2,
         "unit": "mg/kgbb"
@@ -6543,9 +7005,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "amoksisilin",
+        "route": "oral",
         "value_min": 50,
         "value_max": 50,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -6562,6 +7026,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "amoksisilin",
+        "route": "oral",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -6581,6 +7046,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "amoksisilin",
+        "route": "oral",
         "value_min": 10,
         "value_max": 10,
         "unit": "hari"
@@ -6600,9 +7066,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "eritromisin",
+        "route": "oral",
         "value_min": 30,
         "value_max": 30,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -6619,6 +7087,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "eritromisin",
+        "route": "oral",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -6638,9 +7107,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "fenobarbital",
+        "route": "oral",
         "value_min": 2,
         "value_max": 3,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -6657,6 +7128,7 @@
       "claim": {
         "claim_type": "interval",
         "parameter": "fenobarbital",
+        "route": "oral",
         "value_min": 8,
         "value_max": 8,
         "unit": "jam"
@@ -6676,6 +7148,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "fenobarbital",
+        "route": "oral",
         "value_min": 1,
         "value_max": 2,
         "unit": "hari"
@@ -6695,9 +7168,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "dopamin",
+        "route": "iv",
         "value_min": 5,
         "value_max": 10,
-        "unit": "mcg/kgbb/menit"
+        "unit": "mcg/kgbb/menit",
+        "dose_context": "per_menit"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -6714,9 +7189,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "dobutamin",
+        "route": "iv",
         "value_min": 5,
         "value_max": 8,
-        "unit": "mcg/kgbb/menit"
+        "unit": "mcg/kgbb/menit",
+        "dose_context": "per_menit"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -6733,9 +7210,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "furosemid",
+        "route": "oral",
         "value_min": 1,
         "value_max": 2,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -6752,6 +7231,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "furosemid",
+        "route": "oral",
         "value_min": 1,
         "value_max": 2,
         "unit": "kali/hari"
@@ -6771,9 +7251,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "spironolakton",
+        "route": "oral",
         "value_min": 1,
         "value_max": 2,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -6790,9 +7272,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "kaptopril",
+        "route": "oral",
         "value_min": 0.3,
         "value_max": 3,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -6809,6 +7293,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "kaptopril",
+        "route": "oral",
         "value_min": 2,
         "value_max": 3,
         "unit": "kali/hari"
@@ -6829,6 +7314,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "digoksin",
+        "route": "oral",
         "value_min": 20,
         "value_max": 20,
         "unit": "mcg/kg"
@@ -6849,9 +7335,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "digoksin",
+        "route": "oral",
         "value_min": 5,
         "value_max": 5,
-        "unit": "mcg/kgbb/hari"
+        "unit": "mcg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -6871,6 +7359,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "digoksin",
+        "route": "oral",
         "value_min": 30,
         "value_max": 30,
         "unit": "mcg/kg"
@@ -6893,9 +7382,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "digoksin",
+        "route": "oral",
         "value_min": 8,
         "value_max": 8,
-        "unit": "mcg/kgbb/hari"
+        "unit": "mcg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -6914,6 +7405,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "digoksin",
+        "route": "oral",
         "value_min": 40,
         "value_max": 50,
         "unit": "mcg/kg"
@@ -6935,9 +7427,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "digoksin",
+        "route": "oral",
         "value_min": 10,
         "value_max": 12,
-        "unit": "mcg/kgbb/hari"
+        "unit": "mcg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -6956,6 +7450,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "digoksin",
+        "route": "oral",
         "value_min": 30,
         "value_max": 40,
         "unit": "mcg/kg"
@@ -6977,9 +7472,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "digoksin",
+        "route": "oral",
         "value_min": 8,
         "value_max": 10,
-        "unit": "mcg/kgbb/hari"
+        "unit": "mcg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -6996,9 +7493,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "insulin",
+        "route": "sc",
         "value_min": 0.7,
         "value_max": 1.0,
-        "unit": "IU/kgbb/hari"
+        "unit": "IU/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -7016,6 +7515,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "insulin",
+        "route": "im",
         "value_min": 3,
         "value_max": 4,
         "unit": "kali/hari"
@@ -7035,6 +7535,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "latihan aerobik",
+        "route": null,
         "value_min": 20,
         "value_max": 20,
         "unit": "menit"
@@ -7055,6 +7556,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "glukosa",
+        "route": "oral",
         "value_min": 1.75,
         "value_max": 1.75,
         "unit": "g/kgbb"
@@ -7074,6 +7576,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "glukosa",
+        "route": "oral",
         "value_min": 0,
         "value_max": 75,
         "unit": "g"
@@ -7093,6 +7596,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "asam folat",
+        "route": "oral",
         "value_min": 1,
         "value_max": 1,
         "unit": "mg"
@@ -7112,6 +7616,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "asam folat",
+        "route": "oral",
         "value_min": 2,
         "value_max": 2,
         "unit": "kali/hari"
@@ -7131,6 +7636,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "vitamin e",
+        "route": "oral",
         "value_min": 200,
         "value_max": 200,
         "unit": "IU"
@@ -7150,6 +7656,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "vitamin e",
+        "route": "oral",
         "value_min": 2,
         "value_max": 2,
         "unit": "kali/hari"
@@ -7169,9 +7676,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "vitamin c",
+        "route": "oral",
         "value_min": 2,
         "value_max": 3,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -7189,6 +7698,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "vitamin c",
+        "route": "oral",
         "value_min": 0,
         "value_max": 50,
         "unit": "mg"
@@ -7209,6 +7719,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "vitamin c",
+        "route": "oral",
         "value_min": 0,
         "value_max": 100,
         "unit": "mg"
@@ -7228,9 +7739,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "vitamin c",
+        "route": "oral",
         "value_min": 0,
         "value_max": 200,
-        "unit": "mg/hari"
+        "unit": "mg/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -7248,9 +7761,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "desferioksamin",
+        "route": "sc",
         "value_min": 30,
         "value_max": 50,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -7268,6 +7783,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "desferioksamin",
+        "route": "sc",
         "value_min": 5,
         "value_max": 7,
         "unit": "kali/minggu"
@@ -7288,6 +7804,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "desferioksamin",
+        "route": "sc",
         "value_min": 8,
         "value_max": 12,
         "unit": "jam"
@@ -7308,9 +7825,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "desferioksamin",
+        "route": "sc",
         "value_min": 15,
         "value_max": 25,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -7328,9 +7847,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "desferioksamin",
+        "route": "iv",
         "value_min": 60,
         "value_max": 100,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -7348,6 +7869,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "desferioksamin",
+        "route": "iv",
         "value_min": 24,
         "value_max": 24,
         "unit": "jam"
@@ -7368,9 +7890,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "desferioksamin",
+        "route": "sc",
         "value_min": 20,
         "value_max": 30,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -7387,9 +7911,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "deferiprone",
+        "route": "oral",
         "value_min": 50,
         "value_max": 75,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -7406,6 +7932,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "deferiprone",
+        "route": "oral",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -7425,9 +7952,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "deferasirox",
+        "route": "oral",
         "value_min": 20,
         "value_max": 30,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -7444,6 +7973,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "deferasirox",
+        "route": "oral",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -7464,6 +7994,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "indometasin",
+        "route": "oral",
         "value_min": 0.2,
         "value_max": 0.2,
         "unit": "mg/kgbb"
@@ -7484,6 +8015,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "indometasin",
+        "route": "oral",
         "value_min": 0.1,
         "value_max": 0.1,
         "unit": "mg/kgbb"
@@ -7504,6 +8036,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "indometasin",
+        "route": "oral",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -7525,6 +8058,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "indometasin",
+        "route": "oral",
         "value_min": 0.2,
         "value_max": 0.2,
         "unit": "mg/kgbb"
@@ -7545,6 +8079,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "indometasin",
+        "route": "oral",
         "value_min": 0.25,
         "value_max": 0.25,
         "unit": "mg/kgbb"
@@ -7565,6 +8100,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "indometasin",
+        "route": "oral",
         "value_min": 0.1,
         "value_max": 0.1,
         "unit": "mg/kgbb"
@@ -7585,6 +8121,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "indometasin",
+        "route": "oral",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -7605,6 +8142,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "indometasin",
+        "route": "oral",
         "value_min": 5,
         "value_max": 7,
         "unit": "hari"
@@ -7624,6 +8162,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "ibuprofen",
+        "route": "oral",
         "value_min": 10,
         "value_max": 10,
         "unit": "mg/kgbb"
@@ -7643,9 +8182,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "ibuprofen",
+        "route": "oral",
         "value_min": 5,
         "value_max": 5,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -7662,6 +8203,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "ibuprofen",
+        "route": "oral",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -7681,6 +8223,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "amoksisilin",
+        "route": "oral",
         "value_min": 50,
         "value_max": 50,
         "unit": "mg/kgbb"
@@ -7700,6 +8243,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "ampisilin",
+        "route": "iv",
         "value_min": 50,
         "value_max": 50,
         "unit": "mg/kgbb"
@@ -7719,6 +8263,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "ampisilin",
+        "route": "im",
         "value_min": 50,
         "value_max": 50,
         "unit": "mg/kgbb"
@@ -7738,6 +8283,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "sefazolin",
+        "route": "iv",
         "value_min": 50,
         "value_max": 50,
         "unit": "mg/kgbb"
@@ -7757,6 +8303,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "seftriakson",
+        "route": "iv",
         "value_min": 50,
         "value_max": 50,
         "unit": "mg/kgbb"
@@ -7776,6 +8323,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "sefaleksin",
+        "route": "oral",
         "value_min": 50,
         "value_max": 50,
         "unit": "mg/kgbb"
@@ -7795,6 +8343,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "klindamisin",
+        "route": "oral",
         "value_min": 20,
         "value_max": 20,
         "unit": "mg/kgbb"
@@ -7814,6 +8363,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "azithromisin",
+        "route": "oral",
         "value_min": 15,
         "value_max": 15,
         "unit": "mg/kgbb"
@@ -7833,6 +8383,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "klaritromisin",
+        "route": "oral",
         "value_min": 15,
         "value_max": 15,
         "unit": "mg/kgbb"
@@ -7854,9 +8405,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "l-tiroksin",
+        "route": "oral",
         "value_min": 10,
         "value_max": 15,
-        "unit": "mcg/kgbb/hari"
+        "unit": "mcg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -7875,9 +8428,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "l-tiroksin",
+        "route": "oral",
         "value_min": 8,
         "value_max": 10,
-        "unit": "mcg/kgbb/hari"
+        "unit": "mcg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -7896,9 +8451,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "l-tiroksin",
+        "route": "oral",
         "value_min": 6,
         "value_max": 8,
-        "unit": "mcg/kgbb/hari"
+        "unit": "mcg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -7917,9 +8474,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "l-tiroksin",
+        "route": "oral",
         "value_min": 4,
         "value_max": 6,
-        "unit": "mcg/kgbb/hari"
+        "unit": "mcg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -7938,9 +8497,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "l-tiroksin",
+        "route": "oral",
         "value_min": 3,
         "value_max": 5,
-        "unit": "mcg/kgbb/hari"
+        "unit": "mcg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -7958,9 +8519,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "l-tiroksin",
+        "route": "oral",
         "value_min": 2,
         "value_max": 4,
-        "unit": "mcg/kgbb/hari"
+        "unit": "mcg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -7978,9 +8541,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "isoniazid",
+        "route": "oral",
         "value_min": 10,
         "value_max": 20,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -7998,9 +8563,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "isoniazid",
+        "route": "oral",
         "value_min": 0,
         "value_max": 300,
-        "unit": "mg/hari"
+        "unit": "mg/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -8018,9 +8585,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "rifampisin",
+        "route": "oral",
         "value_min": 10,
         "value_max": 20,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -8038,9 +8607,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "rifampisin",
+        "route": "oral",
         "value_min": 0,
         "value_max": 600,
-        "unit": "mg/hari"
+        "unit": "mg/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -8058,9 +8629,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "pirazinamid",
+        "route": "oral",
         "value_min": 15,
         "value_max": 30,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -8078,9 +8651,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "pirazinamid",
+        "route": "oral",
         "value_min": 1,
         "value_max": 2000,
-        "unit": "mg/hari"
+        "unit": "mg/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -8098,9 +8673,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "etambutol",
+        "route": "oral",
         "value_min": 15,
         "value_max": 20,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -8118,9 +8695,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "etambutol",
+        "route": "oral",
         "value_min": 1000,
         "value_max": 1000,
-        "unit": "mg/hari"
+        "unit": "mg/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -8138,9 +8717,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "streptomisin",
+        "route": "im",
         "value_min": 20,
         "value_max": 30,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -8158,9 +8739,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "streptomisin",
+        "route": "im",
         "value_min": 1,
         "value_max": 1,
-        "unit": "gram/hari"
+        "unit": "gram/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -8178,6 +8761,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "isoniazid",
+        "route": "oral",
         "value_min": 10,
         "value_max": 10,
         "unit": "bulan"
@@ -8198,6 +8782,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "rifampisin",
+        "route": "oral",
         "value_min": 10,
         "value_max": 10,
         "unit": "bulan"
@@ -8218,9 +8803,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "prednison",
+        "route": "oral",
         "value_min": 1,
         "value_max": 2,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -8238,6 +8825,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "prednison",
+        "route": "oral",
         "value_min": 6,
         "value_max": 8,
         "unit": "minggu"
@@ -8258,6 +8846,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "deksametason",
+        "route": "oral",
         "value_min": 6,
         "value_max": 6,
         "unit": "mg/m2"
@@ -8278,6 +8867,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "deksametason",
+        "route": "oral",
         "value_min": 4,
         "value_max": 6,
         "unit": "kali/hari"
@@ -8298,9 +8888,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "deksametason",
+        "route": "oral",
         "value_min": 0.3,
         "value_max": 0.5,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -8318,9 +8910,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "asetazolamid",
+        "route": "oral",
         "value_min": 30,
         "value_max": 50,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -8338,6 +8932,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "asetazolamid",
+        "route": "oral",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -8359,9 +8954,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "ampisilin",
+        "route": "iv",
         "value_min": 200,
         "value_max": 400,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -8380,6 +8977,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "ampisilin",
+        "route": "iv",
         "value_min": 4,
         "value_max": 4,
         "unit": "kali/hari"
@@ -8401,9 +8999,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "sefotaksim",
+        "route": "iv",
         "value_min": 200,
         "value_max": 300,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -8422,6 +9022,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "sefotaksim",
+        "route": "iv",
         "value_min": 4,
         "value_max": 4,
         "unit": "kali/hari"
@@ -8443,9 +9044,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "seftriakson",
+        "route": "iv",
         "value_min": 100,
         "value_max": 100,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -8464,6 +9067,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "seftriakson",
+        "route": "iv",
         "value_min": 2,
         "value_max": 2,
         "unit": "kali/hari"
@@ -8484,9 +9088,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "sefotaksim",
+        "route": "iv",
         "value_min": 200,
         "value_max": 300,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -8504,6 +9110,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "sefotaksim",
+        "route": "iv",
         "value_min": 3,
         "value_max": 4,
         "unit": "kali/hari"
@@ -8524,9 +9131,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "seftriakson",
+        "route": "iv",
         "value_min": 100,
         "value_max": 100,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -8544,6 +9153,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "seftriakson",
+        "route": "iv",
         "value_min": 2,
         "value_max": 2,
         "unit": "kali/hari"
@@ -8564,9 +9174,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "ampisilin",
+        "route": "iv",
         "value_min": 200,
         "value_max": 400,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -8584,6 +9196,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "ampisilin",
+        "route": "iv",
         "value_min": 4,
         "value_max": 4,
         "unit": "kali/hari"
@@ -8604,9 +9217,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "kloramfenikol",
+        "route": "iv",
         "value_min": 100,
         "value_max": 100,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -8624,6 +9239,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "kloramfenikol",
+        "route": "iv",
         "value_min": 4,
         "value_max": 4,
         "unit": "kali/hari"
@@ -8643,9 +9259,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "deksametason",
+        "route": "iv",
         "value_min": 0.6,
         "value_max": 0.6,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -8662,6 +9280,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "deksametason",
+        "route": "iv",
         "value_min": 4,
         "value_max": 4,
         "unit": "kali/hari"
@@ -8681,6 +9300,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "deksametason",
+        "route": "iv",
         "value_min": 4,
         "value_max": 4,
         "unit": "hari"
@@ -8700,9 +9320,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "manitol",
+        "route": "iv",
         "value_min": 0.5,
         "value_max": 1,
-        "unit": "gram/kgbb/kali"
+        "unit": "gram/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -8719,9 +9341,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "furosemid",
+        "route": "iv",
         "value_min": 1,
         "value_max": 1,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -8738,9 +9362,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "metil-prednisolon",
+        "route": "iv",
         "value_min": 15,
         "value_max": 15,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -8757,6 +9383,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "metil-prednisolon",
+        "route": "iv",
         "value_min": 4,
         "value_max": 4,
         "unit": "kali/hari"
@@ -8776,6 +9403,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "metil-prednisolon",
+        "route": "iv",
         "value_min": 3,
         "value_max": 5,
         "unit": "hari"
@@ -8795,9 +9423,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "prednison",
+        "route": "oral",
         "value_min": 1,
         "value_max": 2,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -8814,6 +9444,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "prednison",
+        "route": "oral",
         "value_min": 7,
         "value_max": 10,
         "unit": "hari"
@@ -8833,6 +9464,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "desmopresin",
+        "route": "iv",
         "value_min": 0.3,
         "value_max": 0.3,
         "unit": "mcg/kg"
@@ -8852,6 +9484,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "desmopresin",
+        "route": "iv",
         "value_min": 20,
         "value_max": 30,
         "unit": "menit"
@@ -8871,6 +9504,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "desmopresin",
+        "route": "intranasal",
         "value_min": 300,
         "value_max": 300,
         "unit": "mcg"
@@ -8890,9 +9524,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "asam traneksamat",
+        "route": "oral",
         "value_min": 25,
         "value_max": 25,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -8909,6 +9545,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "asam traneksamat",
+        "route": "oral",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -8928,6 +9565,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "asam traneksamat",
+        "route": "oral",
         "value_min": 5,
         "value_max": 10,
         "unit": "hari"
@@ -8947,9 +9585,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "asam traneksamat",
+        "route": "iv",
         "value_min": 25,
         "value_max": 25,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -8966,6 +9606,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "asam traneksamat",
+        "route": "iv",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -8985,6 +9626,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "asam traneksamat",
+        "route": "iv",
         "value_min": 5,
         "value_max": 10,
         "unit": "hari"
@@ -9004,9 +9646,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "morfin sulfat",
+        "route": "sc",
         "value_min": 0.1,
         "value_max": 0.2,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9023,9 +9667,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "morfin sulfat",
+        "route": "im",
         "value_min": 0.1,
         "value_max": 0.2,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9042,9 +9688,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "morfin sulfat",
+        "route": "iv",
         "value_min": 0.1,
         "value_max": 0.2,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9061,9 +9709,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "bikarbonas natrikus",
+        "route": "iv",
         "value_min": 1,
         "value_max": 1,
-        "unit": "mEq/kgbb/kali"
+        "unit": "mEq/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9080,9 +9730,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "propranolol",
+        "route": "iv_bolus",
         "value_min": 0.01,
         "value_max": 0.25,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9099,9 +9751,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "ketamin",
+        "route": "iv",
         "value_min": 1,
         "value_max": 3,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9118,9 +9772,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "fenilefrin",
+        "route": "iv",
         "value_min": 0.02,
         "value_max": 0.02,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9137,9 +9793,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "propranolol",
+        "route": "oral",
         "value_min": 0.5,
         "value_max": 1.5,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9156,6 +9814,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "propranolol",
+        "route": "oral",
         "value_min": 3,
         "value_max": 4,
         "unit": "kali/hari"
@@ -9175,9 +9834,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "propranolol",
+        "route": "oral",
         "value_min": 2,
         "value_max": 6,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9194,9 +9855,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "ampisilin",
+        "route": "iv",
         "value_min": 50,
         "value_max": 50,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9213,6 +9876,7 @@
       "claim": {
         "claim_type": "interval",
         "parameter": "ampisilin",
+        "route": "iv",
         "value_min": 12,
         "value_max": 12,
         "unit": "jam"
@@ -9233,6 +9897,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "gentamisin",
+        "route": "iv",
         "value_min": 3,
         "value_max": 3,
         "unit": "mg/kgbb"
@@ -9253,6 +9918,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "gentamisin",
+        "route": "iv",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -9272,6 +9938,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "surfaktan",
+        "route": "intratracheal",
         "value_min": 2,
         "value_max": 4,
         "unit": "kali/hari"
@@ -9291,9 +9958,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "survanta",
+        "route": "intratracheal",
         "value_min": 4,
         "value_max": 4,
-        "unit": "mL/kgbb"
+        "unit": "mL/kgbb",
+        "dose_context": "total_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9310,6 +9979,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "survanta",
+        "route": "intratracheal",
         "value_min": 4,
         "value_max": 4,
         "unit": "kali/hari"
@@ -9329,9 +9999,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "survanta",
+        "route": "intratracheal",
         "value_min": 1,
         "value_max": 1,
-        "unit": "mL/kgbb/kali"
+        "unit": "mL/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9348,6 +10020,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "survanta",
+        "route": "intratracheal",
         "value_min": 48,
         "value_max": 48,
         "unit": "jam"
@@ -9367,6 +10040,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "nacl 0,9%",
+        "route": "iv",
         "value_min": 20,
         "value_max": 20,
         "unit": "mL/kgbb"
@@ -9386,6 +10060,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "nacl 0,9%",
+        "route": "iv",
         "value_min": 1,
         "value_max": 1,
         "unit": "jam"
@@ -9405,6 +10080,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "cairan resusitasi",
+        "route": "iv",
         "value_min": 36,
         "value_max": 48,
         "unit": "jam"
@@ -9425,6 +10101,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "cairan resusitasi",
+        "route": "iv",
         "value_min": 72,
         "value_max": 72,
         "unit": "jam"
@@ -9445,9 +10122,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "insulin",
+        "route": "iv",
         "value_min": 0.05,
         "value_max": 0.1,
-        "unit": "IU/kgbb/jam"
+        "unit": "IU/kgbb/jam",
+        "dose_context": "per_jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9465,6 +10144,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "insulin",
+        "route": "sc",
         "value_min": 4,
         "value_max": 4,
         "unit": "kali/hari"
@@ -9484,9 +10164,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "kalium",
+        "route": "iv",
         "value_min": 5,
         "value_max": 5,
-        "unit": "meq/kgbb/hari"
+        "unit": "meq/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9503,9 +10185,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "kalium",
+        "route": "iv",
         "value_min": 0,
         "value_max": 0.5,
-        "unit": "meq/kgbb/jam"
+        "unit": "meq/kgbb/jam",
+        "dose_context": "per_jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9522,6 +10206,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "manitol",
+        "route": "iv",
         "value_min": 1,
         "value_max": 2,
         "unit": "gram/kg"
@@ -9541,6 +10226,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "asam ursodeoksikolat",
+        "route": "oral",
         "value_min": 10,
         "value_max": 30,
         "unit": "mg/kgbb"
@@ -9560,6 +10246,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "asam ursodeoksikolat",
+        "route": "oral",
         "value_min": 2,
         "value_max": 3,
         "unit": "kali/hari"
@@ -9579,9 +10266,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "vitamin a",
+        "route": "oral",
         "value_min": 5000,
         "value_max": 25000,
-        "unit": "IU/hari"
+        "unit": "IU/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9598,6 +10287,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "vitamin a",
+        "route": "oral",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -9617,9 +10307,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "vitamin d calcitriol",
+        "route": "oral",
         "value_min": 0.05,
         "value_max": 0.2,
-        "unit": "mcg/kgbb/hari"
+        "unit": "mcg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9636,6 +10328,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "vitamin d calcitriol",
+        "route": "oral",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -9655,9 +10348,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "vitamin e",
+        "route": "oral",
         "value_min": 25,
         "value_max": 200,
-        "unit": "IU/kgbb/hari"
+        "unit": "IU/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9674,6 +10369,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "vitamin e",
+        "route": "oral",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -9693,9 +10389,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "vitamin k1",
+        "route": "oral",
         "value_min": 2.5,
         "value_max": 5,
-        "unit": "mg/hari"
+        "unit": "mg/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9712,6 +10410,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "vitamin k1",
+        "route": "oral",
         "value_min": 2,
         "value_max": 7,
         "unit": "kali/minggu"
@@ -9731,9 +10430,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "vitamin k1",
+        "route": "im",
         "value_min": 2.5,
         "value_max": 5,
-        "unit": "mg/hari"
+        "unit": "mg/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9750,6 +10451,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "vitamin k1",
+        "route": "im",
         "value_min": 2,
         "value_max": 7,
         "unit": "kali/minggu"
@@ -9769,9 +10471,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "kalsium",
+        "route": "oral",
         "value_min": 25,
         "value_max": 100,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9788,9 +10492,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "fosfor (p)",
+        "route": "oral",
         "value_min": 25,
         "value_max": 50,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9807,9 +10513,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "mangan",
+        "route": "oral",
         "value_min": 1,
         "value_max": 2,
-        "unit": "meq/kgbb/hari"
+        "unit": "meq/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9826,9 +10534,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "zink",
+        "route": "oral",
         "value_min": 1,
         "value_max": 1,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9845,9 +10555,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "selenium",
+        "route": "oral",
         "value_min": 1,
         "value_max": 2,
-        "unit": "mcg/kgbb/hari"
+        "unit": "mcg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9864,9 +10576,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "zat besi",
+        "route": "oral",
         "value_min": 5,
         "value_max": 6,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9883,9 +10597,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "difenhidramin",
+        "route": "oral",
         "value_min": 5,
         "value_max": 10,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9902,9 +10618,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "hidroksisin",
+        "route": "oral",
         "value_min": 2,
         "value_max": 5,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9921,9 +10639,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "rifampisin",
+        "route": "oral",
         "value_min": 10,
         "value_max": 10,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9940,6 +10660,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "rifampisin",
+        "route": "oral",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -9959,9 +10680,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "kolestiramin",
+        "route": "oral",
         "value_min": 0.25,
         "value_max": 0.5,
-        "unit": "g/kgbb/hari"
+        "unit": "g/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9978,6 +10701,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "kolestiramin",
+        "route": "oral",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -9997,9 +10721,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "diazepam",
+        "route": "iv",
         "value_min": 10,
         "value_max": 10,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -10016,6 +10742,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "diazepam",
+        "route": "iv_bolus",
         "value_min": 4,
         "value_max": 8,
         "unit": "kali/hari"
@@ -10035,9 +10762,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "diazepam",
+        "route": "iv_bolus",
         "value_min": 0.1,
         "value_max": 0.2,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -10054,9 +10783,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "diazepam",
+        "route": "iv",
         "value_min": 0,
         "value_max": 40,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -10073,6 +10804,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "diazepam",
+        "route": "iv",
         "value_min": 10,
         "value_max": 10,
         "unit": "mg/kgbb"
@@ -10092,6 +10824,7 @@
       "claim": {
         "claim_type": "interval",
         "parameter": "diazepam",
+        "route": "iv",
         "value_min": 6,
         "value_max": 6,
         "unit": "jam"
@@ -10111,6 +10844,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "diazepam",
+        "route": "iv",
         "value_min": 5,
         "value_max": 7,
         "unit": "hari"
@@ -10130,6 +10864,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "human tetanus immunoglobulin",
+        "route": "im",
         "value_min": 500,
         "value_max": 500,
         "unit": "IU"
@@ -10149,6 +10884,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "antitoksin tetanus",
+        "route": "im",
         "value_min": 5000,
         "value_max": 5000,
         "unit": "IU"
@@ -10168,6 +10904,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "tetanus toksoid",
+        "route": "im",
         "value_min": 0.5,
         "value_max": 0.5,
         "unit": "mL"
@@ -10187,9 +10924,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "metronidazol",
+        "route": "iv",
         "value_min": 30,
         "value_max": 30,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -10206,6 +10945,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "metronidazol",
+        "route": "iv",
         "value_min": 4,
         "value_max": 4,
         "unit": "kali/hari"
@@ -10225,6 +10965,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "metronidazol",
+        "route": "iv",
         "value_min": 7,
         "value_max": 10,
         "unit": "hari"
@@ -10244,6 +10985,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "penisilin procain",
+        "route": "iv",
         "value_min": 100000,
         "value_max": 100000,
         "unit": "IU/kg"
@@ -10263,6 +11005,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "penisilin procain",
+        "route": "iv",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -10282,6 +11025,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "penisilin procain",
+        "route": "iv",
         "value_min": 7,
         "value_max": 10,
         "unit": "hari"
@@ -10302,9 +11046,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "tetrasiklin",
+        "route": "oral",
         "value_min": 50,
         "value_max": 50,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -10321,9 +11067,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "natrium bikarbonat",
+        "route": "iv",
         "value_min": 35,
         "value_max": 45,
-        "unit": "mEq/m2/hari"
+        "unit": "mEq/m2/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -10340,6 +11088,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "natrium bikarbonat",
+        "route": "iv",
         "value_min": 25,
         "value_max": 50,
         "unit": "mEq/500mL"
@@ -10359,9 +11108,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "allopurinol",
+        "route": "oral",
         "value_min": 10,
         "value_max": 10,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -10378,6 +11129,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "allopurinol",
+        "route": "oral",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -10397,6 +11149,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "kalsium karbonat",
+        "route": "oral",
         "value_min": 300,
         "value_max": 300,
         "unit": "mg"
@@ -10416,6 +11169,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "kalsium karbonat",
+        "route": "oral",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -10435,6 +11189,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "asiklovir",
+        "route": "iv",
         "value_min": 10,
         "value_max": 10,
         "unit": "mg/kgbb"
@@ -10454,6 +11209,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "asiklovir",
+        "route": "iv",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -10473,6 +11229,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "asiklovir",
+        "route": "iv",
         "value_min": 10,
         "value_max": 14,
         "unit": "hari"
@@ -10492,6 +11249,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "infus asiklovir",
+        "route": "iv",
         "value_min": 1,
         "value_max": 24,
         "unit": "jam"
@@ -10513,6 +11271,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "asiklovir",
+        "route": "iv",
         "value_min": 20,
         "value_max": 20,
         "unit": "mg/kgbb"
@@ -10534,6 +11293,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "asiklovir",
+        "route": "iv",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -10555,6 +11315,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "asiklovir",
+        "route": "iv",
         "value_min": 14,
         "value_max": 21,
         "unit": "hari"
@@ -10574,9 +11335,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "vidarabin",
+        "route": "iv",
         "value_min": 15,
         "value_max": 15,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -10593,6 +11356,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "vidarabin",
+        "route": "iv",
         "value_min": 14,
         "value_max": 14,
         "unit": "hari"
@@ -10613,6 +11377,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "dekstrosa 10%",
+        "route": "iv",
         "value_min": 2,
         "value_max": 2,
         "unit": "mL/kgbb"
@@ -10632,9 +11397,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "laju infus glukosa",
+        "route": "iv",
         "value_min": 6,
         "value_max": 8,
-        "unit": "mg/kgbb/menit"
+        "unit": "mg/kgbb/menit",
+        "dose_context": "per_menit"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -10651,9 +11418,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "epinephrine",
+        "route": "iv",
         "value_min": 0.05,
         "value_max": 2,
-        "unit": "mcg/kgbb/menit"
+        "unit": "mcg/kgbb/menit",
+        "dose_context": "per_menit"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -10670,9 +11439,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "norepinephrine",
+        "route": "iv",
         "value_min": 0.05,
         "value_max": 2,
-        "unit": "mcg/kgbb/menit"
+        "unit": "mcg/kgbb/menit",
+        "dose_context": "per_menit"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -10688,6 +11459,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "diazepam",
+        "route": "rektal",
         "value_min": 0.3,
         "value_max": 0.5,
         "unit": "mg/kgbb"
@@ -10706,6 +11478,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "diazepam",
+        "route": "rektal",
         "value_min": 1,
         "value_max": 2,
         "unit": "kali"
@@ -10726,6 +11499,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "vitamin k1",
+        "route": "im",
         "value_min": 1,
         "value_max": 1,
         "unit": "mg"
@@ -10744,6 +11518,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "vitamin k1",
+        "route": "im",
         "value_min": 3,
         "value_max": 3,
         "unit": "hari"
@@ -10762,6 +11537,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "fresh frozen plasma",
+        "route": "iv",
         "value_min": 10,
         "value_max": 15,
         "unit": "mL/kgbb"
@@ -10780,6 +11556,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "fresh frozen plasma",
+        "route": "iv",
         "value_min": 3,
         "value_max": 3,
         "unit": "hari"
@@ -10798,9 +11575,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "manitol",
+        "route": "iv",
         "value_min": 0.5,
         "value_max": 1,
-        "unit": "gram/kgbb/kali"
+        "unit": "gram/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -10816,9 +11595,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "furosemid",
+        "route": "iv",
         "value_min": 1,
         "value_max": 1,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -10835,6 +11616,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "dekstrosa 10%",
+        "route": "iv_bolus",
         "value_min": 2,
         "value_max": 2,
         "unit": "mL/kgbb"
@@ -10854,9 +11636,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "laju infus glukosa",
+        "route": "iv_infusion",
         "value_min": 6,
         "value_max": 8,
-        "unit": "mg/kgbb/menit"
+        "unit": "mg/kgbb/menit",
+        "dose_context": "per_menit"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -10872,9 +11656,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "laju infus glukosa maksimal",
+        "route": "iv_infusion",
         "value_min": 10,
         "value_max": 12,
-        "unit": "mg/kgbb/menit"
+        "unit": "mg/kgbb/menit",
+        "dose_context": "per_menit"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -10891,6 +11677,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "hidrokortison",
+        "route": "iv",
         "value_min": 5,
         "value_max": 5,
         "unit": "mg/kgbb"
@@ -10910,6 +11697,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "hidrokortison",
+        "route": "im",
         "value_min": 5,
         "value_max": 5,
         "unit": "mg/kgbb"
@@ -10929,6 +11717,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "hidrokortison",
+        "route": "iv",
         "value_min": 2,
         "value_max": 2,
         "unit": "kali/hari"
@@ -10948,6 +11737,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "hidrokortison",
+        "route": "im",
         "value_min": 2,
         "value_max": 2,
         "unit": "kali/hari"
@@ -10967,6 +11757,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "glukagon",
+        "route": "iv",
         "value_min": 200,
         "value_max": 200,
         "unit": "mcg"
@@ -10986,9 +11777,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "diazoksid",
+        "route": "oral",
         "value_min": 10,
         "value_max": 10,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -11005,6 +11798,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "diazoksid",
+        "route": "oral",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -11024,6 +11818,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "vitamin a",
+        "route": "oral",
         "value_min": 50000,
         "value_max": 50000,
         "unit": "IU"
@@ -11044,6 +11839,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "vitamin a",
+        "route": "oral",
         "value_min": 100000,
         "value_max": 100000,
         "unit": "IU"
@@ -11063,6 +11859,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "vitamin a",
+        "route": "oral",
         "value_min": 200000,
         "value_max": 200000,
         "unit": "IU"
@@ -11082,6 +11879,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "fenitoin",
+        "route": "iv_infusion",
         "value_min": 20,
         "value_max": 20,
         "unit": "mg/kgbb"
@@ -11101,6 +11899,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "fenobarbital",
+        "route": "iv",
         "value_min": 15,
         "value_max": 20,
         "unit": "mg/kgbb"
@@ -11120,9 +11919,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "furosemid",
+        "route": "oral",
         "value_min": 0.5,
         "value_max": 2,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -11139,9 +11940,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "furosemid",
+        "route": "iv",
         "value_min": 1,
         "value_max": 1,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -11159,6 +11962,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "furosemid",
+        "route": "iv",
         "value_min": 2,
         "value_max": 2,
         "unit": "kali/hari"
@@ -11178,9 +11982,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "kaptopril",
+        "route": "oral",
         "value_min": 0.3,
         "value_max": 0.5,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -11198,9 +12004,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "nifedipin",
+        "route": "oral",
         "value_min": 0.1,
         "value_max": 0.1,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -11217,6 +12025,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "kalsium glukonas 10%",
+        "route": "iv",
         "value_min": 0.5,
         "value_max": 1,
         "unit": "mL/kgbb"
@@ -11236,9 +12045,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "kcl",
+        "route": "oral",
         "value_min": 75,
         "value_max": 75,
-        "unit": "meq/kgbb/hari"
+        "unit": "meq/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -11255,9 +12066,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "furosemid",
+        "route": "oral",
         "value_min": 0.5,
         "value_max": 2,
-        "unit": "mg/kgbb/hari"
+        "unit": "mg/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -11273,9 +12086,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "kaptopril",
+        "route": "oral",
         "value_min": 0.3,
         "value_max": 0.5,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -11292,9 +12107,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "nifedipin",
+        "route": "oral",
         "value_min": 0.1,
         "value_max": 0.1,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -11312,9 +12129,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "amlodipin",
+        "route": "oral",
         "value_min": 2.5,
         "value_max": 5,
-        "unit": "mg/hari"
+        "unit": "mg/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -11331,9 +12150,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "klonidin",
+        "route": "iv",
         "value_min": 0.002,
         "value_max": 0.002,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -11350,6 +12171,7 @@
       "claim": {
         "claim_type": "frequency",
         "parameter": "klonidin",
+        "route": "iv",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -11370,9 +12192,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "budesonide",
+        "route": "inhalasi",
         "value_min": 100,
         "value_max": 200,
-        "unit": "mcg/hari"
+        "unit": "mcg/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -11390,9 +12214,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "budesonide",
+        "route": "inhalasi",
         "value_min": 200,
         "value_max": 400,
-        "unit": "mcg/hari"
+        "unit": "mcg/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -11410,9 +12236,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "fluticasone",
+        "route": "inhalasi",
         "value_min": 50,
         "value_max": 100,
-        "unit": "mcg/hari"
+        "unit": "mcg/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -11430,9 +12258,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "fluticasone",
+        "route": "inhalasi",
         "value_min": 100,
         "value_max": 200,
-        "unit": "mcg/hari"
+        "unit": "mcg/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -11450,6 +12280,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "deksametason",
+        "route": "iv",
         "value_min": 1,
         "value_max": 5,
         "unit": "hari"
@@ -11469,9 +12300,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "cairan",
+        "route": "iv",
         "value_min": 7,
         "value_max": 7,
-        "unit": "mL/kgbb/jam"
+        "unit": "mL/kgbb/jam",
+        "dose_context": "per_jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -11487,9 +12320,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "cairan",
+        "route": "iv",
         "value_min": 5,
         "value_max": 5,
-        "unit": "mL/kgbb/jam"
+        "unit": "mL/kgbb/jam",
+        "dose_context": "per_jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -11505,9 +12340,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "cairan",
+        "route": "iv",
         "value_min": 3,
         "value_max": 3,
-        "unit": "mL/kgbb/jam"
+        "unit": "mL/kgbb/jam",
+        "dose_context": "per_jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -11523,6 +12360,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "antibiotik",
+        "route": "iv",
         "value_min": 14,
         "value_max": 14,
         "unit": "hari"
@@ -11542,6 +12380,7 @@
       "claim": {
         "claim_type": "duration",
         "parameter": "antibiotik",
+        "route": "iv",
         "value_min": 21,
         "value_max": 21,
         "unit": "hari"
@@ -11561,9 +12400,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "dopamin",
+        "route": "iv",
         "value_min": 2,
         "value_max": 20,
-        "unit": "mcg/kgbb/menit"
+        "unit": "mcg/kgbb/menit",
+        "dose_context": "per_menit"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -11580,9 +12421,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "dobutamin",
+        "route": "iv",
         "value_min": 5,
         "value_max": 20,
-        "unit": "mcg/kgbb/menit"
+        "unit": "mcg/kgbb/menit",
+        "dose_context": "per_menit"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -11598,9 +12441,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "oksigen",
+        "route": null,
         "value_min": 2,
         "value_max": 2,
-        "unit": "l/menit"
+        "unit": "l/menit",
+        "dose_context": "per_menit"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -11617,9 +12462,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "steroid",
+        "route": "iv",
         "value_min": 0.5,
         "value_max": 1,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/kali",
+        "dose_context": "per_dosis"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -11637,9 +12484,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "glukagon infus kontinu",
+        "route": "iv_infusion",
         "value_min": 10,
         "value_max": 10,
-        "unit": "mcg/kg/jam"
+        "unit": "mcg/kg/jam",
+        "dose_context": "per_jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -11657,9 +12506,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "kalori",
+        "route": "oral",
         "value_min": 150,
         "value_max": 200,
-        "unit": "kkal/kgbb/hari"
+        "unit": "kkal/kgbb/hari",
+        "dose_context": "per_hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -11676,6 +12527,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "desmopresin",
+        "route": "intranasal",
         "value_min": 5,
         "value_max": 40,
         "unit": "mcg"
@@ -11695,6 +12547,7 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "oksibutinin",
+        "route": "oral",
         "value_min": 5,
         "value_max": 10,
         "unit": "mg"
@@ -11716,9 +12569,11 @@
       "claim": {
         "claim_type": "dose",
         "parameter": "midazolam",
+        "route": "iv_infusion",
         "value_min": 0.02,
         "value_max": 0.4,
-        "unit": "mg/kg/jam"
+        "unit": "mg/kg/jam",
+        "dose_context": "per_jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -11736,6 +12591,7 @@
       "claim": {
         "claim_type": "contraindication",
         "parameter": "nitrofurantoin",
+        "route": "oral",
         "prohibited": true
       },
       "metadata": {
@@ -11753,6 +12609,7 @@
       "claim": {
         "claim_type": "contraindication",
         "parameter": "sulfisoksazole",
+        "route": "oral",
         "prohibited": true
       },
       "metadata": {
@@ -11770,6 +12627,7 @@
       "claim": {
         "claim_type": "contraindication",
         "parameter": "trimetoprim",
+        "route": "oral",
         "prohibited": true
       },
       "metadata": {
@@ -11787,6 +12645,7 @@
       "claim": {
         "claim_type": "contraindication",
         "parameter": "mineral oil",
+        "route": "oral",
         "prohibited": true
       },
       "metadata": {
@@ -11804,6 +12663,7 @@
       "claim": {
         "claim_type": "contraindication",
         "parameter": "tetrasiklin",
+        "route": "oral",
         "prohibited": true
       },
       "metadata": {
@@ -11821,6 +12681,7 @@
       "claim": {
         "claim_type": "contraindication",
         "parameter": "asam traneksamat",
+        "route": "any",
         "prohibited": true
       },
       "metadata": {
@@ -11838,6 +12699,7 @@
       "claim": {
         "claim_type": "contraindication",
         "parameter": "labetalol",
+        "route": "oral",
         "prohibited": true
       },
       "metadata": {
@@ -11855,6 +12717,7 @@
       "claim": {
         "claim_type": "contraindication",
         "parameter": "propanolol",
+        "route": "oral",
         "prohibited": true
       },
       "metadata": {
@@ -11872,6 +12735,7 @@
       "claim": {
         "claim_type": "contraindication",
         "parameter": "hydralazine",
+        "route": "iv",
         "prohibited": true
       },
       "metadata": {
@@ -11889,6 +12753,7 @@
       "claim": {
         "claim_type": "contraindication",
         "parameter": "vitamin c",
+        "route": "oral",
         "prohibited": true
       },
       "metadata": {
