@@ -1,43 +1,16 @@
 ﻿{
   "rules": [
     {
-      "rule_id": "string",
-      "condition": {
-        "disease": "string",
-        "phase": "string",
-        "age_month_min": "float",
-        "age_month_max": "float",
-        "weight_kg_min": "float",
-        "weight_kg_max": "float",
-        "severity": "string",
-        "complication": "string"
-      },
-      "claim": {
-        "claim_type": "string",
-        "parameter": "string",
-        "value_min": "float",
-        "value_max": "float",
-        "unit": "string",
-        "prohibited": "boolean"
-      },
-      "metadata": {
-        "source": "string",
-        "section": "string",
-        "page": 0,
-        "text": "string"
-      }
-    },
-    {
       "rule_id": "diare_akut_dose_1",
       "condition": {
         "disease": "diare_akut"
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "new oralit",
+        "medicine": "new oralit",
         "value_min": 5,
         "value_max": 10,
-        "unit": "mL/kgbb/kali"
+        "unit": "mL/kgbb"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -54,7 +27,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "new oralit",
+        "medicine": "new oralit",
         "value_min": 50,
         "value_max": 100,
         "unit": "mL"
@@ -74,29 +47,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "new oralit",
+        "medicine": "new oralit",
         "value_min": 100,
         "value_max": 200,
         "unit": "mL"
-      },
-      "metadata": {
-        "source": "Buku PPM IDAI Jilid I",
-        "section": "Diare Akut",
-        "page": 59
-      }
-    },
-    {
-      "rule_id": "diare_akut_dose_4",
-      "condition": {
-        "disease": "diare_akut",
-        "severity": "ringan-sedang"
-      },
-      "claim": {
-        "claim_type": "dose",
-        "parameter": "rehidrasi oral hipoosmolar",
-        "value_min": 75,
-        "value_max": 75,
-        "unit": "mL/kgbb/total"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -112,7 +66,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "rehidrasi oral hipoosmolar",
+        "medicine": "rehidrasi oral hipoosmolar",
         "value_min": 3,
         "value_max": 3,
         "unit": "jam"
@@ -131,7 +85,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "rehidrasi oral hipoosmolar",
+        "medicine": "rehidrasi oral hipoosmolar",
         "value_min": 5,
         "value_max": 10,
         "unit": "mL/kgbb/kali"
@@ -152,7 +106,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "rehidrasi",
+        "medicine": "rehidrasi",
         "value_min": 200,
         "value_max": 200,
         "unit": "mL/kgbb/hari"
@@ -173,7 +127,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "rehidrasi",
+        "medicine": "rehidrasi",
         "value_min": 175,
         "value_max": 175,
         "unit": "mL/kgbb/hari"
@@ -193,7 +147,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "rehidrasi",
+        "medicine": "rehidrasi",
         "value_min": 135,
         "value_max": 135,
         "unit": "mL/kgbb/hari"
@@ -212,7 +166,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "ringer laktat",
+        "medicine": "ringer laktat",
         "value_min": 100,
         "value_max": 100,
         "unit": "mL/kgbb"
@@ -231,7 +185,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "ringer asetat",
+        "medicine": "ringer asetat",
         "value_min": 100,
         "value_max": 100,
         "unit": "mL/kgbb"
@@ -253,7 +207,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "ringer laktat",
+        "medicine": "ringer laktat",
         "value_min": 30,
         "value_max": 30,
         "unit": "mL/kgbb"
@@ -275,7 +229,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "ringer asetat",
+        "medicine": "ringer asetat",
         "value_min": 30,
         "value_max": 30,
         "unit": "mL/kgbb"
@@ -297,7 +251,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "ringer laktat",
+        "medicine": "ringer laktat",
         "value_min": 1,
         "value_max": 1,
         "unit": "jam"
@@ -319,7 +273,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "ringer asetat",
+        "medicine": "ringer asetat",
         "value_min": 1,
         "value_max": 1,
         "unit": "jam"
@@ -341,7 +295,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "ringer laktat",
+        "medicine": "ringer laktat",
         "value_min": 70,
         "value_max": 70,
         "unit": "mL/kgbb"
@@ -363,7 +317,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "ringer asetat",
+        "medicine": "ringer asetat",
         "value_min": 70,
         "value_max": 70,
         "unit": "mL/kgbb"
@@ -385,7 +339,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "ringer laktat",
+        "medicine": "ringer laktat",
         "value_min": 5,
         "value_max": 5,
         "unit": "jam"
@@ -407,7 +361,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "ringer asetat",
+        "medicine": "ringer asetat",
         "value_min": 5,
         "value_max": 5,
         "unit": "jam"
@@ -428,7 +382,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "ringer laktat",
+        "medicine": "ringer laktat",
         "value_min": 30,
         "value_max": 30,
         "unit": "mL/kgbb"
@@ -449,7 +403,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "ringer asetat",
+        "medicine": "ringer asetat",
         "value_min": 30,
         "value_max": 30,
         "unit": "mL/kgbb"
@@ -470,7 +424,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "ringer laktat",
+        "medicine": "ringer laktat",
         "value_min": 0.5,
         "value_max": 0.5,
         "unit": "jam"
@@ -491,7 +445,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "ringer asetat",
+        "medicine": "ringer asetat",
         "value_min": 0.5,
         "value_max": 0.5,
         "unit": "jam"
@@ -512,7 +466,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "ringer laktat",
+        "medicine": "ringer laktat",
         "value_min": 70,
         "value_max": 70,
         "unit": "mL/kgbb"
@@ -533,7 +487,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "ringer asetat",
+        "medicine": "ringer asetat",
         "value_min": 70,
         "value_max": 70,
         "unit": "mL/kgbb"
@@ -554,7 +508,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "ringer laktat",
+        "medicine": "ringer laktat",
         "value_min": 2.5,
         "value_max": 2.5,
         "unit": "jam"
@@ -575,7 +529,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "ringer asetat",
+        "medicine": "ringer asetat",
         "value_min": 2.5,
         "value_max": 2.5,
         "unit": "jam"
@@ -593,7 +547,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "zink",
+        "medicine": "zink",
         "value_min": 10,
         "value_max": 14,
         "unit": "hari"
@@ -612,7 +566,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "zink",
+        "medicine": "zink",
         "value_min": 10,
         "value_max": 10,
         "unit": "mg/hari"
@@ -631,7 +585,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "zink",
+        "medicine": "zink",
         "value_min": 20,
         "value_max": 20,
         "unit": "mg/hari"
@@ -649,7 +603,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "metronidazol",
+        "medicine": "metronidazol",
         "value_min": 50,
         "value_max": 50,
         "unit": "mg/kgbb/hari"
@@ -667,7 +621,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "metronidazol",
+        "medicine": "metronidazol",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -685,7 +639,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "penisilin g",
+        "medicine": "penisilin g",
         "value_min": 50000,
         "value_max": 50000,
         "unit": "IU/kgbb/kali"
@@ -704,7 +658,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "penisilin g",
+        "medicine": "penisilin g",
         "value_min": 0,
         "value_max": 4000000,
         "unit": "IU/kali"
@@ -723,7 +677,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "penisilin g",
+        "medicine": "penisilin g",
         "value_min": 6,
         "value_max": 6,
         "unit": "kali/hari"
@@ -742,7 +696,7 @@
       },
       "claim": {
         "claim_type": "interval",
-        "parameter": "penisilin g",
+        "medicine": "penisilin g",
         "value_min": 4,
         "value_max": 4,
         "unit": "jam"
@@ -761,7 +715,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "ampisilin",
+        "medicine": "ampisilin",
         "value_min": 100,
         "value_max": 100,
         "unit": "mg/kgbb/hari"
@@ -780,7 +734,7 @@
       },
       "claim": {
         "claim_type": "interval",
-        "parameter": "ampisilin",
+        "medicine": "ampisilin",
         "value_min": 6,
         "value_max": 6,
         "unit": "jam"
@@ -800,7 +754,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "kloramfenikol",
+        "medicine": "kloramfenikol",
         "value_min": 100,
         "value_max": 100,
         "unit": "mg/kgbb/hari"
@@ -820,7 +774,7 @@
       },
       "claim": {
         "claim_type": "interval",
-        "parameter": "kloramfenikol",
+        "medicine": "kloramfenikol",
         "value_min": 6,
         "value_max": 6,
         "unit": "jam"
@@ -840,7 +794,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "seftriakson",
+        "medicine": "seftriakson",
         "value_min": 50,
         "value_max": 50,
         "unit": "mg/kgbb/kali"
@@ -860,10 +814,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "seftriakson",
+        "medicine": "seftriakson",
         "value_min": 1,
-        "value_max": 2000,
-        "unit": "mg/kali"
+        "value_max": 2,
+        "unit": "g/kali"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -880,7 +834,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "seftriakson",
+        "medicine": "seftriakson",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -899,7 +853,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "cefuroxime",
+        "medicine": "cefuroxime",
         "value_min": 50,
         "value_max": 50,
         "unit": "mg/kgbb/kali"
@@ -918,7 +872,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "cefuroxime",
+        "medicine": "cefuroxime",
         "value_min": 1,
         "value_max": 2000,
         "unit": "mg/kali"
@@ -937,7 +891,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "cefuroxime",
+        "medicine": "cefuroxime",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -956,7 +910,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "clindamycin",
+        "medicine": "clindamycin",
         "value_min": 10,
         "value_max": 10,
         "unit": "mg/kgbb/kali"
@@ -975,10 +929,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "clindamycin",
+        "medicine": "clindamycin",
         "value_min": 0,
-        "value_max": 1200,
-        "unit": "mg/kali"
+        "value_max": 1.2,
+        "unit": "g/kali"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -994,7 +948,7 @@
       },
       "claim": {
         "claim_type": "interval",
-        "parameter": "clindamycin",
+        "medicine": "clindamycin",
         "value_min": 6,
         "value_max": 6,
         "unit": "jam"
@@ -1013,7 +967,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "eritromisin",
+        "medicine": "eritromisin",
         "value_min": 10,
         "value_max": 10,
         "unit": "mg/kgbb/kali"
@@ -1032,7 +986,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "eritromisin",
+        "medicine": "eritromisin",
         "value_min": 0,
         "value_max": 1000,
         "unit": "mg/kali"
@@ -1051,7 +1005,7 @@
       },
       "claim": {
         "claim_type": "interval",
-        "parameter": "eritromisin",
+        "medicine": "eritromisin",
         "value_min": 6,
         "value_max": 6,
         "unit": "jam"
@@ -1071,7 +1025,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "ampisilin",
+        "medicine": "ampisilin",
         "value_min": 3,
         "value_max": 3,
         "unit": "hari"
@@ -1090,10 +1044,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "ringer laktat",
+        "medicine": "ringer laktat",
         "value_min": 10,
         "value_max": 20,
-        "unit": "mL/kgbb/kali"
+        "unit": "mL/kgbb"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -1109,7 +1063,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "ringer laktat",
+        "medicine": "ringer laktat",
         "value_min": 30,
         "value_max": 30,
         "unit": "menit"
@@ -1128,7 +1082,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "dekstran",
+        "medicine": "dekstran",
         "value_min": 20,
         "value_max": 30,
         "unit": "mL/kgbb/jam"
@@ -1147,7 +1101,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "dekstran",
+        "medicine": "dekstran",
         "value_min": 0,
         "value_max": 1500,
         "unit": "mL/hari"
@@ -1167,7 +1121,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "cairan",
+        "medicine": "cairan",
         "value_min": 10,
         "value_max": 10,
         "unit": "mL/kgbb/jam"
@@ -1187,7 +1141,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "cairan",
+        "medicine": "cairan",
         "value_min": 1,
         "value_max": 4,
         "unit": "jam"
@@ -1206,10 +1160,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "oksigen",
+        "medicine": "oksigen",
         "value_min": 2,
         "value_max": 4,
-        "unit": "l/menit"
+        "unit": "L/menit"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -1225,7 +1179,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "darah segar",
+        "medicine": "darah segar",
         "value_min": 10,
         "value_max": 10,
         "unit": "mL/kgbb"
@@ -1247,10 +1201,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "cairan oral",
+        "medicine": "cairan oral",
         "value_min": 1.5,
         "value_max": 2,
-        "unit": "lt/hari"
+        "unit": "L/hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -1269,10 +1223,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "cairan oral",
+        "medicine": "cairan oral",
         "value_min": 1,
         "value_max": 2,
-        "unit": "lt/hari"
+        "unit": "L/hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -1289,7 +1243,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "cairan",
+        "medicine": "cairan",
         "value_min": 10,
         "value_max": 15,
         "unit": "mL/kgbb/jam"
@@ -1308,7 +1262,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "dekstran",
+        "medicine": "dekstran",
         "value_min": 10,
         "value_max": 20,
         "unit": "mL/kgbb/jam"
@@ -1327,7 +1281,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "dekstran",
+        "medicine": "dekstran",
         "value_min": 0,
         "value_max": 30,
         "unit": "mL/kgbb/jam"
@@ -1346,7 +1300,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "isoniazid",
+        "medicine": "isoniazid",
         "value_min": 5,
         "value_max": 15,
         "unit": "mg/kgbb/hari"
@@ -1365,7 +1319,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "isoniazid",
+        "medicine": "isoniazid",
         "value_min": 0,
         "value_max": 300,
         "unit": "mg/hari"
@@ -1384,7 +1338,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "rifampisin",
+        "medicine": "rifampisin",
         "value_min": 10,
         "value_max": 15,
         "unit": "mg/kgbb/hari"
@@ -1403,7 +1357,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "rifampisin",
+        "medicine": "rifampisin",
         "value_min": 0,
         "value_max": 600,
         "unit": "mg/hari"
@@ -1422,7 +1376,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "pirazinamid",
+        "medicine": "pirazinamid",
         "value_min": 25,
         "value_max": 35,
         "unit": "mg/kgbb/hari"
@@ -1441,10 +1395,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "pirazinamid",
+        "medicine": "pirazinamid",
         "value_min": 1,
-        "value_max": 2000,
-        "unit": "mg/hari"
+        "value_max": 2,
+        "unit": "g"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -1460,7 +1414,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "etambutol",
+        "medicine": "etambutol",
         "value_min": 15,
         "value_max": 20,
         "unit": "mg/kgbb/hari"
@@ -1479,7 +1433,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "etambutol",
+        "medicine": "etambutol",
         "value_min": 0,
         "value_max": 2500,
         "unit": "mg/hari"
@@ -1498,7 +1452,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "streptomisin",
+        "medicine": "streptomisin",
         "value_min": 15,
         "value_max": 30,
         "unit": "mg/kgbb/hari"
@@ -1517,10 +1471,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "streptomisin",
+        "medicine": "streptomisin",
         "value_min": 0,
-        "value_max": 1000,
-        "unit": "mg/hari"
+        "value_max": 1,
+        "unit": "g"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -1536,7 +1490,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "prednison",
+        "medicine": "prednison",
         "value_min": 1,
         "value_max": 2,
         "unit": "mg/kgbb/hari"
@@ -1555,7 +1509,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "prednison",
+        "medicine": "prednison",
         "value_min": 0,
         "value_max": 1,
         "unit": "bulan"
@@ -1574,7 +1528,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "isoniazid",
+        "medicine": "isoniazid",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -1594,7 +1548,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "isoniazid",
+        "medicine": "isoniazid",
         "value_min": 2,
         "value_max": 2,
         "unit": "bulan"
@@ -1614,7 +1568,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "isoniazid",
+        "medicine": "isoniazid",
         "value_min": 4,
         "value_max": 6,
         "unit": "bulan"
@@ -1635,7 +1589,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "isoniazid",
+        "medicine": "isoniazid",
         "value_min": 7,
         "value_max": 10,
         "unit": "bulan"
@@ -1654,7 +1608,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "rifampisin",
+        "medicine": "rifampisin",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -1674,7 +1628,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "rifampisin",
+        "medicine": "rifampisin",
         "value_min": 2,
         "value_max": 2,
         "unit": "bulan"
@@ -1694,7 +1648,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "rifampisin",
+        "medicine": "rifampisin",
         "value_min": 4,
         "value_max": 4,
         "unit": "bulan"
@@ -1715,7 +1669,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "rifampisin",
+        "medicine": "rifampisin",
         "value_min": 7,
         "value_max": 10,
         "unit": "bulan"
@@ -1734,7 +1688,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "pirazinamid",
+        "medicine": "pirazinamid",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -1754,7 +1708,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "pirazinamid",
+        "medicine": "pirazinamid",
         "value_min": 2,
         "value_max": 2,
         "unit": "bulan"
@@ -1773,7 +1727,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "etambutol",
+        "medicine": "etambutol",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -1793,7 +1747,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "etambutol",
+        "medicine": "etambutol",
         "value_min": 2,
         "value_max": 2,
         "unit": "bulan"
@@ -1812,7 +1766,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "streptomisin",
+        "medicine": "streptomisin",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -1832,7 +1786,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "streptomisin",
+        "medicine": "streptomisin",
         "value_min": 2,
         "value_max": 2,
         "unit": "bulan"
@@ -1851,7 +1805,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "prednison",
+        "medicine": "prednison",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -1870,7 +1824,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "prednison",
+        "medicine": "prednison",
         "value_min": 2,
         "value_max": 2,
         "unit": "minggu"
@@ -1889,7 +1843,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "kotrimoksasol",
+        "medicine": "kotrimoksasol",
         "value_min": 5,
         "value_max": 5,
         "unit": "hari"
@@ -1908,7 +1862,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "ampisilin",
+        "medicine": "ampisilin",
         "value_min": 2,
         "value_max": 2,
         "unit": "hari"
@@ -1927,7 +1881,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "ampisilin",
+        "medicine": "ampisilin",
         "value_min": 7,
         "value_max": 7,
         "unit": "hari"
@@ -1946,7 +1900,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "gentamisin",
+        "medicine": "gentamisin",
         "value_min": 7,
         "value_max": 7,
         "unit": "hari"
@@ -1966,10 +1920,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "vitamin a",
+        "medicine": "vitamin a",
         "value_min": 50000,
         "value_max": 50000,
-        "unit": "IU"
+        "unit": "SI"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -1987,7 +1941,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "vitamin a",
+        "medicine": "vitamin a",
         "value_min": 100000,
         "value_max": 100000,
         "unit": "IU"
@@ -2007,7 +1961,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "vitamin a",
+        "medicine": "vitamin a",
         "value_min": 200000,
         "value_max": 200000,
         "unit": "IU"
@@ -2026,7 +1980,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "asam folat",
+        "medicine": "asam folat",
         "value_min": 1,
         "value_max": 5,
         "unit": "mg"
@@ -2045,7 +1999,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "asam folat",
+        "medicine": "asam folat",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -2065,7 +2019,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "energi",
+        "medicine": "energi",
         "value_min": 80,
         "value_max": 100,
         "unit": "kkal/kgbb/hari"
@@ -2085,7 +2039,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "protein",
+        "medicine": "protein",
         "value_min": 1,
         "value_max": 1.5,
         "unit": "g/kgbb/hari"
@@ -2105,7 +2059,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "cairan",
+        "medicine": "cairan",
         "value_min": 100,
         "value_max": 130,
         "unit": "mL/kgbb/hari"
@@ -2125,7 +2079,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "energi",
+        "medicine": "energi",
         "value_min": 100,
         "value_max": 150,
         "unit": "kkal/kgbb/hari"
@@ -2145,7 +2099,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "protein",
+        "medicine": "protein",
         "value_min": 2,
         "value_max": 3,
         "unit": "g/kgbb/hari"
@@ -2165,7 +2119,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "energi",
+        "medicine": "energi",
         "value_min": 150,
         "value_max": 220,
         "unit": "kkal/kgbb/hari"
@@ -2185,7 +2139,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "protein",
+        "medicine": "protein",
         "value_min": 4,
         "value_max": 6,
         "unit": "g/kgbb/hari"
@@ -2204,7 +2158,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "parasetamol",
+        "medicine": "parasetamol",
         "value_min": 10,
         "value_max": 15,
         "unit": "mg/kgbb/kali"
@@ -2223,7 +2177,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "parasetamol",
+        "medicine": "parasetamol",
         "value_min": 4,
         "value_max": 5,
         "unit": "kali/hari"
@@ -2242,7 +2196,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "ibuprofen",
+        "medicine": "ibuprofen",
         "value_min": 5,
         "value_max": 10,
         "unit": "mg/kgbb/kali"
@@ -2261,7 +2215,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "ibuprofen",
+        "medicine": "ibuprofen",
         "value_min": 3,
         "value_max": 4,
         "unit": "kali/hari"
@@ -2280,7 +2234,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "diazepam",
+        "medicine": "diazepam",
         "value_min": 0.3,
         "value_max": 0.3,
         "unit": "mg/kgbb"
@@ -2293,16 +2247,16 @@
       }
     },
     {
-      "rule_id": "kejang_demam_frequency_4",
+      "rule_id": "kejang_demam_interval",
       "condition": {
         "disease": "kejang_demam"
       },
       "claim": {
-        "claim_type": "frequency",
-        "parameter": "diazepam",
-        "value_min": 3,
-        "value_max": 3,
-        "unit": "kali/hari"
+        "claim_type": "interval",
+        "medicine": "diazepam",
+        "value_min": 8,
+        "value_max": 8,
+        "unit": "jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -2318,7 +2272,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "diazepam",
+        "medicine": "diazepam",
         "value_min": 0.5,
         "value_max": 0.5,
         "unit": "mg/kgbb"
@@ -2331,16 +2285,16 @@
       }
     },
     {
-      "rule_id": "kejang_demam_frequency_5",
+      "rule_id": "kejang_demam_interval_1",
       "condition": {
         "disease": "kejang_demam"
       },
       "claim": {
-        "claim_type": "frequency",
-        "parameter": "diazepam",
-        "value_min": 3,
-        "value_max": 3,
-        "unit": "kali/hari"
+        "claim_type": "interval",
+        "medicine": "diazepam",
+        "value_min": 8,
+        "value_max": 8,
+        "unit": "jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -2357,7 +2311,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "fenobarbital",
+        "medicine": "fenobarbital",
         "value_min": 3,
         "value_max": 4,
         "unit": "mg/kgbb/hari"
@@ -2376,7 +2330,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "fenobarbital",
+        "medicine": "fenobarbital",
         "value_min": 1,
         "value_max": 2,
         "unit": "kali/hari"
@@ -2395,7 +2349,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "fenobarbital",
+        "medicine": "fenobarbital",
         "value_min": 1,
         "value_max": 1,
         "unit": "tahun"
@@ -2414,7 +2368,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "asam valproat",
+        "medicine": "asam valproat",
         "value_min": 15,
         "value_max": 40,
         "unit": "mg/kgbb/hari"
@@ -2433,7 +2387,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "asam valproat",
+        "medicine": "asam valproat",
         "value_min": 2,
         "value_max": 3,
         "unit": "kali/hari"
@@ -2452,7 +2406,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "asam valproat",
+        "medicine": "asam valproat",
         "value_min": 1,
         "value_max": 1,
         "unit": "tahun"
@@ -2471,7 +2425,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "ampisilin",
+        "medicine": "ampisilin",
         "value_min": 100,
         "value_max": 100,
         "unit": "mg/kgbb/hari"
@@ -2491,7 +2445,7 @@
       },
       "claim": {
         "claim_type": "interval",
-        "parameter": "ampisilin",
+        "medicine": "ampisilin",
         "value_min": 12,
         "value_max": 12,
         "unit": "jam"
@@ -2511,7 +2465,7 @@
       },
       "claim": {
         "claim_type": "interval",
-        "parameter": "ampisilin",
+        "medicine": "ampisilin",
         "value_min": 6,
         "value_max": 8,
         "unit": "jam"
@@ -2530,7 +2484,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "seftriakson",
+        "medicine": "seftriakson",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -2543,16 +2497,16 @@
       }
     },
     {
-      "rule_id": "infeksi_saluran_kemih_frequency_3",
+      "rule_id": "infeksi_saluran_kemih_interval_3",
       "condition": {
         "disease": "infeksi_saluran_kemih"
       },
       "claim": {
-        "claim_type": "frequency",
-        "parameter": "sefotaksim",
-        "value_min": 3,
-        "value_max": 4,
-        "unit": "kali/hari"
+        "claim_type": "interval",
+        "medicine": "sefotaksim",
+        "value_min": 6,
+        "value_max": 8,
+        "unit": "jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -2568,7 +2522,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "gentamisin",
+        "medicine": "gentamisin",
         "value_min": 5,
         "value_max": 5,
         "unit": "mg/kgbb/hari"
@@ -2588,7 +2542,7 @@
       },
       "claim": {
         "claim_type": "interval",
-        "parameter": "gentamisin",
+        "medicine": "gentamisin",
         "value_min": 12,
         "value_max": 12,
         "unit": "jam"
@@ -2608,7 +2562,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "gentamisin",
+        "medicine": "gentamisin",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -2627,7 +2581,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "seftriakson",
+        "medicine": "seftriakson",
         "value_min": 75,
         "value_max": 75,
         "unit": "mg/kgbb/hari"
@@ -2646,7 +2600,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "seftriakson",
+        "medicine": "seftriakson",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -2665,7 +2619,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "amoksisilin",
+        "medicine": "amoksisilin",
         "value_min": 20,
         "value_max": 40,
         "unit": "mg/kgbb/hari"
@@ -2678,16 +2632,16 @@
       }
     },
     {
-      "rule_id": "infeksi_saluran_kemih_frequency_7",
+      "rule_id": "infeksi_saluran_kemih_interval_5",
       "condition": {
         "disease": "infeksi_saluran_kemih"
       },
       "claim": {
-        "claim_type": "frequency",
-        "parameter": "amoksisilin",
-        "value_min": 3,
-        "value_max": 3,
-        "unit": "kali/hari"
+        "claim_type": "interval",
+        "medicine": "amoksisilin",
+        "value_min": 8,
+        "value_max": 8,
+        "unit": "jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -2703,7 +2657,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "sefiksim",
+        "medicine": "sefiksim",
         "value_min": 4,
         "value_max": 4,
         "unit": "mg/kgbb"
@@ -2722,7 +2676,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "sefiksim",
+        "medicine": "sefiksim",
         "value_min": 2,
         "value_max": 2,
         "unit": "kali/hari"
@@ -2741,7 +2695,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "nitrofurantoin",
+        "medicine": "nitrofurantoin",
         "value_min": 6,
         "value_max": 7,
         "unit": "mg/kgbb"
@@ -2760,7 +2714,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "nitrofurantoin",
+        "medicine": "nitrofurantoin",
         "value_min": 4,
         "value_max": 4,
         "unit": "kali/hari"
@@ -2779,7 +2733,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "sulfisoksazole",
+        "medicine": "sulfisoksazole",
         "value_min": 120,
         "value_max": 150,
         "unit": "mg/kgbb/hari"
@@ -2798,7 +2752,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "sulfisoksazole",
+        "medicine": "sulfisoksazole",
         "value_min": 3,
         "value_max": 4,
         "unit": "kali/hari"
@@ -2817,7 +2771,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "trimetoprim",
+        "medicine": "trimetoprim",
         "value_min": 6,
         "value_max": 12,
         "unit": "mg/kgbb"
@@ -2836,7 +2790,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "trimetoprim",
+        "medicine": "trimetoprim",
         "value_min": 4,
         "value_max": 4,
         "unit": "kali/hari"
@@ -2855,7 +2809,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "sulfametoksazole",
+        "medicine": "sulfametoksazole",
         "value_min": 30,
         "value_max": 60,
         "unit": "mg/kgbb"
@@ -2874,7 +2828,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "sulfametoksazole",
+        "medicine": "sulfametoksazole",
         "value_min": 3,
         "value_max": 4,
         "unit": "kali/hari"
@@ -2893,7 +2847,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "kloramfenikol",
+        "medicine": "kloramfenikol",
         "value_min": 50,
         "value_max": 100,
         "unit": "mg/kgbb/hari"
@@ -2912,7 +2866,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "kloramfenikol",
+        "medicine": "kloramfenikol",
         "value_min": 4,
         "value_max": 4,
         "unit": "kali/hari"
@@ -2931,7 +2885,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "kloramfenikol",
+        "medicine": "kloramfenikol",
         "value_min": 10,
         "value_max": 14,
         "unit": "hari"
@@ -2950,7 +2904,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "kloramfenikol",
+        "medicine": "kloramfenikol",
         "value_min": 50,
         "value_max": 100,
         "unit": "mg/kgbb/hari"
@@ -2969,7 +2923,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "kloramfenikol",
+        "medicine": "kloramfenikol",
         "value_min": 4,
         "value_max": 4,
         "unit": "kali/hari"
@@ -2988,7 +2942,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "kloramfenikol",
+        "medicine": "kloramfenikol",
         "value_min": 10,
         "value_max": 14,
         "unit": "hari"
@@ -3007,7 +2961,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "amoksisilin",
+        "medicine": "amoksisilin",
         "value_min": 100,
         "value_max": 100,
         "unit": "mg/kgbb/hari"
@@ -3026,7 +2980,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "amoksisilin",
+        "medicine": "amoksisilin",
         "value_min": 10,
         "value_max": 10,
         "unit": "hari"
@@ -3045,7 +2999,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "amoksisilin",
+        "medicine": "amoksisilin",
         "value_min": 100,
         "value_max": 100,
         "unit": "mg/kgbb/hari"
@@ -3064,7 +3018,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "amoksisilin",
+        "medicine": "amoksisilin",
         "value_min": 10,
         "value_max": 10,
         "unit": "hari"
@@ -3083,7 +3037,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "kotrimoksasol",
+        "medicine": "kotrimoksasol",
         "value_min": 6,
         "value_max": 6,
         "unit": "mg/kgbb/hari"
@@ -3102,7 +3056,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "kotrimoksasol",
+        "medicine": "kotrimoksasol",
         "value_min": 10,
         "value_max": 10,
         "unit": "hari"
@@ -3121,7 +3075,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "seftriakson",
+        "medicine": "seftriakson",
         "value_min": 80,
         "value_max": 80,
         "unit": "mg/kgbb/hari"
@@ -3140,7 +3094,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "seftriakson",
+        "medicine": "seftriakson",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -3159,7 +3113,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "seftriakson",
+        "medicine": "seftriakson",
         "value_min": 5,
         "value_max": 5,
         "unit": "hari"
@@ -3178,7 +3132,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "sefiksim",
+        "medicine": "sefiksim",
         "value_min": 10,
         "value_max": 10,
         "unit": "mg/kgbb/hari"
@@ -3197,7 +3151,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "sefiksim",
+        "medicine": "sefiksim",
         "value_min": 2,
         "value_max": 2,
         "unit": "kali/hari"
@@ -3216,7 +3170,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "sefiksim",
+        "medicine": "sefiksim",
         "value_min": 10,
         "value_max": 10,
         "unit": "hari"
@@ -3236,7 +3190,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "deksametason",
+        "medicine": "deksametason",
         "value_min": 1,
         "value_max": 3,
         "unit": "mg/kgbb/hari"
@@ -3256,7 +3210,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "deksametason",
+        "medicine": "deksametason",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -3276,7 +3230,7 @@
       },
       "claim": {
         "claim_type": "interval",
-        "parameter": "beta_agonis",
+        "medicine": "beta_agonis",
         "value_min": 4,
         "value_max": 6,
         "unit": "jam"
@@ -3296,7 +3250,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "metil-prednisolon",
+        "medicine": "metil-prednisolon",
         "value_min": 0.5,
         "value_max": 1,
         "unit": "mg/kgbb/hari"
@@ -3316,7 +3270,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "metil-prednisolon",
+        "medicine": "metil-prednisolon",
         "value_min": 3,
         "value_max": 5,
         "unit": "hari"
@@ -3337,10 +3291,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "oksigen",
+        "medicine": "oksigen",
         "value_min": 2,
         "value_max": 4,
-        "unit": "l/menit"
+        "unit": "L/menit"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -3358,7 +3312,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "aminofilin",
+        "medicine": "aminofilin",
         "value_min": 6,
         "value_max": 8,
         "unit": "mg/kgbb"
@@ -3378,7 +3332,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "aminofilin",
+        "medicine": "aminofilin",
         "value_min": 20,
         "value_max": 30,
         "unit": "menit"
@@ -3399,7 +3353,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "aminofilin",
+        "medicine": "aminofilin",
         "value_min": 0.5,
         "value_max": 1,
         "unit": "mg/kgbb/jam"
@@ -3418,7 +3372,7 @@
       },
       "claim": {
         "claim_type": "interval",
-        "parameter": "beta_agonis",
+        "medicine": "beta_agonis",
         "value_min": 4,
         "value_max": 6,
         "unit": "jam"
@@ -3437,7 +3391,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "beta_agonis",
+        "medicine": "beta_agonis",
         "value_min": 24,
         "value_max": 48,
         "unit": "jam"
@@ -3457,7 +3411,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "besi elemental",
+        "medicine": "besi elemental",
         "value_min": 3,
         "value_max": 3,
         "unit": "mg/kgbb/hari"
@@ -3477,7 +3431,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "besi elemental",
+        "medicine": "besi elemental",
         "value_min": 4,
         "value_max": 6,
         "unit": "mg/kgbb/hari"
@@ -3496,7 +3450,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "besi elemental",
+        "medicine": "besi elemental",
         "value_min": 2,
         "value_max": 3,
         "unit": "bulan"
@@ -3517,7 +3471,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "besi elemental",
+        "medicine": "besi elemental",
         "value_min": 1,
         "value_max": 1,
         "unit": "mg/kgbb/hari"
@@ -3539,7 +3493,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "besi elemental",
+        "medicine": "besi elemental",
         "value_min": 2,
         "value_max": 2,
         "unit": "mg/kgbb/hari"
@@ -3561,7 +3515,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "besi elemental",
+        "medicine": "besi elemental",
         "value_min": 3,
         "value_max": 3,
         "unit": "mg/kgbb/hari"
@@ -3582,7 +3536,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "besi elemental",
+        "medicine": "besi elemental",
         "value_min": 4,
         "value_max": 4,
         "unit": "mg/kgbb/hari"
@@ -3600,7 +3554,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "vitamin a",
+        "medicine": "vitamin a",
         "value_min": 100000,
         "value_max": 100000,
         "unit": "IU"
@@ -3620,7 +3574,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "vitamin a",
+        "medicine": "vitamin a",
         "value_min": 1500,
         "value_max": 1500,
         "unit": "IU"
@@ -3640,7 +3594,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "vitamin a",
+        "medicine": "vitamin a",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -3660,7 +3614,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "kloramfenikol",
+        "medicine": "kloramfenikol",
         "value_min": 75,
         "value_max": 75,
         "unit": "mg/kgbb/hari"
@@ -3680,7 +3634,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "kloramfenikol",
+        "medicine": "kloramfenikol",
         "value_min": 7,
         "value_max": 10,
         "unit": "hari"
@@ -3700,7 +3654,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "ampisilin",
+        "medicine": "ampisilin",
         "value_min": 100,
         "value_max": 100,
         "unit": "mg/kgbb/hari"
@@ -3720,7 +3674,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "ampisilin",
+        "medicine": "ampisilin",
         "value_min": 7,
         "value_max": 10,
         "unit": "hari"
@@ -3741,7 +3695,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "deksametason",
+        "medicine": "deksametason",
         "value_min": 1,
         "value_max": 1,
         "unit": "mg/kgbb/hari"
@@ -3762,7 +3716,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "deksametason",
+        "medicine": "deksametason",
         "value_min": 0.5,
         "value_max": 0.5,
         "unit": "g/kgbb/hari"
@@ -3782,7 +3736,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "deksametason",
+        "medicine": "deksametason",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -3802,7 +3756,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "kloramfenikol",
+        "medicine": "kloramfenikol",
         "value_min": 75,
         "value_max": 75,
         "unit": "mg/kgbb/hari"
@@ -3822,7 +3776,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "kloramfenikol",
+        "medicine": "kloramfenikol",
         "value_min": 7,
         "value_max": 10,
         "unit": "hari"
@@ -3842,7 +3796,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "ampisilin",
+        "medicine": "ampisilin",
         "value_min": 100,
         "value_max": 100,
         "unit": "mg/kgbb/hari"
@@ -3862,7 +3816,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "ampisilin",
+        "medicine": "ampisilin",
         "value_min": 7,
         "value_max": 10,
         "unit": "hari"
@@ -3882,10 +3836,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "oksigen",
+        "medicine": "oksigen",
         "value_min": 2,
         "value_max": 2,
-        "unit": "l/menit"
+        "unit": "L/menit"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -3901,7 +3855,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "parafin liquid",
+        "medicine": "parafin liquid",
         "value_min": 15,
         "value_max": 30,
         "unit": "mL/tahun"
@@ -3920,7 +3874,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "parafin liquid",
+        "medicine": "parafin liquid",
         "value_min": 0,
         "value_max": 240,
         "unit": "mL/hari"
@@ -3939,7 +3893,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "polietilen glikol",
+        "medicine": "polietilen glikol",
         "value_min": 20,
         "value_max": 20,
         "unit": "mL/kgbb/jam"
@@ -3958,7 +3912,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "polietilen glikol",
+        "medicine": "polietilen glikol",
         "value_min": 1000,
         "value_max": 1000,
         "unit": "mL/jam"
@@ -3977,7 +3931,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "polietilen glikol",
+        "medicine": "polietilen glikol",
         "value_min": 4,
         "value_max": 4,
         "unit": "jam"
@@ -3996,7 +3950,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "enema fosfat hipertonik",
+        "medicine": "enema fosfat hipertonik",
         "value_min": 3,
         "value_max": 3,
         "unit": "mL/kgbb"
@@ -4015,7 +3969,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "enema fosfat hipertonik",
+        "medicine": "enema fosfat hipertonik",
         "value_min": 1,
         "value_max": 2,
         "unit": "kali/hari"
@@ -4034,7 +3988,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "enema fosfat hipertonik",
+        "medicine": "enema fosfat hipertonik",
         "value_min": 0,
         "value_max": 6,
         "unit": "kali/total"
@@ -4053,7 +4007,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "enema garam fisiologis",
+        "medicine": "enema garam fisiologis",
         "value_min": 600,
         "value_max": 1000,
         "unit": "mL"
@@ -4072,7 +4026,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "parafin liquid",
+        "medicine": "parafin liquid",
         "value_min": 120,
         "value_max": 120,
         "unit": "mL"
@@ -4091,7 +4045,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "enema gliserin",
+        "medicine": "enema gliserin",
         "value_min": 2,
         "value_max": 5,
         "unit": "mL"
@@ -4111,7 +4065,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "laktulosa",
+        "medicine": "laktulosa",
         "value_min": 1,
         "value_max": 3,
         "unit": "mL/kgbb/hari"
@@ -4131,7 +4085,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "laktulosa",
+        "medicine": "laktulosa",
         "value_min": 2,
         "value_max": 2,
         "unit": "kali/hari"
@@ -4151,7 +4105,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "sorbitol",
+        "medicine": "sorbitol",
         "value_min": 1,
         "value_max": 3,
         "unit": "mL/kgbb/hari"
@@ -4171,7 +4125,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "sorbitol",
+        "medicine": "sorbitol",
         "value_min": 2,
         "value_max": 2,
         "unit": "kali/hari"
@@ -4191,7 +4145,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "parafin liquid",
+        "medicine": "parafin liquid",
         "value_min": 1,
         "value_max": 3,
         "unit": "mL/kgbb/hari"
@@ -4211,7 +4165,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "magnesium hidroksida",
+        "medicine": "magnesium hidroksida",
         "value_min": 1,
         "value_max": 3,
         "unit": "mL/kgbb/hari"
@@ -4230,7 +4184,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "cisapride",
+        "medicine": "cisapride",
         "value_min": 0.2,
         "value_max": 0.2,
         "unit": "mg/kgbb/kali"
@@ -4249,7 +4203,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "cisapride",
+        "medicine": "cisapride",
         "value_min": 3,
         "value_max": 4,
         "unit": "kali/hari"
@@ -4268,7 +4222,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "cisapride",
+        "medicine": "cisapride",
         "value_min": 4,
         "value_max": 5,
         "unit": "minggu"
@@ -4287,7 +4241,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "klorfeniramin maleat",
+        "medicine": "klorfeniramin maleat",
         "value_min": 0.25,
         "value_max": 0.25,
         "unit": "mg/kgbb/hari"
@@ -4306,7 +4260,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "klorfeniramin maleat",
+        "medicine": "klorfeniramin maleat",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -4325,7 +4279,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "simetidin",
+        "medicine": "simetidin",
         "value_min": 5,
         "value_max": 5,
         "unit": "mg/kgbb/kali"
@@ -4344,7 +4298,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "simetidin",
+        "medicine": "simetidin",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -4363,7 +4317,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "adrenalin 1:1000",
+        "medicine": "adrenalin 1:1000",
         "value_min": 0.01,
         "value_max": 0.01,
         "unit": "mL/kgbb"
@@ -4382,7 +4336,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "adrenalin 1:1000",
+        "medicine": "adrenalin 1:1000",
         "value_min": 0.3,
         "value_max": 0.3,
         "unit": "mL"
@@ -4401,7 +4355,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "setirizin",
+        "medicine": "setirizin",
         "value_min": 0.25,
         "value_max": 0.25,
         "unit": "mg/kgbb/kali"
@@ -4421,7 +4375,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "setirizin",
+        "medicine": "setirizin",
         "value_min": 2,
         "value_max": 2,
         "unit": "kali/hari"
@@ -4441,7 +4395,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "setirizin",
+        "medicine": "setirizin",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -4462,7 +4416,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "fexofenadin",
+        "medicine": "fexofenadin",
         "value_min": 30,
         "value_max": 30,
         "unit": "mg"
@@ -4482,7 +4436,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "fexofenadin",
+        "medicine": "fexofenadin",
         "value_min": 60,
         "value_max": 60,
         "unit": "mg"
@@ -4501,7 +4455,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "fexofenadin",
+        "medicine": "fexofenadin",
         "value_min": 2,
         "value_max": 2,
         "unit": "kali/hari"
@@ -4522,7 +4476,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "loratadin",
+        "medicine": "loratadin",
         "value_min": 5,
         "value_max": 5,
         "unit": "mg"
@@ -4542,7 +4496,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "loratadin",
+        "medicine": "loratadin",
         "value_min": 10,
         "value_max": 10,
         "unit": "mg"
@@ -4561,7 +4515,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "loratadin",
+        "medicine": "loratadin",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -4582,7 +4536,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "desloratadin",
+        "medicine": "desloratadin",
         "value_min": 1,
         "value_max": 1,
         "unit": "mg"
@@ -4603,7 +4557,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "desloratadin",
+        "medicine": "desloratadin",
         "value_min": 1.25,
         "value_max": 1.25,
         "unit": "mg"
@@ -4624,7 +4578,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "desloratadin",
+        "medicine": "desloratadin",
         "value_min": 2.5,
         "value_max": 2.5,
         "unit": "mg"
@@ -4644,7 +4598,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "desloratadin",
+        "medicine": "desloratadin",
         "value_min": 5,
         "value_max": 5,
         "unit": "mg"
@@ -4663,7 +4617,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "desloratadin",
+        "medicine": "desloratadin",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -4682,7 +4636,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "hydroxizine",
+        "medicine": "hydroxizine",
         "value_min": 0.5,
         "value_max": 2,
         "unit": "mg/kgbb/kali"
@@ -4695,16 +4649,16 @@
       }
     },
     {
-      "rule_id": "urtikaria_dan_angioedema_frequency_5",
+      "rule_id": "urtikaria_dan_angioedema_interval_1",
       "condition": {
         "disease": "urtikaria_dan_angioedema"
       },
       "claim": {
-        "claim_type": "frequency",
-        "parameter": "hydroxizine",
-        "value_min": 3,
-        "value_max": 4,
-        "unit": "kali/hari"
+        "claim_type": "interval",
+        "medicine": "hydroxizine",
+        "value_min": 6,
+        "value_max": 8,
+        "unit": "jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -4720,7 +4674,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "diphenhydramin",
+        "medicine": "diphenhydramin",
         "value_min": 1,
         "value_max": 2,
         "unit": "mg/kgbb/kali"
@@ -4733,16 +4687,16 @@
       }
     },
     {
-      "rule_id": "urtikaria_dan_angioedema_frequency_13",
+      "rule_id": "urtikaria_dan_angioedema_interval_2",
       "condition": {
         "disease": "urtikaria_dan_angioedema"
       },
       "claim": {
-        "claim_type": "frequency",
-        "parameter": "diphenhydramin",
-        "value_min": 3,
-        "value_max": 4,
-        "unit": "kali/hari"
+        "claim_type": "interval",
+        "medicine": "diphenhydramin",
+        "value_min": 6,
+        "value_max": 8,
+        "unit": "jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -4759,7 +4713,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "simetidin",
+        "medicine": "simetidin",
         "value_min": 10,
         "value_max": 20,
         "unit": "mg/kgbb/hari"
@@ -4779,7 +4733,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "simetidin",
+        "medicine": "simetidin",
         "value_min": 20,
         "value_max": 40,
         "unit": "mg/kgbb/hari"
@@ -4798,7 +4752,7 @@
       },
       "claim": {
         "claim_type": "interval",
-        "parameter": "simetidin",
+        "medicine": "simetidin",
         "value_min": 6,
         "value_max": 12,
         "unit": "jam"
@@ -4819,7 +4773,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "ranitidine",
+        "medicine": "ranitidine",
         "value_min": 5,
         "value_max": 10,
         "unit": "mg/kgbb/hari"
@@ -4840,7 +4794,7 @@
       },
       "claim": {
         "claim_type": "interval",
-        "parameter": "ranitidine",
+        "medicine": "ranitidine",
         "value_min": 12,
         "value_max": 12,
         "unit": "jam"
@@ -4859,7 +4813,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "vitamin k1",
+        "medicine": "vitamin k1",
         "value_min": 1,
         "value_max": 1,
         "unit": "mg"
@@ -4878,7 +4832,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "vitamin k1",
+        "medicine": "vitamin k1",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali"
@@ -4897,7 +4851,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "vitamin k1",
+        "medicine": "vitamin k1",
         "value_min": 2,
         "value_max": 2,
         "unit": "mg/kali"
@@ -4916,7 +4870,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "vitamin k1",
+        "medicine": "vitamin k1",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali"
@@ -4935,7 +4889,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "pemberian minum",
+        "medicine": "pemberian minum",
         "value_min": 8,
         "value_max": 24,
         "unit": "kali/hari"
@@ -4956,7 +4910,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "pemberian minum",
+        "medicine": "pemberian minum",
         "value_min": 0,
         "value_max": 10,
         "unit": "mL/kgbb/hari"
@@ -4976,7 +4930,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "peningkatan minum",
+        "medicine": "peningkatan minum",
         "value_min": 0.5,
         "value_max": 1,
         "unit": "mL"
@@ -4996,7 +4950,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "peningkatan minum",
+        "medicine": "peningkatan minum",
         "value_min": 1,
         "value_max": 1,
         "unit": "jam"
@@ -5018,7 +4972,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "pemberian minum",
+        "medicine": "pemberian minum",
         "value_min": 0,
         "value_max": 10,
         "unit": "mL/kgbb/hari"
@@ -5039,7 +4993,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "peningkatan minum",
+        "medicine": "peningkatan minum",
         "value_min": 1,
         "value_max": 2,
         "unit": "mL"
@@ -5060,7 +5014,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "peningkatan minum",
+        "medicine": "peningkatan minum",
         "value_min": 2,
         "value_max": 2,
         "unit": "jam"
@@ -5082,7 +5036,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "pemberian minum",
+        "medicine": "pemberian minum",
         "value_min": 0,
         "value_max": 10,
         "unit": "mL/kgbb/hari"
@@ -5103,7 +5057,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "peningkatan minum",
+        "medicine": "peningkatan minum",
         "value_min": 2,
         "value_max": 4,
         "unit": "mL"
@@ -5124,7 +5078,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "peningkatan minum",
+        "medicine": "peningkatan minum",
         "value_min": 3,
         "value_max": 3,
         "unit": "jam"
@@ -5144,7 +5098,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "pemberian minum",
+        "medicine": "pemberian minum",
         "value_min": 0,
         "value_max": 10,
         "unit": "mL/kgbb/hari"
@@ -5163,7 +5117,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "peningkatan minum",
+        "medicine": "peningkatan minum",
         "value_min": 3,
         "value_max": 5,
         "unit": "mL"
@@ -5182,7 +5136,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "peningkatan minum",
+        "medicine": "peningkatan minum",
         "value_min": 3,
         "value_max": 3,
         "unit": "jam"
@@ -5201,7 +5155,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "fosfat",
+        "medicine": "fosfat",
         "value_min": 2,
         "value_max": 3,
         "unit": "mmol/kgbb/hari"
@@ -5220,7 +5174,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "fosfat",
+        "medicine": "fosfat",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -5241,10 +5195,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "ampisilin",
+        "medicine": "ampisilin",
         "value_min": 50,
         "value_max": 50,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5254,18 +5208,18 @@
       }
     },
     {
-      "rule_id": "sepsis_neonatal_frequency_1",
+      "rule_id": "sepsis_neonatal_interval_3",
       "condition": {
         "disease": "sepsis_neonatal",
         "age_month_min": 0.03,
         "age_month_max": 0.23
       },
       "claim": {
-        "claim_type": "frequency",
-        "parameter": "ampisilin",
-        "value_min": 2,
-        "value_max": 2,
-        "unit": "kali/hari"
+        "claim_type": "interval",
+        "medicine": "ampisilin",
+        "value_min": 12,
+        "value_max": 12,
+        "unit": "jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5282,7 +5236,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "ampisilin",
+        "medicine": "ampisilin",
         "value_min": 50,
         "value_max": 50,
         "unit": "mg/kgbb/kali"
@@ -5295,17 +5249,17 @@
       }
     },
     {
-      "rule_id": "sepsis_neonatal_frequency_2",
+      "rule_id": "sepsis_neonatal_interval_4",
       "condition": {
         "disease": "sepsis_neonatal",
         "age_month_min": 0.27
       },
       "claim": {
-        "claim_type": "frequency",
-        "parameter": "ampisilin",
-        "value_min": 3,
-        "value_max": 3,
-        "unit": "kali/hari"
+        "claim_type": "interval",
+        "medicine": "ampisilin",
+        "value_min": 8,
+        "value_max": 8,
+        "unit": "jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5323,7 +5277,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "ampisilin",
+        "medicine": "ampisilin",
         "value_min": 100,
         "value_max": 100,
         "unit": "mg/kgbb/kali"
@@ -5336,18 +5290,18 @@
       }
     },
     {
-      "rule_id": "sepsis_neonatal_frequency_3",
+      "rule_id": "sepsis_neonatal_interval_5",
       "condition": {
         "disease": "sepsis_neonatal",
         "complication": "meningitis",
         "age_month_max": 0.23
       },
       "claim": {
-        "claim_type": "frequency",
-        "parameter": "ampisilin",
-        "value_min": 2,
-        "value_max": 2,
-        "unit": "kali/hari"
+        "claim_type": "interval",
+        "medicine": "ampisilin",
+        "value_min": 12,
+        "value_max": 12,
+        "unit": "jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5365,7 +5319,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "ampisilin",
+        "medicine": "ampisilin",
         "value_min": 100,
         "value_max": 100,
         "unit": "mg/kgbb/kali"
@@ -5378,18 +5332,18 @@
       }
     },
     {
-      "rule_id": "sepsis_neonatal_frequency_4",
+      "rule_id": "sepsis_neonatal_interval_6",
       "condition": {
         "disease": "sepsis_neonatal",
         "complication": "meningitis",
         "age_month_min": 0.27
       },
       "claim": {
-        "claim_type": "frequency",
-        "parameter": "ampisilin",
-        "value_min": 3,
-        "value_max": 3,
-        "unit": "kali/hari"
+        "claim_type": "interval",
+        "medicine": "ampisilin",
+        "value_min": 8,
+        "value_max": 8,
+        "unit": "jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5407,7 +5361,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "sefotaksim",
+        "medicine": "sefotaksim",
         "value_min": 50,
         "value_max": 50,
         "unit": "mg/kgbb/kali"
@@ -5420,18 +5374,18 @@
       }
     },
     {
-      "rule_id": "sepsis_neonatal_frequency_5",
+      "rule_id": "sepsis_neonatal_interval_7",
       "condition": {
         "disease": "sepsis_neonatal",
         "age_month_min": 0.03,
         "age_month_max": 0.23
       },
       "claim": {
-        "claim_type": "frequency",
-        "parameter": "sefotaksim",
-        "value_min": 3,
-        "value_max": 3,
-        "unit": "kali/hari"
+        "claim_type": "interval",
+        "medicine": "sefotaksim",
+        "value_min": 8,
+        "value_max": 8,
+        "unit": "jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5441,17 +5395,17 @@
       }
     },
     {
-      "rule_id": "sepsis_neonatal_frequency_6",
+      "rule_id": "sepsis_neonatal_interval_8",
       "condition": {
         "disease": "sepsis_neonatal",
         "age_month_min": 0.27
       },
       "claim": {
-        "claim_type": "frequency",
-        "parameter": "sefotaksim",
-        "value_min": 4,
-        "value_max": 4,
-        "unit": "kali/hari"
+        "claim_type": "interval",
+        "medicine": "sefotaksim",
+        "value_min": 6,
+        "value_max": 6,
+        "unit": "jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5468,10 +5422,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "sefotaksim",
+        "medicine": "sefotaksim",
         "value_min": 50,
         "value_max": 50,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5490,7 +5444,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "sefotaksim",
+        "medicine": "sefotaksim",
         "value_min": 50,
         "value_max": 50,
         "unit": "mg/kgbb/kali"
@@ -5503,7 +5457,7 @@
       }
     },
     {
-      "rule_id": "sepsis_neonatal_frequency_7",
+      "rule_id": "sepsis_neonatal_interval_1",
       "condition": {
         "disease": "sepsis_neonatal",
         "complication": "meningitis",
@@ -5511,11 +5465,11 @@
         "age_month_max": 0.23
       },
       "claim": {
-        "claim_type": "frequency",
-        "parameter": "sefotaksim",
-        "value_min": 4,
-        "value_max": 4,
-        "unit": "kali/hari"
+        "claim_type": "interval",
+        "medicine": "sefotaksim",
+        "value_min": 6,
+        "value_max": 6,
+        "unit": "jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5525,18 +5479,18 @@
       }
     },
     {
-      "rule_id": "sepsis_neonatal_frequency_77",
+      "rule_id": "sepsis_neonatal_interval_9",
       "condition": {
         "disease": "sepsis_neonatal",
         "complication": "meningitis",
         "age_month_min": 0.27
       },
       "claim": {
-        "claim_type": "frequency",
-        "parameter": "sefotaksim",
-        "value_min": 4,
-        "value_max": 4,
-        "unit": "kali/hari"
+        "claim_type": "interval",
+        "medicine": "sefotaksim",
+        "value_min": 6,
+        "value_max": 6,
+        "unit": "jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5555,10 +5509,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "gentamisin",
+        "medicine": "gentamisin",
         "value_min": 3,
         "value_max": 3,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5577,7 +5531,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "gentamisin",
+        "medicine": "gentamisin",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -5599,7 +5553,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "gentamisin",
+        "medicine": "gentamisin",
         "value_min": 5,
         "value_max": 5,
         "unit": "mg/kgbb/kali"
@@ -5621,7 +5575,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "gentamisin",
+        "medicine": "gentamisin",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -5641,10 +5595,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "gentamisin",
+        "medicine": "gentamisin",
         "value_min": 7.5,
         "value_max": 7.5,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5654,17 +5608,17 @@
       }
     },
     {
-      "rule_id": "sepsis_neonatal_frequency_10",
+      "rule_id": "sepsis_neonatal_interval_2",
       "condition": {
         "disease": "sepsis_neonatal",
         "age_month_min": 0.27
       },
       "claim": {
-        "claim_type": "frequency",
-        "parameter": "gentamisin",
-        "value_min": 2,
-        "value_max": 2,
-        "unit": "kali/hari"
+        "claim_type": "interval",
+        "medicine": "gentamisin",
+        "value_min": 12,
+        "value_max": 12,
+        "unit": "jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5680,7 +5634,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "formula susu terhidrolisat ekstensif",
+        "medicine": "formula susu terhidrolisat ekstensif",
         "value_min": 2,
         "value_max": 4,
         "unit": "minggu"
@@ -5699,7 +5653,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "formula asam amino",
+        "medicine": "formula asam amino",
         "value_min": 2,
         "value_max": 4,
         "unit": "minggu"
@@ -5718,7 +5672,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "klorokuin sulfat",
+        "medicine": "klorokuin sulfat",
         "value_min": 25,
         "value_max": 25,
         "unit": "mg/kgbb"
@@ -5737,7 +5691,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "klorokuin sulfat",
+        "medicine": "klorokuin sulfat",
         "value_min": 5,
         "value_max": 10,
         "unit": "mg/kgbb"
@@ -5756,7 +5710,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "klorokuin sulfat",
+        "medicine": "klorokuin sulfat",
         "value_min": 3,
         "value_max": 3,
         "unit": "hari"
@@ -5775,10 +5729,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "kina dihidroklorid",
+        "medicine": "kina dihidroklorid",
         "value_min": 1,
         "value_max": 1,
-        "unit": "mggaram/kgbb/kali"
+        "unit": "mg garam/kgbb/kali"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5794,7 +5748,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "kina dihidroklorid",
+        "medicine": "kina dihidroklorid",
         "value_min": 4,
         "value_max": 4,
         "unit": "jam"
@@ -5813,7 +5767,7 @@
       },
       "claim": {
         "claim_type": "interval",
-        "parameter": "kina dihidroklorid",
+        "medicine": "kina dihidroklorid",
         "value_min": 8,
         "value_max": 8,
         "unit": "jam"
@@ -5832,7 +5786,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "kina dihidroklorid",
+        "medicine": "kina dihidroklorid",
         "value_min": 7,
         "value_max": 7,
         "unit": "hari"
@@ -5852,7 +5806,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "kuinin sulfat",
+        "medicine": "kuinin sulfat",
         "value_min": 10,
         "value_max": 10,
         "unit": "mg/kgbb"
@@ -5872,7 +5826,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "kuinin sulfat",
+        "medicine": "kuinin sulfat",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -5892,7 +5846,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "kuinin sulfat",
+        "medicine": "kuinin sulfat",
         "value_min": 7,
         "value_max": 7,
         "unit": "hari"
@@ -5912,7 +5866,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "tetrasiklin",
+        "medicine": "tetrasiklin",
         "value_min": 5,
         "value_max": 5,
         "unit": "mg/kgbb"
@@ -5932,7 +5886,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "tetrasiklin",
+        "medicine": "tetrasiklin",
         "value_min": 4,
         "value_max": 4,
         "unit": "kali/hari"
@@ -5952,7 +5906,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "tetrasiklin",
+        "medicine": "tetrasiklin",
         "value_min": 7,
         "value_max": 7,
         "unit": "hari"
@@ -5972,10 +5926,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "primakuin fosfat",
+        "medicine": "primakuin fosfat",
         "value_min": 0.5,
         "value_max": 0.75,
-        "unit": "mgbasa/kgbb"
+        "unit": "mg/kgbb/kali"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5992,7 +5946,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "primakuin fosfat",
+        "medicine": "primakuin fosfat",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali"
@@ -6012,7 +5966,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "primakuin fosfat",
+        "medicine": "primakuin fosfat",
         "value_min": 1,
         "value_max": 1,
         "unit": "hari"
@@ -6031,7 +5985,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "primakuin fosfat",
+        "medicine": "primakuin fosfat",
         "value_min": 0.25,
         "value_max": 0.25,
         "unit": "mg/kgbb"
@@ -6050,7 +6004,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "primakuin fosfat",
+        "medicine": "primakuin fosfat",
         "value_min": 5,
         "value_max": 14,
         "unit": "hari"
@@ -6069,7 +6023,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "primakuin fosfat",
+        "medicine": "primakuin fosfat",
         "value_min": 0.25,
         "value_max": 0.25,
         "unit": "mg/kgbb"
@@ -6088,7 +6042,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "primakuin fosfat",
+        "medicine": "primakuin fosfat",
         "value_min": 5,
         "value_max": 14,
         "unit": "hari"
@@ -6107,7 +6061,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "primakuin fosfat",
+        "medicine": "primakuin fosfat",
         "value_min": 0.25,
         "value_max": 0.25,
         "unit": "mg/kgbb"
@@ -6126,7 +6080,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "primakuin fosfat",
+        "medicine": "primakuin fosfat",
         "value_min": 5,
         "value_max": 14,
         "unit": "hari"
@@ -6146,7 +6100,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "pirimetamin sulfadoksin",
+        "medicine": "pirimetamin sulfadoksin",
         "value_min": 0.25,
         "value_max": 0.25,
         "unit": "tablet"
@@ -6167,7 +6121,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "pirimetamin sulfadoksin",
+        "medicine": "pirimetamin sulfadoksin",
         "value_min": 0.5,
         "value_max": 0.5,
         "unit": "tablet"
@@ -6188,7 +6142,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "pirimetamin sulfadoksin",
+        "medicine": "pirimetamin sulfadoksin",
         "value_min": 1,
         "value_max": 1,
         "unit": "tablet"
@@ -6209,7 +6163,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "pirimetamin sulfadoksin",
+        "medicine": "pirimetamin sulfadoksin",
         "value_min": 2,
         "value_max": 2,
         "unit": "tablet"
@@ -6229,7 +6183,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "pirimetamin sulfadoksin",
+        "medicine": "pirimetamin sulfadoksin",
         "value_min": 3,
         "value_max": 3,
         "unit": "tablet"
@@ -6249,7 +6203,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "prednison",
+        "medicine": "prednison",
         "value_min": 60,
         "value_max": 60,
         "unit": "mg/m2/hari"
@@ -6269,7 +6223,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "prednison",
+        "medicine": "prednison",
         "value_min": 2,
         "value_max": 2,
         "unit": "mg/kgbb/hari"
@@ -6289,7 +6243,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "prednison",
+        "medicine": "prednison",
         "value_min": 80,
         "value_max": 80,
         "unit": "mg/hari"
@@ -6309,7 +6263,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "prednison",
+        "medicine": "prednison",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -6329,7 +6283,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "prednison",
+        "medicine": "prednison",
         "value_min": 4,
         "value_max": 4,
         "unit": "minggu"
@@ -6349,7 +6303,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "prednison",
+        "medicine": "prednison",
         "value_min": 40,
         "value_max": 40,
         "unit": "mg/m2/hari"
@@ -6369,7 +6323,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "prednison",
+        "medicine": "prednison",
         "value_min": 60,
         "value_max": 60,
         "unit": "mg/hari"
@@ -6389,7 +6343,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "prednison",
+        "medicine": "prednison",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali"
@@ -6409,7 +6363,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "prednison",
+        "medicine": "prednison",
         "value_min": 4,
         "value_max": 8,
         "unit": "minggu"
@@ -6428,7 +6382,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "siklofosfamid",
+        "medicine": "siklofosfamid",
         "value_min": 2,
         "value_max": 3,
         "unit": "mg/kgbb/hari"
@@ -6447,7 +6401,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "furosemid",
+        "medicine": "furosemid",
         "value_min": 1,
         "value_max": 2,
         "unit": "mg/kgbb/hari"
@@ -6466,7 +6420,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "spironolakton",
+        "medicine": "spironolakton",
         "value_min": 2,
         "value_max": 3,
         "unit": "mg/kgbb/hari"
@@ -6485,10 +6439,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "albumin 20-25%",
+        "medicine": "albumin 20-25%",
         "value_min": 1,
         "value_max": 1,
-        "unit": "g/kgbb"
+        "unit": "g/kgbb/hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -6504,7 +6458,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "albumin 20-25%",
+        "medicine": "albumin 20-25%",
         "value_min": 2,
         "value_max": 4,
         "unit": "jam"
@@ -6523,7 +6477,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "furosemid",
+        "medicine": "furosemid",
         "value_min": 1,
         "value_max": 2,
         "unit": "mg/kgbb"
@@ -6542,7 +6496,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "amoksisilin",
+        "medicine": "amoksisilin",
         "value_min": 50,
         "value_max": 50,
         "unit": "mg/kgbb/hari"
@@ -6561,7 +6515,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "amoksisilin",
+        "medicine": "amoksisilin",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -6580,7 +6534,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "amoksisilin",
+        "medicine": "amoksisilin",
         "value_min": 10,
         "value_max": 10,
         "unit": "hari"
@@ -6599,7 +6553,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "eritromisin",
+        "medicine": "eritromisin",
         "value_min": 30,
         "value_max": 30,
         "unit": "mg/kgbb/hari"
@@ -6618,7 +6572,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "eritromisin",
+        "medicine": "eritromisin",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -6637,7 +6591,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "fenobarbital",
+        "medicine": "fenobarbital",
         "value_min": 2,
         "value_max": 3,
         "unit": "mg/kgbb/kali"
@@ -6656,7 +6610,7 @@
       },
       "claim": {
         "claim_type": "interval",
-        "parameter": "fenobarbital",
+        "medicine": "fenobarbital",
         "value_min": 8,
         "value_max": 8,
         "unit": "jam"
@@ -6675,7 +6629,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "fenobarbital",
+        "medicine": "fenobarbital",
         "value_min": 1,
         "value_max": 2,
         "unit": "hari"
@@ -6694,7 +6648,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "dopamin",
+        "medicine": "dopamin",
         "value_min": 5,
         "value_max": 10,
         "unit": "mcg/kgbb/menit"
@@ -6713,7 +6667,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "dobutamin",
+        "medicine": "dobutamin",
         "value_min": 5,
         "value_max": 8,
         "unit": "mcg/kgbb/menit"
@@ -6732,7 +6686,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "furosemid",
+        "medicine": "furosemid",
         "value_min": 1,
         "value_max": 2,
         "unit": "mg/kgbb/hari"
@@ -6751,7 +6705,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "furosemid",
+        "medicine": "furosemid",
         "value_min": 1,
         "value_max": 2,
         "unit": "kali/hari"
@@ -6770,7 +6724,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "spironolakton",
+        "medicine": "spironolakton",
         "value_min": 1,
         "value_max": 2,
         "unit": "mg/kgbb/hari"
@@ -6789,7 +6743,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "kaptopril",
+        "medicine": "kaptopril",
         "value_min": 0.3,
         "value_max": 3,
         "unit": "mg/kgbb/hari"
@@ -6808,7 +6762,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "kaptopril",
+        "medicine": "kaptopril",
         "value_min": 2,
         "value_max": 3,
         "unit": "kali/hari"
@@ -6828,10 +6782,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "digoksin",
+        "medicine": "digoksin",
         "value_min": 20,
         "value_max": 20,
-        "unit": "mcg/kg"
+        "unit": "mcg/kgbb/hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -6848,7 +6802,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "digoksin",
+        "medicine": "digoksin",
         "value_min": 5,
         "value_max": 5,
         "unit": "mcg/kgbb/hari"
@@ -6870,10 +6824,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "digoksin",
+        "medicine": "digoksin",
         "value_min": 30,
         "value_max": 30,
-        "unit": "mcg/kg"
+        "unit": "mcg/kgbb/hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -6892,7 +6846,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "digoksin",
+        "medicine": "digoksin",
         "value_min": 8,
         "value_max": 8,
         "unit": "mcg/kgbb/hari"
@@ -6913,10 +6867,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "digoksin",
+        "medicine": "digoksin",
         "value_min": 40,
         "value_max": 50,
-        "unit": "mcg/kg"
+        "unit": "mcg/kgbb/hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -6934,7 +6888,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "digoksin",
+        "medicine": "digoksin",
         "value_min": 10,
         "value_max": 12,
         "unit": "mcg/kgbb/hari"
@@ -6955,10 +6909,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "digoksin",
+        "medicine": "digoksin",
         "value_min": 30,
         "value_max": 40,
-        "unit": "mcg/kg"
+        "unit": "mcg/kgbb/hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -6976,7 +6930,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "digoksin",
+        "medicine": "digoksin",
         "value_min": 8,
         "value_max": 10,
         "unit": "mcg/kgbb/hari"
@@ -6995,10 +6949,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "insulin",
+        "medicine": "insulin",
         "value_min": 0.7,
         "value_max": 1.0,
-        "unit": "IU/kgbb/hari"
+        "unit": "U/kg/hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -7015,7 +6969,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "insulin",
+        "medicine": "insulin",
         "value_min": 3,
         "value_max": 4,
         "unit": "kali/hari"
@@ -7034,7 +6988,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "latihan aerobik",
+        "medicine": "latihan aerobik",
         "value_min": 20,
         "value_max": 20,
         "unit": "menit"
@@ -7054,10 +7008,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "glukosa",
+        "medicine": "glukosa",
         "value_min": 1.75,
         "value_max": 1.75,
-        "unit": "g/kgbb"
+        "unit": "g/kgbb/hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -7073,7 +7027,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "glukosa",
+        "medicine": "glukosa",
         "value_min": 0,
         "value_max": 75,
         "unit": "g"
@@ -7092,10 +7046,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "asam folat",
+        "medicine": "asam folat",
         "value_min": 1,
         "value_max": 1,
-        "unit": "mg"
+        "unit": "mg/hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -7111,7 +7065,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "asam folat",
+        "medicine": "asam folat",
         "value_min": 2,
         "value_max": 2,
         "unit": "kali/hari"
@@ -7130,7 +7084,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "vitamin e",
+        "medicine": "vitamin e",
         "value_min": 200,
         "value_max": 200,
         "unit": "IU"
@@ -7149,7 +7103,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "vitamin e",
+        "medicine": "vitamin e",
         "value_min": 2,
         "value_max": 2,
         "unit": "kali/hari"
@@ -7168,7 +7122,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "vitamin c",
+        "medicine": "vitamin c",
         "value_min": 2,
         "value_max": 3,
         "unit": "mg/kgbb/hari"
@@ -7188,7 +7142,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "vitamin c",
+        "medicine": "vitamin c",
         "value_min": 0,
         "value_max": 50,
         "unit": "mg"
@@ -7208,7 +7162,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "vitamin c",
+        "medicine": "vitamin c",
         "value_min": 0,
         "value_max": 100,
         "unit": "mg"
@@ -7227,7 +7181,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "vitamin c",
+        "medicine": "vitamin c",
         "value_min": 0,
         "value_max": 200,
         "unit": "mg/hari"
@@ -7247,7 +7201,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "desferioksamin",
+        "medicine": "desferioksamin",
         "value_min": 30,
         "value_max": 50,
         "unit": "mg/kgbb/hari"
@@ -7267,7 +7221,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "desferioksamin",
+        "medicine": "desferioksamin",
         "value_min": 5,
         "value_max": 7,
         "unit": "kali/minggu"
@@ -7287,7 +7241,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "desferioksamin",
+        "medicine": "desferioksamin",
         "value_min": 8,
         "value_max": 12,
         "unit": "jam"
@@ -7307,7 +7261,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "desferioksamin",
+        "medicine": "desferioksamin",
         "value_min": 15,
         "value_max": 25,
         "unit": "mg/kgbb/hari"
@@ -7327,7 +7281,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "desferioksamin",
+        "medicine": "desferioksamin",
         "value_min": 60,
         "value_max": 100,
         "unit": "mg/kgbb/hari"
@@ -7347,7 +7301,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "desferioksamin",
+        "medicine": "desferioksamin",
         "value_min": 24,
         "value_max": 24,
         "unit": "jam"
@@ -7367,7 +7321,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "desferioksamin",
+        "medicine": "desferioksamin",
         "value_min": 20,
         "value_max": 30,
         "unit": "mg/kgbb/hari"
@@ -7386,7 +7340,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "deferiprone",
+        "medicine": "deferiprone",
         "value_min": 50,
         "value_max": 75,
         "unit": "mg/kgbb/hari"
@@ -7405,7 +7359,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "deferiprone",
+        "medicine": "deferiprone",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -7424,7 +7378,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "deferasirox",
+        "medicine": "deferasirox",
         "value_min": 20,
         "value_max": 30,
         "unit": "mg/kgbb/hari"
@@ -7443,7 +7397,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "deferasirox",
+        "medicine": "deferasirox",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -7463,7 +7417,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "indometasin",
+        "medicine": "indometasin",
         "value_min": 0.2,
         "value_max": 0.2,
         "unit": "mg/kgbb"
@@ -7483,7 +7437,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "indometasin",
+        "medicine": "indometasin",
         "value_min": 0.1,
         "value_max": 0.1,
         "unit": "mg/kgbb"
@@ -7503,7 +7457,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "indometasin",
+        "medicine": "indometasin",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -7524,7 +7478,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "indometasin",
+        "medicine": "indometasin",
         "value_min": 0.2,
         "value_max": 0.2,
         "unit": "mg/kgbb"
@@ -7544,7 +7498,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "indometasin",
+        "medicine": "indometasin",
         "value_min": 0.25,
         "value_max": 0.25,
         "unit": "mg/kgbb"
@@ -7564,7 +7518,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "indometasin",
+        "medicine": "indometasin",
         "value_min": 0.1,
         "value_max": 0.1,
         "unit": "mg/kgbb"
@@ -7584,7 +7538,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "indometasin",
+        "medicine": "indometasin",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -7604,7 +7558,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "indometasin",
+        "medicine": "indometasin",
         "value_min": 5,
         "value_max": 7,
         "unit": "hari"
@@ -7623,7 +7577,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "ibuprofen",
+        "medicine": "ibuprofen",
         "value_min": 10,
         "value_max": 10,
         "unit": "mg/kgbb"
@@ -7642,7 +7596,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "ibuprofen",
+        "medicine": "ibuprofen",
         "value_min": 5,
         "value_max": 5,
         "unit": "mg/kgbb/hari"
@@ -7661,7 +7615,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "ibuprofen",
+        "medicine": "ibuprofen",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -7680,7 +7634,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "amoksisilin",
+        "medicine": "amoksisilin",
         "value_min": 50,
         "value_max": 50,
         "unit": "mg/kgbb"
@@ -7699,7 +7653,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "ampisilin",
+        "medicine": "ampisilin",
         "value_min": 50,
         "value_max": 50,
         "unit": "mg/kgbb"
@@ -7718,7 +7672,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "ampisilin",
+        "medicine": "ampisilin",
         "value_min": 50,
         "value_max": 50,
         "unit": "mg/kgbb"
@@ -7737,7 +7691,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "sefazolin",
+        "medicine": "sefazolin",
         "value_min": 50,
         "value_max": 50,
         "unit": "mg/kgbb"
@@ -7756,7 +7710,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "seftriakson",
+        "medicine": "seftriakson",
         "value_min": 50,
         "value_max": 50,
         "unit": "mg/kgbb"
@@ -7775,7 +7729,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "sefaleksin",
+        "medicine": "sefaleksin",
         "value_min": 50,
         "value_max": 50,
         "unit": "mg/kgbb"
@@ -7794,7 +7748,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "klindamisin",
+        "medicine": "klindamisin",
         "value_min": 20,
         "value_max": 20,
         "unit": "mg/kgbb"
@@ -7813,7 +7767,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "azithromisin",
+        "medicine": "azithromisin",
         "value_min": 15,
         "value_max": 15,
         "unit": "mg/kgbb"
@@ -7832,7 +7786,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "klaritromisin",
+        "medicine": "klaritromisin",
         "value_min": 15,
         "value_max": 15,
         "unit": "mg/kgbb"
@@ -7853,7 +7807,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "l-tiroksin",
+        "medicine": "l-tiroksin",
         "value_min": 10,
         "value_max": 15,
         "unit": "mcg/kgbb/hari"
@@ -7874,7 +7828,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "l-tiroksin",
+        "medicine": "l-tiroksin",
         "value_min": 8,
         "value_max": 10,
         "unit": "mcg/kgbb/hari"
@@ -7895,7 +7849,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "l-tiroksin",
+        "medicine": "l-tiroksin",
         "value_min": 6,
         "value_max": 8,
         "unit": "mcg/kgbb/hari"
@@ -7916,7 +7870,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "l-tiroksin",
+        "medicine": "l-tiroksin",
         "value_min": 4,
         "value_max": 6,
         "unit": "mcg/kgbb/hari"
@@ -7937,7 +7891,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "l-tiroksin",
+        "medicine": "l-tiroksin",
         "value_min": 3,
         "value_max": 5,
         "unit": "mcg/kgbb/hari"
@@ -7957,7 +7911,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "l-tiroksin",
+        "medicine": "l-tiroksin",
         "value_min": 2,
         "value_max": 4,
         "unit": "mcg/kgbb/hari"
@@ -7977,7 +7931,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "isoniazid",
+        "medicine": "isoniazid",
         "value_min": 10,
         "value_max": 20,
         "unit": "mg/kgbb/hari"
@@ -7997,7 +7951,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "isoniazid",
+        "medicine": "isoniazid",
         "value_min": 0,
         "value_max": 300,
         "unit": "mg/hari"
@@ -8017,7 +7971,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "rifampisin",
+        "medicine": "rifampisin",
         "value_min": 10,
         "value_max": 20,
         "unit": "mg/kgbb/hari"
@@ -8037,7 +7991,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "rifampisin",
+        "medicine": "rifampisin",
         "value_min": 0,
         "value_max": 600,
         "unit": "mg/hari"
@@ -8057,7 +8011,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "pirazinamid",
+        "medicine": "pirazinamid",
         "value_min": 15,
         "value_max": 30,
         "unit": "mg/kgbb/hari"
@@ -8077,7 +8031,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "pirazinamid",
+        "medicine": "pirazinamid",
         "value_min": 1,
         "value_max": 2000,
         "unit": "mg/hari"
@@ -8097,7 +8051,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "etambutol",
+        "medicine": "etambutol",
         "value_min": 15,
         "value_max": 20,
         "unit": "mg/kgbb/hari"
@@ -8117,7 +8071,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "etambutol",
+        "medicine": "etambutol",
         "value_min": 1000,
         "value_max": 1000,
         "unit": "mg/hari"
@@ -8137,7 +8091,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "streptomisin",
+        "medicine": "streptomisin",
         "value_min": 20,
         "value_max": 30,
         "unit": "mg/kgbb/hari"
@@ -8157,10 +8111,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "streptomisin",
+        "medicine": "streptomisin",
         "value_min": 1,
         "value_max": 1,
-        "unit": "gram/hari"
+        "unit": "g/hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -8177,7 +8131,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "isoniazid",
+        "medicine": "isoniazid",
         "value_min": 10,
         "value_max": 10,
         "unit": "bulan"
@@ -8197,7 +8151,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "rifampisin",
+        "medicine": "rifampisin",
         "value_min": 10,
         "value_max": 10,
         "unit": "bulan"
@@ -8217,7 +8171,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "prednison",
+        "medicine": "prednison",
         "value_min": 1,
         "value_max": 2,
         "unit": "mg/kgbb/hari"
@@ -8237,7 +8191,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "prednison",
+        "medicine": "prednison",
         "value_min": 6,
         "value_max": 8,
         "unit": "minggu"
@@ -8257,7 +8211,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "deksametason",
+        "medicine": "deksametason",
         "value_min": 6,
         "value_max": 6,
         "unit": "mg/m2"
@@ -8270,17 +8224,17 @@
       }
     },
     {
-      "rule_id": "meningitis_tuberkulosis_frequency_1",
+      "rule_id": "meningitis_tuberkulosis_interval_1",
       "condition": {
         "disease": "tuberkulosis",
         "complication": "meningitis"
       },
       "claim": {
-        "claim_type": "frequency",
-        "parameter": "deksametason",
+        "claim_type": "interval",
+        "medicine": "deksametason",
         "value_min": 4,
         "value_max": 6,
-        "unit": "kali/hari"
+        "unit": "jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -8297,7 +8251,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "deksametason",
+        "medicine": "deksametason",
         "value_min": 0.3,
         "value_max": 0.5,
         "unit": "mg/kgbb/hari"
@@ -8317,7 +8271,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "asetazolamid",
+        "medicine": "asetazolamid",
         "value_min": 30,
         "value_max": 50,
         "unit": "mg/kgbb/hari"
@@ -8337,7 +8291,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "asetazolamid",
+        "medicine": "asetazolamid",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -8358,7 +8312,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "ampisilin",
+        "medicine": "ampisilin",
         "value_min": 200,
         "value_max": 400,
         "unit": "mg/kgbb/hari"
@@ -8379,7 +8333,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "ampisilin",
+        "medicine": "ampisilin",
         "value_min": 4,
         "value_max": 4,
         "unit": "kali/hari"
@@ -8400,7 +8354,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "sefotaksim",
+        "medicine": "sefotaksim",
         "value_min": 200,
         "value_max": 300,
         "unit": "mg/kgbb/hari"
@@ -8421,7 +8375,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "sefotaksim",
+        "medicine": "sefotaksim",
         "value_min": 4,
         "value_max": 4,
         "unit": "kali/hari"
@@ -8442,7 +8396,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "seftriakson",
+        "medicine": "seftriakson",
         "value_min": 100,
         "value_max": 100,
         "unit": "mg/kgbb/hari"
@@ -8463,7 +8417,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "seftriakson",
+        "medicine": "seftriakson",
         "value_min": 2,
         "value_max": 2,
         "unit": "kali/hari"
@@ -8483,7 +8437,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "sefotaksim",
+        "medicine": "sefotaksim",
         "value_min": 200,
         "value_max": 300,
         "unit": "mg/kgbb/hari"
@@ -8503,7 +8457,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "sefotaksim",
+        "medicine": "sefotaksim",
         "value_min": 3,
         "value_max": 4,
         "unit": "kali/hari"
@@ -8523,7 +8477,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "seftriakson",
+        "medicine": "seftriakson",
         "value_min": 100,
         "value_max": 100,
         "unit": "mg/kgbb/hari"
@@ -8543,7 +8497,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "seftriakson",
+        "medicine": "seftriakson",
         "value_min": 2,
         "value_max": 2,
         "unit": "kali/hari"
@@ -8563,7 +8517,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "ampisilin",
+        "medicine": "ampisilin",
         "value_min": 200,
         "value_max": 400,
         "unit": "mg/kgbb/hari"
@@ -8583,7 +8537,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "ampisilin",
+        "medicine": "ampisilin",
         "value_min": 4,
         "value_max": 4,
         "unit": "kali/hari"
@@ -8603,7 +8557,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "kloramfenikol",
+        "medicine": "kloramfenikol",
         "value_min": 100,
         "value_max": 100,
         "unit": "mg/kgbb/hari"
@@ -8623,7 +8577,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "kloramfenikol",
+        "medicine": "kloramfenikol",
         "value_min": 4,
         "value_max": 4,
         "unit": "kali/hari"
@@ -8642,7 +8596,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "deksametason",
+        "medicine": "deksametason",
         "value_min": 0.6,
         "value_max": 0.6,
         "unit": "mg/kgbb/hari"
@@ -8661,7 +8615,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "deksametason",
+        "medicine": "deksametason",
         "value_min": 4,
         "value_max": 4,
         "unit": "kali/hari"
@@ -8680,7 +8634,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "deksametason",
+        "medicine": "deksametason",
         "value_min": 4,
         "value_max": 4,
         "unit": "hari"
@@ -8699,10 +8653,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "manitol",
+        "medicine": "manitol",
         "value_min": 0.5,
         "value_max": 1,
-        "unit": "gram/kgbb/kali"
+        "unit": "g/kgbb/kali"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -8718,7 +8672,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "furosemid",
+        "medicine": "furosemid",
         "value_min": 1,
         "value_max": 1,
         "unit": "mg/kgbb/kali"
@@ -8737,7 +8691,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "metil-prednisolon",
+        "medicine": "metil-prednisolon",
         "value_min": 15,
         "value_max": 15,
         "unit": "mg/kgbb/hari"
@@ -8750,16 +8704,16 @@
       }
     },
     {
-      "rule_id": "ensefalitis_frequency_1",
+      "rule_id": "ensefalitis_interval_1",
       "condition": {
         "disease": "ensefalitis"
       },
       "claim": {
-        "claim_type": "frequency",
-        "parameter": "metil-prednisolon",
-        "value_min": 4,
-        "value_max": 4,
-        "unit": "kali/hari"
+        "claim_type": "interval",
+        "medicine": "metil-prednisolon",
+        "value_min": 6,
+        "value_max": 6,
+        "unit": "jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -8775,7 +8729,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "metil-prednisolon",
+        "medicine": "metil-prednisolon",
         "value_min": 3,
         "value_max": 5,
         "unit": "hari"
@@ -8794,7 +8748,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "prednison",
+        "medicine": "prednison",
         "value_min": 1,
         "value_max": 2,
         "unit": "mg/kgbb/hari"
@@ -8813,7 +8767,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "prednison",
+        "medicine": "prednison",
         "value_min": 7,
         "value_max": 10,
         "unit": "hari"
@@ -8832,10 +8786,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "desmopresin",
+        "medicine": "desmopresin",
         "value_min": 0.3,
         "value_max": 0.3,
-        "unit": "mcg/kg"
+        "unit": "mcg/kgbb/hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -8851,7 +8805,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "desmopresin",
+        "medicine": "desmopresin",
         "value_min": 20,
         "value_max": 30,
         "unit": "menit"
@@ -8870,7 +8824,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "desmopresin",
+        "medicine": "desmopresin",
         "value_min": 300,
         "value_max": 300,
         "unit": "mcg"
@@ -8889,7 +8843,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "asam traneksamat",
+        "medicine": "asam traneksamat",
         "value_min": 25,
         "value_max": 25,
         "unit": "mg/kgbb/kali"
@@ -8908,7 +8862,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "asam traneksamat",
+        "medicine": "asam traneksamat",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -8927,7 +8881,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "asam traneksamat",
+        "medicine": "asam traneksamat",
         "value_min": 5,
         "value_max": 10,
         "unit": "hari"
@@ -8946,7 +8900,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "asam traneksamat",
+        "medicine": "asam traneksamat",
         "value_min": 25,
         "value_max": 25,
         "unit": "mg/kgbb/kali"
@@ -8965,7 +8919,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "asam traneksamat",
+        "medicine": "asam traneksamat",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -8984,7 +8938,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "asam traneksamat",
+        "medicine": "asam traneksamat",
         "value_min": 5,
         "value_max": 10,
         "unit": "hari"
@@ -9003,7 +8957,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "morfin sulfat",
+        "medicine": "morfin sulfat",
         "value_min": 0.1,
         "value_max": 0.2,
         "unit": "mg/kgbb/kali"
@@ -9022,7 +8976,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "morfin sulfat",
+        "medicine": "morfin sulfat",
         "value_min": 0.1,
         "value_max": 0.2,
         "unit": "mg/kgbb/kali"
@@ -9041,7 +8995,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "morfin sulfat",
+        "medicine": "morfin sulfat",
         "value_min": 0.1,
         "value_max": 0.2,
         "unit": "mg/kgbb/kali"
@@ -9060,10 +9014,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "bikarbonas natrikus",
+        "medicine": "bikarbonas natrikus",
         "value_min": 1,
         "value_max": 1,
-        "unit": "mEq/kgbb/kali"
+        "unit": "mEq/kgbb/hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9079,7 +9033,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "propranolol",
+        "medicine": "propranolol",
         "value_min": 0.01,
         "value_max": 0.25,
         "unit": "mg/kgbb/kali"
@@ -9098,7 +9052,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "ketamin",
+        "medicine": "ketamin",
         "value_min": 1,
         "value_max": 3,
         "unit": "mg/kgbb/kali"
@@ -9117,7 +9071,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "fenilefrin",
+        "medicine": "fenilefrin",
         "value_min": 0.02,
         "value_max": 0.02,
         "unit": "mg/kgbb/kali"
@@ -9136,7 +9090,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "propranolol",
+        "medicine": "propranolol",
         "value_min": 0.5,
         "value_max": 1.5,
         "unit": "mg/kgbb/kali"
@@ -9155,7 +9109,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "propranolol",
+        "medicine": "propranolol",
         "value_min": 3,
         "value_max": 4,
         "unit": "kali/hari"
@@ -9174,7 +9128,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "propranolol",
+        "medicine": "propranolol",
         "value_min": 2,
         "value_max": 6,
         "unit": "mg/kgbb/hari"
@@ -9193,7 +9147,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "ampisilin",
+        "medicine": "ampisilin",
         "value_min": 50,
         "value_max": 50,
         "unit": "mg/kgbb/kali"
@@ -9212,7 +9166,7 @@
       },
       "claim": {
         "claim_type": "interval",
-        "parameter": "ampisilin",
+        "medicine": "ampisilin",
         "value_min": 12,
         "value_max": 12,
         "unit": "jam"
@@ -9232,7 +9186,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "gentamisin",
+        "medicine": "gentamisin",
         "value_min": 3,
         "value_max": 3,
         "unit": "mg/kgbb"
@@ -9252,7 +9206,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "gentamisin",
+        "medicine": "gentamisin",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -9265,16 +9219,16 @@
       }
     },
     {
-      "rule_id": "membran_hialin_frequency_3",
+      "rule_id": "membran_hialin_interval_2",
       "condition": {
         "disease": "membran_hialin"
       },
       "claim": {
-        "claim_type": "frequency",
-        "parameter": "surfaktan",
-        "value_min": 2,
-        "value_max": 4,
-        "unit": "kali/hari"
+        "claim_type": "interval",
+        "medicine": "surfaktan",
+        "value_min": 6,
+        "value_max": 12,
+        "unit": "jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9290,7 +9244,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "survanta",
+        "medicine": "survanta",
         "value_min": 4,
         "value_max": 4,
         "unit": "mL/kgbb"
@@ -9309,7 +9263,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "survanta",
+        "medicine": "survanta",
         "value_min": 4,
         "value_max": 4,
         "unit": "kali/hari"
@@ -9328,7 +9282,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "survanta",
+        "medicine": "survanta",
         "value_min": 1,
         "value_max": 1,
         "unit": "mL/kgbb/kali"
@@ -9347,7 +9301,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "survanta",
+        "medicine": "survanta",
         "value_min": 48,
         "value_max": 48,
         "unit": "jam"
@@ -9366,7 +9320,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "nacl 0,9%",
+        "medicine": "nacl 0,9%",
         "value_min": 20,
         "value_max": 20,
         "unit": "mL/kgbb"
@@ -9385,7 +9339,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "nacl 0,9%",
+        "medicine": "nacl 0,9%",
         "value_min": 1,
         "value_max": 1,
         "unit": "jam"
@@ -9404,7 +9358,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "cairan resusitasi",
+        "medicine": "cairan resusitasi",
         "value_min": 36,
         "value_max": 48,
         "unit": "jam"
@@ -9424,7 +9378,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "cairan resusitasi",
+        "medicine": "cairan resusitasi",
         "value_min": 72,
         "value_max": 72,
         "unit": "jam"
@@ -9444,10 +9398,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "insulin",
+        "medicine": "insulin",
         "value_min": 0.05,
         "value_max": 0.1,
-        "unit": "IU/kgbb/jam"
+        "unit": "U/kgbb/jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9464,7 +9418,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "insulin",
+        "medicine": "insulin",
         "value_min": 4,
         "value_max": 4,
         "unit": "kali/hari"
@@ -9483,10 +9437,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "kalium",
+        "medicine": "kalium",
         "value_min": 5,
         "value_max": 5,
-        "unit": "meq/kgbb/hari"
+        "unit": "mEq/kgbb/hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9502,10 +9456,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "kalium",
+        "medicine": "kalium",
         "value_min": 0,
         "value_max": 0.5,
-        "unit": "meq/kgbb/jam"
+        "unit": "mEq/kgbb/hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9521,10 +9475,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "manitol",
+        "medicine": "manitol",
         "value_min": 1,
         "value_max": 2,
-        "unit": "gram/kg"
+        "unit": "g/kgbb"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9540,7 +9494,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "asam ursodeoksikolat",
+        "medicine": "asam ursodeoksikolat",
         "value_min": 10,
         "value_max": 30,
         "unit": "mg/kgbb"
@@ -9559,7 +9513,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "asam ursodeoksikolat",
+        "medicine": "asam ursodeoksikolat",
         "value_min": 2,
         "value_max": 3,
         "unit": "kali/hari"
@@ -9578,7 +9532,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "vitamin a",
+        "medicine": "vitamin a",
         "value_min": 5000,
         "value_max": 25000,
         "unit": "IU/hari"
@@ -9597,7 +9551,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "vitamin a",
+        "medicine": "vitamin a",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -9616,7 +9570,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "vitamin d calcitriol",
+        "medicine": "vitamin d calcitriol",
         "value_min": 0.05,
         "value_max": 0.2,
         "unit": "mcg/kgbb/hari"
@@ -9635,7 +9589,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "vitamin d calcitriol",
+        "medicine": "vitamin d calcitriol",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -9654,7 +9608,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "vitamin e",
+        "medicine": "vitamin e",
         "value_min": 25,
         "value_max": 200,
         "unit": "IU/kgbb/hari"
@@ -9673,7 +9627,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "vitamin e",
+        "medicine": "vitamin e",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -9692,7 +9646,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "vitamin k1",
+        "medicine": "vitamin k1",
         "value_min": 2.5,
         "value_max": 5,
         "unit": "mg/hari"
@@ -9711,7 +9665,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "vitamin k1",
+        "medicine": "vitamin k1",
         "value_min": 2,
         "value_max": 7,
         "unit": "kali/minggu"
@@ -9730,7 +9684,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "vitamin k1",
+        "medicine": "vitamin k1",
         "value_min": 2.5,
         "value_max": 5,
         "unit": "mg/hari"
@@ -9749,7 +9703,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "vitamin k1",
+        "medicine": "vitamin k1",
         "value_min": 2,
         "value_max": 7,
         "unit": "kali/minggu"
@@ -9768,7 +9722,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "kalsium",
+        "medicine": "kalsium",
         "value_min": 25,
         "value_max": 100,
         "unit": "mg/kgbb/hari"
@@ -9787,7 +9741,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "fosfor (p)",
+        "medicine": "fosfor (p)",
         "value_min": 25,
         "value_max": 50,
         "unit": "mg/kgbb/hari"
@@ -9806,10 +9760,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "mangan",
+        "medicine": "mangan",
         "value_min": 1,
         "value_max": 2,
-        "unit": "meq/kgbb/hari"
+        "unit": "mEq/kgbb/hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9825,7 +9779,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "zink",
+        "medicine": "zink",
         "value_min": 1,
         "value_max": 1,
         "unit": "mg/kgbb/hari"
@@ -9844,7 +9798,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "selenium",
+        "medicine": "selenium",
         "value_min": 1,
         "value_max": 2,
         "unit": "mcg/kgbb/hari"
@@ -9863,7 +9817,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "zat besi",
+        "medicine": "zat besi",
         "value_min": 5,
         "value_max": 6,
         "unit": "mg/kgbb/hari"
@@ -9882,7 +9836,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "difenhidramin",
+        "medicine": "difenhidramin",
         "value_min": 5,
         "value_max": 10,
         "unit": "mg/kgbb/hari"
@@ -9901,7 +9855,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "hidroksisin",
+        "medicine": "hidroksisin",
         "value_min": 2,
         "value_max": 5,
         "unit": "mg/kgbb/hari"
@@ -9920,7 +9874,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "rifampisin",
+        "medicine": "rifampisin",
         "value_min": 10,
         "value_max": 10,
         "unit": "mg/kgbb/hari"
@@ -9939,7 +9893,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "rifampisin",
+        "medicine": "rifampisin",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -9958,7 +9912,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "kolestiramin",
+        "medicine": "kolestiramin",
         "value_min": 0.25,
         "value_max": 0.5,
         "unit": "g/kgbb/hari"
@@ -9977,7 +9931,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "kolestiramin",
+        "medicine": "kolestiramin",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -9996,7 +9950,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "diazepam",
+        "medicine": "diazepam",
         "value_min": 10,
         "value_max": 10,
         "unit": "mg/kgbb/hari"
@@ -10009,16 +9963,16 @@
       }
     },
     {
-      "rule_id": "tetanus_neonatorum_frequency_1",
+      "rule_id": "tetanus_neonatorum_interval_3",
       "condition": {
         "disease": "tetanus_neonatorum"
       },
       "claim": {
-        "claim_type": "frequency",
-        "parameter": "diazepam",
-        "value_min": 4,
-        "value_max": 8,
-        "unit": "kali/hari"
+        "claim_type": "interval",
+        "medicine": "diazepam",
+        "value_min": 3,
+        "value_max": 6,
+        "unit": "jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -10034,7 +9988,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "diazepam",
+        "medicine": "diazepam",
         "value_min": 0.1,
         "value_max": 0.2,
         "unit": "mg/kgbb/kali"
@@ -10053,7 +10007,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "diazepam",
+        "medicine": "diazepam",
         "value_min": 0,
         "value_max": 40,
         "unit": "mg/kgbb/hari"
@@ -10072,7 +10026,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "diazepam",
+        "medicine": "diazepam",
         "value_min": 10,
         "value_max": 10,
         "unit": "mg/kgbb"
@@ -10091,7 +10045,7 @@
       },
       "claim": {
         "claim_type": "interval",
-        "parameter": "diazepam",
+        "medicine": "diazepam",
         "value_min": 6,
         "value_max": 6,
         "unit": "jam"
@@ -10110,7 +10064,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "diazepam",
+        "medicine": "diazepam",
         "value_min": 5,
         "value_max": 7,
         "unit": "hari"
@@ -10129,10 +10083,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "human tetanus immunoglobulin",
+        "medicine": "human tetanus immunoglobulin",
         "value_min": 500,
         "value_max": 500,
-        "unit": "IU"
+        "unit": "U"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -10148,7 +10102,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "antitoksin tetanus",
+        "medicine": "antitoksin tetanus",
         "value_min": 5000,
         "value_max": 5000,
         "unit": "IU"
@@ -10167,7 +10121,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "tetanus toksoid",
+        "medicine": "tetanus toksoid",
         "value_min": 0.5,
         "value_max": 0.5,
         "unit": "mL"
@@ -10186,7 +10140,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "metronidazol",
+        "medicine": "metronidazol",
         "value_min": 30,
         "value_max": 30,
         "unit": "mg/kgbb/hari"
@@ -10199,16 +10153,16 @@
       }
     },
     {
-      "rule_id": "tetanus_neonatorum_frequency_3",
+      "rule_id": "tetanus_neonatorum_interval_4",
       "condition": {
         "disease": "tetanus_neonatorum"
       },
       "claim": {
-        "claim_type": "frequency",
-        "parameter": "metronidazol",
-        "value_min": 4,
-        "value_max": 4,
-        "unit": "kali/hari"
+        "claim_type": "interval",
+        "medicine": "metronidazol",
+        "value_min": 6,
+        "value_max": 6,
+        "unit": "jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -10224,7 +10178,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "metronidazol",
+        "medicine": "metronidazol",
         "value_min": 7,
         "value_max": 10,
         "unit": "hari"
@@ -10243,10 +10197,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "penisilin procain",
+        "medicine": "penisilin procain",
         "value_min": 100000,
         "value_max": 100000,
-        "unit": "IU/kg"
+        "unit": "IU/kgbb/kali"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -10262,7 +10216,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "penisilin procain",
+        "medicine": "penisilin procain",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -10281,7 +10235,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "penisilin procain",
+        "medicine": "penisilin procain",
         "value_min": 7,
         "value_max": 10,
         "unit": "hari"
@@ -10301,7 +10255,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "tetrasiklin",
+        "medicine": "tetrasiklin",
         "value_min": 50,
         "value_max": 50,
         "unit": "mg/kgbb/hari"
@@ -10320,7 +10274,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "natrium bikarbonat",
+        "medicine": "natrium bikarbonat",
         "value_min": 35,
         "value_max": 45,
         "unit": "mEq/m2/hari"
@@ -10339,7 +10293,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "natrium bikarbonat",
+        "medicine": "natrium bikarbonat",
         "value_min": 25,
         "value_max": 50,
         "unit": "mEq/500mL"
@@ -10358,7 +10312,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "allopurinol",
+        "medicine": "allopurinol",
         "value_min": 10,
         "value_max": 10,
         "unit": "mg/kgbb/hari"
@@ -10377,7 +10331,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "allopurinol",
+        "medicine": "allopurinol",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -10396,7 +10350,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "kalsium karbonat",
+        "medicine": "kalsium karbonat",
         "value_min": 300,
         "value_max": 300,
         "unit": "mg"
@@ -10409,16 +10363,16 @@
       }
     },
     {
-      "rule_id": "hiperleukositosis_frequency_2",
+      "rule_id": "hiperleukositosis_interval_1",
       "condition": {
         "disease": "hiperleukositosis"
       },
       "claim": {
-        "claim_type": "frequency",
-        "parameter": "kalsium karbonat",
-        "value_min": 3,
-        "value_max": 3,
-        "unit": "kali/hari"
+        "claim_type": "interval",
+        "medicine": "kalsium karbonat",
+        "value_min": 8,
+        "value_max": 8,
+        "unit": "jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -10434,7 +10388,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "asiklovir",
+        "medicine": "asiklovir",
         "value_min": 10,
         "value_max": 10,
         "unit": "mg/kgbb"
@@ -10447,16 +10401,16 @@
       }
     },
     {
-      "rule_id": "ensefalitis_herpes_simpleks_frequency_1",
+      "rule_id": "ensefalitis_herpes_simpleks_interval_1",
       "condition": {
         "disease": "ensefalitis_herpes_simpleks"
       },
       "claim": {
-        "claim_type": "frequency",
-        "parameter": "asiklovir",
-        "value_min": 3,
-        "value_max": 3,
-        "unit": "kali/hari"
+        "claim_type": "interval",
+        "medicine": "asiklovir",
+        "value_min": 8,
+        "value_max": 8,
+        "unit": "jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -10472,7 +10426,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "asiklovir",
+        "medicine": "asiklovir",
         "value_min": 10,
         "value_max": 14,
         "unit": "hari"
@@ -10491,7 +10445,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "infus asiklovir",
+        "medicine": "infus asiklovir",
         "value_min": 1,
         "value_max": 24,
         "unit": "jam"
@@ -10512,7 +10466,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "asiklovir",
+        "medicine": "asiklovir",
         "value_min": 20,
         "value_max": 20,
         "unit": "mg/kgbb"
@@ -10525,18 +10479,18 @@
       }
     },
     {
-      "rule_id": "ensefalitis_herpes_simpleks_frequency_2",
+      "rule_id": "ensefalitis_herpes_simpleks_interval_2",
       "condition": {
         "disease": "ensefalitis_herpes_simpleks",
         "age_month_min": 0,
         "age_month_max": 1
       },
       "claim": {
-        "claim_type": "frequency",
-        "parameter": "asiklovir",
-        "value_min": 3,
-        "value_max": 3,
-        "unit": "kali/hari"
+        "claim_type": "interval",
+        "medicine": "asiklovir",
+        "value_min": 8,
+        "value_max": 8,
+        "unit": "jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -10554,7 +10508,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "asiklovir",
+        "medicine": "asiklovir",
         "value_min": 14,
         "value_max": 21,
         "unit": "hari"
@@ -10573,7 +10527,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "vidarabin",
+        "medicine": "vidarabin",
         "value_min": 15,
         "value_max": 15,
         "unit": "mg/kgbb/hari"
@@ -10592,7 +10546,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "vidarabin",
+        "medicine": "vidarabin",
         "value_min": 14,
         "value_max": 14,
         "unit": "hari"
@@ -10612,7 +10566,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "dekstrosa 10%",
+        "medicine": "dekstrosa 10%",
         "value_min": 2,
         "value_max": 2,
         "unit": "mL/kgbb"
@@ -10631,7 +10585,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "laju infus glukosa",
+        "medicine": "laju infus glukosa",
         "value_min": 6,
         "value_max": 8,
         "unit": "mg/kgbb/menit"
@@ -10650,7 +10604,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "epinephrine",
+        "medicine": "epinephrine",
         "value_min": 0.05,
         "value_max": 2,
         "unit": "mcg/kgbb/menit"
@@ -10669,7 +10623,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "norepinephrine",
+        "medicine": "norepinephrine",
         "value_min": 0.05,
         "value_max": 2,
         "unit": "mcg/kgbb/menit"
@@ -10687,7 +10641,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "diazepam",
+        "medicine": "diazepam",
         "value_min": 0.3,
         "value_max": 0.5,
         "unit": "mg/kgbb"
@@ -10705,7 +10659,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "diazepam",
+        "medicine": "diazepam",
         "value_min": 1,
         "value_max": 2,
         "unit": "kali"
@@ -10725,7 +10679,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "vitamin k1",
+        "medicine": "vitamin k1",
         "value_min": 1,
         "value_max": 1,
         "unit": "mg"
@@ -10743,7 +10697,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "vitamin k1",
+        "medicine": "vitamin k1",
         "value_min": 3,
         "value_max": 3,
         "unit": "hari"
@@ -10761,7 +10715,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "fresh frozen plasma",
+        "medicine": "fresh frozen plasma",
         "value_min": 10,
         "value_max": 15,
         "unit": "mL/kgbb"
@@ -10779,7 +10733,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "fresh frozen plasma",
+        "medicine": "fresh frozen plasma",
         "value_min": 3,
         "value_max": 3,
         "unit": "hari"
@@ -10797,10 +10751,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "manitol",
+        "medicine": "manitol",
         "value_min": 0.5,
         "value_max": 1,
-        "unit": "gram/kgbb/kali"
+        "unit": "g/kgbb/kali"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -10815,7 +10769,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "furosemid",
+        "medicine": "furosemid",
         "value_min": 1,
         "value_max": 1,
         "unit": "mg/kgbb/kali"
@@ -10834,7 +10788,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "dekstrosa 10%",
+        "medicine": "dekstrosa 10%",
         "value_min": 2,
         "value_max": 2,
         "unit": "mL/kgbb"
@@ -10853,7 +10807,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "laju infus glukosa",
+        "medicine": "laju infus glukosa",
         "value_min": 6,
         "value_max": 8,
         "unit": "mg/kgbb/menit"
@@ -10871,7 +10825,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "laju infus glukosa maksimal",
+        "medicine": "laju infus glukosa maksimal",
         "value_min": 10,
         "value_max": 12,
         "unit": "mg/kgbb/menit"
@@ -10890,7 +10844,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "hidrokortison",
+        "medicine": "hidrokortison",
         "value_min": 5,
         "value_max": 5,
         "unit": "mg/kgbb"
@@ -10909,7 +10863,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "hidrokortison",
+        "medicine": "hidrokortison",
         "value_min": 5,
         "value_max": 5,
         "unit": "mg/kgbb"
@@ -10921,17 +10875,17 @@
       }
     },
     {
-      "rule_id": "hipoglikemia_neonatal_frequency_4",
+      "rule_id": "hipoglikemia_neonatal_interval_1",
       "condition": {
         "disease": "hipoglikemia_neonatal",
         "complication": "refraktori"
       },
       "claim": {
-        "claim_type": "frequency",
-        "parameter": "hidrokortison",
-        "value_min": 2,
-        "value_max": 2,
-        "unit": "kali/hari"
+        "claim_type": "interval",
+        "medicine": "hidrokortison",
+        "value_min": 12,
+        "value_max": 12,
+        "unit": "jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -10940,17 +10894,17 @@
       }
     },
     {
-      "rule_id": "hipoglikemia_neonatal_frequency_44",
+      "rule_id": "hipoglikemia_neonatal_interval_2",
       "condition": {
         "disease": "hipoglikemia_neonatal",
         "complication": "refraktori"
       },
       "claim": {
-        "claim_type": "frequency",
-        "parameter": "hidrokortison",
-        "value_min": 2,
-        "value_max": 2,
-        "unit": "kali/hari"
+        "claim_type": "interval",
+        "medicine": "hidrokortison",
+        "value_min": 12,
+        "value_max": 12,
+        "unit": "jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -10966,7 +10920,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "glukagon",
+        "medicine": "glukagon",
         "value_min": 200,
         "value_max": 200,
         "unit": "mcg"
@@ -10985,7 +10939,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "diazoksid",
+        "medicine": "diazoksid",
         "value_min": 10,
         "value_max": 10,
         "unit": "mg/kgbb/hari"
@@ -10997,17 +10951,17 @@
       }
     },
     {
-      "rule_id": "hipoglikemia_neonatal_frequency_6",
+      "rule_id": "hipoglikemia_neonatal_interval_3",
       "condition": {
         "disease": "hipoglikemia_neonatal",
         "complication": "refraktori"
       },
       "claim": {
-        "claim_type": "frequency",
-        "parameter": "diazoksid",
-        "value_min": 3,
-        "value_max": 3,
-        "unit": "kali/hari"
+        "claim_type": "interval",
+        "medicine": "diazoksid",
+        "value_min": 8,
+        "value_max": 8,
+        "unit": "jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -11023,7 +10977,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "vitamin a",
+        "medicine": "vitamin a",
         "value_min": 50000,
         "value_max": 50000,
         "unit": "IU"
@@ -11043,7 +10997,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "vitamin a",
+        "medicine": "vitamin a",
         "value_min": 100000,
         "value_max": 100000,
         "unit": "IU"
@@ -11062,7 +11016,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "vitamin a",
+        "medicine": "vitamin a",
         "value_min": 200000,
         "value_max": 200000,
         "unit": "IU"
@@ -11081,7 +11035,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "fenitoin",
+        "medicine": "fenitoin",
         "value_min": 20,
         "value_max": 20,
         "unit": "mg/kgbb"
@@ -11100,7 +11054,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "fenobarbital",
+        "medicine": "fenobarbital",
         "value_min": 15,
         "value_max": 20,
         "unit": "mg/kgbb"
@@ -11119,7 +11073,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "furosemid",
+        "medicine": "furosemid",
         "value_min": 0.5,
         "value_max": 2,
         "unit": "mg/kgbb/hari"
@@ -11138,7 +11092,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "furosemid",
+        "medicine": "furosemid",
         "value_min": 1,
         "value_max": 1,
         "unit": "mg/kgbb/kali"
@@ -11158,7 +11112,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "furosemid",
+        "medicine": "furosemid",
         "value_min": 2,
         "value_max": 2,
         "unit": "kali/hari"
@@ -11177,7 +11131,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "kaptopril",
+        "medicine": "kaptopril",
         "value_min": 0.3,
         "value_max": 0.5,
         "unit": "mg/kgbb/kali"
@@ -11197,7 +11151,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "nifedipin",
+        "medicine": "nifedipin",
         "value_min": 0.1,
         "value_max": 0.1,
         "unit": "mg/kgbb/kali"
@@ -11216,7 +11170,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "kalsium glukonas 10%",
+        "medicine": "kalsium glukonas 10%",
         "value_min": 0.5,
         "value_max": 1,
         "unit": "mL/kgbb"
@@ -11235,10 +11189,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "kcl",
+        "medicine": "kcl",
         "value_min": 75,
         "value_max": 75,
-        "unit": "meq/kgbb/hari"
+        "unit": "mEq/kgbb/hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -11254,7 +11208,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "furosemid",
+        "medicine": "furosemid",
         "value_min": 0.5,
         "value_max": 2,
         "unit": "mg/kgbb/hari"
@@ -11272,7 +11226,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "kaptopril",
+        "medicine": "kaptopril",
         "value_min": 0.3,
         "value_max": 0.5,
         "unit": "mg/kgbb/kali"
@@ -11291,7 +11245,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "nifedipin",
+        "medicine": "nifedipin",
         "value_min": 0.1,
         "value_max": 0.1,
         "unit": "mg/kgbb/kali"
@@ -11311,7 +11265,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "amlodipin",
+        "medicine": "amlodipin",
         "value_min": 2.5,
         "value_max": 5,
         "unit": "mg/hari"
@@ -11330,7 +11284,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "klonidin",
+        "medicine": "klonidin",
         "value_min": 0.002,
         "value_max": 0.002,
         "unit": "mg/kgbb/kali"
@@ -11349,7 +11303,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "parameter": "klonidin",
+        "medicine": "klonidin",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -11369,7 +11323,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "budesonide",
+        "medicine": "budesonide",
         "value_min": 100,
         "value_max": 200,
         "unit": "mcg/hari"
@@ -11389,7 +11343,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "budesonide",
+        "medicine": "budesonide",
         "value_min": 200,
         "value_max": 400,
         "unit": "mcg/hari"
@@ -11409,7 +11363,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "fluticasone",
+        "medicine": "fluticasone",
         "value_min": 50,
         "value_max": 100,
         "unit": "mcg/hari"
@@ -11429,7 +11383,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "fluticasone",
+        "medicine": "fluticasone",
         "value_min": 100,
         "value_max": 200,
         "unit": "mcg/hari"
@@ -11449,7 +11403,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "deksametason",
+        "medicine": "deksametason",
         "value_min": 1,
         "value_max": 5,
         "unit": "hari"
@@ -11468,7 +11422,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "cairan",
+        "medicine": "cairan",
         "value_min": 7,
         "value_max": 7,
         "unit": "mL/kgbb/jam"
@@ -11486,7 +11440,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "cairan",
+        "medicine": "cairan",
         "value_min": 5,
         "value_max": 5,
         "unit": "mL/kgbb/jam"
@@ -11504,7 +11458,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "cairan",
+        "medicine": "cairan",
         "value_min": 3,
         "value_max": 3,
         "unit": "mL/kgbb/jam"
@@ -11522,7 +11476,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "antibiotik",
+        "medicine": "antibiotik",
         "value_min": 14,
         "value_max": 14,
         "unit": "hari"
@@ -11541,7 +11495,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "parameter": "antibiotik",
+        "medicine": "antibiotik",
         "value_min": 21,
         "value_max": 21,
         "unit": "hari"
@@ -11560,7 +11514,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "dopamin",
+        "medicine": "dopamin",
         "value_min": 2,
         "value_max": 20,
         "unit": "mcg/kgbb/menit"
@@ -11579,7 +11533,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "dobutamin",
+        "medicine": "dobutamin",
         "value_min": 5,
         "value_max": 20,
         "unit": "mcg/kgbb/menit"
@@ -11597,10 +11551,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "oksigen",
+        "medicine": "oksigen",
         "value_min": 2,
         "value_max": 2,
-        "unit": "l/menit"
+        "unit": "L/menit"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -11616,10 +11570,10 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "steroid",
+        "medicine": "steroid",
         "value_min": 0.5,
         "value_max": 1,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -11636,7 +11590,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "glukagon infus kontinu",
+        "medicine": "glukagon infus kontinu",
         "value_min": 10,
         "value_max": 10,
         "unit": "mcg/kg/jam"
@@ -11656,7 +11610,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "kalori",
+        "medicine": "kalori",
         "value_min": 150,
         "value_max": 200,
         "unit": "kkal/kgbb/hari"
@@ -11675,7 +11629,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "desmopresin",
+        "medicine": "desmopresin",
         "value_min": 5,
         "value_max": 40,
         "unit": "mcg"
@@ -11694,7 +11648,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "oksibutinin",
+        "medicine": "oksibutinin",
         "value_min": 5,
         "value_max": 10,
         "unit": "mg"
@@ -11715,7 +11669,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "parameter": "midazolam",
+        "medicine": "midazolam",
         "value_min": 0.02,
         "value_max": 0.4,
         "unit": "mg/kg/jam"
@@ -11735,7 +11689,7 @@
       },
       "claim": {
         "claim_type": "contraindication",
-        "parameter": "nitrofurantoin",
+        "medicine": "nitrofurantoin",
         "prohibited": true
       },
       "metadata": {
@@ -11752,7 +11706,7 @@
       },
       "claim": {
         "claim_type": "contraindication",
-        "parameter": "sulfisoksazole",
+        "medicine": "sulfisoksazole",
         "prohibited": true
       },
       "metadata": {
@@ -11769,7 +11723,7 @@
       },
       "claim": {
         "claim_type": "contraindication",
-        "parameter": "trimetoprim",
+        "medicine": "trimetoprim",
         "prohibited": true
       },
       "metadata": {
@@ -11786,7 +11740,7 @@
       },
       "claim": {
         "claim_type": "contraindication",
-        "parameter": "mineral oil",
+        "medicine": "mineral oil",
         "prohibited": true
       },
       "metadata": {
@@ -11803,7 +11757,7 @@
       },
       "claim": {
         "claim_type": "contraindication",
-        "parameter": "tetrasiklin",
+        "medicine": "tetrasiklin",
         "prohibited": true
       },
       "metadata": {
@@ -11820,7 +11774,7 @@
       },
       "claim": {
         "claim_type": "contraindication",
-        "parameter": "asam traneksamat",
+        "medicine": "asam traneksamat",
         "prohibited": true
       },
       "metadata": {
@@ -11837,7 +11791,7 @@
       },
       "claim": {
         "claim_type": "contraindication",
-        "parameter": "labetalol",
+        "medicine": "labetalol",
         "prohibited": true
       },
       "metadata": {
@@ -11854,7 +11808,7 @@
       },
       "claim": {
         "claim_type": "contraindication",
-        "parameter": "propanolol",
+        "medicine": "propanolol",
         "prohibited": true
       },
       "metadata": {
@@ -11871,7 +11825,7 @@
       },
       "claim": {
         "claim_type": "contraindication",
-        "parameter": "hydralazine",
+        "medicine": "hydralazine",
         "prohibited": true
       },
       "metadata": {
@@ -11888,7 +11842,7 @@
       },
       "claim": {
         "claim_type": "contraindication",
-        "parameter": "vitamin c",
+        "medicine": "vitamin c",
         "prohibited": true
       },
       "metadata": {

@@ -8,53 +8,6 @@ from typing import Any
 logger = logging.getLogger(__name__)
 
 # ---------------------------------------------------------------------------
-# Unit alias table
-# ---------------------------------------------------------------------------
-
-_UNIT_ALIASES: dict[str, str] = {
-    "kali sehari":       "kali/hari",
-    "kali per hari":     "kali/hari",
-    "x sehari":          "kali/hari",
-    "x per hari":        "kali/hari",
-    "x/hari":            "kali/hari",
-    "per hari":          "kali/hari",
-    "hari":              "hari",
-    "jam":               "jam",
-    "mg/kg":             "mg/kgbb",
-    "mg/kg bb":          "mg/kgbb",
-    "mg per kg":         "mg/kgbb",
-    "mg per kgbb":       "mg/kgbb",
-    "mg/kg/hari":        "mg/kgbb/hari",
-    "mg/kg bb/hari":     "mg/kgbb/hari",
-    "mg/kg per hari":    "mg/kgbb/hari",
-    "mg/kg/kali":        "mg/kgbb/kali",
-    "mg/kg bb/kali":     "mg/kgbb/kali",
-    "mg/kg/dosis":       "mg/kgbb/kali",
-    "mg/kgbb/dosis":     "mg/kgbb/kali",
-    "mg/kg/dose":        "mg/kgbb/kali",
-    "mg/kgbb/dose":      "mg/kgbb/kali",
-    "mg/kgbb/dose":      "mg/kgbb/kali",
-    "mg/kgbb/":          "mg/kgbb/kali",
-    "mg garam/kgbb/dose":      "mggaram/kgbb/kali",
-    "ml/kg":             "mL/kgbb",
-    "ml/kg bb":          "mL/kgbb",
-    "ml/kgbb":           "mL/kgbb",
-    "ml/kg/kali":        "mL/kgbb/kali",
-    "ml/kg bb/kali":     "mL/kgbb/kali",
-    "ml/kgbb/kali":      "mL/kgbb/kali",
-    "ml/kg/hari":        "mL/kgbb/hari",
-    "ml/kg bb/hari":     "mL/kgbb/hari",
-    "ml/kgbb/hari":      "mL/kgbb/hari",
-    "ml/kg/jam":         "mL/kgbb/jam",
-    "ml/kg bb/jam":      "mL/kgbb/jam",
-    "ml/kgbb/jam":       "mL/kgbb/jam",
-    "ml":                "mL",
-    "iu/kgbb/kali":      "IU/kgbb/kali",
-    "iu/kali":           "IU/kali",
-}
-
-
-# ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
 
@@ -64,14 +17,6 @@ def _norm(value: Any) -> str | None:
         return None
     s = re.sub(r"\s+", "_", str(value).strip().lower().replace("-", "_"))
     return s or None
-
-
-def _normalize_unit(value: Any) -> str | None:
-    if value is None:
-        return None
-    unit = re.sub(r"\s+", " ", str(value).strip().lower())
-    unit = unit.replace(" / ", "/").replace(" /", "/").replace("/ ", "/")
-    return _UNIT_ALIASES.get(unit, unit)
 
 
 def _to_float(value: Any) -> float | None:
@@ -96,9 +41,7 @@ def _base_result(status: str, claim: dict, rule: dict | None = None) -> dict:
         "status":        status,
         "rule_id":       rule.get("rule_id") if rule else None,
         "claim_type":    claim.get("claim_type"),
-        "parameter":     claim.get("parameter"),
-        "route":         claim.get("route"),
-        "dose_context":  claim.get("dose_context"),
+        "medicine":     claim.get("medicine"),
         "evidence_text": claim.get("evidence_text", ""),
     }
     if rule:
@@ -179,25 +122,12 @@ def _signature_matches(rule: dict, claim: dict, *, ignore_claim_type: bool = Fal
         if _norm(rule_claim.get("claim_type")) != _norm(claim.get("claim_type")):
             return False
 
-    rule_param = _norm(rule_claim.get("parameter")) or ""
-    claim_param = _norm(claim.get("parameter")) or ""
+    # Mendukung schema lama (medicine) dan schema baru (parameter)
+    rule_param = _norm(rule_claim.get("parameter") or rule_claim.get("medicine")) or ""
+    claim_param = _norm(claim.get("medicine")) or ""
     if not (rule_param and claim_param and (rule_param in claim_param or claim_param in rule_param)):
         return False
-
-    rule_route = _norm(rule_claim.get("route"))
-    if rule_route in (None, "any"):
-        return True
-
-    claim_route = _norm(claim.get("route"))
-    if claim_route not in (None, "any") and rule_route != claim_route:
-        return False
-
-    rule_dose_context = _norm(rule_claim.get("dose_context"))
-    if rule_dose_context is None:
-        return True
-
-    return rule_dose_context == _norm(claim.get("dose_context"))
-
+    return True
 
 # ---------------------------------------------------------------------------
 # Verification
@@ -206,7 +136,7 @@ def _signature_matches(rule: dict, claim: dict, *, ignore_claim_type: bool = Fal
 def _verify_numeric(claim: dict, matched_rules: list[dict]) -> dict:
     claim_min = claim.get("value_min")
     claim_max = claim.get("value_max")
-    claim_unit = _normalize_unit(claim.get("unit"))
+    claim_unit = claim.get("unit")
 
     if claim_min is None and claim_max is None:
         result = _base_result("no_rule", claim)
@@ -216,7 +146,7 @@ def _verify_numeric(claim: dict, matched_rules: list[dict]) -> dict:
     comparable_rules = []
     for rule in matched_rules:
         rule_claim = rule.get("claim") or {}
-        rule_unit = _normalize_unit(rule_claim.get("unit"))
+        rule_unit = rule_claim.get("unit")
         if rule_unit and claim_unit and rule_unit != claim_unit:
             continue
         comparable_rules.append(rule)
@@ -232,7 +162,7 @@ def _verify_numeric(claim: dict, matched_rules: list[dict]) -> dict:
 
     best = comparable_rules[0] if comparable_rules else matched_rules[0]
     best_claim = best.get("claim") or {}
-    best_unit = _normalize_unit(best_claim.get("unit"))
+    best_unit = best_claim.get("unit")
 
     result = _base_result("violation", claim, best)
     result["claim_value"]   = _format_range(claim_min, claim_max, claim_unit)
@@ -264,7 +194,7 @@ def verify_claims(claims: list[dict], rules: list[dict]) -> list[dict]:
     results: list[dict] = []
 
     for claim in claims:
-        # Check for contraindication rules that apply to this claim's parameter/condition.
+        # Check for contraindication rules that apply to this claim's medicine/condition.
         contra_rules = [
             rule for rule in rules
             if _norm((rule.get("claim") or {}).get("claim_type")) == "contraindication"
@@ -277,7 +207,7 @@ def verify_claims(claims: list[dict], rules: list[dict]) -> list[dict]:
             result = _base_result("violation", claim, contra_rules[0])
             result["expected"]    = "prohibited"
             result["claim_value"] = "recommended_or_mentioned"
-            result["note"]        = "Klaim menyebut parameter yang dikontraindikasikan pada kondisi ini."
+            result["note"]        = "Klaim menyebut medicine yang dikontraindikasikan pada kondisi ini."
             results.append(result)
             continue
 

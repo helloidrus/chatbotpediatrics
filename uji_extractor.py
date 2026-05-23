@@ -12,15 +12,7 @@ rules = load_rules(str(rules_path))
 
 rag_text = """
 
-Dosis Ringer Laktat (RL) atau Ringer Asetat (RA) pada diare akut tergantung pada derajat dehidrasi. Berikut adalah pedoman dosis RL/RA pada diare akut:
-
-- **Tanpa dehidrasi (kehilangan cairan <5% berat badan)**: tidak perlu diberikan RL/RA.
-- **Mild dehidrasi (kehilangan cairan 5-10% berat badan)**: 50-100 mL/kgBB per hari, dibagi menjadi 4-6 dosis.
-- **Moderate dehidrasi (kehilangan cairan 11-20% berat badan)**: 100-150 mL/kgBB per hari, dibagi menjadi 4-6 dosis.
-- **Sedang berat dehidrasi (kehilangan cairan 21-30% berat badan)**: 150-200 mL/kgBB per hari, dibagi menjadi 4-6 dosis.
-- **Berat dehidrasi (kehilangan cairan >30% berat badan)**: 200-250 mL/kgBB per hari, dibagi menjadi 4-6 dosis.
-
-Namun, perlu diingat bahwa pedoman di atas hanya sebagai acuan dan dapat disesuaikan dengan kebutuhan pas
+Dosis kina dihidroklorid pada malaria adalah 10 mg garam/kgbb/kali
 
 """
 

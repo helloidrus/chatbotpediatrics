@@ -1,4 +1,6 @@
+import json
 from dotenv import load_dotenv
+from pathlib import Path
 import os
 
 from openai import OpenAI
@@ -57,47 +59,48 @@ class Generator:
 
     # Metode khusus untuk ekstraksi klaim dari jawaban LLM
     def generate_claim_extraction(self, answer_text):
+        # Load few-shot examples from root directory
+        few_shot_path = Path(__file__).parent.parent.parent / "few_shot_extractor.jsonl"
+        examples_str = ""
+        if few_shot_path.exists():
+            try:
+                with open(few_shot_path, "r", encoding="utf-8") as f:
+                    for i, line in enumerate(f, 1):
+                        ex = json.loads(line)
+                        examples_str += f"\nCONTOH {i}:\nTEXT: \"{ex['text']}\"\nJSON: {json.dumps(ex['json'], indent=2)}\n"
+            except Exception as e:
+                # Fallback jika gagal baca file (logging internal)
+                print(f"Warning: Gagal memuat few-shot file: {e}")
+
         system_prompt = """
         Ekstrak fakta klinis pediatri ke JSON. Tanpa markdown, tanpa inferensi, hanya yang eksplisit tertulis.
 
         ATURAN:
         - Setiap kondisi unik maka buat entry terpisah.
-        - Jika phase, severity, dan complication tidak disebutkan verbatim maka null.
         - Satu obat + satu kondisi maka satu set claims.
-        - Ekstrak masing-masing dose, frequency, interval, atau duration sebagai claim terpisah.
-        - Isi null hanya untuk field schema yang tidak disebut eksplisit di teks.
-        - parameter harus atomik, hanya satu obat/cairan per field.
-        - parameter adalah nama obat persis seperti di teks, tanpa disingkat atau dinormalisasi.
-        - Jika claim_type: dose maka dose_context harus diisi.
+        - Ekstrak masing-masing dose, frequency, interval, dan duration sebagai claim terpisah.
+        - medicine harus atomik, hanya satu obat/cairan per field.
+        - medicine adalah nama obat persis seperti di teks, tanpa disingkat atau dinormalisasi.
         - Jika nilai tunggal maka min=max, jika rentang isi keduanya.
         - Unit wajib diisi jika value_min atau value_max tidak null.
-        - Jika claim_type: contraindication maka prohibited: true dan lainnya null.
+        - Jika claim_type: contraindication maka prohibited: true.
         - evidence_text harus berupa kutipan verbatim pendek yang langsung mendukung claim.
+        - Jika suatu field tidak memiliki nilai, OMIT field tersebut dari output JSON.
 
         ENUM:
         - severity: ringan|ringan-sedang|sedang|berat|besar|resisten_cairan|tersangka|refrakter
         - phase: initial|continuation|acute|intensive|maintenance
         - complication: malnutrisi|ensefalopati|bronkopneumonia|meningitis|gangguan_fungsi_jantung|hamil_trimester_akhir|hipernatremia|refraktori|krisis_hipertensi|rawat_inap|rawat_jalan|perdarahan_saluran_kemih|asma_atau_gagal_jantung|efusi_perikardium
         - claim_type: dose|frequency|duration|interval|contraindication
-        - route: oral|iv|im|sc|rektal|inhalasi|intranasal|intratracheal|oral_ngt|iv_bolus|iv_infusion
-        - dose_context: per_dosis|per_hari|per_jam|per_menit|total_dosis
 
         OUTPUT:
         {
         "entries": [{
-            "condition": {
-                "disease": string,
-                "age_month_min": float, "age_month_max": float,
-                "weight_kg_min": float, "weight_kg_max": float,
-                "phase": string, "severity": string, "complication": string },
-            "claims": [{
-                "claim_type": string, "parameter": string, "route": string,
-                "value_min": float, "value_max": float, "unit": string, "dose_context": string, "prohibited": true,
-                "evidence_text": string }]
+            "condition": { "disease": string, "age_month_min": float, "age_month_max": float, "weight_kg_min": float, "weight_kg_max": float, "phase": string, "severity": string, "complication": string },
+            "claims": [{ "claim_type": string, "medicine": string, "value_min": float, "value_max": float, "unit": string, "prohibited": true, "evidence_text": string }]
             }]
         }
-
-        """
+        """ + examples_str
 
         user_prompt = f"TEXT:{answer_text}"
         
