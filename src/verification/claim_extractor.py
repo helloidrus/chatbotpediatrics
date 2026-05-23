@@ -72,8 +72,15 @@ def _clean_unit(value: Any) -> str | None:
         return None
     unit = str(value).strip().lower()
     unit = re.sub(r"\s+", " ", unit)
-    unit = unit.replace(" / ", "/").replace(" /", "/").replace("/ ", "/")
-    return unit.replace(" ", "") or None
+    unit = unit.replace(" / ", "/").replace(" /", "/")
+    return unit.replace("/ ", "/") or None
+
+
+def _normalize_unit(value: Any) -> str | None:
+    cleaned = _clean_unit(value)
+    if cleaned is None:
+        return None
+    return UNIT_ALIASES.get(_canonical_text(cleaned), cleaned)
 
 
 def _drop_none(value: Any) -> Any:
@@ -136,16 +143,15 @@ def _build_alias_map(groups: dict[str, list[str]]) -> dict[str, str]:
 ONTOLOGY = _load_ontology()
 
 CLAIM_TYPE_ALIASES = _build_alias_map(ONTOLOGY.get("claim_type", {}))
-ROUTE_ALIASES      = _build_alias_map(ONTOLOGY.get("route", {}))
 PHASE_ALIASES      = _build_alias_map(ONTOLOGY.get("phase", {}))
 SEVERITY_ALIASES   = _build_alias_map(ONTOLOGY.get("severity", {}))
-PARAMETER_ALIASES  = _build_alias_map(ONTOLOGY.get("parameter", {}))
+PARAMETER_ALIASES  = _build_alias_map(ONTOLOGY.get("medicine", {}))
 COMPLICATION_ALIASES = _build_alias_map(ONTOLOGY.get("complication", {}))
 DISEASE_ALIASES    = _build_alias_map(ONTOLOGY.get("disease", {}))
+UNIT_ALIASES       = _build_alias_map(ONTOLOGY.get("unit", {}))
 
 # Valid sets derived directly from the ontology — no duplication needed.
 VALID_CLAIM_TYPE = set(ONTOLOGY.get("claim_type", {}))
-VALID_ROUTE    = set(ONTOLOGY.get("route", {}))
 VALID_PHASE    = set(ONTOLOGY.get("phase", {}))
 VALID_SEVERITY = set(ONTOLOGY.get("severity", {}))
 
@@ -202,20 +208,18 @@ def _parse_claim(raw: Any, condition: dict) -> dict | None:
         logger.warning("Klaim dilewati karena claim_type tidak valid: %r", raw)
         return None
 
-    parameter = _normalize_with_alias(raw.get("parameter"), PARAMETER_ALIASES)
-    if not parameter:
-        logger.warning("Klaim dilewati karena field parameter kosong: %r", raw)
+    medicine = _normalize_with_alias(raw.get("medicine"), PARAMETER_ALIASES)
+    if not medicine:
+        logger.warning("Klaim dilewati karena field medicine kosong: %r", raw)
         return None
 
     return _drop_none({
         "condition":     condition,
         "claim_type":    claim_type,
-        "parameter":     parameter,
-        "route":         _normalize_with_alias(raw.get("route"), ROUTE_ALIASES, valid_set=VALID_ROUTE, field_name="route"),
+        "medicine":     medicine,
         "value_min":     _to_float_or_none(raw.get("value_min")),
         "value_max":     _to_float_or_none(raw.get("value_max")),
-        "unit":          _clean_unit(raw.get("unit")),
-        "dose_context":  _canonical_text(raw.get("dose_context")),
+        "unit":          _normalize_unit(raw.get("unit")),
         # contraindication claims are always prohibited; others follow the raw flag.
         "prohibited":    True if (claim_type == "contraindication" or raw.get("prohibited") is True) else None,
         "evidence_text": str(raw.get("evidence_text") or ""),
