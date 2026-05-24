@@ -11,12 +11,7 @@ logger = logging.getLogger(__name__)
 ONTOLOGY_PATH = Path(__file__).with_name("ontology.json")
 
 
-# ---------------------------------------------------------------------------
-# Helpers
-# ---------------------------------------------------------------------------
-
 def _canonical_text(value: Any) -> str | None:
-    """Normalise any value to a lowercase, underscore-separated string."""
     if value is None:
         return None
     normalized = str(value).strip().lower().replace("-", "_")
@@ -48,6 +43,16 @@ def _normalize_with_alias(
         return None
 
     resolved = aliases.get(key, key)
+
+    if key not in aliases and valid_set is None:
+        logger.warning(
+            "Nilai %r tidak ditemukan di alias map untuk field %s; "
+            "menggunakan canonical form %r tanpa validasi.",
+            value,
+            field_name,
+            resolved,
+        )
+
     if valid_set is not None and resolved not in valid_set:
         logger.warning("Nilai %r tidak valid untuk field %s; diabaikan.", value, field_name)
         return None
@@ -95,24 +100,17 @@ def _drop_none(value: Any) -> Any:
     return value
 
 
-# ---------------------------------------------------------------------------
-# Ontology loading
-# ---------------------------------------------------------------------------
-
 def _load_ontology(path: Path = ONTOLOGY_PATH) -> dict[str, dict[str, list[str]]]:
     try:
         with open(path, encoding="utf-8-sig") as fh:
             data = json.load(fh)
-    except FileNotFoundError:
-        logger.error("File ontology alias tidak ditemukan: %s", path)
-        return {}
+    except FileNotFoundError as exc:
+        raise RuntimeError(f"Ontology file tidak ditemukan: {path}") from exc
     except json.JSONDecodeError as exc:
-        logger.error("Gagal membaca ontology alias %s: %s", path, exc)
-        return {}
+        raise RuntimeError(f"Ontology file tidak valid: {path}. Error: {exc}") from exc
 
     if not isinstance(data, dict):
-        logger.error("Isi ontology alias harus berupa object JSON.")
-        return {}
+        raise RuntimeError(f"Ontology file harus berisi JSON object, bukan {type(data).__name__}.")
 
     ontology: dict[str, dict[str, list[str]]] = {}
     for group_name, group_value in data.items():
@@ -142,6 +140,23 @@ def _build_alias_map(groups: dict[str, list[str]]) -> dict[str, str]:
 
 ONTOLOGY = _load_ontology()
 
+
+def _validate_ontology(ontology: dict) -> None:
+    if not ontology:
+        raise RuntimeError("Ontology kosong setelah loading.")
+
+    critical_groups = {"claim_type", "disease", "medicine"}
+    missing_groups = critical_groups - set(ontology)
+    if missing_groups:
+        logger.warning(
+            "Ontology tidak memiliki beberapa grup kritis yang diharapkan: %s. "
+            "Normalisasi untuk grup ini akan tidak efektif.",
+            missing_groups,
+        )
+
+
+_validate_ontology(ONTOLOGY)
+
 CLAIM_TYPE_ALIASES = _build_alias_map(ONTOLOGY.get("claim_type", {}))
 PHASE_ALIASES      = _build_alias_map(ONTOLOGY.get("phase", {}))
 SEVERITY_ALIASES   = _build_alias_map(ONTOLOGY.get("severity", {}))
@@ -154,14 +169,12 @@ UNIT_ALIASES       = _build_alias_map(ONTOLOGY.get("unit", {}))
 VALID_CLAIM_TYPE = set(ONTOLOGY.get("claim_type", {}))
 VALID_PHASE    = set(ONTOLOGY.get("phase", {}))
 VALID_SEVERITY = set(ONTOLOGY.get("severity", {}))
+VALID_DISEASE = set(ONTOLOGY.get("disease", {}))
+VALID_COMPLICATION = set(ONTOLOGY.get("complication", {}))
+VALID_MEDICINE = set(ONTOLOGY.get("medicine", {}))
 
-
-# ---------------------------------------------------------------------------
-# JSON extraction
-# ---------------------------------------------------------------------------
 
 def _extract_json_object(text: str) -> dict | None:
-    # Strip optional markdown code fence.
     text = re.sub(r"^```(?:json)?\s*", "", text.strip(), flags=re.IGNORECASE)
     text = re.sub(r"\s*```$", "", text).strip()
 
@@ -180,21 +193,24 @@ def _extract_json_object(text: str) -> dict | None:
     return None
 
 
-# ---------------------------------------------------------------------------
-# Parsing
-# ---------------------------------------------------------------------------
+def _alias(raw: dict, field: str, aliases: dict[str, str], valid_set: set[str]) -> str | None:
+    return _normalize_with_alias(raw.get(field), aliases, valid_set=valid_set, field_name=field)
 
-def _parse_condition(raw: Any) -> dict:
-    raw = raw if isinstance(raw, dict) else {}
+
+def _parse_condition(raw: Any) -> dict | None:
+    if not isinstance(raw, dict):
+        return None
+
     return {
-        "disease":        _normalize_with_alias(raw.get("disease"), DISEASE_ALIASES),
-        "age_month_min":  _to_float_or_none(raw.get("age_month_min")),
-        "age_month_max":  _to_float_or_none(raw.get("age_month_max")),
-        "weight_kg_min":  _to_float_or_none(raw.get("weight_kg_min")),
-        "weight_kg_max":  _to_float_or_none(raw.get("weight_kg_max")),
-        "phase":    _normalize_with_alias(raw.get("phase"),    PHASE_ALIASES,    valid_set=VALID_PHASE,    field_name="phase"),
-        "severity": _normalize_with_alias(raw.get("severity"), SEVERITY_ALIASES, valid_set=VALID_SEVERITY, field_name="severity"),
-        "complication": _normalize_with_alias(raw.get("complication"), COMPLICATION_ALIASES),
+        "disease": _alias(raw, "disease", DISEASE_ALIASES, VALID_DISEASE),
+        "age_month_min": _to_float_or_none(raw.get("age_month_min")),
+        "age_month_max": _to_float_or_none(raw.get("age_month_max")),
+        "weight_kg_min": _to_float_or_none(raw.get("weight_kg_min")),
+        "weight_kg_max": _to_float_or_none(raw.get("weight_kg_max")),
+        "phase": _alias(raw, "phase", PHASE_ALIASES, VALID_PHASE),
+        "severity": _alias(raw, "severity", SEVERITY_ALIASES, VALID_SEVERITY),
+        "complication": _alias(raw, "complication", COMPLICATION_ALIASES, VALID_COMPLICATION),
+        "category": _canonical_text(raw.get("category")),
     }
 
 
@@ -208,26 +224,45 @@ def _parse_claim(raw: Any, condition: dict) -> dict | None:
         logger.warning("Klaim dilewati karena claim_type tidak valid: %r", raw)
         return None
 
-    medicine = _normalize_with_alias(raw.get("medicine"), PARAMETER_ALIASES)
+    medicine = _normalize_with_alias(raw.get("medicine"), PARAMETER_ALIASES, valid_set=VALID_MEDICINE, field_name="medicine")
     if not medicine:
-        logger.warning("Klaim dilewati karena field medicine kosong: %r", raw)
+        logger.warning("Klaim dilewati karena field medicine tidak valid atau kosong: %r", raw)
         return None
 
+    value_min = _to_float_or_none(raw.get("value_min"))
+    value_max = _to_float_or_none(raw.get("value_max"))
+    if value_min is not None and value_max is not None and value_min > value_max:
+        logger.warning(
+            "Range nilai terbalik untuk klaim: value_min=%r > value_max=%r; "
+            "klaim dilewati karena semantik range tidak valid.",
+            value_min, value_max,
+        )
+        return None
+
+    evidence_text = str(raw.get("evidence_text") or "").strip() or None
+
     return _drop_none({
-        "condition":     condition,
-        "claim_type":    claim_type,
-        "medicine":     medicine,
-        "value_min":     _to_float_or_none(raw.get("value_min")),
-        "value_max":     _to_float_or_none(raw.get("value_max")),
-        "unit":          _normalize_unit(raw.get("unit")),
-        # contraindication claims are always prohibited; others follow the raw flag.
-        "prohibited":    True if (claim_type == "contraindication" or raw.get("prohibited") is True) else None,
-        "evidence_text": str(raw.get("evidence_text") or ""),
+        "condition": condition,
+        "claim_type": claim_type,
+        "medicine": medicine,
+        "value_min": value_min,
+        "value_max": value_max,
+        "unit": _normalize_unit(raw.get("unit")),
+        "prohibited": True if claim_type == "contraindication" or raw.get("prohibited") is True else None,
+        "evidence_text": evidence_text,
     })
 
 
 def _parse_entry(entry: dict) -> list[dict]:
     condition = _parse_condition(entry.get("condition"))
+    if not condition or all(value is None for value in condition.values()):
+        logger.warning(
+            "Entry dilewati karena condition tidak memiliki constraint yang valid "
+            "(semua field kosong). Klaim tanpa kondisi bisa menyebabkan false positive: %r",
+            entry,
+        )
+        return []
+
     claims_raw = entry.get("claims") or []
     if not isinstance(claims_raw, list):
         logger.warning("Field claims bukan list; entry dilewati: %r", entry)
@@ -240,12 +275,19 @@ def _parse_entry(entry: dict) -> list[dict]:
     ]
 
 
-# ---------------------------------------------------------------------------
-# Public API
-# ---------------------------------------------------------------------------
-
 def extract_claims(llm_json_output: str) -> list[dict]:
-    """Return normalised claims extracted from an LLM JSON output string."""
+    """
+    Return normalised claims extracted from an LLM JSON output string.
+
+    Raises RuntimeError if ontology initialization failed.
+    """
+    if not ONTOLOGY:
+        raise RuntimeError(
+            "ONTOLOGY tidak tersedia untuk normalisasi klaim! "
+            "Ini terjadi saat module initialization. "
+            "Periksa logs untuk error saat loading ontology.json."
+        )
+
     if not llm_json_output:
         return []
 
