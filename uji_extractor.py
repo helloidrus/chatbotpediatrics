@@ -12,7 +12,7 @@ rules = load_rules(str(rules_path))
 
 rag_text = """
 
-Dosis kina dihidroklorid pada malaria adalah 10 mg garam/kgbb/kali
+Dosis primakuin fosfat pada malaria falciparum adalah 0,5-0,75 mg basa/kgbb dosis tunggal, pada hari pertama pengobatan
 
 """
 

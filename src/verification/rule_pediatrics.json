@@ -5929,7 +5929,7 @@
         "medicine": "primakuin fosfat",
         "value_min": 0.5,
         "value_max": 0.75,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg basa/kgbb"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5969,7 +5969,7 @@
         "medicine": "primakuin fosfat",
         "value_min": 1,
         "value_max": 1,
-        "unit": "hari"
+        "unit": "kali"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
