@@ -1396,7 +1396,7 @@
       "claim": {
         "claim_type": "dose",
         "medicine": "pirazinamid",
-        "value_min": 1,
+        "value_min": 0,
         "value_max": 2,
         "unit": "g"
       },
@@ -2955,6 +2955,18 @@
       }
     },
     {
+        "rule_id": "demam_tifoid_max_abs_amoksisilin",
+        "condition": { "disease": "demam_tifoid" },
+        "claim": {
+            "claim_type": "dose",
+            "medicine": "amoksisilin",
+            "value_min": 0,
+            "value_max": 2000,
+            "unit": "mg/hari",
+            "dose_context": "absolute_maximum"
+        }
+    },
+    {
       "rule_id": "demam_tifoid_duration_3",
       "condition": {
         "disease": "demam_tifoid"
@@ -3798,7 +3810,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "parafin liquid",
+        "medicine": "mineral oil",
         "value_min": 15,
         "value_max": 30,
         "unit": "mL/tahun"
@@ -3817,7 +3829,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "parafin liquid",
+        "medicine": "mineral oil",
         "value_min": 0,
         "value_max": 240,
         "unit": "mL/hari"
@@ -3969,7 +3981,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "parafin liquid",
+        "medicine": "mineral oil",
         "value_min": 120,
         "value_max": 120,
         "unit": "mL"
@@ -4088,7 +4100,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "parafin liquid",
+        "medicine": "mineral oil",
         "value_min": 1,
         "value_max": 3,
         "unit": "mL/kgbb/hari"
@@ -5461,7 +5473,7 @@
         "source": "Buku PPM IDAI Jilid I",
         "section": "Sepsis Neonatal",
         "page": 268,
-        "text": "< 2 kg: 3 mg/kg"
+        "text": "< 2 kg: 3 mg/kg, dosiss per pemberian"
       }
     },
     {
@@ -6187,7 +6199,7 @@
       "claim": {
         "claim_type": "dose",
         "medicine": "prednison",
-        "value_min": 80,
+        "value_min": 0,
         "value_max": 80,
         "unit": "mg/hari"
       },
@@ -7956,7 +7968,7 @@
       "claim": {
         "claim_type": "dose",
         "medicine": "pirazinamid",
-        "value_min": 1,
+        "value_min": 0,
         "value_max": 2000,
         "unit": "mg/hari"
       },
@@ -7996,7 +8008,7 @@
       "claim": {
         "claim_type": "dose",
         "medicine": "etambutol",
-        "value_min": 1000,
+        "value_min": 0,
         "value_max": 1000,
         "unit": "mg/hari"
       },
@@ -8036,7 +8048,7 @@
       "claim": {
         "claim_type": "dose",
         "medicine": "streptomisin",
-        "value_min": 1,
+        "value_min": 0,
         "value_max": 1,
         "unit": "g/hari"
       },
@@ -8568,6 +8580,22 @@
         "section": "Meningitis Bakterialis",
         "page": 191,
         "text": "selama 4 hari"
+      }
+    },
+    {
+      "rule_id": "meningitis_bakterialis_antibiotic_duration",
+      "condition": { "disease": "meningitis_bakterialis" },
+      "claim": {
+        "claim_type": "duration",
+        "medicine": "antibiotik",
+        "value_min": 10,
+        "value_max": 14,
+        "unit": "hari"
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I",
+        "page": 191,
+        "text": "Lama pengobatan: Tergantung dari kuman penyebab, umumnya 10-14 hari."
       }
     },
     {
@@ -9546,44 +9574,6 @@
     },
     {
       "rule_id": "kolestasis_frequency_5",
-      "condition": {
-        "disease": "kolestasis"
-      },
-      "claim": {
-        "claim_type": "frequency",
-        "medicine": "vitamin k1",
-        "value_min": 2,
-        "value_max": 7,
-        "unit": "kali/minggu"
-      },
-      "metadata": {
-        "source": "Buku PPM IDAI Jilid I",
-        "section": "Kolestasis",
-        "page": 172,
-        "text": "diberikan 2-7kali/minggu"
-      }
-    },
-    {
-      "rule_id": "kolestasis_dose_66",
-      "condition": {
-        "disease": "kolestasis"
-      },
-      "claim": {
-        "claim_type": "dose",
-        "medicine": "vitamin k1",
-        "value_min": 2.5,
-        "value_max": 5,
-        "unit": "mg/hari"
-      },
-      "metadata": {
-        "source": "Buku PPM IDAI Jilid I",
-        "section": "Kolestasis",
-        "page": 172,
-        "text": "K1 (2,5-5 mg/hari"
-      }
-    },
-    {
-      "rule_id": "kolestasis_frequency_55",
       "condition": {
         "disease": "kolestasis"
       },
@@ -11646,7 +11636,7 @@
       }
     },
     {
-      "rule_id": "hypertension_contraindication_labetalol",
+      "rule_id": "hypertension_contraindication_labetalol1",
       "condition": {
         "disease": "hipertensi",
         "complication": "diabetes_mellitus_insulin_dependent"
