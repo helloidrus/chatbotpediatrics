@@ -1,9 +1,9 @@
 """
 Decision layer for rule verification results.
 
-Only confirmed violations trigger regeneration. Claims with no matching rule are
-reported as warnings so the pipeline does not label unverifiable content as
-fully compliant.
+Only confirmed violations trigger regeneration. Claims outside the current rule
+coverage are reported as warnings so the pipeline does not label unverifiable
+content as fully compliant.
 """
 
 
@@ -12,9 +12,9 @@ def decide_action(verification_results):
         result for result in verification_results
         if result.get("status") == "violation"
     ]
-    no_rule = [
+    warnings = [
         result for result in verification_results
-        if result.get("status") == "no_rule"
+        if result.get("status") in {"uncovered", "no_rule"}
     ]
 
     if violations:
@@ -22,14 +22,14 @@ def decide_action(verification_results):
             "action": "REGENERATE",
             "reason": "Guideline violations detected",
             "violations": violations,
-            "warnings": no_rule,
+            "warnings": warnings,
         }
 
-    if no_rule:
+    if warnings:
         return {
             "action": "PASS_WITH_WARNINGS",
-            "reason": "No violations detected, but some claims had no matching rule",
-            "warnings": no_rule,
+            "reason": "No violations detected, but some claims are outside rule coverage",
+            "warnings": warnings,
         }
 
     if not verification_results:

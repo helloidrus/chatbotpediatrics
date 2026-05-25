@@ -90,7 +90,7 @@ class Generator:
         ENUM:
         - severity: ringan|ringan-sedang|sedang|berat|besar|resisten_cairan|tersangka|refrakter
         - phase: initial|continuation|acute|intensive|maintenance
-        - complication: malnutrisi|ensefalopati|bronkopneumonia|meningitis|gangguan_fungsi_jantung|hamil_trimester_akhir|hipernatremia|refraktori|krisis_hipertensi|rawat_inap|rawat_jalan|perdarahan_saluran_kemih|asma_atau_gagal_jantung|efusi_perikardium
+        - complication: malnutrisi|ensefalopati|bronkopneumonia|meningitis|gangguan_fungsi_jantung|hamil_trimester_akhir|hipernatremia|refraktori|krisis_hipertensi|rawat_inap|rawat_jalan|perdarahan_saluran_kemih|asma_atau_gagal_jantung|efusi_perikardium|diabetes_mellitus
         - claim_type: dose|frequency|duration|interval|contraindication
 
         OUTPUT:
