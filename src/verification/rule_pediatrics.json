@@ -2461,7 +2461,7 @@
       "rule_id": "infeksi_saluran_kemih_interval_2",
       "condition": {
         "disease": "infeksi_saluran_kemih",
-        "age_month_max": 0.23
+        "age_month_min": 0.24
       },
       "claim": {
         "claim_type": "interval",
@@ -2591,25 +2591,6 @@
         "section": "Infeksi Saluran Kemih",
         "page": 139,
         "text": "Seftriakson 75"
-      }
-    },
-    {
-      "rule_id": "infeksi_saluran_kemih_frequency_6",
-      "condition": {
-        "disease": "infeksi_saluran_kemih"
-      },
-      "claim": {
-        "claim_type": "frequency",
-        "medicine": "seftriakson",
-        "value_min": 1,
-        "value_max": 1,
-        "unit": "kali/hari"
-      },
-      "metadata": {
-        "source": "Buku PPM IDAI Jilid I",
-        "section": "Infeksi Saluran Kemih",
-        "page": 139,
-        "text": "kali/hari"
       }
     },
     {
@@ -2975,44 +2956,6 @@
     },
     {
       "rule_id": "demam_tifoid_duration_3",
-      "condition": {
-        "disease": "demam_tifoid"
-      },
-      "claim": {
-        "claim_type": "duration",
-        "medicine": "amoksisilin",
-        "value_min": 10,
-        "value_max": 10,
-        "unit": "hari"
-      },
-      "metadata": {
-        "source": "Buku PPM IDAI Jilid I",
-        "section": "Demam Tifoid",
-        "page": 48,
-        "text": "Amoksisilin 100 mg/kgbb/hari, oral atau intravena, selama 10 hari"
-      }
-    },
-    {
-      "rule_id": "demam_tifoid_dose_4",
-      "condition": {
-        "disease": "demam_tifoid"
-      },
-      "claim": {
-        "claim_type": "dose",
-        "medicine": "amoksisilin",
-        "value_min": 100,
-        "value_max": 100,
-        "unit": "mg/kgbb/hari"
-      },
-      "metadata": {
-        "source": "Buku PPM IDAI Jilid I",
-        "section": "Demam Tifoid",
-        "page": 48,
-        "text": "Amoksisilin 100 mg/kgbb/hari, oral atau intravena, selama 10 hari"
-      }
-    },
-    {
-      "rule_id": "demam_tifoid_duration_4",
       "condition": {
         "disease": "demam_tifoid"
       },
@@ -3719,13 +3662,13 @@
         "medicine": "deksametason",
         "value_min": 0.5,
         "value_max": 0.5,
-        "unit": "g/kgbb/hari"
+        "unit": "mg/kgbb/hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Campak",
         "page": 34,
-        "text": "dilanjutkan 0,5 g/kgbb/hari"
+        "text": "dilanjutkan 0,5 g/kgbb/hari *sepertinya kesalahan cetakan buku"
       }
     },
     {
@@ -5191,7 +5134,7 @@
       "condition": {
         "disease": "sepsis_neonatal",
         "age_month_min": 0.03,
-        "age_month_max": 0.23
+        "age_month_max": 0.25
       },
       "claim": {
         "claim_type": "dose",
@@ -5212,7 +5155,7 @@
       "condition": {
         "disease": "sepsis_neonatal",
         "age_month_min": 0.03,
-        "age_month_max": 0.23
+        "age_month_max": 0.25
       },
       "claim": {
         "claim_type": "interval",
@@ -5232,7 +5175,7 @@
       "rule_id": "sepsis_neonatal_dose_2",
       "condition": {
         "disease": "sepsis_neonatal",
-        "age_month_min": 0.27
+        "age_month_min": 0.25
       },
       "claim": {
         "claim_type": "dose",
@@ -5252,7 +5195,7 @@
       "rule_id": "sepsis_neonatal_interval_4",
       "condition": {
         "disease": "sepsis_neonatal",
-        "age_month_min": 0.27
+        "age_month_min": 0.25
       },
       "claim": {
         "claim_type": "interval",
@@ -5273,7 +5216,7 @@
       "condition": {
         "disease": "sepsis_neonatal",
         "complication": "meningitis",
-        "age_month_max": 0.23
+        "age_month_max": 0.25
       },
       "claim": {
         "claim_type": "dose",
@@ -5294,7 +5237,7 @@
       "condition": {
         "disease": "sepsis_neonatal",
         "complication": "meningitis",
-        "age_month_max": 0.23
+        "age_month_max": 0.25
       },
       "claim": {
         "claim_type": "interval",
@@ -5315,7 +5258,7 @@
       "condition": {
         "disease": "sepsis_neonatal",
         "complication": "meningitis",
-        "age_month_min": 0.27
+        "age_month_min": 0.25
       },
       "claim": {
         "claim_type": "dose",
@@ -5336,7 +5279,7 @@
       "condition": {
         "disease": "sepsis_neonatal",
         "complication": "meningitis",
-        "age_month_min": 0.27
+        "age_month_min": 0.25
       },
       "claim": {
         "claim_type": "interval",
@@ -5357,7 +5300,7 @@
       "condition": {
         "disease": "sepsis_neonatal",
         "age_month_min": 0.03,
-        "age_month_max": 0.23
+        "age_month_max": 0.25
       },
       "claim": {
         "claim_type": "dose",
@@ -5378,7 +5321,7 @@
       "condition": {
         "disease": "sepsis_neonatal",
         "age_month_min": 0.03,
-        "age_month_max": 0.23
+        "age_month_max": 0.25
       },
       "claim": {
         "claim_type": "interval",
@@ -5398,7 +5341,7 @@
       "rule_id": "sepsis_neonatal_interval_8",
       "condition": {
         "disease": "sepsis_neonatal",
-        "age_month_min": 0.27
+        "age_month_min": 0.25
       },
       "claim": {
         "claim_type": "interval",
@@ -5418,7 +5361,7 @@
       "rule_id": "sepsis_neonatal_dose_6",
       "condition": {
         "disease": "sepsis_neonatal",
-        "age_month_min": 0.27
+        "age_month_min": 0.25
       },
       "claim": {
         "claim_type": "dose",
@@ -5439,7 +5382,7 @@
       "condition": {
         "disease": "sepsis_neonatal",
         "age_month_min": 0.03,
-        "age_month_max": 0.23,
+        "age_month_max": 0.25,
         "complication": "meningitis"
       },
       "claim": {
@@ -5462,7 +5405,7 @@
         "disease": "sepsis_neonatal",
         "complication": "meningitis",
         "age_month_min": 0.03,
-        "age_month_max": 0.23
+        "age_month_max": 0.25
       },
       "claim": {
         "claim_type": "interval",
@@ -5483,7 +5426,7 @@
       "condition": {
         "disease": "sepsis_neonatal",
         "complication": "meningitis",
-        "age_month_min": 0.27
+        "age_month_min": 0.25
       },
       "claim": {
         "claim_type": "interval",
@@ -5504,7 +5447,7 @@
       "condition": {
         "disease": "sepsis_neonatal",
         "age_month_min": 0.03,
-        "age_month_max": 0.23,
+        "age_month_max": 0.25,
         "weight_kg_max": 2
       },
       "claim": {
@@ -5526,7 +5469,7 @@
       "condition": {
         "disease": "sepsis_neonatal",
         "age_month_min": 0.03,
-        "age_month_max": 0.23,
+        "age_month_max": 0.25,
         "weight_kg_max": 2
       },
       "claim": {
@@ -5548,7 +5491,7 @@
       "condition": {
         "disease": "sepsis_neonatal",
         "age_month_min": 0.03,
-        "age_month_max": 0.23,
+        "age_month_max": 0.25,
         "weight_kg_min": 2
       },
       "claim": {
@@ -5570,7 +5513,7 @@
       "condition": {
         "disease": "sepsis_neonatal",
         "age_month_min": 0.03,
-        "age_month_max": 0.23,
+        "age_month_max": 0.25,
         "weight_kg_min": 2
       },
       "claim": {
@@ -5591,7 +5534,7 @@
       "rule_id": "sepsis_neonatal_dose_10",
       "condition": {
         "disease": "sepsis_neonatal",
-        "age_month_min": 0.27
+        "age_month_min": 0.25
       },
       "claim": {
         "claim_type": "dose",
@@ -5611,7 +5554,7 @@
       "rule_id": "sepsis_neonatal_interval_2",
       "condition": {
         "disease": "sepsis_neonatal",
-        "age_month_min": 0.27
+        "age_month_min": 0.25
       },
       "claim": {
         "claim_type": "interval",
@@ -5969,7 +5912,7 @@
         "medicine": "primakuin fosfat",
         "value_min": 1,
         "value_max": 1,
-        "unit": "kali"
+        "unit": "hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -7666,25 +7609,6 @@
       }
     },
     {
-      "rule_id": "duktus_arteriosus_persisten_dose_99",
-      "condition": {
-        "disease": "duktus_arteriosus_persisten"
-      },
-      "claim": {
-        "claim_type": "dose",
-        "medicine": "ampisilin",
-        "value_min": 50,
-        "value_max": 50,
-        "unit": "mg/kgbb"
-      },
-      "metadata": {
-        "source": "Buku PPM IDAI Jilid I",
-        "section": "Duktus Arteriosus Persisten",
-        "page": 65,
-        "text": "ampisilin/cefazolin/ceftriakson 50 mg/kgbb IV/IM"
-      }
-    },
-    {
       "rule_id": "duktus_arteriosus_persisten_dose_10",
       "condition": {
         "disease": "duktus_arteriosus_persisten"
@@ -8970,44 +8894,6 @@
       }
     },
     {
-      "rule_id": "tetralogi_fallot_dose_11",
-      "condition": {
-        "disease": "tetralogi_fallot"
-      },
-      "claim": {
-        "claim_type": "dose",
-        "medicine": "morfin sulfat",
-        "value_min": 0.1,
-        "value_max": 0.2,
-        "unit": "mg/kgbb/kali"
-      },
-      "metadata": {
-        "source": "Buku PPM IDAI Jilid I",
-        "section": "Tetralogi Fallot",
-        "page": 321,
-        "text": "Morfin sulfat 0,1-0,2 mg/kgbb SC, IM atau IV untuk menekan pusat pernafasan dan mengatasi takipne."
-      }
-    },
-    {
-      "rule_id": "tetralogi_fallot_dose_111",
-      "condition": {
-        "disease": "tetralogi_fallot"
-      },
-      "claim": {
-        "claim_type": "dose",
-        "medicine": "morfin sulfat",
-        "value_min": 0.1,
-        "value_max": 0.2,
-        "unit": "mg/kgbb/kali"
-      },
-      "metadata": {
-        "source": "Buku PPM IDAI Jilid I",
-        "section": "Tetralogi Fallot",
-        "page": 321,
-        "text": "Morfin sulfat 0,1-0,2 mg/kgbb SC, IM atau IV untuk menekan pusat pernafasan dan mengatasi takipne."
-      }
-    },
-    {
       "rule_id": "tetralogi_fallot_dose_2",
       "condition": {
         "disease": "tetralogi_fallot"
@@ -9817,7 +9703,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "zat besi",
+        "medicine": "besi elemental",
         "value_min": 5,
         "value_max": 6,
         "unit": "mg/kgbb/hari"
@@ -10970,64 +10856,6 @@
       }
     },
     {
-      "rule_id": "campak_dose_11",
-      "condition": {
-        "disease": "campak",
-        "age_month_max": 5
-      },
-      "claim": {
-        "claim_type": "dose",
-        "medicine": "vitamin a",
-        "value_min": 50000,
-        "value_max": 50000,
-        "unit": "IU"
-      },
-      "metadata": {
-        "source": "Buku PPM IDAI Jilid I",
-        "section": "Malnutrisi Energi Protein",
-        "page": 185
-      }
-    },
-    {
-      "rule_id": "campak_dose_22",
-      "condition": {
-        "disease": "campak",
-        "age_month_min": 6,
-        "age_month_max": 12
-      },
-      "claim": {
-        "claim_type": "dose",
-        "medicine": "vitamin a",
-        "value_min": 100000,
-        "value_max": 100000,
-        "unit": "IU"
-      },
-      "metadata": {
-        "source": "Buku PPM IDAI Jilid I",
-        "section": "Campak / Malnutrisi Energi Protein",
-        "page": "34, 185"
-      }
-    },
-    {
-      "rule_id": "campak_dose_33",
-      "condition": {
-        "disease": "campak",
-        "age_month_min": 13
-      },
-      "claim": {
-        "claim_type": "dose",
-        "medicine": "vitamin a",
-        "value_min": 200000,
-        "value_max": 200000,
-        "unit": "IU"
-      },
-      "metadata": {
-        "source": "Buku PPM IDAI Jilid I",
-        "section": "Malnutrisi Energi Protein",
-        "page": 185
-      }
-    },
-    {
       "rule_id": "kejang_akut_dose_fenitoin",
       "condition": {
         "disease": "kejang_akut",
@@ -11787,7 +11615,41 @@
       "rule_id": "hypertension_contraindication_labetalol",
       "condition": {
         "disease": "hipertensi",
-        "complication": "asma_atau_gagal_jantung"
+        "complication": "asma"
+      },
+      "claim": {
+        "claim_type": "contraindication",
+        "medicine": "labetalol",
+        "prohibited": true
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I",
+        "page": 113,
+        "text": "Kontraindikasi pada penderita asma dan gagal jantung"
+      }
+    },
+    {
+      "rule_id": "hypertension_contraindication_labetalol1",
+      "condition": {
+        "disease": "hipertensi",
+        "complication": "gagal_jantung"
+      },
+      "claim": {
+        "claim_type": "contraindication",
+        "medicine": "labetalol",
+        "prohibited": true
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I",
+        "page": 113,
+        "text": "Kontraindikasi pada penderita asma dan gagal jantung"
+      }
+    },
+    {
+      "rule_id": "hypertension_contraindication_labetalol",
+      "condition": {
+        "disease": "hipertensi",
+        "complication": "diabetes_mellitus_insulin_dependent"
       },
       "claim": {
         "claim_type": "contraindication",

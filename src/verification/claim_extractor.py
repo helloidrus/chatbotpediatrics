@@ -201,7 +201,7 @@ def _parse_condition(raw: Any) -> dict | None:
     if not isinstance(raw, dict):
         return None
 
-    return {
+    result = {
         "disease": _alias(raw, "disease", DISEASE_ALIASES, VALID_DISEASE),
         "age_month_min": _to_float_or_none(raw.get("age_month_min")),
         "age_month_max": _to_float_or_none(raw.get("age_month_max")),
@@ -212,6 +212,19 @@ def _parse_condition(raw: Any) -> dict | None:
         "complication": _alias(raw, "complication", COMPLICATION_ALIASES, VALID_COMPLICATION),
         "category": _canonical_text(raw.get("category")),
     }
+
+    age_min = result.get("age_month_min")
+    age_max = result.get("age_month_max")
+    if age_min is not None and age_max is not None and age_min > age_max:
+        logger.error(
+            "Range usia tidak valid: age_month_min (%s) > age_month_max (%s). "
+            "Condition ditolak untuk keamanan klinis.",
+            age_min,
+            age_max,
+        )
+        return None
+
+    return result
 
 
 def _parse_claim(raw: Any, condition: dict) -> dict | None:

@@ -34,6 +34,10 @@ def _to_float(value: Any) -> float | None:
 def _format_range(value_min: Any, value_max: Any, unit: str | None) -> str:
     if value_min is None and value_max is None:
         return unit or ""
+    if value_min is None:
+        return f"<= {value_max} {unit or ''}".strip()
+    if value_max is None:
+        return f">= {value_min} {unit or ''}".strip()
     if value_min == value_max:
         return f"{value_min} {unit or ''}".strip()
     return f"{value_min}-{value_max} {unit or ''}".strip()
@@ -68,24 +72,36 @@ def load_rules(path: str) -> list[dict]:
     return valid_rules
 
 
-def _ranges_overlap(rule_min: Any, rule_max: Any, claim_min: Any, claim_max: Any) -> bool:
+def _ranges_overlap(
+    rule_min: Any,
+    rule_max: Any,
+    claim_min: Any,
+    claim_max: Any,
+    *,
+    unknown_claim_matches_specific: bool = False,
+) -> bool:
     r_min, r_max = _to_float(rule_min), _to_float(rule_max)
     c_min, c_max = _to_float(claim_min), _to_float(claim_max)
 
     if r_min is None and r_max is None:
         return True
     if c_min is None and c_max is None:
-        return False
+        return unknown_claim_matches_specific
 
     return (r_max is None or c_min is None or c_min <= r_max) and (
         r_min is None or c_max is None or c_max >= r_min
     )
 
 
-def _condition_matches(rule: dict, claim: dict) -> bool:
+def _condition_matches(rule: dict, claim: dict, *, strict_contraindication: bool = False) -> bool:
     rule_condition = rule.get("condition") or {}
     claim_condition = claim.get("condition") or {}
+    rule_claim = rule.get("claim") or {}
+    is_contraindication = strict_contraindication and rule_claim.get("prohibited") is True
 
+    # Cek field kategorikal.
+    # Jika rule tidak menentukan field (None), maka dianggap cocok dengan nilai apapun di klaim (wildcard).
+    # Namun jika rule menentukan nilai, maka klaim wajib memiliki nilai yang sama (setelah normalisasi).
     for field in ("disease", "phase", "severity", "complication", "category"):
         rule_value = rule_condition.get(field)
         if rule_value is not None and not _same_norm(rule_value, claim_condition.get(field)):
@@ -96,6 +112,7 @@ def _condition_matches(rule: dict, claim: dict) -> bool:
         rule_condition.get("age_month_max"),
         claim_condition.get("age_month_min"),
         claim_condition.get("age_month_max"),
+        unknown_claim_matches_specific=is_contraindication,
     ) and _ranges_overlap(
         rule_condition.get("weight_kg_min"),
         rule_condition.get("weight_kg_max"),
@@ -120,13 +137,17 @@ def _matching_rules(
     *,
     claim_type: str | None = None,
     ignore_claim_type: bool = False,
+    strict_contraindication: bool = False,
 ) -> list[dict]:
     matches = []
     for rule in rules:
         rule_claim = rule.get("claim") or {}
         if claim_type and _norm(rule_claim.get("claim_type")) != claim_type:
             continue
-        if _condition_matches(rule, claim) and _signature_matches(rule, claim, ignore_claim_type=ignore_claim_type):
+        if (
+            _condition_matches(rule, claim, strict_contraindication=strict_contraindication)
+            and _signature_matches(rule, claim, ignore_claim_type=ignore_claim_type)
+        ):
             matches.append(rule)
     return matches
 
@@ -144,17 +165,41 @@ def _unit_comparable(rule_unit: Any, claim_unit: Any) -> bool:
     return not (rule_unit and claim_unit) or _same_norm(rule_unit, claim_unit)
 
 
+def _lower_bound_ok(claim_min: float | None, rule_min: float | None) -> bool:
+    if rule_min is None:
+        return True
+    if claim_min is None:
+        return rule_min <= 0
+    return claim_min >= rule_min
+
+
+def _upper_bound_ok(claim_max: float | None, rule_max: float | None) -> bool:
+    if rule_max is None:
+        return True
+    if claim_max is None:
+        return False
+    return claim_max <= rule_max
+
+
 def _verify_numeric(claim: dict, matched_rules: list[dict]) -> dict:
     claim_min, claim_max, claim_unit = _claim_range(claim)
+    single_bound_inferred = False
+    if claim_min is not None and claim_max is None:
+        claim_max = claim_min
+        single_bound_inferred = True
+    elif claim_min is None and claim_max is not None:
+        claim_min = claim_max
+        single_bound_inferred = True
+
     if claim_min is None and claim_max is None:
         result = _base_result("no_rule", claim)
         result["note"] = "Klaim numerik tidak memiliki nilai yang bisa dibandingkan."
         return result
 
-    if (claim_min is None) != (claim_max is None):
+    if single_bound_inferred:
         logger.warning(
             "Klaim memiliki hanya satu bound numerik (min=%r, max=%r); "
-            "semantik range dapat ambigu.",
+            "diproses sebagai nilai titik untuk verifikasi.",
             claim_min,
             claim_max,
         )
@@ -166,8 +211,8 @@ def _verify_numeric(claim: dict, matched_rules: list[dict]) -> dict:
 
     for rule in comparable_rules:
         rule_min, rule_max, rule_unit = _rule_range(rule)
-        min_ok = claim_min is None or rule_min is None or claim_min >= rule_min
-        max_ok = claim_max is None or rule_max is None or claim_max <= rule_max
+        min_ok = _lower_bound_ok(claim_min, rule_min)
+        max_ok = _upper_bound_ok(claim_max, rule_max)
         if min_ok and max_ok:
             result = _base_result("compliant", claim, rule)
             result["claim_value"] = _format_range(claim_min, claim_max, claim_unit)
@@ -181,6 +226,8 @@ def _verify_numeric(claim: dict, matched_rules: list[dict]) -> dict:
     result["allowed_range"] = _format_range(best_min, best_max, best_unit)
     if not comparable_rules:
         result["note"] = "Unit klaim tidak sama dengan rule yang cocok."
+    elif single_bound_inferred:
+        result["note"] = "Klaim hanya memiliki satu bound numerik; diproses sebagai nilai titik."
     return result
 
 
@@ -204,7 +251,13 @@ def verify_claims(claims: list[dict], rules: list[dict]) -> list[dict]:
 
     for claim in claims:
         contra_rules = [
-            rule for rule in _matching_rules(claim, rules, claim_type="contraindication", ignore_claim_type=True)
+            rule for rule in _matching_rules(
+                claim,
+                rules,
+                claim_type="contraindication",
+                ignore_claim_type=True,
+                strict_contraindication=True,
+            )
             if (rule.get("claim") or {}).get("prohibited") is True
         ]
         if contra_rules and claim.get("claim_type") != "contraindication":
@@ -215,10 +268,17 @@ def verify_claims(claims: list[dict], rules: list[dict]) -> list[dict]:
             results.append(result)
             continue
 
-        matched_rules = _matching_rules(claim, rules)
+        matched_rules = _matching_rules(
+            claim,
+            rules,
+            strict_contraindication=claim.get("claim_type") == "contraindication",
+        )
         if not matched_rules:
-            result = _base_result("no_rule", claim)
-            result["note"] = "Tidak ada rule yang cocok ditemukan untuk klaim ini."
+            result = _base_result("uncovered", claim)
+            result["note"] = (
+                "Klaim berada di luar cakupan rule yang tersedia. "
+                "Diperlukan review manual oleh klinisi."
+            )
             results.append(result)
             continue
 
