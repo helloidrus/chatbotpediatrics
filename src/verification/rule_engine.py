@@ -42,7 +42,6 @@ def _format_range(value_min: Any, value_max: Any, unit: str | None) -> str:
         return f"{value_min} {unit or ''}".strip()
     return f"{value_min}-{value_max} {unit or ''}".strip()
 
-
 def _base_result(status: str, claim: dict, rule: dict | None = None) -> dict:
     result = {
         "status": status,
