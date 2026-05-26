@@ -12,14 +12,28 @@ def decide_action(verification_results):
         result for result in verification_results
         if result.get("status") == "violation"
     ]
-    warnings = [
+    uncovered = [
         result for result in verification_results
-        if result.get("status") in {"uncovered", "no_rule"}
+        if result.get("status") == "uncovered"
     ]
+    no_rule = [
+        result for result in verification_results
+        if result.get("status") == "no_rule"
+    ]
+    warnings = uncovered + no_rule
+
+    total = len(verification_results)
+    covered = total - len(uncovered) - len(no_rule)
+    base = {
+        "coverage_rate": round(covered / total, 3) if total > 0 else 0.0,
+        "total_claims": total,
+        "verified_claims": covered,
+    }
 
     if violations:
         return {
             "action": "REGENERATE",
+            **base,
             "reason": "Guideline violations detected",
             "violations": violations,
             "warnings": warnings,
@@ -28,19 +42,22 @@ def decide_action(verification_results):
     if warnings:
         return {
             "action": "PASS_WITH_WARNINGS",
+            **base,
             "reason": "No violations detected, but some claims are outside rule coverage",
             "warnings": warnings,
         }
 
     if not verification_results:
         return {
-            "action": "PASS_WITH_WARNINGS",
+            "action": "NO_CLAIMS_EXTRACTED",
+            **base,
             "reason": "No verifiable clinical claims were extracted",
             "warnings": [],
         }
 
     return {
         "action": "PASS",
+        **base,
         "reason": "All extracted claims comply with clinical guideline",
         "warnings": [],
     }

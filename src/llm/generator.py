@@ -86,11 +86,13 @@ class Generator:
         - Jika claim_type: contraindication maka prohibited: true.
         - evidence_text harus berupa kutipan verbatim pendek yang langsung mendukung claim.
         - Jika suatu field tidak memiliki nilai, OMIT field tersebut dari output JSON.
+        - Jika teks menyebutkan dosis "per kali" DAN frekuensi terpisah, ekstrak keduanya sebagai claim terpisah dengan unit yang tepat.
+        - "10 mg/kg 3 kali sehari" → dose: 10 mg/kgbb/kali + frequency: 3 kali/hari, BUKAN dose: 30 mg/kgbb/hari
 
         ENUM:
-        - severity: ringan|ringan-sedang|sedang|berat|besar|resisten_cairan|tersangka|refrakter
+        - severity: ringan|ringa_sedang|sedang|berat|besar|resisten_cairan|tersangka|refrakter
         - phase: initial|continuation|acute|intensive|maintenance
-        - complication: malnutrisi|ensefalopati|bronkopneumonia|meningitis|gangguan_fungsi_jantung|hamil_trimester_akhir|hipernatremia|refraktori|krisis_hipertensi|rawat_inap|rawat_jalan|perdarahan_saluran_kemih|asma_atau_gagal_jantung|efusi_perikardium|diabetes_mellitus
+        - complication: malnutrisi|ensefalopati|bronkopneumonia|meningitis|gangguan_fungsi_jantung|hamil_trimester_akhir|hipernatremia|refraktori|krisis_hipertensi|rawat_inap|rawat_jalan|perdarahan_saluran_kemih|efusi_perikardium|diabetes_mellitus
         - claim_type: dose|frequency|duration|interval|contraindication
 
         OUTPUT:
