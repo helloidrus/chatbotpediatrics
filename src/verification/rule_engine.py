@@ -99,13 +99,14 @@ def _ranges_overlap(
     Args:
         rule_min, rule_max: Range yang didefinisikan di rule
         claim_min, claim_max: Range dari claim (bisa None jika tidak disertakan)
-        unknown_claim_matches_specific: Jika True, klaim tanpa range cocok dengan rule spesifik.
-                                       Untuk contraindication (safety): True
-                                       Untuk numeric verification: False
+        unknown_claim_matches_specific: Jika True, klaim tanpa range bisa cocok
+                                       dengan rule luas. Rule dengan range sangat
+                                       spesifik tetap tidak dicocokkan agar tidak
+                                       menimbulkan false positive klinis.
     
     Returns:
         True jika range overlapping atau tidak ada batasan range.
-        False jika ada batasan range tapi claim tidak menyertakan range (untuk safety).
+        False jika ada batasan range sempit tapi claim tidak menyertakan range.
     """
     r_min, r_max = _to_float(rule_min), _to_float(rule_max)
     c_min, c_max = _to_float(claim_min), _to_float(claim_max)
@@ -119,6 +120,12 @@ def _ranges_overlap(
     # Untuk contraindication (safety): True (cocok aman-aman)
     # Untuk numeric verification: False (tidak cocok, hindari false compliance)
     if c_min is None and c_max is None:
+        # Keep very narrow age rules from matching generic claims without age context.
+        rule_range = (r_max if r_max is not None else 999) - (
+            r_min if r_min is not None else 0
+        )
+        if rule_range < 3:
+            return False
         return unknown_claim_matches_specific
 
     return (r_max is None or c_min <= r_max) and (
