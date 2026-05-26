@@ -62,7 +62,7 @@
       "rule_id": "diare_akut_duration_1",
       "condition": {
         "disease": "diare_akut",
-        "severity": "ringan-sedang"
+        "severity": "ringan_sedang"
       },
       "claim": {
         "claim_type": "duration",
@@ -81,7 +81,7 @@
       "rule_id": "diare_akut_dose_5",
       "condition": {
         "disease": "diare_akut",
-        "severity": "ringan-sedang"
+        "severity": "ringan_sedang"
       },
       "claim": {
         "claim_type": "dose",
@@ -100,7 +100,7 @@
       "rule_id": "diare_akut_dose_6",
       "condition": {
         "disease": "diare_akut",
-        "severity": "ringan-sedang",
+        "severity": "ringan_sedang",
         "weight_kg_min": 3,
         "weight_kg_max": 10
       },
@@ -121,7 +121,7 @@
       "rule_id": "diare_akut_dose_7",
       "condition": {
         "disease": "diare_akut",
-        "severity": "ringan-sedang",
+        "severity": "ringan_sedang",
         "weight_kg_min": 10,
         "weight_kg_max": 15
       },
@@ -142,7 +142,7 @@
       "rule_id": "diare_akut_dose_8",
       "condition": {
         "disease": "diare_akut",
-        "severity": "ringan-sedang",
+        "severity": "ringan_sedang",
         "weight_kg_min": 15
       },
       "claim": {
@@ -5694,6 +5694,21 @@
         "section": "Malaria",
         "page": 180,
         "text": "Kina dihidroklorid intravena 1mg garam/kgbb/dosis"
+      }
+    },
+    {
+      "rule_id": "malaria_dose_14_garam",
+      "condition": {"disease": "malaria"},
+      "claim": {
+        "claim_type": "dose",
+        "medicine": "kina dihidroklorid",
+        "value_min": 1,
+        "value_max": 1,
+        "unit": "mg/kgbb/kali",
+        "dose_context": "salt_equivalent"
+      },
+      "metadata": {
+        "note": "1 mg garam/kgbb ekuivalen dengan ~0.83 mg basa kina"
       }
     },
     {
@@ -11636,7 +11651,7 @@
       }
     },
     {
-      "rule_id": "hypertension_contraindication_labetalol1",
+      "rule_id": "hypertension_contraindication_labetalol2",
       "condition": {
         "disease": "hipertensi",
         "complication": "diabetes_mellitus_insulin_dependent"
@@ -11701,6 +11716,24 @@
         "source": "Buku PPM IDAI Jilid I",
         "page": 300,
         "text": "Vitamin C... TIDAK dipakai pada pasien dengan gangguan fungsi jantung"
+      }
+    },
+    {
+      "rule_id": "bronkiolitis_icu_threshold_sao2",
+      "condition": {"disease": "bronkiolitis"},
+      "claim": {
+        "claim_type": "dose",
+        "medicine": "oksigen",
+        "value_min": 92,
+        "value_max": 100,
+        "unit": "%",
+        "dose_context": "saturation_threshold_icu"
+      },
+      "metadata": {
+        "source": "PPM IDAI Jilid I",
+        "section": "Bronkiolitis",
+        "page": 31,
+        "text": "Bayi dengan saturasi oksigen ≤92% membutuhkan perawatan di ruang intensif"
       }
     }
   ]

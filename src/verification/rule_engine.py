@@ -63,11 +63,26 @@ def load_rules(path: str) -> list[dict]:
     if not isinstance(rules, list):
         raise ValueError(f"Field 'rules' di {path} harus berupa list.")
 
-    valid_rules = [
-        rule for rule in rules
-        if isinstance(rule, dict) and rule.get("rule_id") != "string"
-    ]
-    logger.info("Berhasil memuat %d rule dari %s", len(valid_rules), path)
+    seen_ids = {}
+    valid_rules = []
+    
+    for rule in rules:
+        if not isinstance(rule, dict):
+            continue
+        rule_id = rule.get("rule_id", "")
+        if rule_id == "string":
+            continue
+        if rule_id in seen_ids:
+            logger.error(
+                "Rule ID duplikat ditemukan: '%s'. "
+                "Rule kedua diabaikan — periksa rule_pediatrics.json!",
+                rule_id
+            )
+            continue
+        seen_ids[rule_id] = True
+        valid_rules.append(rule)
+    
+    logger.info("Memuat %d rule valid dari %s", len(valid_rules), path)
     return valid_rules
 
 
@@ -79,16 +94,35 @@ def _ranges_overlap(
     *,
     unknown_claim_matches_specific: bool = False,
 ) -> bool:
+    """Cek apakah range di rule dan claim overlapping.
+    
+    Args:
+        rule_min, rule_max: Range yang didefinisikan di rule
+        claim_min, claim_max: Range dari claim (bisa None jika tidak disertakan)
+        unknown_claim_matches_specific: Jika True, klaim tanpa range cocok dengan rule spesifik.
+                                       Untuk contraindication (safety): True
+                                       Untuk numeric verification: False
+    
+    Returns:
+        True jika range overlapping atau tidak ada batasan range.
+        False jika ada batasan range tapi claim tidak menyertakan range (untuk safety).
+    """
     r_min, r_max = _to_float(rule_min), _to_float(rule_max)
     c_min, c_max = _to_float(claim_min), _to_float(claim_max)
 
+    # Jika rule tidak membatasi → cocok dengan semua klaim
     if r_min is None and r_max is None:
         return True
+    
+    # Jika rule membatasi tapi klaim tidak menyertakan batasan
+    # → kembalikan berdasarkan unknown_claim_matches_specific
+    # Untuk contraindication (safety): True (cocok aman-aman)
+    # Untuk numeric verification: False (tidak cocok, hindari false compliance)
     if c_min is None and c_max is None:
         return unknown_claim_matches_specific
 
-    return (r_max is None or c_min is None or c_min <= r_max) and (
-        r_min is None or c_max is None or c_max >= r_min
+    return (r_max is None or c_min <= r_max) and (
+        r_min is None or c_max >= r_min
     )
 
 

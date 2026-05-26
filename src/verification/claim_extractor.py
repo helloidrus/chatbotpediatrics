@@ -19,6 +19,23 @@ def _canonical_text(value: Any) -> str | None:
     return normalized or None
 
 
+def _canonical_unit_text(value: Any) -> str | None:
+    """
+    Khusus untuk unit: pertahankan slash, normalisasi spasi di sekitar slash.
+    Menangani variasi seperti "mg / kg bb", "mg/kgbb", "mg / kg / hari", dll.
+    """
+    if value is None:
+        return None
+    unit = str(value).strip().lower()
+    # Normalisasi: hapus spasi di sekitar slash
+    unit = re.sub(r'\s*/\s*', '/', unit)
+    # Normalisasi: 'kg bb' → 'kgbb' dan 'kgBB' → 'kgbb'
+    unit = re.sub(r'kg\s+bb', 'kgbb', unit, flags=re.IGNORECASE)
+    # Hapus semua spasi tersisa
+    unit = re.sub(r'\s+', '', unit)
+    return unit or None
+
+
 def _to_float_or_none(value: Any) -> float | None:
     if value is None or value == "":
         return None
@@ -85,7 +102,8 @@ def _normalize_unit(value: Any) -> str | None:
     cleaned = _clean_unit(value)
     if cleaned is None:
         return None
-    return UNIT_ALIASES.get(_canonical_text(cleaned), cleaned)
+    canonical = _canonical_unit_text(cleaned)
+    return UNIT_ALIASES.get(canonical, cleaned)
 
 
 def _drop_none(value: Any) -> Any:
