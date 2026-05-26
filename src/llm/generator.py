@@ -59,8 +59,8 @@ class Generator:
 
     # Metode khusus untuk ekstraksi klaim dari jawaban LLM
     def generate_claim_extraction(self, answer_text):
-        # Load few-shot examples from root directory
-        few_shot_path = Path(__file__).parent.parent.parent / "few_shot_extractor.jsonl"
+        # Load few-shot examples colocated with this generator module.
+        few_shot_path = Path(__file__).parent / "few_shot_extractor.jsonl"
         examples_str = ""
         if few_shot_path.exists():
             try:
