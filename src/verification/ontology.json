@@ -4,15 +4,15 @@
     "anemia_defisiensi_besi": [ "anemia_defisiensi_besi", "anemia_besi", "iron_deficiency_anemia", "adb" ],
     "bayi_berat_lahir_rendah": [ "bayi_berat_lahir_rendah", "bblr", "low_birth_weight" ],
     "campak": [ "campak", "measles", "rubeola" ],
-    "diare_akut": [ "diare_akut", "diare", "acute_diarrhea", "gastroenteritis_akut", "disentri" ],
+    "diare_akut": [ "diare_akut", "diare", "acute_diarrhea", "gastroenteritis_akut", "disentri", "gastroenteritis", "acute diarrhea", "mencret", "buang air besar cair" ],
     "demam_tifoid": [ "demam_tifoid", "tifoid", "typhoid_fever" ],
     "infeksi_virus_dengue": [ "infeksi_virus_dengue", "dengue", "dbd", "dd", "ds", "demam_berdarah_dengue", "infeksi_dengue" ],
     "infeksi_saluran_kemih": [ "infeksi_saluran_kemih", "isk", "uti" ],
-    "pneumonia": [ "pneumonia", "pneumoni", "bronkopneumonia" ],
+    "pneumonia": [ "pneumonia", "pneumoni", "bronkopneumonia", "infeksi paru", "community acquired pneumonia", "cap" ],
     "asma": [ "asma", "asthma" ],
     "serangan_asma_akut": [ "serangan_asma_akut", "serangan_asma", "acute_asthma_attack" ],
     "kejang_akut": [ "kejang_akut", "kejang", "acute_seizure", "status_epileptikus" ],
-    "kejang_demam": [ "kejang_demam", "febrile_seizure", "kejang_demam_sederhana", "kejang_demam_kompleks" ],
+    "kejang_demam": [ "kejang_demam", "febrile_seizure", "kejang_demam_sederhana", "kejang_demam_kompleks", "febrile convulsion", "stuip", "step" ],
     "tuberkulosis": [ "tuberkulosis", "tb", "tbc", "tuberculosis" ],
     "malnutrisi_energi_protein": [ "malnutrisi_energi_protein", "mep", "gizi_buruk", "gizi_kurang", "marasmus", "kwashiorkor" ],
     "defek_septum_ventrikel": [ "defek_septum_ventrikel", "dsv", "ventricular_septal_defect", "vsd" ],
@@ -92,7 +92,7 @@
     "meningitis": [ "meningitis", "meningitis_bacterial", "meningitis_viral" ],
     "perdarahan_saluran_kemih": [ "perdarahan_saluran_kemih", "urinary_tract_bleeding", "hematuria" ],
     "resisten_cairan": [ "resisten_cairan", "fluid_resistant", "tidak_responsif_cairan", "resistant_to_fluid" ],
-    "asma": ["asma", "asthma", "bronkial_asma"],
+    "komorbid_asma": ["asma komorbid", "pasien asma", "penderita asma"],
     "gagal_jantung_komorbid": ["gagal_jantung_komorbid", "heart_failure_comorbid"],
     "diabetes_mellitus_insulin_dependent": [ "diabetes_mellitus_insulin_dependent", "iddm", "insulin_dependent", "tergantung_insulin" ],
     "efusi_pleura": ["efusi_pleura", "pleural_effusion"],
@@ -334,6 +334,7 @@
     "mEq/500mL": [ "meq/500ml", "meq/500 ml" ],
     "kali/minggu": [ "kali/minggu", "times per week", "kali per minggu" ],
     "g/kgbb": [ "g/kg", "g/kg bb", "g/kgbb", "gram/kg", "gram per kg" ],
-    "kali/total": [ "kali/total", "times total", "total times", "kali total" ]
+    "kali/total": [ "kali/total", "times total", "total times", "kali total" ],
+    "nacl_0_9_persen": [ "nacl 0,9%", "nacl 0.9%", "normal saline", "ns", "saline 0,9%", "nacl 0,9 persen", "cairan nacl" ]
   }
 }

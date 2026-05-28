@@ -205,6 +205,20 @@ def _unit_comparable(rule_unit: Any, claim_unit: Any) -> bool:
     return not (rule_unit and claim_unit) or _same_norm(rule_unit, claim_unit)
 
 
+def _numeric_unit_comparable(claim: dict, rule_unit: Any, claim_unit: Any) -> bool:
+    if _unit_comparable(rule_unit, claim_unit):
+        return True
+
+    if (
+        _same_norm(claim.get("claim_type"), "dose")
+        and _same_norm(claim_unit, "mg/kgbb")
+        and _same_norm(rule_unit, "mg/kgbb/kali")
+    ):
+        return True
+
+    return False
+
+
 def _lower_bound_ok(claim_min: float | None, rule_min: float | None) -> bool:
     if rule_min is None:
         return True
@@ -246,7 +260,7 @@ def _verify_numeric(claim: dict, matched_rules: list[dict]) -> dict:
 
     comparable_rules = [
         rule for rule in matched_rules
-        if _unit_comparable(_rule_range(rule)[2], claim_unit)
+        if _numeric_unit_comparable(claim, _rule_range(rule)[2], claim_unit)
     ]
 
     for rule in comparable_rules:
