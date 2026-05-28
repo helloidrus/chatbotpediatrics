@@ -2879,25 +2879,6 @@
       }
     },
     {
-      "rule_id": "demam_tifoid_dose_2",
-      "condition": {
-        "disease": "demam_tifoid"
-      },
-      "claim": {
-        "claim_type": "dose",
-        "medicine": "kloramfenikol",
-        "value_min": 50,
-        "value_max": 100,
-        "unit": "mg/kgbb/hari"
-      },
-      "metadata": {
-        "source": "Buku PPM IDAI Jilid I",
-        "section": "Demam Tifoid",
-        "page": 48,
-        "text": "Kloramfenikol (drug of choice) 50-100 mg/kgbb/hari, IV"
-      }
-    },
-    {
       "rule_id": "demam_tifoid_frequency_2",
       "condition": {
         "disease": "demam_tifoid"
@@ -8065,7 +8046,8 @@
       "rule_id": "meningitis_tuberkulosis_duration_2",
       "condition": {
         "disease": "tuberkulosis",
-        "complication": "meningitis"
+        "complication": "meningitis",
+        "phase": "continuation"
       },
       "claim": {
         "claim_type": "duration",
@@ -8085,7 +8067,8 @@
       "rule_id": "meningitis_tuberkulosis_duration_22",
       "condition": {
         "disease": "tuberkulosis",
-        "complication": "meningitis"
+        "complication": "meningitis",
+        "phase": "continuation"
       },
       "claim": {
         "claim_type": "duration",
