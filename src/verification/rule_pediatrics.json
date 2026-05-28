@@ -1590,15 +1590,15 @@
       "claim": {
         "claim_type": "duration",
         "medicine": "isoniazid",
-        "value_min": 4,
-        "value_max": 6,
+        "value_min": 7,
+        "value_max": 10,
         "unit": "bulan"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Tuberkulosis",
         "page": 325,
-        "text": "Fase lanjutan: 7-10 OAT selama 7-10 bulan"
+        "text": "TB paru berat (milier, destroyed lung) dan TB ekstra paru... fase lanjutan: 7-10 bulan"
       }
     },
     {
@@ -1678,7 +1678,7 @@
         "source": "Buku PPM IDAI Jilid I",
         "section": "Tuberkulosis",
         "page": 325,
-        "text": "Fase lanjutan: 7-10 OAT selama 7-10 bulan"
+        "text": "TB paru berat (milier, destroyed lung) dan TB ekstra paru... fase lanjutan: 7-10 bulan"
       }
     },
     {
@@ -10207,14 +10207,34 @@
     {
       "rule_id": "ensefalitis_herpes_simpleks_dose_1",
       "condition": {
-        "disease": "ensefalitis_herpes_simpleks"
+        "disease": "ensefalitis_herpes_simpleks",
+        "age_month_min": 0,
+        "age_month_max": 0.99
+      },
+      "claim": {
+        "claim_type": "dose",
+        "medicine": "asiklovir",
+        "value_min": 20,
+        "value_max": 20,
+        "unit": "mg/kgbb/kali"
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I", "section": "Ensefalitis Herpes Simpleks", "page": 71,
+        "text": "Dosis untuk neonatus 20 mg/kgbb"
+      }
+    },
+    {
+      "rule_id": "ensefalitis_herpes_simpleks_dose_4",
+      "condition": {
+        "disease": "ensefalitis_herpes_simpleks",
+        "age_month_min": 1
       },
       "claim": {
         "claim_type": "dose",
         "medicine": "asiklovir",
         "value_min": 10,
         "value_max": 10,
-        "unit": "mg/kgbb"
+        "unit": "mg/kgbb/kali"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -11672,7 +11692,7 @@
       "condition": {
         "disease": "demam_tanpa_penyebab_jelas"
       },
-      "claims": [
+      "claim": [
         {
           "claim_type": "dose",
           "medicine": "amoksisilin",
