@@ -110,7 +110,7 @@ class Generator:
             system_prompt=system_prompt,
             user_prompt=user_prompt,
             temperature=0,
-            max_tokens=999,
+            max_tokens=2048
         )
 
     # Metode untuk meregenerasi jawaban berdasarkan pelanggaran pedoman

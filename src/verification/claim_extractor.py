@@ -30,6 +30,7 @@ def _canonical_unit_text(value: Any) -> str | None:
     # Normalisasi: hapus spasi di sekitar slash
     unit = re.sub(r'\s*/\s*', '/', unit)
     # Normalisasi: 'kg bb' → 'kgbb' dan 'kgBB' → 'kgbb'
+    unit = re.sub(r'kgbb', 'kgbb', unit)
     unit = re.sub(r'kg\s+bb', 'kgbb', unit, flags=re.IGNORECASE)
     # Hapus semua spasi tersisa
     unit = re.sub(r'\s+', '', unit)
