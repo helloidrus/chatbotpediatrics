@@ -51,8 +51,9 @@
     "alergi_obat": ["alergi_obat", "drug_allergy"],
     "hepatitis_akut": ["hepatitis_akut", "acute_hepatitis"],
     "bronkiolitis": ["bronkiolitis", "bronchiolitis"],
-    "failure_to_thrive": ["failure_to_thrive", "ftt", "gagal_tumbuh"]
-  },
+    "failure_to_thrive": ["failure_to_thrive", "ftt", "gagal_tumbuh"],
+    "demam_tanpa_penyebab_jelas": ["demam_tanpa_penyebab_jelas", "fever_without_source", "demam_akut_tanpa_penyebab", "fws"]
+},
 
   "phase": {
     "initial": [ "initial", "awal", "fase_awal", "inisial", "initial_phase", "loading", "loading_dose" ],
@@ -289,10 +290,10 @@
     "mL": [ "ml", "milliliter", "millilitre" ],
     "L": [ "l", "liter", "litre" ],
     "mg/kgbb": [ "mg/kg", "mg/kg bb", "mg per kg", "mg per kgbb", "mg/kgbb", "mg per kilogram" ],
+    "mgbasa/kgbb": ["mg_basa/kgbb", "mg basa/kgbb", "mg_basa/kg", "mg base/kgbb", "mg basa/kgBB", "mg base/kg"],
     "mg/kgbb/kali": [ "mg/kg/kali", "mg/kg bb/kali", "mg/kg/dosis", "mg/kgbb/dosis", "mg/kg/dose", "mg/kgbb/dose", "mg/kgbb/", "mg/kgbb/kali", "mg per kg per dose", "mg per kg per kali", "mg/kg/d", "mg/kg/administration" ],
     "mg/kgbb/hari": [ "mg/kg/hari", "mg/kg bb/hari", "mg/kg per hari", "mg/kg/day", "mg per kg per hari", "mg/kgbb/hari" ],
-    "mg garam/kgbb/kali": [ "mg garam/kgbb/dose", "mg garam/kg/dose", "mg garam/kg/kali", "mg garam/kgbb/kali", "mg garam/kgbb/dosis" ],
-    "mg basa/kgbb": ["mg basa/kgbb", "mg_basa/kg", "mg base/kgbb"],
+    "mggaram/kgbb/kali": [ "mg garam/kgbb/dose", "mg garam/kg/dose", "mg garam/kg/kali", "mg garam/kgbb/kali", "mg garam/kgbb/dosis" ],
     "mg/m2/hari": [ "mg/m2/hari", "mg/m2/day", "mg per m2 per hari" ],
     "mg/m2": [ "mg/m2", "mg per m2" ],
     "mL/kgbb": [ "ml/kg", "ml/kg bb", "ml/kgbb", "ml/kgBB", "secara bolus" ],

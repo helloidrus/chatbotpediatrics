@@ -5133,8 +5133,8 @@
       "rule_id": "sepsis_neonatal_dose_1",
       "condition": {
         "disease": "sepsis_neonatal",
-        "age_month_min": 0.03,
-        "age_month_max": 0.25
+        "age_month_min": 0,
+        "age_month_max": 0.23
       },
       "claim": {
         "claim_type": "dose",
@@ -5154,8 +5154,8 @@
       "rule_id": "sepsis_neonatal_interval_3",
       "condition": {
         "disease": "sepsis_neonatal",
-        "age_month_min": 0.03,
-        "age_month_max": 0.25
+        "age_month_min": 0,
+        "age_month_max": 0.23
       },
       "claim": {
         "claim_type": "interval",
@@ -5168,14 +5168,14 @@
         "source": "Buku PPM IDAI Jilid I",
         "section": "Sepsis Neonatal",
         "page": 268,
-        "text": "setiap 12 jam"
+        "text": "setiap 12 jam, 0-7 hari kehidupan (neonatus dini)"
       }
     },
     {
       "rule_id": "sepsis_neonatal_dose_2",
       "condition": {
         "disease": "sepsis_neonatal",
-        "age_month_min": 0.25
+        "age_month_min": 0.23
       },
       "claim": {
         "claim_type": "dose",
@@ -5195,7 +5195,7 @@
       "rule_id": "sepsis_neonatal_interval_4",
       "condition": {
         "disease": "sepsis_neonatal",
-        "age_month_min": 0.25
+        "age_month_min": 0.23
       },
       "claim": {
         "claim_type": "interval",
@@ -5216,7 +5216,7 @@
       "condition": {
         "disease": "sepsis_neonatal",
         "complication": "meningitis",
-        "age_month_max": 0.25
+        "age_month_max": 0.23
       },
       "claim": {
         "claim_type": "dose",
@@ -5237,7 +5237,7 @@
       "condition": {
         "disease": "sepsis_neonatal",
         "complication": "meningitis",
-        "age_month_max": 0.25
+        "age_month_max": 0.23
       },
       "claim": {
         "claim_type": "interval",
@@ -5258,7 +5258,7 @@
       "condition": {
         "disease": "sepsis_neonatal",
         "complication": "meningitis",
-        "age_month_min": 0.25
+        "age_month_min": 0.23
       },
       "claim": {
         "claim_type": "dose",
@@ -5279,7 +5279,7 @@
       "condition": {
         "disease": "sepsis_neonatal",
         "complication": "meningitis",
-        "age_month_min": 0.25
+        "age_month_min": 0.23
       },
       "claim": {
         "claim_type": "interval",
@@ -5299,8 +5299,8 @@
       "rule_id": "sepsis_neonatal_dose_5",
       "condition": {
         "disease": "sepsis_neonatal",
-        "age_month_min": 0.03,
-        "age_month_max": 0.25
+        "age_month_min": 0,
+        "age_month_max": 0.23
       },
       "claim": {
         "claim_type": "dose",
@@ -5320,8 +5320,8 @@
       "rule_id": "sepsis_neonatal_interval_7",
       "condition": {
         "disease": "sepsis_neonatal",
-        "age_month_min": 0.03,
-        "age_month_max": 0.25
+        "age_month_min": 0,
+        "age_month_max": 0.23
       },
       "claim": {
         "claim_type": "interval",
@@ -5341,7 +5341,7 @@
       "rule_id": "sepsis_neonatal_interval_8",
       "condition": {
         "disease": "sepsis_neonatal",
-        "age_month_min": 0.25
+        "age_month_min": 0.23
       },
       "claim": {
         "claim_type": "interval",
@@ -5361,7 +5361,7 @@
       "rule_id": "sepsis_neonatal_dose_6",
       "condition": {
         "disease": "sepsis_neonatal",
-        "age_month_min": 0.25
+        "age_month_min": 0.23
       },
       "claim": {
         "claim_type": "dose",
@@ -5381,8 +5381,8 @@
       "rule_id": "sepsis_neonatal_dose_7",
       "condition": {
         "disease": "sepsis_neonatal",
-        "age_month_min": 0.03,
-        "age_month_max": 0.25,
+        "age_month_min": 0,
+        "age_month_max": 0.23,
         "complication": "meningitis"
       },
       "claim": {
@@ -5404,8 +5404,8 @@
       "condition": {
         "disease": "sepsis_neonatal",
         "complication": "meningitis",
-        "age_month_min": 0.03,
-        "age_month_max": 0.25
+        "age_month_min": 0,
+        "age_month_max": 0.23
       },
       "claim": {
         "claim_type": "interval",
@@ -5426,7 +5426,7 @@
       "condition": {
         "disease": "sepsis_neonatal",
         "complication": "meningitis",
-        "age_month_min": 0.25
+        "age_month_min": 0.23
       },
       "claim": {
         "claim_type": "interval",
@@ -5446,8 +5446,8 @@
       "rule_id": "sepsis_neonatal_dose_8",
       "condition": {
         "disease": "sepsis_neonatal",
-        "age_month_min": 0.03,
-        "age_month_max": 0.25,
+        "age_month_min": 0,
+        "age_month_max": 0.23,
         "weight_kg_max": 2
       },
       "claim": {
@@ -5468,8 +5468,8 @@
       "rule_id": "sepsis_neonatal_frequency_8",
       "condition": {
         "disease": "sepsis_neonatal",
-        "age_month_min": 0.03,
-        "age_month_max": 0.25,
+        "age_month_min": 0,
+        "age_month_max": 0.23,
         "weight_kg_max": 2
       },
       "claim": {
@@ -5490,8 +5490,8 @@
       "rule_id": "sepsis_neonatal_dose_9",
       "condition": {
         "disease": "sepsis_neonatal",
-        "age_month_min": 0.03,
-        "age_month_max": 0.25,
+        "age_month_min": 0,
+        "age_month_max": 0.23,
         "weight_kg_min": 2
       },
       "claim": {
@@ -5512,8 +5512,8 @@
       "rule_id": "sepsis_neonatal_frequency_9",
       "condition": {
         "disease": "sepsis_neonatal",
-        "age_month_min": 0.03,
-        "age_month_max": 0.25,
+        "age_month_min": 0,
+        "age_month_max": 0.23,
         "weight_kg_min": 2
       },
       "claim": {
@@ -5534,7 +5534,7 @@
       "rule_id": "sepsis_neonatal_dose_10",
       "condition": {
         "disease": "sepsis_neonatal",
-        "age_month_min": 0.25
+        "age_month_min": 0.23
       },
       "claim": {
         "claim_type": "dose",
@@ -5554,7 +5554,7 @@
       "rule_id": "sepsis_neonatal_interval_2",
       "condition": {
         "disease": "sepsis_neonatal",
-        "age_month_min": 0.25
+        "age_month_min": 0.23
       },
       "claim": {
         "claim_type": "interval",
@@ -5675,7 +5675,7 @@
         "medicine": "kina dihidroklorid",
         "value_min": 1,
         "value_max": 1,
-        "unit": "mg garam/kgbb/kali"
+        "unit": "mggaram/kgbb/kali"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5887,7 +5887,7 @@
         "medicine": "primakuin fosfat",
         "value_min": 0.5,
         "value_max": 0.75,
-        "unit": "mg basa/kgbb"
+        "unit": "mgbasa/kgbb"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -6955,8 +6955,7 @@
         "source": "Buku PPM IDAI Jilid I",
         "section": "Diabetes Melitus Tipe-1",
         "page": 54,
-        "text": "dilanjutkan 20 menit untuk latihan aerobik",
-        "phase": "N/A"
+        "text": "dilanjutkan 20 menit untuk latihan aerobik"
       }
     },
     {
@@ -8849,44 +8848,6 @@
       }
     },
     {
-      "rule_id": "hemofilia_dose_4",
-      "condition": {
-        "disease": "hemofilia"
-      },
-      "claim": {
-        "claim_type": "dose",
-        "medicine": "asam traneksamat",
-        "value_min": 25,
-        "value_max": 25,
-        "unit": "mg/kgbb/kali"
-      },
-      "metadata": {
-        "source": "Buku PPM IDAI Jilid I",
-        "section": "Hemofilia",
-        "page": 94,
-        "text": "Dosis: 25 mg/kgbb/kali"
-      }
-    },
-    {
-      "rule_id": "hemofilia_frequency_2",
-      "condition": {
-        "disease": "hemofilia"
-      },
-      "claim": {
-        "claim_type": "frequency",
-        "medicine": "asam traneksamat",
-        "value_min": 3,
-        "value_max": 3,
-        "unit": "kali/hari"
-      },
-      "metadata": {
-        "source": "Buku PPM IDAI Jilid I",
-        "section": "Hemofilia",
-        "page": 94,
-        "text": "3 kali/hari, oral/intravena"
-      }
-    },
-    {
       "rule_id": "hemofilia_duration_3",
       "condition": {
         "disease": "hemofilia"
@@ -10553,7 +10514,7 @@
       "rule_id": "apcd_vitk1_dose_1",
       "condition": {
         "disease": "defisiensi kompleks protrombin",
-        "age_month_min": 0.25,
+        "age_month_min": 0.23,
         "age_month_max": 6
       },
       "claim": {
@@ -11707,36 +11668,15 @@
       }
     },
     {
-      "rule_id": "bronkiolitis_icu_threshold_sao2",
-      "condition": {"disease": "bronkiolitis"},
-      "claim": {
-        "claim_type": "dose",
-        "medicine": "oksigen",
-        "value_min": 92,
-        "value_max": 100,
-        "unit": "%",
-        "dose_context": "saturation_threshold_icu"
-      },
-      "metadata": {
-        "source": "PPM IDAI Jilid I",
-        "section": "Bronkiolitis",
-        "page": 31,
-        "text": "Bayi dengan saturasi oksigen ≤92% membutuhkan perawatan di ruang intensif"
-      }
-    },
-    {
       "rule_id": "demam_tanpa_penyebab_jelas_antibiotik_empirik",
       "condition": { "disease": "demam_tanpa_penyebab_jelas" },
-      "claims": [
-        {
+      "claim":{
           "claim_type": "dose",
           "medicine": "seftriakson",
           "value_min": 50,
           "value_max": 75,
-          "unit": "mg/kgbb/hari",
-          "evidence_text": "Seftriakson 50–75 mg/kgbb/hr maksimum 2 g/hr"
-        }
-      ],
+          "unit": "mg/kgbb/hari"
+        },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Demam Tanpa Penyebab yang Jelas",
