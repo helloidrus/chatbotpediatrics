@@ -10,7 +10,7 @@ def main():
         return
 
     # Pertanyaan yang memerlukan referensi data klinis
-    query = "Apa regimen lengkap primakuin untuk malaria vivax?"
+    query = "Kapan antibiotik empiris boleh diberikan pada diare akut anak?"
 
     print(f"\nPERTANYAAN: {query}")
 

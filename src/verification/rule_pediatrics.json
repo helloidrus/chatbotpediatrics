@@ -1,13 +1,39 @@
 ﻿{
   "rules": [
     {
+      "rule_id": "string",
+      "condition": { 
+        "disease": "string",
+        "age_month_min": "float",
+        "age_month_max": "float",
+        "weight_kg_min": "float",
+        "weight_kg_max": "float",
+        "phase": "string",
+        "severity": "string",
+        "complication": "string"
+      },
+      "claim": {
+        "claim_type": "string",
+        "medicine": "string",
+        "value_min": "float",
+        "value_max": "float",
+        "unit": "string",
+        "prohibited": true
+      },
+      "metadata": {
+        "source": "string",
+        "section": "string",
+        "page": "int"
+      }
+    },
+    {
       "rule_id": "diare_akut_dose_1",
       "condition": {
         "disease": "diare_akut"
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "new oralit",
+        "medicine": "new_oralit",
         "value_min": 5,
         "value_max": 10,
         "unit": "mL/kgbb"
@@ -27,7 +53,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "new oralit",
+        "medicine": "new_oralit",
         "value_min": 50,
         "value_max": 100,
         "unit": "mL"
@@ -47,7 +73,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "new oralit",
+        "medicine": "new_oralit",
         "value_min": 100,
         "value_max": 200,
         "unit": "mL"
@@ -66,7 +92,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "medicine": "rehidrasi oral hipoosmolar",
+        "medicine": "rehidrasi_oral_hipoosmolar",
         "value_min": 3,
         "value_max": 3,
         "unit": "jam"
@@ -85,7 +111,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "rehidrasi oral hipoosmolar",
+        "medicine": "rehidrasi_oral_hipoosmolar",
         "value_min": 5,
         "value_max": 10,
         "unit": "mL/kgbb/kali"
@@ -166,7 +192,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "ringer laktat",
+        "medicine": "ringer_laktat",
         "value_min": 100,
         "value_max": 100,
         "unit": "mL/kgbb"
@@ -185,7 +211,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "ringer asetat",
+        "medicine": "ringer_asetat",
         "value_min": 100,
         "value_max": 100,
         "unit": "mL/kgbb"
@@ -207,7 +233,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "ringer laktat",
+        "medicine": "ringer_laktat",
         "value_min": 30,
         "value_max": 30,
         "unit": "mL/kgbb"
@@ -229,7 +255,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "ringer asetat",
+        "medicine": "ringer_asetat",
         "value_min": 30,
         "value_max": 30,
         "unit": "mL/kgbb"
@@ -251,7 +277,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "medicine": "ringer laktat",
+        "medicine": "ringer_laktat",
         "value_min": 1,
         "value_max": 1,
         "unit": "jam"
@@ -273,7 +299,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "medicine": "ringer asetat",
+        "medicine": "ringer_asetat",
         "value_min": 1,
         "value_max": 1,
         "unit": "jam"
@@ -295,7 +321,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "ringer laktat",
+        "medicine": "ringer_laktat",
         "value_min": 70,
         "value_max": 70,
         "unit": "mL/kgbb"
@@ -317,7 +343,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "ringer asetat",
+        "medicine": "ringer_asetat",
         "value_min": 70,
         "value_max": 70,
         "unit": "mL/kgbb"
@@ -339,7 +365,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "medicine": "ringer laktat",
+        "medicine": "ringer_laktat",
         "value_min": 5,
         "value_max": 5,
         "unit": "jam"
@@ -361,7 +387,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "medicine": "ringer asetat",
+        "medicine": "ringer_asetat",
         "value_min": 5,
         "value_max": 5,
         "unit": "jam"
@@ -382,7 +408,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "ringer laktat",
+        "medicine": "ringer_laktat",
         "value_min": 30,
         "value_max": 30,
         "unit": "mL/kgbb"
@@ -403,7 +429,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "ringer asetat",
+        "medicine": "ringer_asetat",
         "value_min": 30,
         "value_max": 30,
         "unit": "mL/kgbb"
@@ -424,7 +450,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "medicine": "ringer laktat",
+        "medicine": "ringer_laktat",
         "value_min": 0.5,
         "value_max": 0.5,
         "unit": "jam"
@@ -445,7 +471,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "medicine": "ringer asetat",
+        "medicine": "ringer_asetat",
         "value_min": 0.5,
         "value_max": 0.5,
         "unit": "jam"
@@ -466,7 +492,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "ringer laktat",
+        "medicine": "ringer_laktat",
         "value_min": 70,
         "value_max": 70,
         "unit": "mL/kgbb"
@@ -487,7 +513,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "ringer asetat",
+        "medicine": "ringer_asetat",
         "value_min": 70,
         "value_max": 70,
         "unit": "mL/kgbb"
@@ -508,7 +534,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "medicine": "ringer laktat",
+        "medicine": "ringer_laktat",
         "value_min": 2.5,
         "value_max": 2.5,
         "unit": "jam"
@@ -529,7 +555,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "medicine": "ringer asetat",
+        "medicine": "ringer_asetat",
         "value_min": 2.5,
         "value_max": 2.5,
         "unit": "jam"
@@ -639,7 +665,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "penisilin g",
+        "medicine": "penisilin_g",
         "value_min": 50000,
         "value_max": 50000,
         "unit": "IU/kgbb/kali"
@@ -658,7 +684,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "penisilin g",
+        "medicine": "penisilin_g",
         "value_min": 0,
         "value_max": 4000000,
         "unit": "IU/kali"
@@ -677,7 +703,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "medicine": "penisilin g",
+        "medicine": "penisilin_g",
         "value_min": 6,
         "value_max": 6,
         "unit": "kali/hari"
@@ -696,7 +722,7 @@
       },
       "claim": {
         "claim_type": "interval",
-        "medicine": "penisilin g",
+        "medicine": "penisilin_g",
         "value_min": 4,
         "value_max": 4,
         "unit": "jam"
@@ -1044,7 +1070,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "ringer laktat",
+        "medicine": "ringer_laktat",
         "value_min": 10,
         "value_max": 20,
         "unit": "mL/kgbb"
@@ -1063,7 +1089,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "medicine": "ringer laktat",
+        "medicine": "ringer_laktat",
         "value_min": 30,
         "value_max": 30,
         "unit": "menit"
@@ -1179,7 +1205,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "darah segar",
+        "medicine": "darah_segar",
         "value_min": 10,
         "value_max": 10,
         "unit": "mL/kgbb"
@@ -1201,7 +1227,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "cairan oral",
+        "medicine": "cairan_oral",
         "value_min": 1.5,
         "value_max": 2,
         "unit": "L/hari"
@@ -1223,7 +1249,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "cairan oral",
+        "medicine": "cairan_oral",
         "value_min": 1,
         "value_max": 2,
         "unit": "L/hari"
@@ -1941,7 +1967,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "vitamin a",
+        "medicine": "vitamin_a",
         "value_min": 100000,
         "value_max": 100000,
         "unit": "IU"
@@ -1980,7 +2006,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "asam folat",
+        "medicine": "asam_folat",
         "value_min": 1,
         "value_max": 5,
         "unit": "mg"
@@ -1999,7 +2025,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "medicine": "asam folat",
+        "medicine": "asam_folat",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -2368,7 +2394,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "asam valproat",
+        "medicine": "asam_valproat",
         "value_min": 15,
         "value_max": 40,
         "unit": "mg/kgbb/hari"
@@ -2387,7 +2413,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "medicine": "asam valproat",
+        "medicine": "asam_valproat",
         "value_min": 2,
         "value_max": 3,
         "unit": "kali/hari"
@@ -2406,7 +2432,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "medicine": "asam valproat",
+        "medicine": "asam_valproat",
         "value_min": 1,
         "value_max": 1,
         "unit": "tahun"
@@ -3174,7 +3200,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "metil-prednisolon",
+        "medicine": "metil_prednisolon",
         "value_min": 0.5,
         "value_max": 1,
         "unit": "mg/kgbb/hari"
@@ -3194,7 +3220,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "medicine": "metil-prednisolon",
+        "medicine": "metil_prednisolon",
         "value_min": 3,
         "value_max": 5,
         "unit": "hari"
@@ -3335,7 +3361,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "besi elemental",
+        "medicine": "besi_elemental",
         "value_min": 3,
         "value_max": 3,
         "unit": "mg/kgbb/hari"
@@ -3355,7 +3381,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "besi elemental",
+        "medicine": "besi_elemental",
         "value_min": 4,
         "value_max": 6,
         "unit": "mg/kgbb/hari"
@@ -3374,7 +3400,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "medicine": "besi elemental",
+        "medicine": "besi_elemental",
         "value_min": 2,
         "value_max": 3,
         "unit": "bulan"
@@ -3395,7 +3421,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "besi elemental",
+        "medicine": "besi_elemental",
         "value_min": 1,
         "value_max": 1,
         "unit": "mg/kgbb/hari"
@@ -3417,7 +3443,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "besi elemental",
+        "medicine": "besi_elemental",
         "value_min": 2,
         "value_max": 2,
         "unit": "mg/kgbb/hari"
@@ -3439,7 +3465,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "besi elemental",
+        "medicine": "besi_elemental",
         "value_min": 3,
         "value_max": 3,
         "unit": "mg/kgbb/hari"
@@ -3460,7 +3486,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "besi elemental",
+        "medicine": "besi_elemental",
         "value_min": 4,
         "value_max": 4,
         "unit": "mg/kgbb/hari"
@@ -3498,7 +3524,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "vitamin a",
+        "medicine": "vitamin_a",
         "value_min": 1500,
         "value_max": 1500,
         "unit": "IU"
@@ -3518,7 +3544,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "medicine": "vitamin a",
+        "medicine": "vitamin_a",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -3779,7 +3805,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "mineral oil",
+        "medicine": "mineral_oil",
         "value_min": 15,
         "value_max": 30,
         "unit": "mL/tahun"
@@ -4069,7 +4095,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "mineral oil",
+        "medicine": "mineral_oil",
         "value_min": 1,
         "value_max": 3,
         "unit": "mL/kgbb/hari"
@@ -4165,7 +4191,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "klorfeniramin maleat",
+        "medicine": "klorfeniramin_maleat",
         "value_min": 0.25,
         "value_max": 0.25,
         "unit": "mg/kgbb/hari"
@@ -4184,7 +4210,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "medicine": "klorfeniramin maleat",
+        "medicine": "klorfeniramin_maleat",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -4241,7 +4267,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "adrenalin 1:1000",
+        "medicine": "adrenalin_1_1000",
         "value_min": 0.01,
         "value_max": 0.01,
         "unit": "mL/kgbb"
@@ -4260,7 +4286,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "adrenalin 1:1000",
+        "medicine": "adrenalin_1_1000",
         "value_min": 0.3,
         "value_max": 0.3,
         "unit": "mL"
@@ -4737,7 +4763,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "vitamin k1",
+        "medicine": "vitamin_k1",
         "value_min": 1,
         "value_max": 1,
         "unit": "mg"
@@ -4756,7 +4782,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "medicine": "vitamin k1",
+        "medicine": "vitamin_k1",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali"
@@ -4775,7 +4801,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "vitamin k1",
+        "medicine": "vitamin_k1",
         "value_min": 2,
         "value_max": 2,
         "unit": "mg/kali"
@@ -4794,7 +4820,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "medicine": "vitamin k1",
+        "medicine": "vitamin_k1",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali"
@@ -4813,7 +4839,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "medicine": "pemberian minum",
+        "medicine": "pemberian_minum",
         "value_min": 8,
         "value_max": 24,
         "unit": "kali/hari"
@@ -4834,7 +4860,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "pemberian minum",
+        "medicine": "pemberian_minum",
         "value_min": 0,
         "value_max": 10,
         "unit": "mL/kgbb/hari"
@@ -4854,7 +4880,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "peningkatan minum",
+        "medicine": "peningkatan_minum",
         "value_min": 0.5,
         "value_max": 1,
         "unit": "mL"
@@ -4874,7 +4900,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "medicine": "peningkatan minum",
+        "medicine": "peningkatan_minum",
         "value_min": 1,
         "value_max": 1,
         "unit": "jam"
@@ -4896,7 +4922,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "pemberian minum",
+        "medicine": "pemberian_minum",
         "value_min": 0,
         "value_max": 10,
         "unit": "mL/kgbb/hari"
@@ -4917,7 +4943,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "peningkatan minum",
+        "medicine": "peningkatan_minum",
         "value_min": 1,
         "value_max": 2,
         "unit": "mL"
@@ -4938,7 +4964,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "medicine": "peningkatan minum",
+        "medicine": "peningkatan_minum",
         "value_min": 2,
         "value_max": 2,
         "unit": "jam"
@@ -4960,7 +4986,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "pemberian minum",
+        "medicine": "pemberian_minum",
         "value_min": 0,
         "value_max": 10,
         "unit": "mL/kgbb/hari"
@@ -4981,7 +5007,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "peningkatan minum",
+        "medicine": "peningkatan_minum",
         "value_min": 2,
         "value_max": 4,
         "unit": "mL"
@@ -5002,7 +5028,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "medicine": "peningkatan minum",
+        "medicine": "peningkatan_minum",
         "value_min": 3,
         "value_max": 3,
         "unit": "jam"
@@ -5022,7 +5048,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "pemberian minum",
+        "medicine": "pemberian_minum",
         "value_min": 0,
         "value_max": 10,
         "unit": "mL/kgbb/hari"
@@ -5041,7 +5067,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "peningkatan minum",
+        "medicine": "peningkatan_minum",
         "value_min": 3,
         "value_max": 5,
         "unit": "mL"
@@ -5060,7 +5086,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "medicine": "peningkatan minum",
+        "medicine": "peningkatan_minum",
         "value_min": 3,
         "value_max": 3,
         "unit": "jam"
@@ -5558,7 +5584,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "medicine": "formula susu terhidrolisat ekstensif",
+        "medicine": "formula_susu_terhidrolisat_ekstensif",
         "value_min": 2,
         "value_max": 4,
         "unit": "minggu"
@@ -5577,7 +5603,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "medicine": "formula asam amino",
+        "medicine": "formula_asam_amino",
         "value_min": 2,
         "value_max": 4,
         "unit": "minggu"
@@ -5596,7 +5622,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "klorokuin sulfat",
+        "medicine": "klorokuin_sulfat",
         "value_min": 25,
         "value_max": 25,
         "unit": "mg/kgbb"
@@ -5615,7 +5641,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "klorokuin sulfat",
+        "medicine": "klorokuin_sulfat",
         "value_min": 5,
         "value_max": 10,
         "unit": "mg/kgbb"
@@ -5634,7 +5660,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "medicine": "klorokuin sulfat",
+        "medicine": "klorokuin_sulfat",
         "value_min": 3,
         "value_max": 3,
         "unit": "hari"
@@ -5653,7 +5679,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "kina dihidroklorid",
+        "medicine": "kina_dihidroklorid",
         "value_min": 1,
         "value_max": 1,
         "unit": "mggaram/kgbb/kali"
@@ -5670,7 +5696,7 @@
       "condition": {"disease": "malaria"},
       "claim": {
         "claim_type": "dose",
-        "medicine": "kina dihidroklorid",
+        "medicine": "kina_dihidroklorid",
         "value_min": 1,
         "value_max": 1,
         "unit": "mg/kgbb/kali",
@@ -5687,7 +5713,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "medicine": "kina dihidroklorid",
+        "medicine": "kina_dihidroklorid",
         "value_min": 4,
         "value_max": 4,
         "unit": "jam"
@@ -5706,7 +5732,7 @@
       },
       "claim": {
         "claim_type": "interval",
-        "medicine": "kina dihidroklorid",
+        "medicine": "kina_dihidroklorid",
         "value_min": 8,
         "value_max": 8,
         "unit": "jam"
@@ -5725,7 +5751,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "medicine": "kina dihidroklorid",
+        "medicine": "kina_dihidroklorid",
         "value_min": 7,
         "value_max": 7,
         "unit": "hari"
@@ -5745,7 +5771,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "kuinin sulfat",
+        "medicine": "kuinin_sulfat",
         "value_min": 10,
         "value_max": 10,
         "unit": "mg/kgbb"
@@ -5765,7 +5791,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "medicine": "kuinin sulfat",
+        "medicine": "kuinin_sulfat",
         "value_min": 3,
         "value_max": 3,
         "unit": "kali/hari"
@@ -5785,7 +5811,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "medicine": "kuinin sulfat",
+        "medicine": "kuinin_sulfat",
         "value_min": 7,
         "value_max": 7,
         "unit": "hari"
@@ -5865,7 +5891,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "primakuin fosfat",
+        "medicine": "primakuin_fosfat",
         "value_min": 0.5,
         "value_max": 0.75,
         "unit": "mgbasa/kgbb"
@@ -5885,7 +5911,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "medicine": "primakuin fosfat",
+        "medicine": "primakuin_fosfat",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali"
@@ -5905,7 +5931,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "medicine": "primakuin fosfat",
+        "medicine": "primakuin_fosfat",
         "value_min": 1,
         "value_max": 1,
         "unit": "hari"
@@ -5924,7 +5950,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "primakuin fosfat",
+        "medicine": "primakuin_fosfat",
         "value_min": 0.25,
         "value_max": 0.25,
         "unit": "mg/kgbb"
@@ -5943,7 +5969,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "medicine": "primakuin fosfat",
+        "medicine": "primakuin_fosfat",
         "value_min": 5,
         "value_max": 14,
         "unit": "hari"
@@ -5962,7 +5988,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "primakuin fosfat",
+        "medicine": "primakuin_fosfat",
         "value_min": 0.25,
         "value_max": 0.25,
         "unit": "mg/kgbb"
@@ -5981,7 +6007,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "medicine": "primakuin fosfat",
+        "medicine": "primakuin_fosfat",
         "value_min": 5,
         "value_max": 14,
         "unit": "hari"
@@ -6000,7 +6026,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "primakuin fosfat",
+        "medicine": "primakuin_fosfat",
         "value_min": 0.25,
         "value_max": 0.25,
         "unit": "mg/kgbb"
@@ -6019,7 +6045,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "medicine": "primakuin fosfat",
+        "medicine": "primakuin_fosfat",
         "value_min": 5,
         "value_max": 14,
         "unit": "hari"
@@ -6039,7 +6065,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "pirimetamin sulfadoksin",
+        "medicine": "pirimetamin_sulfadoksin",
         "value_min": 0.25,
         "value_max": 0.25,
         "unit": "tablet"
@@ -6060,7 +6086,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "pirimetamin sulfadoksin",
+        "medicine": "pirimetamin_sulfadoksin",
         "value_min": 0.5,
         "value_max": 0.5,
         "unit": "tablet"
@@ -6081,7 +6107,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "pirimetamin sulfadoksin",
+        "medicine": "pirimetamin_sulfadoksin",
         "value_min": 1,
         "value_max": 1,
         "unit": "tablet"
@@ -6102,7 +6128,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "pirimetamin sulfadoksin",
+        "medicine": "pirimetamin_sulfadoksin",
         "value_min": 2,
         "value_max": 2,
         "unit": "tablet"
@@ -6122,7 +6148,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "pirimetamin sulfadoksin",
+        "medicine": "pirimetamin_sulfadoksin",
         "value_min": 3,
         "value_max": 3,
         "unit": "tablet"
@@ -7022,7 +7048,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "vitamin e",
+        "medicine": "vitamin_e",
         "value_min": 200,
         "value_max": 200,
         "unit": "IU"
@@ -7041,7 +7067,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "medicine": "vitamin e",
+        "medicine": "vitamin_e",
         "value_min": 2,
         "value_max": 2,
         "unit": "kali/hari"
@@ -7060,7 +7086,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "vitamin c",
+        "medicine": "vitamin_c",
         "value_min": 2,
         "value_max": 3,
         "unit": "mg/kgbb/hari"
@@ -7080,7 +7106,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "vitamin c",
+        "medicine": "vitamin_c",
         "value_min": 0,
         "value_max": 50,
         "unit": "mg"
@@ -7100,7 +7126,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "vitamin c",
+        "medicine": "vitamin_c",
         "value_min": 0,
         "value_max": 100,
         "unit": "mg"
@@ -7119,7 +7145,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "vitamin c",
+        "medicine": "vitamin_c",
         "value_min": 0,
         "value_max": 200,
         "unit": "mg/hari"
@@ -7726,7 +7752,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "l-tiroksin",
+        "medicine": "l_tiroksin",
         "value_min": 10,
         "value_max": 15,
         "unit": "mcg/kgbb/hari"
@@ -7747,7 +7773,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "l-tiroksin",
+        "medicine": "l_tiroksin",
         "value_min": 8,
         "value_max": 10,
         "unit": "mcg/kgbb/hari"
@@ -7768,7 +7794,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "l-tiroksin",
+        "medicine": "l_tiroksin",
         "value_min": 6,
         "value_max": 8,
         "unit": "mcg/kgbb/hari"
@@ -7789,7 +7815,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "l-tiroksin",
+        "medicine": "l_tiroksin",
         "value_min": 4,
         "value_max": 6,
         "unit": "mcg/kgbb/hari"
@@ -7810,7 +7836,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "l-tiroksin",
+        "medicine": "l_tiroksin",
         "value_min": 3,
         "value_max": 5,
         "unit": "mcg/kgbb/hari"
@@ -7830,7 +7856,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "l-tiroksin",
+        "medicine": "l_tiroksin",
         "value_min": 2,
         "value_max": 4,
         "unit": "mcg/kgbb/hari"
@@ -8780,7 +8806,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "asam traneksamat",
+        "medicine": "asam_traneksamat",
         "value_min": 25,
         "value_max": 25,
         "unit": "mg/kgbb/kali"
@@ -8856,7 +8882,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "morfin sulfat",
+        "medicine": "morfin_sulfat",
         "value_min": 0.1,
         "value_max": 0.2,
         "unit": "mg/kgbb/kali"
@@ -8875,7 +8901,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "bikarbonas natrikus",
+        "medicine": "bikarbonas_natrikus",
         "value_min": 1,
         "value_max": 1,
         "unit": "mEq/kgbb/hari"
@@ -9181,7 +9207,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "nacl 0,9%",
+        "medicine": "nacl_0_9_persen",
         "value_min": 20,
         "value_max": 20,
         "unit": "mL/kgbb"
@@ -9200,7 +9226,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "medicine": "nacl 0,9%",
+        "medicine": "nacl_0_9_persen",
         "value_min": 1,
         "value_max": 1,
         "unit": "jam"
@@ -9219,7 +9245,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "medicine": "cairan resusitasi",
+        "medicine": "cairan_resusitasi",
         "value_min": 36,
         "value_max": 48,
         "unit": "jam"
@@ -9239,7 +9265,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "medicine": "cairan resusitasi",
+        "medicine": "cairan_resusitasi",
         "value_min": 72,
         "value_max": 72,
         "unit": "jam"
@@ -9355,7 +9381,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "asam ursodeoksikolat",
+        "medicine": "asam_ursodeoksikolat",
         "value_min": 10,
         "value_max": 30,
         "unit": "mg/kgbb"
@@ -9374,7 +9400,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "medicine": "asam ursodeoksikolat",
+        "medicine": "asam_ursodeoksikolat",
         "value_min": 2,
         "value_max": 3,
         "unit": "kali/hari"
@@ -9431,7 +9457,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "vitamin d calcitriol",
+        "medicine": "vitamin_d_calcitriol",
         "value_min": 0.05,
         "value_max": 0.2,
         "unit": "mcg/kgbb/hari"
@@ -9450,7 +9476,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "medicine": "vitamin d calcitriol",
+        "medicine": "vitamin_d_calcitriol",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -9469,7 +9495,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "vitamin e",
+        "medicine": "vitamin_e",
         "value_min": 25,
         "value_max": 200,
         "unit": "IU/kgbb/hari"
@@ -9488,7 +9514,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "medicine": "vitamin e",
+        "medicine": "vitamin_e",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -9507,7 +9533,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "vitamin k1",
+        "medicine": "vitamin_k1",
         "value_min": 2.5,
         "value_max": 5,
         "unit": "mg/hari"
@@ -9526,7 +9552,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "medicine": "vitamin k1",
+        "medicine": "vitamin_k1",
         "value_min": 2,
         "value_max": 7,
         "unit": "kali/minggu"
@@ -9564,7 +9590,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "fosfor (p)",
+        "medicine": "fosfor_p",
         "value_min": 25,
         "value_max": 50,
         "unit": "mg/kgbb/hari"
@@ -9640,7 +9666,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "besi elemental",
+        "medicine": "besi_elemental",
         "value_min": 5,
         "value_max": 6,
         "unit": "mg/kgbb/hari"
@@ -9906,7 +9932,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "human tetanus immunoglobulin",
+        "medicine": "human_tetanus_immunoglobulin",
         "value_min": 500,
         "value_max": 500,
         "unit": "U"
@@ -9925,7 +9951,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "antitoksin tetanus",
+        "medicine": "antitoksin_tetanus",
         "value_min": 5000,
         "value_max": 5000,
         "unit": "IU"
@@ -9944,7 +9970,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "tetanus toksoid",
+        "medicine": "tetanus_toksoid",
         "value_min": 0.5,
         "value_max": 0.5,
         "unit": "mL"
@@ -10020,7 +10046,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "penisilin procain",
+        "medicine": "penisilin_procain",
         "value_min": 100000,
         "value_max": 100000,
         "unit": "IU/kgbb/kali"
@@ -10039,7 +10065,7 @@
       },
       "claim": {
         "claim_type": "frequency",
-        "medicine": "penisilin procain",
+        "medicine": "penisilin_procain",
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
@@ -10058,7 +10084,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "medicine": "penisilin procain",
+        "medicine": "penisilin_procain",
         "value_min": 7,
         "value_max": 10,
         "unit": "hari"
@@ -10097,7 +10123,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "natrium bikarbonat",
+        "medicine": "natrium_bikarbonat",
         "value_min": 35,
         "value_max": 45,
         "unit": "mEq/m2/hari"
@@ -10116,7 +10142,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "natrium bikarbonat",
+        "medicine": "natrium_bikarbonat",
         "value_min": 25,
         "value_max": 50,
         "unit": "mEq/500mL"
@@ -10173,7 +10199,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "kalsium karbonat",
+        "medicine": "kalsium_karbonat",
         "value_min": 300,
         "value_max": 300,
         "unit": "mg"
@@ -10192,7 +10218,7 @@
       },
       "claim": {
         "claim_type": "interval",
-        "medicine": "kalsium karbonat",
+        "medicine": "kalsium_karbonat",
         "value_min": 8,
         "value_max": 8,
         "unit": "jam"
@@ -10288,7 +10314,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "medicine": "infus asiklovir",
+        "medicine": "infus_asiklovir",
         "value_min": 1,
         "value_max": 24,
         "unit": "jam"
@@ -10409,7 +10435,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "dekstrosa 10%",
+        "medicine": "dekstrosa_10_persen",
         "value_min": 2,
         "value_max": 2,
         "unit": "mL/kgbb"
@@ -10428,7 +10454,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "laju infus glukosa",
+        "medicine": "laju_infus_glukosa",
         "value_min": 6,
         "value_max": 8,
         "unit": "mg/kgbb/menit"
@@ -10522,7 +10548,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "vitamin k1",
+        "medicine": "vitamin_k1",
         "value_min": 1,
         "value_max": 1,
         "unit": "mg"
@@ -10540,7 +10566,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "medicine": "vitamin k1",
+        "medicine": "vitamin_k1",
         "value_min": 3,
         "value_max": 3,
         "unit": "hari"
@@ -10558,7 +10584,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "fresh frozen plasma",
+        "medicine": "fresh_frozen_plasma",
         "value_min": 10,
         "value_max": 15,
         "unit": "mL/kgbb"
@@ -10576,7 +10602,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "medicine": "fresh frozen plasma",
+        "medicine": "fresh_frozen_plasma",
         "value_min": 3,
         "value_max": 3,
         "unit": "hari"
@@ -10631,7 +10657,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "dekstrosa 10%",
+        "medicine": "dekstrosa_10_persen",
         "value_min": 2,
         "value_max": 2,
         "unit": "mL/kgbb"
@@ -10650,7 +10676,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "laju infus glukosa",
+        "medicine": "laju_infus_glukosa",
         "value_min": 6,
         "value_max": 8,
         "unit": "mg/kgbb/menit"
@@ -10668,7 +10694,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "laju infus glukosa maksimal",
+        "medicine": "laju_infus_glukosa_maksimal",
         "value_min": 10,
         "value_max": 12,
         "unit": "mg/kgbb/menit"
@@ -10955,7 +10981,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "kalsium glukonas 10%",
+        "medicine": "kalsium_glukonas_10_persen",
         "value_min": 0.5,
         "value_max": 1,
         "unit": "mL/kgbb"
@@ -11375,7 +11401,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "glukagon infus kontinu",
+        "medicine": "glukagon_infus_kontinu",
         "value_min": 10,
         "value_max": 10,
         "unit": "mcg/kg/jam"
@@ -11661,7 +11687,7 @@
       },
       "claim": {
         "claim_type": "contraindication",
-        "medicine": "vitamin c",
+        "medicine": "vitamin_c",
         "prohibited": true
       },
       "metadata": {
@@ -11692,15 +11718,13 @@
       "condition": {
         "disease": "demam_tanpa_penyebab_jelas"
       },
-      "claim": [
-        {
-          "claim_type": "dose",
-          "medicine": "amoksisilin",
-          "value_min": 60,
-          "value_max": 100,
-          "unit": "mg/kgbb/hari"
-        }
-      ],
+      "claim": {
+        "claim_type": "dose",
+        "medicine": "amoksisilin",
+        "value_min": 60,
+        "value_max": 100,
+        "unit": "mg/kgbb/hari"
+      },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Demam Tanpa Penyebab yang Jelas",
@@ -11726,6 +11750,625 @@
         "section": "Serangan Asma Akut",
         "page": 272,
         "text": "Jika pasien telah mendapat aminofilin sebelumnya (kurang dari 4 jam), dosis yang diberikan adalah setengah dosis inisial."
+      }
+    },
+
+
+
+
+    {
+      "rule_id": "failure_to_thrive_frequency_1",
+      "condition": {
+        "disease": "failure_to_thrive",
+        "age_month_min": 0,
+        "phase": "intervention"
+      },
+      "claim": {
+        "claim_type": "frequency",
+        "medicine": "asi",
+        "constraint": {
+          "value_min": 8,
+          "value_max": 12,
+          "unit": "kali/24 jam",
+          "prohibited": false
+        }
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I", "section": "Failure to Thrive", "page": 78,
+        "text": "Frekuensi pemberian berkisar antara 8-12 kali dalam 24 jam"
+      }
+    },
+    {
+      "rule_id": "failure_to_thrive_duration_1",
+      "condition": {
+        "disease": "failure_to_thrive",
+        "age_month_min": 0,
+        "phase": "intervention"
+      },
+      "claim": {
+        "claim_type": "duration",
+        "medicine": "asi",
+        "constraint": {
+          "value_min": 10,
+          "value_max": 10,
+          "unit": "menit",
+          "prohibited": false
+        }
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I", "section": "Failure to Thrive", "page": 78,
+        "text": "lama pemberian minimal 10 menit disetiap payudara"
+      }
+    },
+    {
+      "rule_id": "failure_to_thrive_dose_1",
+      "condition": {
+        "disease": "failure_to_thrive",
+        "age_month_min": 12,
+        "age_month_max": 60,
+        "phase": "intervention"
+      },
+      "claim": {
+        "claim_type": "dose",
+        "medicine": "susu",
+        "constraint": {
+          "value_min": 480,
+          "value_max": 960,
+          "unit": "mL/hari"
+        }
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I", "section": "Failure to Thrive", "page": 78,
+        "text": "Susu sebanyak 480-960 mL per hari"
+      }
+    },
+    {
+      "rule_id": "failure_to_thrive_frequency_2",
+      "condition": {
+        "disease": "failure_to_thrive",
+        "age_month_min": 12,
+        "age_month_max": 60,
+        "phase": "intervention"
+      },
+      "claim": {
+        "claim_type": "frequency",
+        "medicine": "makan_utama",
+        "constraint": {
+          "value_min": 3,
+          "value_max": 3,
+          "unit": "kali/hari"
+        }
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I", "section": "Failure to Thrive", "page": 78,
+        "text": "3 kali makan"
+      }
+    },
+    {
+      "rule_id": "failure_to_thrive_frequency_3",
+      "condition": {
+        "disease": "failure_to_thrive",
+        "age_month_min": 12,
+        "age_month_max": 60,
+        "phase": "intervention"
+      },
+      "claim": {
+        "claim_type": "frequency",
+        "medicine": "snack",
+        "constraint": {
+          "value_min": 2,
+          "value_max": 2,
+          "unit": "kali/hari"
+        }
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I", "section": "Failure to Thrive", "page": 78,
+        "text": "2 kali snack bergizi per hari"
+      }
+    },
+    {
+      "rule_id": "failure_to_thrive_contraindication_1",
+      "condition": {
+        "disease": "failure_to_thrive",
+        "phase": "intervention"
+      },
+      "claim": {
+        "claim_type": "contraindication",
+        "medicine": "jus_punch_soda",
+        "constraint": {
+          "prohibited": true
+        }
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I", "section": "Failure to Thrive", "page": 78,
+        "text": "Stop pemberian jus, punch, soda sampai berat badan normal"
+      }
+    },
+    {
+      "rule_id": "failure_to_thrive_dose_2",
+      "condition": {
+        "disease": "failure_to_thrive",
+        "age_month_min": 0,
+        "age_month_max": 36,
+        "phase": "intervention"
+      },
+      "claim": {
+        "claim_type": "dose",
+        "medicine": "formula_bayi",
+        "constraint": {
+          "value_min": 24,
+          "value_max": 30,
+          "unit": "kkal/oz"
+        }
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I", "section": "Failure to Thrive", "page": 78,
+        "text": "Formula bayi dapat dikonsentrasikan sampai 24-30 kkal/oz (30 ml)"
+      }
+    },
+    {
+      "rule_id": "infant_feeding_practice_duration_1",
+      "condition": {
+        "disease": "infant_feeding_practice",
+        "age_month_min": 0,
+        "age_month_max": 6,
+        "phase": "eksklusif"
+      },
+      "claim": {
+        "claim_type": "duration",
+        "medicine": "asi",
+        "constraint": {
+          "value_min": 6,
+          "value_max": 6,
+          "unit": "bulan"
+        }
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I","section": "Infant Feeding Practice","page": 129,
+        "text": "Air Susu Ibu (ASI) eksklusif selama 6 bulan (180 hari)"
+      }
+    },
+    {
+      "rule_id": "infant_feeding_practice_contraindication_1",
+      "condition": {
+        "disease": "infant_feeding_practice",
+        "complication": "infeksi_hiv"
+      },
+      "claim": {
+        "claim_type": "contraindication",
+        "medicine": "asi",
+        "constraint": {
+          "prohibited": true
+        }
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I","section": "Infant Feeding Practice","page": 130,
+        "text": "Keadaan yang meghalangi pemberian ASI secara permanen adalah Infeksi HIV"
+      }
+    },
+    {
+      "rule_id": "infant_feeding_practice_dose_1",
+      "condition": {
+        "disease": "infant_feeding_practice",
+        "age_month_min": 6,
+        "age_month_max": 8,
+        "phase": "pendamping_asi"
+      },
+      "claim": {
+        "claim_type": "dose",
+        "medicine": "energi_tambahan_mpasi",
+        "constraint": {
+          "value_min": 200,
+          "value_max": 200,
+          "unit": "kkal/hari"
+        }
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I","section": "Infant Feeding Practice","page": 135,
+        "text": "Energi yang dibutuhkan sebagai tambahan ASI: 200 kkal per hari"
+      }
+    },
+    {
+      "rule_id": "infant_feeding_practice_frequency_1",
+      "condition": {
+        "disease": "infant_feeding_practice",
+        "age_month_min": 6,
+        "age_month_max": 8,
+        "phase": "pendamping_asi"
+      },
+      "claim": {
+        "claim_type": "frequency",
+        "medicine": "mpasi_makan_utama",
+        "constraint": {
+          "value_min": 2,
+          "value_max": 3,
+          "unit": "kali/hari"
+        }
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I","section": "Infant Feeding Practice","page": 135,
+        "text": "Frekuensi: 2-3 kali perhari"
+      }
+    },
+    {
+      "rule_id": "infant_feeding_practice_dose_2",
+      "condition": {
+        "disease": "infant_feeding_practice",
+        "age_month_min": 6,
+        "age_month_max": 8,
+        "phase": "pendamping_asi"
+      },
+      "claim": {
+        "claim_type": "dose",
+        "medicine": "mpasi_volume_per_makan",
+        "constraint": {
+          "value_min": 125,
+          "value_max": 125,
+          "unit": "mL"
+        }
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I","section": "Infant Feeding Practice","page": 135,
+        "text": "Jumlah rata-rata makanan yang biasanya dimakan per kali: setengah cangkir 250 ml"
+      }
+    },
+    {
+      "rule_id": "infant_feeding_practice_frequency_2",
+      "condition": {
+        "disease": "infant_feeding_practice",
+        "age_month_min": 9,
+        "age_month_max": 11,
+        "phase": "pendamping_asi"
+      },
+      "claim": {
+        "claim_type": "frequency",
+        "medicine": "mpasi_makan_utama",
+        "constraint": {
+          "value_min": 3,
+          "value_max": 4,
+          "unit": "kali/hari"
+        }
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I","section": "Infant Feeding Practice","page": 135,
+        "text": "Frekuensi: 3-4 kali per hari"
+      }
+    },
+    {
+      "rule_id": "infant_feeding_practice_dose_3",
+      "condition": {
+        "disease": "infant_feeding_practice",
+        "age_month_min": 12,
+        "age_month_max": 23,
+        "phase": "pendamping_asi"
+      },
+      "claim": {
+        "claim_type": "dose",
+        "medicine": "mpasi_volume_per_makan",
+        "constraint": {
+          "value_min": 187.5,
+          "value_max": 250,
+          "unit": "mL"
+        }
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I","section": "Infant Feeding Practice","page": 135,
+        "text": "Jumlah rata-rata makanan yang biasanya dimakan per kali: Tiga perempat sampai satu cangkir/mangkuk 250 ml"
+      }
+    },
+    {
+      "rule_id": "infant_feeding_practice_duration_2",
+      "condition": {
+        "disease": "infant_feeding_practice",
+        "phase": "penyiapan_susu"
+      },
+      "claim": {
+        "claim_type": "duration",
+        "medicine": "susu_formula_sisa",
+        "constraint": {
+          "value_min": 0,
+          "value_max": 2,
+          "unit": "jam",
+          "prohibited": true
+        }
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I",
+        "section": "Infant Feeding Practice",
+        "page": 132,
+        "text": "Buang semua susu formula yang tidak habis lebih dari 2 jam setelah dibuat."
+      }
+    },
+    {
+      "rule_id": "asuhan_nutrisi_pediatri_dose_1",
+      "condition": {
+        "disease": "asuhan_nutrisi_pediatri",
+        "age_month_min": 0,
+        "age_month_max": 6,
+        "phase": "rumatan"
+      },
+      "claim": {
+        "claim_type": "dose",
+        "medicine": "kalori",
+        "constraint": {
+          "value_min": 108,
+          "value_max": 108,
+          "unit": "kkal/kg"
+        }
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I","section": "Asuhan Nutrisi Pediatri","page": 21,
+        "text": "Tabel 3. RDA Bayi 0,0-0,5 tahun Kalori 108 kkal/kg"
+      }
+    },
+    {
+      "rule_id": "asuhan_nutrisi_pediatri_dose_2",
+      "condition": {
+        "disease": "asuhan_nutrisi_pediatri",
+        "age_month_min": 0,
+        "age_month_max": 6,
+        "phase": "rumatan"
+      },
+      "claim": {
+        "claim_type": "dose",
+        "medicine": "protein",
+        "constraint": {
+          "value_min": 2.2,
+          "value_max": 2.2,
+          "unit": "g/kg"
+        }
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I","section": "Asuhan Nutrisi Pediatri","page": 21,
+        "text": "Tabel 3. RDA Bayi 0,0-0,5 tahun Protein 2,2 g/kg"
+      }
+    },
+    {
+      "rule_id": "asuhan_nutrisi_pediatri_dose_3",
+      "condition": {
+        "disease": "asuhan_nutrisi_pediatri",
+        "age_month_min": 0,
+        "age_month_max": 6,
+        "phase": "rumatan"
+      },
+      "claim": {
+        "claim_type": "dose",
+        "medicine": "cairan",
+        "constraint": {
+          "value_min": 140,
+          "value_max": 160,
+          "unit": "ml/kg"
+        }
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I","section": "Asuhan Nutrisi Pediatri","page": 21,
+        "text": "Tabel 3. RDA Bayi 0,0-0,5 tahun Cairan 140-160 ml/kg"
+      }
+    },
+    {
+      "rule_id": "asuhan_nutrisi_pediatri_dose_4",
+      "condition": {
+        "disease": "asuhan_nutrisi_pediatri",
+        "age_month_min": 6,
+        "age_month_max": 12,
+        "phase": "rumatan"
+      },
+      "claim": {
+        "claim_type": "dose",
+        "medicine": "kalori",
+        "constraint": {
+          "value_min": 98,
+          "value_max": 98,
+          "unit": "kkal/kg"
+        }
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I","section": "Asuhan Nutrisi Pediatri","page": 21,
+        "text": "Tabel 3. RDA Bayi 0,5-1,0 tahun Kalori 98 kkal/kg"
+      }
+    },
+    {
+      "rule_id": "asuhan_nutrisi_pediatri_dose_5",
+      "condition": {
+        "disease": "asuhan_nutrisi_pediatri",
+        "age_month_min": 12,
+        "age_month_max": 36,
+        "phase": "rumatan"
+      },
+      "claim": {
+        "claim_type": "dose",
+        "medicine": "protein",
+        "constraint": {
+          "value_min": 1.23,
+          "value_max": 1.23,
+          "unit": "g/kg"
+        }
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I","section": "Asuhan Nutrisi Pediatri","page": 21,
+        "text": "Tabel 3. RDA Anak 1-3 tahun Protein 1,23 g/kg"
+      }
+    },
+    {
+      "rule_id": "asuhan_nutrisi_pediatri_contraindication_1",
+      "condition": {
+        "disease": "asuhan_nutrisi_pediatri",
+        "age_month_min": 0,
+        "age_month_max": 120
+      },
+      "claim": {
+        "claim_type": "contraindication",
+        "medicine": "formula_enteral_dewasa",
+        "constraint": {
+          "prohibited": true
+        }
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I","section": "Asuhan Nutrisi Pediatri","page": 17,
+        "text": "sebaiknya tidak menggunakan formula enteral dewasa pada anak di bawah usia 10 tahun."
+      }
+    },
+    {
+      "rule_id": "asuhan_nutrisi_pediatri_dose_6",
+      "condition": {
+        "disease": "asuhan_nutrisi_pediatri",
+        "age_month_min": 0,
+        "phase": "initial"
+      },
+      "claim": {
+        "claim_type": "dose",
+        "medicine": "rsl_maksimal_bayi",
+        "constraint": {
+          "value_min": 0,
+          "value_max": 33,
+          "unit": "mOsm/100 kkal"
+        }
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I","section": "Asuhan Nutrisi Pediatri","page": 18,
+        "text": "Batas atas potensial RSL untuk bayi adalah 33 mOsm/100 kkal formula."
+      }
+    },
+    {
+      "rule_id": "asuhan_nutrisi_pediatri_dose_7",
+      "condition": {
+        "disease": "asuhan_nutrisi_pediatri",
+        "age_month_min": 0,
+        "phase": "initial"
+      },
+      "claim": {
+        "claim_type": "dose",
+        "medicine": "osmolalitas_maksimal_bayi",
+        "constraint": {
+          "value_min": 0,
+          "value_max": 460,
+          "unit": "mOsm"
+        }
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I","section": "Asuhan Nutrisi Pediatri","page": 18,
+        "text": "The American Academy of Pediatrics (1979) merekomendasikan osmolalitas untuk formula bayi adalah <= 460 mOsm."
+      }
+    },
+    {
+      "rule_id": "asuhan_nutrisi_pediatri_dose_8",
+      "condition": {
+        "disease": "asuhan_nutrisi_pediatri",
+        "severity": "demam",
+        "phase": "stres"
+      },
+      "claim": {
+        "claim_type": "dose",
+        "medicine": "faktor_stres_energi",
+        "constraint": {
+          "value_min": 12,
+          "value_max": 12,
+          "unit": "% per derajat > 37°C"
+        }
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I","section": "Asuhan Nutrisi Pediatri","page": 20,
+        "text": "Tabel 2. Menentukan faktor stress: Demam 12% per derajat > 37°C"
+      }
+    },
+    {
+      "rule_id": "sindrom_nefrotik_dose_relaps_1",
+      "condition": {
+        "disease": "sindrom_nefrotik",
+        "phase": "relaps_intensive"
+      },
+      "claim": {
+        "claim_type": "dose",
+        "medicine": "prednison",
+        "constraint": {
+          "value_min": 60,
+          "value_max": 60,
+          "unit": "mg/m2/hari"
+        }
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I","section": "Sindrom Nefrotik","page": 275,
+        "text": "Bila terjadi relaps, maka diberikan prednison 60 mg/m2/hari sampai terjadi remisi"
+      }
+    },
+    {
+      "rule_id": "sindrom_nefrotik_duration_relaps_1",
+      "condition": {
+        "disease": "sindrom_nefrotik",
+        "phase": "relaps_intensive"
+      },
+      "claim": {
+        "claim_type": "duration",
+        "medicine": "prednison",
+        "constraint": {
+          "value_min": 0,
+          "value_max": 4,
+          "unit": "minggu"
+        }
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I","section": "Sindrom Nefrotik","page": 275,
+        "text": "sampai terjadi remisi (maksimal 4 minggu)"
+      }
+    },
+    {
+      "rule_id": "sindrom_nefrotik_dose_relaps_2",
+      "condition": {
+        "disease": "sindrom_nefrotik",
+        "phase": "relaps_maintenance"
+      },
+      "claim": {
+        "claim_type": "dose",
+        "medicine": "prednison",
+        "constraint": {
+          "value_min": 40,
+          "value_max": 40,
+          "unit": "mg/m2/hari"
+        }
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I","section": "Sindrom Nefrotik","page": 275,
+        "text": "dilanjutkan 2/3 dosis awal (40 mg/m2/hari) secara alternating"
+      }
+    },
+    {
+      "rule_id": "sindrom_nefrotik_interval_relaps_1",
+      "condition": {
+        "disease": "sindrom_nefrotik",
+        "phase": "relaps_maintenance"
+      },
+      "claim": {
+        "claim_type": "interval",
+        "medicine": "prednison",
+        "constraint": {
+          "value_min": 48,
+          "value_max": 48,
+          "unit": "jam"
+        }
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I","section": "Sindrom Nefrotik","page": 275,
+        "text": "secara alternating"
+      }
+    },
+    {
+      "rule_id": "sindrom_nefrotik_duration_relaps_2",
+      "condition": {
+        "disease": "sindrom_nefrotik",
+        "phase": "relaps_maintenance"
+      },
+      "claim": {
+        "claim_type": "duration",
+        "medicine": "prednison",
+        "constraint": {
+          "value_min": 4,
+          "value_max": 4,
+          "unit": "minggu"
+        }
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I","section": "Sindrom Nefrotik","page": 275,
+        "text": "secara alternating selama 4 minggu."
       }
     }
   ]

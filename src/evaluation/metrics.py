@@ -20,7 +20,7 @@ def evaluate_response(response_text, generator, rules):
     claim_doc = extract_claims(claim_extraction)
     verifications = verify_claims(claim_doc, rules)
 
-    total_claims = len(claim_doc.get("claims", []))
+    total_claims = len(claim_doc)
     matched_claims = len(verifications)
     passed_claims = _count_status(verifications, "pass")
     violated_claims = _count_status(verifications, "violation")

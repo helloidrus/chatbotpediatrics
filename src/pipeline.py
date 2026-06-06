@@ -77,13 +77,13 @@ class Pipeline:
 
         # Debug output
         self._debug_print("\n=== CLAIM EXTRACTION RAW ===\n", claim_extraction)
-        self._debug_print("\n=== EXTRACTED CLAIMS ===\n", json.dumps(claim_doc, indent=2, ensure_ascii=False))
+        self._debug_print("\n=== EXTRACTED CLAIM ===\n", json.dumps(claim_doc, indent=2, ensure_ascii=False))
         self._debug_print("\n=== VIOLATIONS ===\n", json.dumps(violations, indent=2, ensure_ascii=False))
         self._debug_print("\n=== DECISION ===\n", json.dumps(decision, indent=2, ensure_ascii=False))
 
         return {
             **rag_result,
-            "claims": claim_doc,
+            "claim": claim_doc,
             "verified_response": verified_response,
             "violations": violations,
             "decision": decision,
