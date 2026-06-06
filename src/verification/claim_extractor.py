@@ -20,10 +20,6 @@ def _canonical_text(value: Any) -> str | None:
 
 
 def _canonical_unit_text(value: Any) -> str | None:
-    """
-    Khusus untuk unit: pertahankan slash, normalisasi spasi di sekitar slash.
-    Menangani variasi seperti "mg / kg bb", "mg/kgbb", "mg / kg / hari", dll.
-    """
     if value is None:
         return None
     unit = str(value).strip().lower()
@@ -45,7 +41,6 @@ def _to_float_or_none(value: Any) -> float | None:
             value = value.strip().replace(",", ".")
         return float(value)
     except (TypeError, ValueError):
-        logger.warning("Nilai numerik tidak valid dan diabaikan: %r", value)
         return None
 
 
@@ -62,17 +57,7 @@ def _normalize_with_alias(
 
     resolved = aliases.get(key, key)
 
-    if key not in aliases and valid_set is None:
-        logger.warning(
-            "Nilai %r tidak ditemukan di alias map untuk field %s; "
-            "menggunakan canonical form %r tanpa validasi.",
-            value,
-            field_name,
-            resolved,
-        )
-
     if valid_set is not None and resolved not in valid_set:
-        logger.warning("Nilai %r tidak valid untuk field %s; diabaikan.", value, field_name)
         return None
 
     return resolved
@@ -85,8 +70,6 @@ def _normalize_claim_type(value: Any) -> str | None:
         valid_set=VALID_CLAIM_TYPE,
         field_name="claim_type",
     )
-    if resolved is None:
-        logger.warning("claim_type tidak valid atau hilang: %r", value)
     return resolved
 
 
@@ -134,7 +117,6 @@ def _load_ontology(path: Path = ONTOLOGY_PATH) -> dict[str, dict[str, list[str]]
     ontology: dict[str, dict[str, list[str]]] = {}
     for group_name, group_value in data.items():
         if not isinstance(group_value, dict):
-            logger.warning("Grup ontology %s bukan object; diabaikan.", group_name)
             continue
         ontology[group_name] = {
             str(canonical): [str(a) for a in aliases]
@@ -167,11 +149,7 @@ def _validate_ontology(ontology: dict) -> None:
     critical_groups = {"claim_type", "disease", "medicine"}
     missing_groups = critical_groups - set(ontology)
     if missing_groups:
-        logger.warning(
-            "Ontology tidak memiliki beberapa grup kritis yang diharapkan: %s. "
-            "Normalisasi untuk grup ini akan tidak efektif.",
-            missing_groups,
-        )
+        return
 
 
 _validate_ontology(ONTOLOGY)
@@ -252,27 +230,19 @@ def _parse_condition(raw: Any) -> dict | None:
 
 def _parse_claim(raw: Any, condition: dict) -> dict | None:
     if not isinstance(raw, dict):
-        logger.warning("Claim bukan dict; dilewati: %r", raw)
         return None
 
     claim_type = _normalize_claim_type(raw.get("claim_type"))
     if claim_type is None:
-        logger.warning("Klaim dilewati karena claim_type tidak valid: %r", raw)
         return None
 
     medicine = _normalize_with_alias(raw.get("medicine"), PARAMETER_ALIASES, valid_set=VALID_MEDICINE, field_name="medicine")
     if not medicine:
-        logger.warning("Klaim dilewati karena field medicine tidak valid atau kosong: %r", raw)
         return None
 
     value_min = _to_float_or_none(raw.get("value_min"))
     value_max = _to_float_or_none(raw.get("value_max"))
     if value_min is not None and value_max is not None and value_min > value_max:
-        logger.warning(
-            "Range nilai terbalik untuk klaim: value_min=%r > value_max=%r; "
-            "klaim dilewati karena semantik range tidak valid.",
-            value_min, value_max,
-        )
         return None
 
     evidence_text = str(raw.get("evidence_text") or "").strip() or None
@@ -292,31 +262,20 @@ def _parse_claim(raw: Any, condition: dict) -> dict | None:
 def _parse_entry(entry: dict) -> list[dict]:
     condition = _parse_condition(entry.get("condition"))
     if not condition or all(value is None for value in condition.values()):
-        logger.warning(
-            "Entry dilewati karena condition tidak memiliki constraint yang valid "
-            "(semua field kosong). Klaim tanpa kondisi bisa menyebabkan false positive: %r",
-            entry,
-        )
         return []
 
-    claims_raw = entry.get("claims") or []
-    if not isinstance(claims_raw, list):
-        logger.warning("Field claims bukan list; entry dilewati: %r", entry)
+    claim_raw = entry.get("claim") or []
+    if not isinstance(claim_raw, list):
         return []
 
     return [
         claim
-        for raw_claim in claims_raw
+        for raw_claim in claim_raw
         if (claim := _parse_claim(raw_claim, condition)) is not None
     ]
 
 
 def extract_claims(llm_json_output: str) -> list[dict]:
-    """
-    Return normalised claims extracted from an LLM JSON output string.
-
-    Raises RuntimeError if ontology initialization failed.
-    """
     if not ONTOLOGY:
         raise RuntimeError(
             "ONTOLOGY tidak tersedia untuk normalisasi klaim! "
@@ -333,7 +292,6 @@ def extract_claims(llm_json_output: str) -> list[dict]:
 
     entries = data.get("entries")
     if not isinstance(entries, list):
-        logger.warning("Output LLM tidak memiliki field 'entries' berbentuk list.")
         return []
 
     all_claims = [

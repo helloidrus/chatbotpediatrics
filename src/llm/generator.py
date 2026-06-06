@@ -22,7 +22,7 @@ class Generator:
         self.model_name = model_name
 
     # --- INTERNAL METHODS ---
-    def _chat(self, system_prompt, user_prompt, temperature=0.2, max_tokens=300):
+    def _chat(self, system_prompt, user_prompt, temperature=0.2, max_tokens=512):
         response = client.chat.completions.create(
             model=self.model_name,
             messages=[
@@ -43,6 +43,8 @@ class Generator:
 
         user_prompt = f"""
         Jawab pertanyaan dengan singkat, jelas, dan sesuai dengan pedoman klinis pediatri.
+        Gunakan hanya informasi yang relevan dengan pertanyaan.
+        Hindari penggunaan daftar poin jika memungkinkan, kecuali untuk dosis yang sangat spesifik.
         
         Context:
         {context}
@@ -55,6 +57,7 @@ class Generator:
         return self._chat(
             system_prompt=system_prompt,
             user_prompt=user_prompt,
+            temperature=0.0,
         )
 
     # Metode khusus untuk ekstraksi klaim dari jawaban LLM
@@ -77,7 +80,8 @@ class Generator:
 
         ATURAN:
         - Setiap kondisi unik maka buat entry terpisah.
-        - Satu obat + satu kondisi maka satu set claims.
+        - Satu obat + satu kondisi maka satu set claim.
+        - Wajib gunakan key "claim" untuk daftar klaim di setiap entry.
         - Ekstrak masing-masing dose, frequency, interval, dan duration sebagai claim terpisah.
         - medicine harus atomik, hanya satu obat/cairan per field.
         - medicine adalah nama obat persis seperti di teks, tanpa disingkat atau dinormalisasi.
@@ -99,7 +103,7 @@ class Generator:
         {
         "entries": [{
             "condition": { "disease": string, "age_month_min": float, "age_month_max": float, "weight_kg_min": float, "weight_kg_max": float, "phase": string, "severity": string, "complication": string },
-            "claims": [{ "claim_type": string, "medicine": string, "value_min": float, "value_max": float, "unit": string, "prohibited": true, "evidence_text": string }]
+            "claim": [{ "claim_type": string, "medicine": string, "value_min": float, "value_max": float, "unit": string, "prohibited": true, "evidence_text": string }]
             }]
         }
         """ + examples_str

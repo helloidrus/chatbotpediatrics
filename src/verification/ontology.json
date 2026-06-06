@@ -290,7 +290,7 @@
     "mL": [ "ml", "milliliter", "millilitre" ],
     "L": [ "l", "liter", "litre" ],
     "mg/kgbb": [ "mg/kg", "mg/kg bb", "mg per kg", "mg per kgbb", "mg/kgbb", "mg per kilogram" ],
-    "mgbasa/kgbb": ["mg_basa/kgbb", "mg basa/kgbb", "mg_basa/kg", "mg base/kgbb", "mg basa/kgBB", "mg base/kg"],
+    "mgbasa/kgbb": ["mgbasa/kgbb","mg_basa/kgbb", "mg basa/kgbb", "mg_basa/kg", "mg base/kgbb", "mg basa/kgBB", "mg base/kg", "mg_basa/kgbb/dosis", "mg basa/kgbb/dosis", "mgbasa/kgbb/dosis"],
     "mg/kgbb/kali": [ "mg/kg/kali", "mg/kg bb/kali", "mg/kg/dosis", "mg/kgbb/dosis", "mg/kg/dose", "mg/kgbb/dose", "mg/kgbb/", "mg/kgbb/kali", "mg per kg per dose", "mg per kg per kali", "mg/kg/d", "mg/kg/administration" ],
     "mg/kgbb/hari": [ "mg/kg/hari", "mg/kg bb/hari", "mg/kg per hari", "mg/kg/day", "mg per kg per hari", "mg/kgbb/hari" ],
     "mggaram/kgbb/kali": [ "mg garam/kgbb/dose", "mg garam/kg/dose", "mg garam/kg/kali", "mg garam/kgbb/kali", "mg garam/kgbb/dosis" ],
