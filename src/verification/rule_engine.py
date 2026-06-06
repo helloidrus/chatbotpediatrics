@@ -47,8 +47,7 @@ def _base_result(status: str, claim: dict, rule: dict | None = None) -> dict:
         "status": status,
         "rule_id": rule.get("rule_id") if rule else None,
         "claim_type": claim.get("claim_type"),
-        "medicine": claim.get("medicine"),
-        "evidence_text": claim.get("evidence_text", ""),
+        "medicine": claim.get("medicine")
     }
     if rule and (dose_context := (rule.get("claim") or {}).get("dose_context")) is not None:
         result["expected_dose_context"] = dose_context
@@ -114,8 +113,8 @@ def _ranges_overlap(
             return False
         return unknown_claim_matches_specific
 
-    return (r_max is None or c_min <= r_max) and (
-        r_min is None or c_max >= r_min
+    return (r_max is None or c_min is None or c_min <= r_max) and (
+        r_min is None or c_max is None or c_max >= r_min
     )
 
 

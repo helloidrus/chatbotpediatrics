@@ -245,8 +245,6 @@ def _parse_claim(raw: Any, condition: dict) -> dict | None:
     if value_min is not None and value_max is not None and value_min > value_max:
         return None
 
-    evidence_text = str(raw.get("evidence_text") or "").strip() or None
-
     return _drop_none({
         "condition": condition,
         "claim_type": claim_type,
@@ -254,8 +252,7 @@ def _parse_claim(raw: Any, condition: dict) -> dict | None:
         "value_min": value_min,
         "value_max": value_max,
         "unit": _normalize_unit(raw.get("unit")),
-        "prohibited": True if claim_type == "contraindication" or raw.get("prohibited") is True else None,
-        "evidence_text": evidence_text,
+        "prohibited": True if claim_type == "contraindication" or raw.get("prohibited") is True else None
     })
 
 
