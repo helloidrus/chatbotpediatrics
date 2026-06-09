@@ -41,7 +41,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Diare Akut",
-        "page": 59
+        "page": 59,
+        "text": "Cairan rehidrasi oralit dengan menggunakan NEW ORALIT diberikan 5-10 mL/kg BB setiap diare cair"
       }
     },
     {
@@ -61,7 +62,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Diare Akut",
-        "page": 59
+        "page": 59,
+        "text": "atau berdasarkan usia, yaitu umur < 1 tahun sebanyak 50-100 mL"
       }
     },
     {
@@ -81,7 +83,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Diare Akut",
-        "page": 59
+        "page": 59,
+        "text": "umur 1-5 tahun sebanyak 100-200 mL"
       }
     },
     {
@@ -100,7 +103,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Diare Akut",
-        "page": 59
+        "page": 59,
+        "text": "Cairan rehidrasi oral (CRO) hipoosmolar diberikan sebanyak 75 mL/kgBB dalam 3 jam"
       }
     },
     {
@@ -119,7 +123,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Diare Akut",
-        "page": 59
+        "page": 59,
+        "text": "dan sebanyak 5-10 mL/ kgBB setiap diare cair."
       }
     },
     {
@@ -140,7 +145,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Diare Akut",
-        "page": 60
+        "page": 60,
+        "text": "Berat badan 3-10 kg : 200 mL/kgBB/hari"
       }
     },
     {
@@ -161,7 +167,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Diare Akut",
-        "page": 60
+        "page": 60,
+        "text": "Berat badan 10-15 kg : 175 mL/kgBB/hari"
       }
     },
     {
@@ -181,7 +188,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Diare Akut",
-        "page": 60
+        "page": 60,
+        "text": "Berat badan > 15 kg : 135 mL/kgBB/hari"
       }
     },
     {
@@ -200,7 +208,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Diare Akut",
-        "page": 61
+        "page": 61,
+        "text": "Diberikan cairan rehidrasi parenteral dengan ringer laktat atau ringer asetat 100 mL/kgBB"
       }
     },
     {
@@ -219,7 +228,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Diare Akut",
-        "page": 61
+        "page": 61,
+        "text": "Diberikan cairan rehidrasi parenteral dengan ringer laktat atau ringer asetat 100 mL/kgBB"
       }
     },
     {
@@ -229,7 +239,7 @@
         "phase": "initial",
         "severity": "berat",
         "age_month_min": 0,
-        "age_month_max": 11
+        "age_month_max": 12
       },
       "claim": {
         "claim_type": "dose",
@@ -241,7 +251,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Diare Akut",
-        "page": 61
+        "page": 61,
+        "text": "Umur kurang dari 12 bulan: 30 mL/kgBB dalam 1 jam pertama"
       }
     },
     {
@@ -251,7 +262,7 @@
         "phase": "initial",
         "severity": "berat",
         "age_month_min": 0,
-        "age_month_max": 11
+        "age_month_max": 12
       },
       "claim": {
         "claim_type": "dose",
@@ -263,7 +274,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Diare Akut",
-        "page": 61
+        "page": 61,
+        "text": "Umur kurang dari 12 bulan: 30 mL/kgBB dalam 1 jam pertama"
       }
     },
     {
@@ -273,7 +285,7 @@
         "phase": "initial",
         "severity": "berat",
         "age_month_min": 0,
-        "age_month_max": 11
+        "age_month_max": 12
       },
       "claim": {
         "claim_type": "duration",
@@ -285,7 +297,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Diare Akut",
-        "page": 61
+        "page": 61,
+        "text": "Umur kurang dari 12 bulan: 30 mL/kgBB dalam 1 jam pertama"
       }
     },
     {
@@ -295,7 +308,7 @@
         "phase": "initial",
         "severity": "berat",
         "age_month_min": 0,
-        "age_month_max": 11
+        "age_month_max": 12
       },
       "claim": {
         "claim_type": "duration",
@@ -307,7 +320,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Diare Akut",
-        "page": 61
+        "page": 61,
+        "text": "Umur kurang dari 12 bulan: 30 mL/kgBB dalam 1 jam pertama"
       }
     },
     {
@@ -317,7 +331,7 @@
         "phase": "continuation",
         "severity": "berat",
         "age_month_min": 0,
-        "age_month_max": 11
+        "age_month_max": 12
       },
       "claim": {
         "claim_type": "dose",
@@ -329,7 +343,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Diare Akut",
-        "page": 61
+        "page": 61,
+        "text": "dilanjutkan 70 mL/kgBB dalam 5 jam berikutnya"
       }
     },
     {
@@ -339,7 +354,7 @@
         "phase": "continuation",
         "severity": "berat",
         "age_month_min": 0,
-        "age_month_max": 11
+        "age_month_max": 12
       },
       "claim": {
         "claim_type": "dose",
@@ -351,7 +366,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Diare Akut",
-        "page": 61
+        "page": 61,
+        "text": "dilanjutkan 70 mL/kgBB dalam 5 jam berikutnya"
       }
     },
     {
@@ -361,7 +377,7 @@
         "phase": "continuation",
         "severity": "berat",
         "age_month_min": 0,
-        "age_month_max": 11
+        "age_month_max": 12
       },
       "claim": {
         "claim_type": "duration",
@@ -373,7 +389,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Diare Akut",
-        "page": 61
+        "page": 61,
+        "text": "dilanjutkan 70 mL/kgBB dalam 5 jam berikutnya"
       }
     },
     {
@@ -383,7 +400,7 @@
         "phase": "continuation",
         "severity": "berat",
         "age_month_min": 0,
-        "age_month_max": 11
+        "age_month_max": 12
       },
       "claim": {
         "claim_type": "duration",
@@ -395,7 +412,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Diare Akut",
-        "page": 61
+        "page": 61,
+        "text": "dilanjutkan 70 mL/kgBB dalam 5 jam berikutnya"
       }
     },
     {
@@ -404,7 +422,7 @@
         "disease": "diare_akut",
         "phase": "initial",
         "severity": "berat",
-        "age_month_min": 12
+        "age_month_min": 13
       },
       "claim": {
         "claim_type": "dose",
@@ -416,7 +434,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Diare Akut",
-        "page": 61
+        "page": 61,
+        "text": "Umur di atas 12 bulan: 30 mL/kgBB dalam ½ jam pertama"
       }
     },
     {
@@ -425,7 +444,7 @@
         "disease": "diare_akut",
         "phase": "initial",
         "severity": "berat",
-        "age_month_min": 12
+        "age_month_min": 13
       },
       "claim": {
         "claim_type": "dose",
@@ -437,7 +456,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Diare Akut",
-        "page": 61
+        "page": 61,
+        "text": "Umur di atas 12 bulan: 30 mL/kgBB dalam ½ jam pertama"
       }
     },
     {
@@ -446,7 +466,7 @@
         "disease": "diare_akut",
         "phase": "initial",
         "severity": "berat",
-        "age_month_min": 12
+        "age_month_min": 13
       },
       "claim": {
         "claim_type": "duration",
@@ -458,7 +478,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Diare Akut",
-        "page": 61
+        "page": 61,
+        "text": "Umur di atas 12 bulan: 30 mL/kgBB dalam ½ jam pertama"
       }
     },
     {
@@ -479,7 +500,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Diare Akut",
-        "page": 61
+        "page": 61,
+        "text": "Umur di atas 12 bulan: 30 mL/kgBB dalam ½ jam pertama"
       }
     },
     {
@@ -500,7 +522,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Diare Akut",
-        "page": 61
+        "page": 61,
+        "text": "dilanjutkan 70 mL/kgBB dalam 2,5 jam berikutnya"
       }
     },
     {
@@ -521,7 +544,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Diare Akut",
-        "page": 61
+        "page": 61,
+        "text": "dilanjutkan 70 mL/kgBB dalam 2,5 jam berikutnya"
       }
     },
     {
@@ -542,7 +566,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Diare Akut",
-        "page": 61
+        "page": 61,
+        "text": "dilanjutkan 70 mL/kgBB dalam 2,5 jam berikutnya"
       }
     },
     {
@@ -563,7 +588,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Diare Akut",
-        "page": 61
+        "page": 61,
+        "text": "dilanjutkan 70 mL/kgBB dalam 2,5 jam berikutnya"
       }
     },
     {
@@ -581,7 +607,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Diare Akut",
-        "page": 61
+        "page": 61,
+        "text": "SengZink elemental diberikan selama 10-14 hari"
       }
     },
     {
@@ -600,7 +627,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Diare Akut",
-        "page": 61
+        "page": 61,
+        "text": "Umur di bawah 6 bulan: 10 mg per hari"
       }
     },
     {
@@ -619,7 +647,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Diare Akut",
-        "page": 61
+        "page": 61,
+        "text": "Umur di atas 6 bulan: 20 mg per hari"
       }
     },
     {
@@ -637,7 +666,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Diare Akut",
-        "page": 61
+        "page": 61,
+        "text": "Metronidazol 50 mg/kgBB/hari dibagi 3 dosis merupakan obat pilihan untuk amuba vegetatif"
       }
     },
     {
@@ -655,7 +685,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Diare Akut",
-        "page": 61
+        "page": 61,
+        "text": "Metronidazol 50 mg/kgBB/hari dibagi 3 dosis"
       }
     },
     {
@@ -3428,6 +3459,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Anemia Defisiensi Besi",
         "page": 66,
         "text": "Bayi berat lahir normal dimulai sejak usia 6 bulan dianjurkan 1 mg/kg BB/hari"
       }
@@ -3450,6 +3482,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Anemia Defisiensi Besi",
         "page": 66,
         "text": "Bayi 1,5-2,0 kg: 2 mg/kgBB/hari, diberikan sejak usia 2 minggu"
       }
@@ -3472,6 +3505,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Anemia Defisiensi Besi",
         "page": 66,
         "text": "Bayi 1,0-1,5 kg: 3 mg/kgBB/hari, diberikan sejak usia 2 minggu"
       }
@@ -3493,6 +3527,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Anemia Defisiensi Besi",
         "page": 66,
         "text": "Bayi <1 kg: 4 mg/kgBB/hari, diberikan sejak usia 2 minggu"
       }
@@ -5703,7 +5738,10 @@
         "dose_context": "salt_equivalent"
       },
       "metadata": {
-        "note": "1 mg garam/kgbb ekuivalen dengan ~0.83 mg basa kina"
+        "source": "Buku PPM IDAI Jilid I",
+        "section": "Malaria",
+        "page": 180,
+        "text": "Kina dihidroklorid intravena 1mg garam/kgbb/dosis"
       }
     },
     {
@@ -5886,8 +5924,7 @@
     {
       "rule_id": "malaria_dose_5",
       "condition": {
-        "disease": "malaria_falciparum",
-        "phase": "initial"
+        "disease": "malaria_falciparum"
       },
       "claim": {
         "claim_type": "dose",
@@ -5906,8 +5943,7 @@
     {
       "rule_id": "malaria_frequency_4",
       "condition": {
-        "disease": "malaria_falciparum",
-        "phase": "initial"
+        "disease": "malaria_falciparum"
       },
       "claim": {
         "claim_type": "frequency",
@@ -5926,8 +5962,7 @@
     {
       "rule_id": "malaria_duration_7",
       "condition": {
-        "disease": "malaria_falciparum",
-        "phase": "initial"
+        "disease": "malaria_falciparum"
       },
       "claim": {
         "claim_type": "duration",
@@ -8606,6 +8641,7 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "page": 191,
+        "section": "Meningitis Bakterialis",
         "text": "Lama pengobatan: Tergantung dari kuman penyebab, umumnya 10-14 hari."
       }
     },
@@ -10442,6 +10478,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Hipoglikemia",
         "page": 122,
         "text": "Pemberian segera dengan bolus 200 mg/kg dengan dekstrosa 10% = 2 mL/kg"
       }
@@ -10461,6 +10498,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Hipoglikemia",
         "page": 122,
         "text": "Infus glukosa 6-8 mg/kgbb/menit."
       }
@@ -10480,6 +10518,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Syok",
         "page": 296,
         "text": "berikan epinephrine 0,05-2 µg/kgbb/ menit, bila akral dingin"
       }
@@ -10499,6 +10538,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Syok",
         "page": 296,
         "text": "norepinephrine 0,05-2 µg/kgbb/menit, bila akral hangat"
       }
@@ -10517,6 +10557,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Kejang Akut",
         "page": 311,
         "text": "pemberian diazepam per rektal dengan dosis 0,3 – 0,5 mg/kg"
       }
@@ -10535,6 +10576,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Kejang Akut",
         "page": 311,
         "text": "Pemberian di rumah maksimum 2 kali dengan interval 5 menit."
       }
@@ -10542,7 +10584,7 @@
     {
       "rule_id": "apcd_vitk1_dose_1",
       "condition": {
-        "disease": "defisiensi kompleks protrombin",
+        "disease": "defisiensi_kompleks_protrombin",
         "age_month_min": 0.23,
         "age_month_max": 6
       },
@@ -10555,6 +10597,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Defisiensi Kompleks Protrombin",
         "page": 154,
         "text": "Vitamin K1 1 mg IM"
       }
@@ -10562,7 +10605,7 @@
     {
       "rule_id": "apcd_vitk1_duration_1",
       "condition": {
-        "disease": "defisiensi kompleks protrombin"
+        "disease": "defisiensi_kompleks_protrombin"
       },
       "claim": {
         "claim_type": "duration",
@@ -10573,6 +10616,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Defisiensi Kompleks Protrombin",
         "page": 154,
         "text": "selama 3 hari berturut-turut"
       }
@@ -10580,7 +10624,7 @@
     {
       "rule_id": "apcd_ffp_dose_1",
       "condition": {
-        "disease": "defisiensi kompleks protrombin"
+        "disease": "defisiensi_kompleks_protrombin"
       },
       "claim": {
         "claim_type": "dose",
@@ -10591,6 +10635,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Defisiensi Kompleks Protrombin",
         "page": 154,
         "text": "Transfusi Fresh Frozen Plasma 10-15 mL/kgBB"
       }
@@ -10598,7 +10643,7 @@
     {
       "rule_id": "apcd_ffp_duration_1",
       "condition": {
-        "disease": "defisiensi kompleks protrombin"
+        "disease": "defisiensi_kompleks_protrombin"
       },
       "claim": {
         "claim_type": "duration",
@@ -10609,6 +10654,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Defisiensi Kompleks Protrombin",
         "page": 154,
         "text": "selama 3 hari berturut-turut"
       }
@@ -10616,7 +10662,7 @@
     {
       "rule_id": "apcd_manitol_dose_1",
       "condition": {
-        "disease": "defisiensi kompleks protrombin"
+        "disease": "defisiensi_kompleks_protrombin"
       },
       "claim": {
         "claim_type": "dose",
@@ -10627,6 +10673,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Defisiensi Kompleks Protrombin",
         "page": 154,
         "text": "Manitol 0,5 – 1 gram/kgBB/kali"
       }
@@ -10634,7 +10681,7 @@
     {
       "rule_id": "apcd_furosemid_dose_1",
       "condition": {
-        "disease": "defisiensi kompleks protrombin"
+        "disease": "defisiensi_kompleks_protrombin"
       },
       "claim": {
         "claim_type": "dose",
@@ -10645,6 +10692,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Defisiensi Kompleks Protrombin",
         "page": 154,
         "text": "furosemid 1 mg/kgBB/kali dapat diberikan untuk menurunkan tekanan intrakranial"
       }
@@ -10683,6 +10731,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Hipoglikemia",
         "page": 123,
         "text": "Hitung Glucose Infusion Rate (GIR): 6-8 mg/kgBB/menit"
       }
@@ -10701,6 +10750,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Hipoglikemia",
         "page": 123,
         "text": "dapat dinaikkan 2 mg/kgBB/menit sampai maksimal 10-12 mg/kgBB/menit"
       }
@@ -10720,6 +10770,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Hipoglikemia",
         "page": 123,
         "text": "Hidrokortison: 5 mg/kg IV atau IM setiap 12 jam"
       }
@@ -10739,6 +10790,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Hipoglikemia",
         "page": 123,
         "text": "Hidrokortison: 5 mg/kg IV atau IM setiap 12 jam"
       }
@@ -10758,6 +10810,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Hipoglikemia",
         "page": 123,
         "text": "Hidrokortison: 5 mg/kg IV atau IM setiap 12 jam"
       }
@@ -10777,6 +10830,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Hipoglikemia",
         "page": 123,
         "text": "Hidrokortison: 5 mg/kg IV atau IM setiap 12 jam"
       }
@@ -10796,6 +10850,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Hipoglikemia",
         "page": 123,
         "text": "Glukagon 200 µg IV (segera)"
       }
@@ -10815,6 +10870,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Hipoglikemia",
         "page": 123,
         "text": "Diazoxid 10 mg/kgbb/hari setiap 8 jam"
       }
@@ -10834,6 +10890,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Hipoglikemia",
         "page": 123,
         "text": "Diazoxid 10 mg/kgbb/hari setiap 8 jam"
       }
@@ -10854,7 +10911,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Tata Laksana Kejang Akut dan Status Epileptikus",
-        "page": 311
+        "page": 311,
+        "text": "berikan fenitoin IV dengan dosis 20 mg/kg dilarutkan dalam NaCl 0,9% diberikan perlahan lahan dengan kecepatan pemberian 50 mg/ menit."
       }
     },
     {
@@ -10874,7 +10932,8 @@
         "source": "Buku PPM IDAI Jilid I",
         "section": "Tata Laksana Kejang Akut dan Status Epileptikus",
         "page": 311,
-        "administration_note": "Kecepatan pemberian 100 mg/menit."
+        "administration_note": "Kecepatan pemberian 100 mg/menit.",
+        "text": "berikan fenobarbital IV dengan dosis maksimum 15 - 20 mg/kg dengan kecepatan pemberian 100 mg/menit."
       }
     },
     {
@@ -10892,7 +10951,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Glomerulonefritis Akut Pasca Streptokokus / Hipertensi",
-        "page": "90, 114"
+        "page": "90, 114",
+        "text": "Furosemide Dosis: 0,5 mg s/d 2 mg/kg/hari Dosis maksimum: 6 mg/kg/hari"
       }
     },
     {
@@ -10951,7 +11011,7 @@
         "source": "Buku PPM IDAI Jilid I",
         "section": "Hipertensi",
         "page": "106, 112",
-        "max_dose": "6 mg/kgbb/hari"
+        "text": "Captopril... Dosis: 0,3 s/d 0,5 mg/kg/kali Maksimum 6 mg/kg/hari"
       }
     },
     {
@@ -10971,7 +11031,7 @@
         "source": "Buku PPM IDAI Jilid I",
         "section": "Hipertensi",
         "page": 106,
-        "administration_note": "Dapat dinaikkan 0,1 mg/kgBB/kali (maks. 10 mg/kali) setiap 5-30 menit sampai stabil."
+        "text": "Nifedipin oral diberikan dengan dosis 0,1 mg/kgBB/kali, dinaikkan 0,1 mg/kgBB/kali (dosis maksimal 10 mg/kali) setiap 5 menit pada 15 menit pertama"
       }
     },
     {
@@ -10990,7 +11050,7 @@
         "source": "Buku PPM IDAI Jilid I",
         "section": "Diare Akut",
         "page": 60,
-        "administration_note": "Diberikan secara perlahan-lahan dalam 5-10 menit dengan monitoring EKG."
+        "text": "Koreksi dilakukan dengan pemberian kalsium glukonas 10% sebanyak 0.5-1 ml/ kg BB i.v secara perlahan-lahan dalam 5-10 menit; sambil dimonitor irama jantung dengan EKG."
       }
     },
     {
@@ -11009,7 +11069,7 @@
         "source": "Buku PPM IDAI Jilid I",
         "section": "Diare Akut",
         "page": 60,
-        "frequency": "dibagi 3 dosis"
+        "text": "Kadar K 2,5-3,5 mEq/L, berikan KCl 75 mEq/kg BB per oral per hari dibagi 3 dosis"
       }
     },
     {
@@ -11027,7 +11087,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Hipertensi",
-        "page": "106, 114"
+        "page": "106, 114",
+        "text": "Koreksi dilakukan dengan pemberian kalsium glukonas 10% sebanyak 0.5-1 ml/ kg BB i.v secara perlahan-lahan dalam 5-10 menit; sambil dimonitor irama jantung dengan EKG."
       }
     },
     {
@@ -11045,7 +11106,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Hipertensi",
-        "page": "106, 112"
+        "page": "106, 112",
+        "text": "Captopril... Dosis: 0,3 s/d 0,5 mg/kg/kali Maksimum 6 mg/kg/hari"
       }
     },
     {
@@ -11064,7 +11126,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Hipertensi",
-        "page": 106
+        "page": 106,
+        "text": "Nifedipin oral diberikan dengan dosis 0,1 mg/kgBB/kali, dinaikkan 0,1 mg/kgBB/kali (dosis maksimal 10 mg/kali) setiap 5 menit pada 15 menit pertama"
       }
     },
     {
@@ -11084,7 +11147,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Hipertensi",
-        "page": 113
+        "page": 113,
+        "text": "Amlodipine... Anak usia 6 sampai 17 tahun: 2,5 sampai 5 mg satu kali sehari"
       }
     },
     {
@@ -11103,7 +11167,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Hipertensi",
-        "page": 106
+        "page": 106,
+        "text": "Klonidin drip 0,002 mg/kgBB/8 jam + 100 ml dekstrose 5%."
       }
     },
     {
@@ -11122,7 +11187,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Hipertensi",
-        "page": 106
+        "page": 106,
+        "text": "bila tekanan darah belum turun ditambahkan kaptopril 0,3 mg/kgBB/kali, diberikan 2-3 kali sehari"
       }
     },
     {
@@ -11142,7 +11208,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Tata Laksana Jangka Panjang Asma",
-        "page": 305
+        "page": 305,
+        "text": "usia <12 tahun: Budesonide 100-200 µg (50-100 µg Flutikason)"
       }
     },
     {
@@ -11162,7 +11229,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Tata Laksana Jangka Panjang Asma",
-        "page": 305
+        "page": 305,
+        "text": "usia >12 tahun: Budesonide 200-400 µg (100-200 µg Flutikason)"
       }
     },
     {
@@ -11182,7 +11250,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Tata Laksana Jangka Panjang Asma",
-        "page": 305
+        "page": 305,
+        "text": "usia <12 tahun: Budesonide 100-200 µg (50-100 µg Flutikason)"
       }
     },
     {
@@ -11202,7 +11271,8 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Tata Laksana Jangka Panjang Asma",
-        "page": 305
+        "page": 305,
+        "text": "usia >12 tahun: Budesonide 200-400 µg (100-200 µg Flutikason)"
       }
     },
     {
@@ -11221,8 +11291,9 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Tata Laksana Demam Tifoid",
         "page": 49,
-        "text": "diberikan hingga kesadaran membaik (monitoring klinis harian)."
+        "text": "Deksametason 1-3 mg/kgbb/hari intravena, dibagi 3 dosis hingga kesadaran membaik"
       }
     },
     {
@@ -11240,7 +11311,9 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
-        "page": 144
+        "section": "Tata Laksana Infeksi Virus Dengue",
+        "page": 144,
+        "text": "Volume cairan diturunkan menjadi 7ml/kgbb/jam, selanjutnya 5ml, dan 3 ml apabila tanda vital dan diuresis baik."
       }
     },
     {
@@ -11258,7 +11331,9 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
-        "page": 144
+        "section": "Tata Laksana Infeksi Virus Dengue",
+        "page": 144,
+        "text": "Volume cairan diturunkan menjadi 7ml/kgbb/jam, selanjutnya 5ml, dan 3 ml apabila tanda vital dan diuresis baik."
       }
     },
     {
@@ -11276,7 +11351,9 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
-        "page": 144
+        "section": "Tata Laksana Infeksi Virus Dengue",
+        "page": 144,
+        "text": "Volume cairan diturunkan menjadi 7ml/kgbb/jam, selanjutnya 5ml, dan 3 ml apabila tanda vital dan diuresis baik."
       }
     },
     {
@@ -11294,6 +11371,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Sepsis Neonatal",
         "page": 265,
         "text": "14 hari untuk kuman Gram positif"
       }
@@ -11313,6 +11391,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Sepsis Neonatal",
         "page": 266,
         "text": "21 hari untuk kuman Gram negatif"
       }
@@ -11332,6 +11411,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Syok",
         "page": 296,
         "text": "Dosis 2-10 (inotropik), 10-20 (vasopresor)"
       }
@@ -11351,7 +11431,9 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
-        "page": 296
+        "section": "Syok",
+        "page": 296,
+        "text": "Bila syok belum teratasi setelah langkah no. 8, berikan dopamine 2-10 µg/kg/menit atau dobutamine 5-20 µg/kg/menit."
       }
     },
     {
@@ -11369,6 +11451,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Campak",
         "page": 34,
         "text": "Oksigen 2 liter/menit"
       }
@@ -11388,6 +11471,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Serangan Asma Akut",
         "page": 272,
         "text": "Steroid intravena diberikan secara bolus, tiap 6-8 jam. Dosis steroid intravena 0,5-1 mg/kgBB/hari"
       }
@@ -11505,6 +11589,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Infeksi Saluran Kemih",
         "page": 139,
         "text": "Tidak direkomendasikan untuk neonatus dan penderita dengan insufisiensi ginjal"
       }
@@ -11522,6 +11607,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Infeksi Saluran Kemih",
         "page": 139,
         "text": "Tidak direkomendasikan untuk neonatus dan penderita dengan insufisiensi ginjal"
       }
@@ -11539,6 +11625,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Infeksi Saluran Kemih",
         "page": 139,
         "text": "Tidak direkomendasikan untuk neonatus dan penderita dengan insufisiensi ginjal"
       }
@@ -11556,6 +11643,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Konstipasi",
         "page": 177,
         "text": "Mineral oil (parafin liquid) diberikan 1-3 ml/kgBB/hari, tetapi tidak dianjurkan untuk anak dibawah 1 tahun"
       }
@@ -11573,6 +11661,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Tetanus Neonatorum",
         "page": 316,
         "text": "Jika hipersensitif terhadap penisilin, berikan tetrasiklin 50 mg/kg/hr (utk anak > 8 th)"
       }
@@ -11590,6 +11679,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Hemofilia",
         "page": 94,
         "text": "Kontraindikasi: perdarahan saluran kemih (risiko obstruksi saluran kemih akibat bekuan darah)"
       }
@@ -11607,6 +11697,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Hemofilia",
         "page": 113,
         "text": "Kontraindikasi pada penderita asma dan gagal jantung"
       }
@@ -11624,6 +11715,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Hemofilia",
         "page": 113,
         "text": "Kontraindikasi pada penderita asma dan gagal jantung"
       }
@@ -11641,6 +11733,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Hemofilia",
         "page": 113,
         "text": "Kontraindikasi pada penderita asma dan gagal jantung"
       }
@@ -11658,6 +11751,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Hemofilia",
         "page": 113,
         "text": "Tidak digunakan pada pasien diabetes mellitus"
       }
@@ -11675,6 +11769,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Hemofilia",
         "page": 113,
         "text": "Kontraindikasi pada efusi pericardium, supraventrikular takikardia, dan tachydysrhytmia"
       }
@@ -11692,6 +11787,7 @@
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
+        "section": "Talasemia",
         "page": 300,
         "text": "Vitamin C... TIDAK dipakai pada pasien dengan gangguan fungsi jantung"
       }

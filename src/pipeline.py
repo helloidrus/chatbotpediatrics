@@ -7,6 +7,12 @@ from src.verification.decision_layer import apply_decision
 from src.verification.rule_engine import load_rules, verify_claims
 
 
+NO_RELEVANT_CONTEXT_RESPONSE = (
+    "Saya belum menemukan konteks pedoman pediatri yang relevan untuk menjawab "
+    "pertanyaan ini dengan aman."
+)
+
+
 class Pipeline:
     ## --- INITIALIZATION ---
     def __init__(self, debug=True):
@@ -47,6 +53,14 @@ class Pipeline:
     #-- RAG GENERATION ---
     def run_rag(self, query):
         retrieved_docs, scores, context = self._retrieve_context(query)
+        if not retrieved_docs:
+            return {
+                "rag_response": NO_RELEVANT_CONTEXT_RESPONSE,
+                "retrieved_docs": retrieved_docs,
+                "scores": scores,
+                "used_fallback": True,
+            }
+
         start = time.time()
         rag_response = self.generator.generate(query, context)
         self._debug_print("RAG generation time:", time.time() - start)
@@ -54,6 +68,7 @@ class Pipeline:
             "rag_response": rag_response,
             "retrieved_docs": retrieved_docs,
             "scores": scores,
+            "used_fallback": False,
         }
 
     #-- RAG WITH RULE VERIFICATION ---

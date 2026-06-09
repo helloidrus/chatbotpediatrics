@@ -104,12 +104,13 @@ def _ranges_overlap(
     # → kembalikan berdasarkan unknown_claim_matches_specific
     # Untuk contraindication (safety): True (cocok aman-aman)
     # Untuk numeric verification: False (tidak cocok, hindari false compliance)
+    NARROW_AGE_RULE_THRESHOLD_MONTHS = 3
     if c_min is None and c_max is None:
         # Keep very narrow age rules from matching generic claim entries without age context.
         rule_range = (r_max if r_max is not None else 999) - (
             r_min if r_min is not None else 0
         )
-        if rule_range < 3:
+        if rule_range < NARROW_AGE_RULE_THRESHOLD_MONTHS:
             return False
         return unknown_claim_matches_specific
 

@@ -22,7 +22,7 @@ class Generator:
         self.model_name = model_name
 
     # --- INTERNAL METHODS ---
-    def _chat(self, system_prompt, user_prompt, temperature=0.2, max_tokens=512):
+    def _chat(self, system_prompt, user_prompt, temperature=0.2, max_tokens=2048):
         response = client.chat.completions.create(
             model=self.model_name,
             messages=[
@@ -56,8 +56,7 @@ class Generator:
         """
         return self._chat(
             system_prompt=system_prompt,
-            user_prompt=user_prompt,
-            temperature=0.0,
+            user_prompt=user_prompt
         )
 
     # Metode khusus untuk ekstraksi klaim dari jawaban LLM
@@ -85,6 +84,7 @@ class Generator:
         1. HANYA EKSTRAK yang tertulis eksplisit. JANGAN gunakan pengetahuan medis Anda untuk menambah info (misal: JANGAN menambah obat "oralit" jika tidak ada di teks).
         2. JANGAN GUNAKAN NILAI DEFAULT. Jika usia/berat/fase/severity tidak ada di teks, hilangkan field tersebut (OMIT). Jangan isi 0-720 bulan atau 0-100 kg jika tidak tertulis.
         3. JANGAN MEMAKSAKAN FIELD. Jika suatu kata bukan merupakan 'complication' atau 'severity' medis, jangan masukkan ke field tersebut.
+        4. EVIDANCE TEXT harus berupa kutipan asli (verbatim) dari teks, JANGAN diubah formatnya (jangan gunakan underscore).
         5. Jika tidak ada instruksi terapi/dosis/obat, kembalikan {"entries": []}.
 
         ATURAN:
@@ -97,15 +97,22 @@ class Generator:
         - Jika nilai tunggal maka min=max, jika rentang isi keduanya.
         - Unit wajib diisi jika value_min atau value_max tidak null.
         - Jika claim_type: contraindication maka prohibited: true.
+        - evidence_text harus berupa kutipan verbatim pendek yang langsung mendukung claim.
         - Jika suatu field tidak memiliki nilai, OMIT field tersebut dari output JSON.
         - Jika teks menyebutkan dosis "per kali" DAN frekuensi terpisah, ekstrak keduanya sebagai claim terpisah dengan unit yang tepat.
         - "10 mg/kg 3 kali sehari" → dose: 10 mg/kgbb/kali + frequency: 3 kali/hari, BUKAN dose: 30 mg/kgbb/hari
+
+        ENUM:
+        - severity: ringan|ringa_sedang|sedang|berat|besar|resisten_cairan|tersangka|refrakter
+        - phase: initial|continuation|acute|intensive|maintenance
+        - complication: malnutrisi|ensefalopati|bronkopneumonia|meningitis|gangguan_fungsi_jantung|hamil_trimester_akhir|hipernatremia|refraktori|krisis_hipertensi|rawat_inap|rawat_jalan|perdarahan_saluran_kemih|efusi_perikardium|diabetes_mellitus
+        - claim_type: dose|frequency|duration|interval|contraindication
 
         OUTPUT:
         {
         "entries": [{
             "condition": { "disease": string, "age_month_min": float, "age_month_max": float, "weight_kg_min": float, "weight_kg_max": float, "phase": string, "severity": string, "complication": string },
-            "claim": [{ "claim_type": string, "medicine": string, "value_min": float, "value_max": float, "unit": string, "prohibited": true }]
+            "claim": [{ "claim_type": string, "medicine": string, "value_min": float, "value_max": float, "unit": string, "prohibited": true, "evidence_text": string }]
             }]
         }
         """ + examples_str
