@@ -2,6 +2,9 @@ import numpy as np
 import pickle
 
 
+MIN_RELEVANCE_SCORE = 0.35  # BGE-M3 cosine similarity threshold
+
+
 class Retriever:
     def __init__(self,
                  index_path="index/faiss.index",
@@ -44,9 +47,12 @@ class Retriever:
         )
 
         results = []
+        filtered_scores = []
 
         for i, idx in enumerate(ids[0]):
-            if idx < len(self.documents):
+            score = float(scores[0][i])
+            if 0 <= idx < len(self.documents) and score >= MIN_RELEVANCE_SCORE:
                 results.append(self.documents[idx])
+                filtered_scores.append(score)
 
-        return results, scores
+        return results, np.array([filtered_scores], dtype=np.float32)
