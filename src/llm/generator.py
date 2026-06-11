@@ -77,44 +77,29 @@ class Generator:
                 print(f"Warning: Gagal memuat few-shot file: {e}")
 
         system_prompt = """
-        Ekstrak fakta klinis pediatri ke JSON. Tanpa markdown, tanpa inferensi, hanya yang eksplisit tertulis.
-        Tugas: Ekstrak parameter terapi klinis (dosis, frekuensi, durasi, interval, kontraindikasi) ke JSON.
+        Ekstrak parameter terapi klinis dari teks pediatri ke JSON murni. Tanpa markdown.
+
+        PRINSIP:
+        1. Hanya ekstrak yang tersurat eksplisit. Jangan inferensi atau tambah informasi.
+        2. OMIT semua field yang tidak disebutkan di teks (usia, berat, fase, severity, dll).
+        3. Jika tidak ada parameter terapi, kembalikan {"entries": []}.
+
+        ATURAN KLAIM:
+        - Setiap kombinasi kondisi-obat yang unik = satu entry.
+        - Pisahkan dosis, frekuensi, durasi, dan interval sebagai klaim terpisah.
+        - "10 mg/kg 3 kali sehari" → dose: 10 mg/kgbb/kali + frequency: 3 kali/hari (JANGAN dikalikan).
+        - Nilai tunggal: min = max. Nilai rentang: isi keduanya.
+        - Unit wajib diisi bila ada nilai numerik.
+        - contraindication → prohibited: true.
+
+        ENUM (gunakan tepat seperti tertulis):
+        - severity: ringan | ringan_sedang | sedang | berat | besar | resisten_cairan | tersangka | refrakter
+        - phase: initial | continuation | acute | intensive | maintenance
+        - complication: malnutrisi | ensefalopati | bronkopneumonia | meningitis | gangguan_fungsi_jantung | hamil_trimester_akhir | hipernatremia | refraktori | krisis_hipertensi | rawat_inap | rawat_jalan | perdarahan_saluran_kemih | efusi_perikardium | diabetes_mellitus
+
+        SKEMA:
+        {"entries": [{"condition": {"disease": str, "age_month_min": float, "age_month_max": float, "weight_kg_min": float, "weight_kg_max": float, "phase": str, "severity": str, "complication": str}, "claim": [{"claim_type": str, "medicine": str, "value_min": float, "value_max": float, "unit": str, "prohibited": true}]}]}
         
-        PRINSIP KETAT:
-        1. HANYA EKSTRAK yang tertulis eksplisit. JANGAN gunakan pengetahuan medis Anda untuk menambah info (misal: JANGAN menambah obat "oralit" jika tidak ada di teks).
-        2. JANGAN GUNAKAN NILAI DEFAULT. Jika usia/berat/fase/severity tidak ada di teks, hilangkan field tersebut (OMIT). Jangan isi 0-720 bulan atau 0-100 kg jika tidak tertulis.
-        3. JANGAN MEMAKSAKAN FIELD. Jika suatu kata bukan merupakan 'complication' atau 'severity' medis, jangan masukkan ke field tersebut.
-        4. EVIDANCE TEXT harus berupa kutipan asli (verbatim) dari teks, JANGAN diubah formatnya (jangan gunakan underscore).
-        5. Jika tidak ada instruksi terapi/dosis/obat, kembalikan {"entries": []}.
-
-        ATURAN:
-        - Setiap kondisi unik maka buat entry terpisah.
-        - Satu obat + satu kondisi maka satu set claim.
-        - Wajib gunakan key "claim" untuk daftar klaim di setiap entry.
-        - Ekstrak masing-masing dose, frequency, interval, dan duration sebagai claim terpisah.
-        - medicine harus atomik, hanya satu obat/cairan per field.
-        - medicine adalah nama obat persis seperti di teks, tanpa disingkat atau dinormalisasi.
-        - Jika nilai tunggal maka min=max, jika rentang isi keduanya.
-        - Unit wajib diisi jika value_min atau value_max tidak null.
-        - Jika claim_type: contraindication maka prohibited: true.
-        - evidence_text harus berupa kutipan verbatim pendek yang langsung mendukung claim.
-        - Jika suatu field tidak memiliki nilai, OMIT field tersebut dari output JSON.
-        - Jika teks menyebutkan dosis "per kali" DAN frekuensi terpisah, ekstrak keduanya sebagai claim terpisah dengan unit yang tepat.
-        - "10 mg/kg 3 kali sehari" → dose: 10 mg/kgbb/kali + frequency: 3 kali/hari, BUKAN dose: 30 mg/kgbb/hari
-
-        ENUM:
-        - severity: ringan|ringa_sedang|sedang|berat|besar|resisten_cairan|tersangka|refrakter
-        - phase: initial|continuation|acute|intensive|maintenance
-        - complication: malnutrisi|ensefalopati|bronkopneumonia|meningitis|gangguan_fungsi_jantung|hamil_trimester_akhir|hipernatremia|refraktori|krisis_hipertensi|rawat_inap|rawat_jalan|perdarahan_saluran_kemih|efusi_perikardium|diabetes_mellitus
-        - claim_type: dose|frequency|duration|interval|contraindication
-
-        OUTPUT:
-        {
-        "entries": [{
-            "condition": { "disease": string, "age_month_min": float, "age_month_max": float, "weight_kg_min": float, "weight_kg_max": float, "phase": string, "severity": string, "complication": string },
-            "claim": [{ "claim_type": string, "medicine": string, "value_min": float, "value_max": float, "unit": string, "prohibited": true, "evidence_text": string }]
-            }]
-        }
         """ + examples_str
 
         user_prompt = f"TEXT:{answer_text}"
@@ -123,7 +108,6 @@ class Generator:
             system_prompt=system_prompt,
             user_prompt=user_prompt,
             temperature=0,
-            max_tokens=2048
         )
 
     # Metode untuk meregenerasi jawaban berdasarkan pelanggaran pedoman
