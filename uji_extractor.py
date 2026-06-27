@@ -7,7 +7,7 @@ from src.verification.decision_layer import apply_decision
 from src.verification.rule_engine import load_rules, verify_claims
 
 pipeline = Pipeline()
-rules_path = Path("src") / "verification" / "rule_pediatrics.json"
+rules_path = Path("data") / "rules" / "rule_pediatrics.json"
 rules = load_rules(str(rules_path))
 
 rag_text = """

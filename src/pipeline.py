@@ -22,7 +22,7 @@ class Pipeline:
         self.debug = debug
         self.retriever = Retriever()
         self.generator = Generator()
-        rules_path = Path(__file__).parent / "verification" / "rule_pediatrics.json"
+        rules_path = Path(__file__).resolve().parents[1] / "data" / "rules" / "rule_pediatrics.json"
         self.rules = load_rules(str(rules_path))
 
     ## --- DEBUGGING ---
@@ -38,7 +38,7 @@ class Pipeline:
         score_values = scores[0] if len(scores) > 0 else []
         self._debug_print("\n=== RETRIEVED DOCS ===")
         for i, (doc, score) in enumerate(zip(retrieved_docs, score_values), start=1):
-            preview = doc[:150].replace("\n", " ")
+            preview = doc[:300].replace("\n", " ")
             self._debug_print(f"[{i}] score={score} | {preview}")
         self._debug_print("Retrieval time:", time.time() - start)
         return retrieved_docs, scores, context

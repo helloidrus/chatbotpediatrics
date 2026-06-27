@@ -20,8 +20,29 @@ client = OpenAI(
 class Generator:
     def __init__(self, model_name="llama-3.1-8b-instant"):
         self.model_name = model_name
+        self._few_shot_examples = None
 
     # --- INTERNAL METHODS ---
+    def _load_few_shot_examples(self):
+        if self._few_shot_examples is not None:
+            return self._few_shot_examples
+
+        few_shot_path = Path(__file__).parent / "few_shot_extractor.jsonl"
+        examples = []
+
+        if few_shot_path.exists():
+            try:
+                with open(few_shot_path, "r", encoding="utf-8") as f:
+                    for line in f:
+                        line = line.strip()
+                        if line:
+                            examples.append(json.loads(line))
+            except Exception as e:
+                print(f"Warning: Gagal memuat few-shot file: {e}")
+
+        self._few_shot_examples = examples
+        return self._few_shot_examples
+
     def _chat(self, system_prompt, user_prompt, temperature=0.2, max_tokens=2048):
         response = client.chat.completions.create(
             model=self.model_name,
@@ -61,20 +82,10 @@ class Generator:
 
     # Metode khusus untuk ekstraksi klaim dari jawaban LLM
     def generate_claim_extraction(self, answer_text):
-        # Load few-shot examples colocated with this generator module.
-        few_shot_path = Path(__file__).parent / "few_shot_extractor.jsonl"
+        examples = self._load_few_shot_examples()
         examples_str = ""
-        if few_shot_path.exists():
-            try:
-                with open(few_shot_path, "r", encoding="utf-8") as f:
-                    for i, line in enumerate(f, 1):
-                        line = line.strip()
-                        if line:
-                            ex = json.loads(line)
-                            examples_str += f"\nCONTOH {i}:\nTEXT: \"{ex['text']}\"\nJSON: {json.dumps(ex['json'], indent=2)}\n"
-            except Exception as e:
-                # Fallback jika gagal baca file (logging internal)
-                print(f"Warning: Gagal memuat few-shot file: {e}")
+        for i, ex in enumerate(examples, 1):
+            examples_str += f"\nCONTOH {i}:\nTEXT: \"{ex['text']}\"\nJSON: {json.dumps(ex['json'], indent=2)}\n"
 
         system_prompt = """
         Ekstrak parameter terapi klinis dari teks pediatri ke JSON murni. Tanpa markdown.

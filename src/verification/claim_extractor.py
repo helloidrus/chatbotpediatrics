@@ -8,7 +8,7 @@ from typing import Any
 
 logger = logging.getLogger(__name__)
 
-ONTOLOGY_PATH = Path(__file__).with_name("ontology.json")
+ONTOLOGY_PATH = Path(__file__).resolve().parents[2] / "data" / "rules" / "ontology.json"
 
 
 def _canonical_text(value: Any) -> str | None:
