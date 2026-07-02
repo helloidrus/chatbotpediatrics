@@ -11192,90 +11192,6 @@
       }
     },
     {
-      "rule_id": "asma_longterm_dose_budesonide_low_child",
-      "condition": {
-        "disease": "asma",
-        "category": "episodik_sering",
-        "age_month_max": 132
-      },
-      "claim": {
-        "claim_type": "dose",
-        "medicine": "budesonide",
-        "value_min": 100,
-        "value_max": 200,
-        "unit": "mcg/hari"
-      },
-      "metadata": {
-        "source": "Buku PPM IDAI Jilid I",
-        "section": "Tata Laksana Jangka Panjang Asma",
-        "page": 305,
-        "text": "usia <12 tahun: Budesonide 100-200 µg (50-100 µg Flutikason)"
-      }
-    },
-    {
-      "rule_id": "asma_longterm_dose_budesonide_low_adolescent",
-      "condition": {
-        "disease": "asma",
-        "category": "episodik_sering",
-        "age_month_min": 144
-      },
-      "claim": {
-        "claim_type": "dose",
-        "medicine": "budesonide",
-        "value_min": 200,
-        "value_max": 400,
-        "unit": "mcg/hari"
-      },
-      "metadata": {
-        "source": "Buku PPM IDAI Jilid I",
-        "section": "Tata Laksana Jangka Panjang Asma",
-        "page": 305,
-        "text": "usia >12 tahun: Budesonide 200-400 µg (100-200 µg Flutikason)"
-      }
-    },
-    {
-      "rule_id": "asma_longterm_dose_fluticasone_low_child",
-      "condition": {
-        "disease": "asma",
-        "category": "episodik_sering",
-        "age_month_max": 132
-      },
-      "claim": {
-        "claim_type": "dose",
-        "medicine": "fluticasone",
-        "value_min": 50,
-        "value_max": 100,
-        "unit": "mcg/hari"
-      },
-      "metadata": {
-        "source": "Buku PPM IDAI Jilid I",
-        "section": "Tata Laksana Jangka Panjang Asma",
-        "page": 305,
-        "text": "usia <12 tahun: Budesonide 100-200 µg (50-100 µg Flutikason)"
-      }
-    },
-    {
-      "rule_id": "asma_longterm_dose_fluticasone_low_adolescent",
-      "condition": {
-        "disease": "asma",
-        "category": "episodik_sering",
-        "age_month_min": 144
-      },
-      "claim": {
-        "claim_type": "dose",
-        "medicine": "fluticasone",
-        "value_min": 100,
-        "value_max": 200,
-        "unit": "mcg/hari"
-      },
-      "metadata": {
-        "source": "Buku PPM IDAI Jilid I",
-        "section": "Tata Laksana Jangka Panjang Asma",
-        "page": 305,
-        "text": "usia >12 tahun: Budesonide 200-400 µg (100-200 µg Flutikason)"
-      }
-    },
-    {
       "rule_id": "demam_tifoid_duration_deksametason",
       "condition": {
         "disease": "demam_tifoid",
@@ -11354,46 +11270,6 @@
         "section": "Tata Laksana Infeksi Virus Dengue",
         "page": 144,
         "text": "Volume cairan diturunkan menjadi 7ml/kgbb/jam, selanjutnya 5ml, dan 3 ml apabila tanda vital dan diuresis baik."
-      }
-    },
-    {
-      "rule_id": "sepsis_neonatal_duration_gram_positif",
-      "condition": {
-        "disease": "sepsis_neonatal",
-        "complication": "meningitis"
-      },
-      "claim": {
-        "claim_type": "duration",
-        "medicine": "antibiotik",
-        "value_min": 14,
-        "value_max": 14,
-        "unit": "hari"
-      },
-      "metadata": {
-        "source": "Buku PPM IDAI Jilid I",
-        "section": "Sepsis Neonatal",
-        "page": 265,
-        "text": "14 hari untuk kuman Gram positif"
-      }
-    },
-    {
-      "rule_id": "sepsis_neonatal_duration_gram_negatif",
-      "condition": {
-        "disease": "sepsis_neonatal",
-        "complication": "meningitis"
-      },
-      "claim": {
-        "claim_type": "duration",
-        "medicine": "antibiotik",
-        "value_min": 21,
-        "value_max": 21,
-        "unit": "hari"
-      },
-      "metadata": {
-        "source": "Buku PPM IDAI Jilid I",
-        "section": "Sepsis Neonatal",
-        "page": 266,
-        "text": "21 hari untuk kuman Gram negatif"
       }
     },
     {
@@ -11688,7 +11564,7 @@
       "rule_id": "hypertension_contraindication_labetalol",
       "condition": {
         "disease": "hipertensi",
-        "complication": "asma"
+        "complication": "komorbid_asma"
       },
       "claim": {
         "claim_type": "contraindication",
@@ -11706,7 +11582,7 @@
       "rule_id": "hypertension_contraindication_labetalol1",
       "condition": {
         "disease": "hipertensi",
-        "complication": "gagal_jantung"
+        "complication": "gagal_jantung_komorbid"
       },
       "claim": {
         "claim_type": "contraindication",

@@ -47,7 +47,7 @@
     "talasemia": [ "talasemia", "thalassemia", "mediterranean_anemia" ],
     "tetanus_neonatorum": [ "tetanus_neonatorum", "neonatal_tetanus" ],
     "tetralogi_fallot": [ "tetralogi_fallot", "tetralogy_of_fallot", "tof" ],
-    "urtikaria_dan_angioedema": [ "urtikaria_dan_angioedema", "urticaria_and_angioedema", "hives_angioedema" ],
+    "urtikaria_dan_angioedema": [ "urtikaria_dan_angioedema", "urticaria_and_angioedema", "hives_angioedema", "anafilaksis", "anaphylaxis" ],
     "alergi_obat": ["alergi_obat", "drug_allergy"],
     "hepatitis_akut": ["hepatitis_akut", "acute_hepatitis"],
     "bronkiolitis": ["bronkiolitis", "bronchiolitis"],
