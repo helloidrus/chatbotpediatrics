@@ -18,7 +18,7 @@ client = OpenAI(
 
 
 class Generator:
-    def __init__(self, model_name="llama-3.1-8b-instant"):
+    def __init__(self, model_name="llama-3.1-8b-instant"): # "llama-3.1-8b-instant" | "llama-3.3-70b-versatile" | "qwen/qwen3-32b"
         self.model_name = model_name
         self._few_shot_examples = None
 
