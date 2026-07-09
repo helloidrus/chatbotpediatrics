@@ -747,7 +747,7 @@
       }
     },
     {
-      "rule_id": "pneumonia_interal_1",
+      "rule_id": "pneumonia_interval_1",
       "condition": {
         "disease": "pneumonia"
       },
@@ -895,6 +895,27 @@
         "value_min": 1,
         "value_max": 1,
         "unit": "kali/hari"
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I",
+        "section": "Pneumonia",
+        "page": 255,
+        "text": "1 x / hari"
+      }
+    },
+    
+    {
+      "rule_id": "pneumonia_interval_33",
+      "condition": {
+        "disease": "pneumonia",
+        "age_month_min": 3
+      },
+      "claim": {
+        "claim_type": "interval",
+        "medicine": "seftriakson",
+        "value_min": 24,
+        "value_max": 24,
+        "unit": "jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
