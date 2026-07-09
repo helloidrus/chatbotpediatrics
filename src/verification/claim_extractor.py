@@ -33,13 +33,16 @@ def _canonical_unit_text(value: Any) -> str | None:
     return unit or None
 
 
-def _to_float_or_none(value: Any) -> float | None:
+def _to_float_or_none(value: Any) -> int | float | None:
     if value is None or value == "":
         return None
     try:
         if isinstance(value, str):
             value = value.strip().replace(",", ".")
-        return float(value)
+        number = float(value)
+        if number.is_integer():
+            return int(number)
+        return number
     except (TypeError, ValueError):
         return None
 

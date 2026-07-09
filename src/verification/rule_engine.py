@@ -31,16 +31,22 @@ def _to_float(value: Any) -> float | None:
         return None
 
 
+def _format_number(value: Any) -> str:
+    if isinstance(value, float) and value.is_integer():
+        return str(int(value))
+    return str(value)
+
+
 def _format_range(value_min: Any, value_max: Any, unit: str | None) -> str:
     if value_min is None and value_max is None:
         return unit or ""
     if value_min is None:
-        return f"<= {value_max} {unit or ''}".strip()
+        return f"<= {_format_number(value_max)} {unit or ''}".strip()
     if value_max is None:
-        return f">= {value_min} {unit or ''}".strip()
+        return f">= {_format_number(value_min)} {unit or ''}".strip()
     if value_min == value_max:
-        return f"{value_min} {unit or ''}".strip()
-    return f"{value_min}-{value_max} {unit or ''}".strip()
+        return f"{_format_number(value_min)} {unit or ''}".strip()
+    return f"{_format_number(value_min)}-{_format_number(value_max)} {unit or ''}".strip()
 
 def _base_result(status: str, claim: dict, rule: dict | None = None) -> dict:
     result = {

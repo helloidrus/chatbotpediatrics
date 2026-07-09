@@ -872,9 +872,9 @@
       "claim": {
         "claim_type": "dose",
         "medicine": "seftriakson",
-        "value_min": 1,
-        "value_max": 2,
-        "unit": "g/kali"
+        "value_min": 1000,
+        "value_max": 2000,
+        "unit": "mg/kali"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -1009,8 +1009,8 @@
         "claim_type": "dose",
         "medicine": "clindamycin",
         "value_min": 0,
-        "value_max": 1.2,
-        "unit": "g/kali"
+        "value_max": 1200,
+        "unit": "mg/kali"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -1273,7 +1273,6 @@
       "rule_id": "infeksi_virus_dengue_dose_7",
       "condition": {
         "disease": "infeksi_virus_dengue",
-        "phase": "initial",
         "severity": "tersangka",
         "complication": "rawat_jalan"
       },
@@ -1295,7 +1294,6 @@
       "rule_id": "infeksi_virus_dengue_dose_8",
       "condition": {
         "disease": "infeksi_virus_dengue",
-        "phase": "initial",
         "severity": "tersangka",
         "complication": "rawat_inap"
       },

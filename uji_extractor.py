@@ -12,7 +12,7 @@ rules = load_rules(str(rules_path))
 
 rag_text = """
 
-Dosis awal primakuin fosfat pada malaria falciparum adalah 0,5-0,75 mg basa/kgbb dosis tunggal, pada hari pertama pengobatan
+Dosis clindamycin pada pneumonia anak adalah 10 mg/kg/kali, dengan dosis tunggal maksimum 1,2 gram. Dosis ini diberikan setiap 6 jam.
 
 """
 
