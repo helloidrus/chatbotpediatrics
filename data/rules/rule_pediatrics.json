@@ -1473,8 +1473,8 @@
         "claim_type": "dose",
         "medicine": "pirazinamid",
         "value_min": 0,
-        "value_max": 2,
-        "unit": "g"
+        "value_max": 2000,
+        "unit": "mg"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -1549,8 +1549,8 @@
         "claim_type": "dose",
         "medicine": "streptomisin",
         "value_min": 0,
-        "value_max": 1,
-        "unit": "g"
+        "value_max": 1000,
+        "unit": "mg"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -1654,27 +1654,6 @@
         "section": "Tuberkulosis",
         "page": 325,
         "text": "Fase lanjutan: 4-6 OAT selama 4-6 bulan"
-      }
-    },
-    {
-      "rule_id": "tuberkulosis_duration_111",
-      "condition": {
-        "disease": "tuberkulosis",
-        "phase": "continuation",
-        "severity": "berat"
-      },
-      "claim": {
-        "claim_type": "duration",
-        "medicine": "isoniazid",
-        "value_min": 7,
-        "value_max": 10,
-        "unit": "bulan"
-      },
-      "metadata": {
-        "source": "Buku PPM IDAI Jilid I",
-        "section": "Tuberkulosis",
-        "page": 325,
-        "text": "TB paru berat (milier, destroyed lung) dan TB ekstra paru... fase lanjutan: 7-10 bulan"
       }
     },
     {
@@ -1894,22 +1873,22 @@
       }
     },
     {
-      "rule_id": "tuberkulosis_duration_6",
+      "rule_id": "tb_paru_total_duration_v1",
       "condition": {
         "disease": "tuberkulosis"
       },
       "claim": {
         "claim_type": "duration",
-        "medicine": "prednison",
-        "value_min": 2,
-        "value_max": 2,
-        "unit": "minggu"
+        "medicine": "oat",
+        "value_min": 6,
+        "value_max": 6,
+        "unit": "bulan"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Tuberkulosis",
-        "page": 325,
-        "text": "dilanjutkan 2 minggu penurunan dosis bertahap (tappering off)"
+        "page": "325, 327",
+        "text": "Pengobatan TB berlangsung lama, minimal 6 bulan, tidak boleh terputus, dan harus kontrol teratur tiap bulan. TB paru dilanjutkan INH dan rifampisin hingga genap 6 bulan terapi."
       }
     },
     {
@@ -2348,7 +2327,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "diazepam",
+        "medicine": "diazepam_rektal",
         "value_min": 0.5,
         "value_max": 0.5,
         "unit": "mg/kgbb"
@@ -2367,7 +2346,7 @@
       },
       "claim": {
         "claim_type": "interval",
-        "medicine": "diazepam",
+        "medicine": "diazepam_rektal",
         "value_min": 8,
         "value_max": 8,
         "unit": "jam"
@@ -2569,7 +2548,26 @@
         "source": "Buku PPM IDAI Jilid I",
         "section": "Infeksi Saluran Kemih",
         "page": 139,
-        "text": "kali/hari"
+        "text": "sekali sehari"
+      }
+    },
+    {
+      "rule_id": "infeksi_saluran_kemih_interval_66",
+      "condition": {
+        "disease": "infeksi_saluran_kemih"
+      },
+      "claim": {
+        "claim_type": "interval",
+        "medicine": "seftriakson",
+        "value_min": 24,
+        "value_max": 24,
+        "unit": "jam"
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I",
+        "section": "Infeksi Saluran Kemih",
+        "page": 139,
+        "text": "sekali sehari"
       }
     },
     {
@@ -3307,8 +3305,7 @@
       "rule_id": "serangan_asma_akut_dose_4",
       "condition": {
         "disease": "serangan_asma_akut",
-        "phase": "intensive",
-        "severity": "berat"
+        "phase": "initial"
       },
       "claim": {
         "claim_type": "dose",
@@ -3327,8 +3324,7 @@
     {
       "rule_id": "serangan_asma_akut_duration_3",
       "condition": {
-        "disease": "serangan_asma_akut",
-        "severity": "berat"
+        "disease": "serangan_asma_akut"
       },
       "claim": {
         "claim_type": "duration",
@@ -3348,8 +3344,7 @@
       "rule_id": "serangan_asma_akut_dose_5",
       "condition": {
         "disease": "serangan_asma_akut",
-        "phase": "continuation",
-        "severity": "berat"
+        "phase": "maintenance"
       },
       "claim": {
         "claim_type": "dose",
@@ -4049,7 +4044,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "enema gliserin",
+        "medicine": "enema_gliserin",
         "value_min": 2,
         "value_max": 5,
         "unit": "mL"
@@ -4064,8 +4059,7 @@
     {
       "rule_id": "konstipasi_dose_9",
       "condition": {
-        "disease": "konstipasi",
-        "phase": "continuation"
+        "disease": "konstipasi"
       },
       "claim": {
         "claim_type": "dose",
@@ -4084,8 +4078,7 @@
     {
       "rule_id": "konstipasi_frequency_3",
       "condition": {
-        "disease": "konstipasi",
-        "phase": "continuation"
+        "disease": "konstipasi"
       },
       "claim": {
         "claim_type": "frequency",
@@ -4274,6 +4267,24 @@
         "section": "Urtikaria dan Angioedema",
         "page": 331,
         "text": "dibagi dalam 3 dosis"
+      }
+    },
+    {
+      "rule_id": "urtikaria_ctm_interval_v1",
+      "condition": {
+        "disease": "urtikaria_dan_angioedema"
+      },
+      "claim": {
+        "claim_type": "interval",
+        "medicine": "klorfeniramin_maleat",
+        "value_min": 8,
+        "value_max": 8,
+        "unit": "jam"
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I",
+        "page": 331,
+        "text": "dosis 0,25 mg/kgbb/hari dibagi dalam 3 dosis (setiap 8 jam)"
       }
     },
     {
@@ -4771,9 +4782,7 @@
     {
       "rule_id": "urtikaria_dan_angioedema_dose_14",
       "condition": {
-        "disease": "urtikaria_dan_angioedema",
-        "age_month_min": 1,
-        "age_month_max": 192
+        "disease": "urtikaria_dan_angioedema"
       },
       "claim": {
         "claim_type": "dose",
@@ -4792,9 +4801,7 @@
     {
       "rule_id": "urtikaria_dan_angioedema_interval_6",
       "condition": {
-        "disease": "urtikaria_dan_angioedema",
-        "age_month_min": 1,
-        "age_month_max": 192
+        "disease": "urtikaria_dan_angioedema"
       },
       "claim": {
         "claim_type": "interval",
@@ -4808,6 +4815,26 @@
         "section": "Urtikaria dan Angioedema",
         "page": 332,
         "text": "Tiap 12 jam"
+      }
+    },
+    
+    {
+      "rule_id": "urtikaria_dan_angioedema_frequency_5",
+      "condition": {
+        "disease": "urtikaria_dan_angioedema"
+      },
+      "claim": {
+        "claim_type": "frequency",
+        "medicine": "ranitidine",
+        "value_min": 2,
+        "value_max": 2,
+        "unit": "kali/hari"
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I",
+        "section": "Urtikaria dan Angioedema",
+        "page": 332,
+        "text": "terbagi dalam 2 dosis"
       }
     },
     {
@@ -5553,7 +5580,7 @@
         "disease": "sepsis_neonatal",
         "age_month_min": 0,
         "age_month_max": 0.23,
-        "weight_kg_min": 2
+        "weight_kg_min": 2.1
       },
       "claim": {
         "claim_type": "dose",
@@ -5575,7 +5602,7 @@
         "disease": "sepsis_neonatal",
         "age_month_min": 0,
         "age_month_max": 0.23,
-        "weight_kg_min": 2
+        "weight_kg_min": 2.1
       },
       "claim": {
         "claim_type": "frequency",
@@ -6218,7 +6245,7 @@
       "rule_id": "sindrom_nefrotik_dose_1",
       "condition": {
         "disease": "sindrom_nefrotik",
-        "phase": "intensive"
+        "phase": "initial"
       },
       "claim": {
         "claim_type": "dose",
@@ -6238,7 +6265,7 @@
       "rule_id": "sindrom_nefrotik_dose_2",
       "condition": {
         "disease": "sindrom_nefrotik",
-        "phase": "intensive"
+        "phase": "initial"
       },
       "claim": {
         "claim_type": "dose",
@@ -6258,7 +6285,7 @@
       "rule_id": "sindrom_nefrotik_dose_3",
       "condition": {
         "disease": "sindrom_nefrotik",
-        "phase": "intensive"
+        "phase": "initial"
       },
       "claim": {
         "claim_type": "dose",
@@ -6278,7 +6305,7 @@
       "rule_id": "sindrom_nefrotik_frequency_1",
       "condition": {
         "disease": "sindrom_nefrotik",
-        "phase": "intensive"
+        "phase": "initial"
       },
       "claim": {
         "claim_type": "frequency",
@@ -6298,7 +6325,7 @@
       "rule_id": "sindrom_nefrotik_duration_1",
       "condition": {
         "disease": "sindrom_nefrotik",
-        "phase": "intensive"
+        "phase": "initial"
       },
       "claim": {
         "claim_type": "duration",
@@ -6458,7 +6485,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "albumin 20-25%",
+        "medicine": "albumin",
         "value_min": 1,
         "value_max": 1,
         "unit": "g/kgbb/hari"
@@ -6477,7 +6504,7 @@
       },
       "claim": {
         "claim_type": "duration",
-        "medicine": "albumin 20-25%",
+        "medicine": "albumin",
         "value_min": 2,
         "value_max": 4,
         "unit": "jam"
@@ -6817,7 +6844,7 @@
       "rule_id": "gagal_jantung_dose_9",
       "condition": {
         "disease": "gagal_jantung",
-        "phase": "continuation"
+        "phase": "maintenance"
       },
       "claim": {
         "claim_type": "dose",
@@ -6859,7 +6886,7 @@
       "rule_id": "gagal_jantung_dose_11",
       "condition": {
         "disease": "gagal_jantung",
-        "phase": "continuation",
+        "phase": "maintenance",
         "age_month_min": 0,
         "age_month_max": 1
       },
@@ -6902,7 +6929,7 @@
       "rule_id": "gagal_jantung_dose_13",
       "condition": {
         "disease": "gagal_jantung",
-        "phase": "continuation",
+        "phase": "maintenance",
         "age_month_max": 23
       },
       "claim": {
@@ -6924,7 +6951,7 @@
       "condition": {
         "disease": "gagal_jantung",
         "phase": "initial",
-        "age_month_min": 25
+        "age_month_min": 24
       },
       "claim": {
         "claim_type": "dose",
@@ -6944,8 +6971,8 @@
       "rule_id": "gagal_jantung_dose_15",
       "condition": {
         "disease": "gagal_jantung",
-        "phase": "continuation",
-        "age_month_min": 25
+        "phase": "maintenance",
+        "age_month_min": 24
       },
       "claim": {
         "claim_type": "dose",
@@ -7047,8 +7074,8 @@
         "claim_type": "dose",
         "medicine": "glukosa",
         "value_min": 0,
-        "value_max": 75,
-        "unit": "g"
+        "value_max": 75000,
+        "unit": "mg"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -7925,8 +7952,7 @@
     {
       "rule_id": "meningitis_tuberkulosis_dose_1",
       "condition": {
-        "disease": "tuberkulosis",
-        "complication": "meningitis"
+        "disease": "meningitis_tuberkulosis"
       },
       "claim": {
         "claim_type": "dose",
@@ -7945,8 +7971,7 @@
     {
       "rule_id": "meningitis_tuberkulosis_dose_2",
       "condition": {
-        "disease": "tuberkulosis",
-        "complication": "meningitis"
+        "disease": "meningitis_tuberkulosis"
       },
       "claim": {
         "claim_type": "dose",
@@ -7965,8 +7990,7 @@
     {
       "rule_id": "meningitis_tuberkulosis_dose_3",
       "condition": {
-        "disease": "tuberkulosis",
-        "complication": "meningitis"
+        "disease": "meningitis_tuberkulosis"
       },
       "claim": {
         "claim_type": "dose",
@@ -7985,8 +8009,7 @@
     {
       "rule_id": "meningitis_tuberkulosis_dose_4",
       "condition": {
-        "disease": "tuberkulosis",
-        "complication": "meningitis"
+        "disease": "meningitis_tuberkulosis"
       },
       "claim": {
         "claim_type": "dose",
@@ -8005,8 +8028,7 @@
     {
       "rule_id": "meningitis_tuberkulosis_dose_5",
       "condition": {
-        "disease": "tuberkulosis",
-        "complication": "meningitis"
+        "disease": "meningitis_tuberkulosis"
       },
       "claim": {
         "claim_type": "dose",
@@ -8025,8 +8047,7 @@
     {
       "rule_id": "meningitis_tuberkulosis_dose_6",
       "condition": {
-        "disease": "tuberkulosis",
-        "complication": "meningitis"
+        "disease": "meningitis_tuberkulosis"
       },
       "claim": {
         "claim_type": "dose",
@@ -8045,8 +8066,7 @@
     {
       "rule_id": "meningitis_tuberkulosis_dose_7",
       "condition": {
-        "disease": "tuberkulosis",
-        "complication": "meningitis"
+        "disease": "meningitis_tuberkulosis"
       },
       "claim": {
         "claim_type": "dose",
@@ -8065,8 +8085,7 @@
     {
       "rule_id": "meningitis_tuberkulosis_dose_8",
       "condition": {
-        "disease": "tuberkulosis",
-        "complication": "meningitis"
+        "disease": "meningitis_tuberkulosis"
       },
       "claim": {
         "claim_type": "dose",
@@ -8085,8 +8104,7 @@
     {
       "rule_id": "meningitis_tuberkulosis_dose_9",
       "condition": {
-        "disease": "tuberkulosis",
-        "complication": "meningitis"
+        "disease": "meningitis_tuberkulosis"
       },
       "claim": {
         "claim_type": "dose",
@@ -8105,8 +8123,7 @@
     {
       "rule_id": "meningitis_tuberkulosis_dose_10",
       "condition": {
-        "disease": "tuberkulosis",
-        "complication": "meningitis"
+        "disease": "meningitis_tuberkulosis"
       },
       "claim": {
         "claim_type": "dose",
@@ -8125,8 +8142,7 @@
     {
       "rule_id": "meningitis_tuberkulosis_duration_2",
       "condition": {
-        "disease": "tuberkulosis",
-        "complication": "meningitis",
+        "disease": "meningitis_tuberkulosis",
         "phase": "continuation"
       },
       "claim": {
@@ -8146,8 +8162,7 @@
     {
       "rule_id": "meningitis_tuberkulosis_duration_22",
       "condition": {
-        "disease": "tuberkulosis",
-        "complication": "meningitis",
+        "disease": "meningitis_tuberkulosis",
         "phase": "continuation"
       },
       "claim": {
@@ -8167,8 +8182,7 @@
     {
       "rule_id": "meningitis_tuberkulosis_dose_11",
       "condition": {
-        "disease": "tuberkulosis",
-        "complication": "meningitis"
+        "disease": "meningitis_tuberkulosis"
       },
       "claim": {
         "claim_type": "dose",
@@ -8187,8 +8201,7 @@
     {
       "rule_id": "meningitis_tuberkulosis_duration_3",
       "condition": {
-        "disease": "tuberkulosis",
-        "complication": "meningitis"
+        "disease": "meningitis_tuberkulosis"
       },
       "claim": {
         "claim_type": "duration",
@@ -8207,8 +8220,7 @@
     {
       "rule_id": "meningitis_tuberkulosis_dose_12",
       "condition": {
-        "disease": "tuberkulosis",
-        "complication": "meningitis"
+        "disease": "meningitis_tuberkulosis"
       },
       "claim": {
         "claim_type": "dose",
@@ -8227,8 +8239,7 @@
     {
       "rule_id": "meningitis_tuberkulosis_interval_1",
       "condition": {
-        "disease": "tuberkulosis",
-        "complication": "meningitis"
+        "disease": "meningitis_tuberkulosis"
       },
       "claim": {
         "claim_type": "interval",
@@ -8247,8 +8258,7 @@
     {
       "rule_id": "meningitis_tuberkulosis_dose_13",
       "condition": {
-        "disease": "tuberkulosis",
-        "complication": "meningitis"
+        "disease": "meningitis_tuberkulosis"
       },
       "claim": {
         "claim_type": "dose",
@@ -8267,8 +8277,7 @@
     {
       "rule_id": "meningitis_tuberkulosis_dose_14",
       "condition": {
-        "disease": "tuberkulosis",
-        "complication": "meningitis"
+        "disease": "meningitis_tuberkulosis"
       },
       "claim": {
         "claim_type": "dose",
@@ -8287,8 +8296,7 @@
     {
       "rule_id": "meningitis_tuberkulosis_frequency_2",
       "condition": {
-        "disease": "tuberkulosis",
-        "complication": "meningitis"
+        "disease": "meningitis_tuberkulosis"
       },
       "claim": {
         "claim_type": "frequency",
@@ -11130,10 +11138,28 @@
       }
     },
     {
+      "rule_id": "hipertensi_dose_captopril_max",
+      "condition": {
+        "disease": "hipertensi"
+      },
+      "claim": {
+        "claim_type": "dose",
+        "medicine": "kaptopril",
+        "value_min": 0,
+        "value_max": 6,
+        "unit": "mg/kgbb/hari"
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I",
+        "section": "Hipertensi",
+        "page": "106, 112",
+        "text": "Captopril... Dosis: 0,3 s/d 0,5 mg/kg/kali Maksimum 6 mg/kg/hari"
+      }
+    },
+    {
       "rule_id": "hipertensi_krisis_nifedipin",
       "condition": {
-        "disease": "hipertensi",
-        "complication": "krisis_hipertensi"
+        "disease": "krisis_hipertensi"
       },
       "claim": {
         "claim_type": "dose",
@@ -11173,8 +11199,7 @@
     {
       "rule_id": "hipertensi_krisis_klonidin_drip",
       "condition": {
-        "disease": "hipertensi",
-        "complication": "krisis_hipertensi"
+        "disease": "krisis_hipertensi"
       },
       "claim": {
         "claim_type": "dose",
@@ -11193,8 +11218,7 @@
     {
       "rule_id": "hipertensi_krisis_klonidin_drip1",
       "condition": {
-        "disease": "hipertensi",
-        "complication": "krisis_hipertensi"
+        "disease": "krisis_hipertensi"
       },
       "claim": {
         "claim_type": "frequency",
@@ -11289,6 +11313,23 @@
         "section": "Tata Laksana Infeksi Virus Dengue",
         "page": 144,
         "text": "Volume cairan diturunkan menjadi 7ml/kgbb/jam, selanjutnya 5ml, dan 3 ml apabila tanda vital dan diuresis baik."
+      }
+    },
+    {
+      "rule_id": "dengue_contraindication_aspirin",
+      "condition": {
+        "disease": "infeksi_virus_dengue"
+      },
+      "claim": {
+        "claim_type": "contraindication",
+        "medicine": "aspirin",
+        "prohibited": true
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I",
+        "section": "Infeksi Virus Dengue",
+        "page": 143,
+        "text": "Antipiretik dapat diberikan, dianjurkan pemberian parasetamol bukan aspirin."
       }
     },
     {
@@ -11409,7 +11450,7 @@
         "source": "Buku PPM IDAI Jilid I",
         "section": "Defek Septum Ventrikel",
         "page": 40,
-        "text": "Nutrisi tambahan, seperti formula tinggi kalori, perlu diberikan sejak awal jika terdapat pirau yang besar karena kebutuhan metabolisme meningkat. Kebutuhan kalori hingga 150-200 kkal/kgBB/hari mungkin diperlukan untuk pertumbuhan yang adekuat."
+        "text": "Kebutuhan kalori hingga 150-200 kkal/kgBB/hari mungkin diperlukan untuk pertumbuhan yang adekuat."
       }
     },
     {
@@ -11619,7 +11660,7 @@
       "rule_id": "hypertension_contraindication_labetalol2",
       "condition": {
         "disease": "hipertensi",
-        "complication": "diabetes_mellitus_insulin_dependent"
+        "complication": "diabetes_melitus_insulin_dependent"
       },
       "claim": {
         "claim_type": "contraindication",
@@ -11634,21 +11675,21 @@
       }
     },
     {
-      "rule_id": "hypertension_contraindication_propanolol",
+      "rule_id": "hypertension_contraindication_propranolol",
       "condition": {
         "disease": "hipertensi",
-        "complication": "diabetes_mellitus"
+        "complication": "diabetes_melitus"
       },
       "claim": {
         "claim_type": "contraindication",
-        "medicine": "propanolol",
+        "medicine": "propranolol",
         "prohibited": true
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Hemofilia",
         "page": 113,
-        "text": "Tidak digunakan pada pasien diabetes mellitus"
+        "text": "Tidak digunakan pada pasien diabetes melitus"
       }
     },
     {
@@ -11723,30 +11764,6 @@
         "text": "Amoksisilin 60–100 mg/kgbb/hr"
       }
     },
-    {
-      "rule_id": "asma_akut_aminofilin_post_recent_dose",
-      "condition": {
-        "disease": "serangan_asma_akut",
-        "severity": "berat"
-      },
-      "claim": {
-        "claim_type": "dose",
-        "medicine": "aminofilin",
-        "value_min": 3,
-        "value_max": 4,
-        "unit": "mg/kgbb"
-      },
-      "metadata": {
-        "source": "Buku PPM IDAI Jilid I",
-        "section": "Serangan Asma Akut",
-        "page": 272,
-        "text": "Jika pasien telah mendapat aminofilin sebelumnya (kurang dari 4 jam), dosis yang diberikan adalah setengah dosis inisial."
-      }
-    },
-
-
-
-
     {
       "rule_id": "failure_to_thrive_frequency_1",
       "condition": {
@@ -12197,6 +12214,24 @@
       "metadata": {
         "source": "Buku PPM IDAI Jilid I","section": "Asuhan Nutrisi Pediatri","page": 17,
         "text": "sebaiknya tidak menggunakan formula enteral dewasa pada anak di bawah usia 10 tahun."
+      }
+    },
+    {
+      "rule_id": "hipertensi_contraindication_propranolol_v1",
+      "condition": {
+        "disease": "hipertensi",
+        "complication": "diabetes_mellitus"
+      },
+      "claim": {
+        "claim_type": "contraindication",
+        "medicine": "propranolol",
+        "prohibited": true
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I",
+        "section": "Hipertensi",
+        "page": 113,
+        "text": "Tidak digunakan pada pasien diabetes mellitus"
       }
     },
     {
