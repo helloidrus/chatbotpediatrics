@@ -26,10 +26,9 @@ def _canonical_unit_text(value: Any) -> str | None:
     # Normalisasi: hapus spasi di sekitar slash
     unit = re.sub(r'\s*/\s*', '/', unit)
     # Normalisasi: 'kg bb' → 'kgbb' dan 'kgBB' → 'kgbb'
-    unit = re.sub(r'kgbb', 'kgbb', unit)
     unit = re.sub(r'kg\s+bb', 'kgbb', unit, flags=re.IGNORECASE)
-    # Hapus semua spasi tersisa
-    unit = re.sub(r'\s+', '', unit)
+    # Pertahankan pemisah kata sebagai underscore agar cocok dengan alias ontology
+    unit = re.sub(r'\s+', '_', unit)
     return unit or None
 
 
@@ -38,13 +37,29 @@ def _to_float_or_none(value: Any) -> int | float | None:
         return None
     try:
         if isinstance(value, str):
-            value = value.strip().replace(",", ".")
+            cleaned = value.strip().lower().replace(",", ".")
+            cleaned = re.sub(r"\s+", "", cleaned)
+            if cleaned.endswith("kg"):
+                cleaned = cleaned[:-2]
+            elif cleaned.endswith("g"):
+                cleaned = cleaned[:-1]
+            value = cleaned
         number = float(value)
         if number.is_integer():
             return int(number)
         return number
     except (TypeError, ValueError):
         return None
+
+
+def _normalize_weight_kg(value: Any) -> int | float | None:
+    normalized = _to_float_or_none(value)
+    if normalized is None:
+        return None
+    if normalized > 100:
+        normalized = normalized / 1000
+        logger.debug("Mengonversi berat dari gram ke kg: %r -> %s", value, normalized)
+    return normalized
 
 
 def _normalize_with_alias(
@@ -207,8 +222,8 @@ def _parse_condition(raw: Any) -> dict | None:
         "disease": disease,
         "age_month_min": _to_float_or_none(raw.get("age_month_min")),
         "age_month_max": _to_float_or_none(raw.get("age_month_max")),
-        "weight_kg_min": _to_float_or_none(raw.get("weight_kg_min")),
-        "weight_kg_max": _to_float_or_none(raw.get("weight_kg_max")),
+        "weight_kg_min": _normalize_weight_kg(raw.get("weight_kg_min")),
+        "weight_kg_max": _normalize_weight_kg(raw.get("weight_kg_max")),
         "phase": _alias(raw, "phase", PHASE_ALIASES, VALID_PHASE),
         "severity": _alias(raw, "severity", SEVERITY_ALIASES, VALID_SEVERITY),
         "complication": _alias(raw, "complication", COMPLICATION_ALIASES, VALID_COMPLICATION),
@@ -247,6 +262,16 @@ def _parse_claim(raw: Any, condition: dict) -> dict | None:
     value_max = _to_float_or_none(raw.get("value_max"))
     if value_min is not None and value_max is not None and value_min > value_max:
         return None
+    if value_min == 0 and value_max == 0:
+        return None
+
+    raw_prohibited = raw.get("prohibited")
+    if isinstance(raw_prohibited, bool):
+        prohibited = raw_prohibited
+    elif claim_type == "contraindication":
+        prohibited = True
+    else:
+        prohibited = None
 
     return _drop_none({
         "condition": condition,
@@ -255,7 +280,7 @@ def _parse_claim(raw: Any, condition: dict) -> dict | None:
         "value_min": value_min,
         "value_max": value_max,
         "unit": _normalize_unit(raw.get("unit")),
-        "prohibited": True if claim_type == "contraindication" or raw.get("prohibited") is True else None
+        "prohibited": prohibited,
     })
 
 

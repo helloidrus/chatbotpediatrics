@@ -163,6 +163,18 @@ def _signature_matches(rule: dict, claim: dict, *, ignore_claim_type: bool = Fal
     return bool(rule_parameter and claim_parameter and rule_parameter == claim_parameter)
 
 
+def _condition_specificity(rule: dict) -> int:
+    condition = rule.get("condition") or {}
+    score = 0
+    for field in ("disease", "phase", "severity", "complication", "category"):
+        if condition.get(field) is not None:
+            score += 1
+    for field in ("age_month_min", "age_month_max", "weight_kg_min", "weight_kg_max"):
+        if condition.get(field) is not None:
+            score += 1
+    return score
+
+
 def _matching_rules(
     claim: dict,
     rules: list[dict],
@@ -181,6 +193,8 @@ def _matching_rules(
             and _signature_matches(rule, claim, ignore_claim_type=ignore_claim_type)
         ):
             matches.append(rule)
+
+    matches.sort(key=_condition_specificity, reverse=True)
     return matches
 
 
@@ -201,12 +215,14 @@ def _numeric_unit_comparable(claim: dict, rule_unit: Any, claim_unit: Any) -> bo
     if _unit_comparable(rule_unit, claim_unit):
         return True
 
-    if (
-        _same_norm(claim.get("claim_type"), "dose")
-        and _same_norm(claim_unit, "mg/kgbb")
-        and _same_norm(rule_unit, "mg/kgbb/kali")
-    ):
-        return True
+    if _same_norm(claim.get("claim_type"), "dose"):
+        # Beberapa rule menyimpan dosis mg/kg tanpa '/kali', sementara klaim dapat
+        # memakai unit mg/kgbb/kali. Untuk dosis, kedua bentuk harus dianggap sama.
+        if (
+            (_same_norm(claim_unit, "mg/kgbb") and _same_norm(rule_unit, "mg/kgbb/kali"))
+            or (_same_norm(claim_unit, "mg/kgbb/kali") and _same_norm(rule_unit, "mg/kgbb"))
+        ):
+            return True
 
     return False
 
