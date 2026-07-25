@@ -96,6 +96,7 @@ class Generator:
         3. Jika tidak ada parameter terapi, kembalikan {"entries": []}.
 
         ATURAN KLAIM:
+        - Setiap kombinasi kondisi (penyakit/populasi/berat badan/usia) yang unik harus menjadi satu objek terpisah dalam array.
         - Setiap kombinasi kondisi-obat yang unik = satu entry.
         - Pisahkan dosis, frekuensi, durasi, dan interval sebagai klaim terpisah.
         - "10 mg/kg 3 kali sehari" → dose: 10 mg/kgbb/kali + frequency: 3 kali/hari (JANGAN dikalikan).
@@ -103,6 +104,7 @@ class Generator:
         - Unit wajib diisi bila ada nilai numerik.
         - contraindication → prohibited: true.
         - Informasi mengenai fase pemberian obat, masukkan ke dalam field phase
+        - Nilai weight adalah berat badan dalam satuan kg dan nilai age adalah usia usia dalam bulan.
 
         ENUM (gunakan tepat seperti tertulis):
         - severity: ringan | ringan_sedang | sedang | berat | besar | resisten_cairan | tersangka | refrakter

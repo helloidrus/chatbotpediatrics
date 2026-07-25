@@ -12,7 +12,8 @@ rules = load_rules(str(rules_path))
 
 rag_text = """
 
-Dosis clindamycin pada pneumonia anak adalah 10 mg/kg/kali, dengan dosis tunggal maksimum 1,2 gram. Dosis ini diberikan setiap 6 jam.
+Beta agonis dapat diberikan pada serangan asma akut ringan anak sebanyak 1-2 dosis dalam waktu 4-6 jam.
+
 
 """
 

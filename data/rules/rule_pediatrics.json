@@ -49,7 +49,6 @@
       "rule_id": "diare_akut_dose_2",
       "condition": {
         "disease": "diare_akut",
-        "age_month_min": 0,
         "age_month_max": 11
       },
       "claim": {
@@ -238,8 +237,7 @@
         "disease": "diare_akut",
         "phase": "initial",
         "severity": "berat",
-        "age_month_min": 0,
-        "age_month_max": 12
+        "age_month_max": 11
       },
       "claim": {
         "claim_type": "dose",
@@ -261,8 +259,7 @@
         "disease": "diare_akut",
         "phase": "initial",
         "severity": "berat",
-        "age_month_min": 0,
-        "age_month_max": 12
+        "age_month_max": 11
       },
       "claim": {
         "claim_type": "dose",
@@ -284,8 +281,7 @@
         "disease": "diare_akut",
         "phase": "initial",
         "severity": "berat",
-        "age_month_min": 0,
-        "age_month_max": 12
+        "age_month_max": 11
       },
       "claim": {
         "claim_type": "duration",
@@ -307,8 +303,7 @@
         "disease": "diare_akut",
         "phase": "initial",
         "severity": "berat",
-        "age_month_min": 0,
-        "age_month_max": 12
+        "age_month_max": 11
       },
       "claim": {
         "claim_type": "duration",
@@ -330,8 +325,7 @@
         "disease": "diare_akut",
         "phase": "continuation",
         "severity": "berat",
-        "age_month_min": 0,
-        "age_month_max": 12
+        "age_month_max": 11
       },
       "claim": {
         "claim_type": "dose",
@@ -353,8 +347,7 @@
         "disease": "diare_akut",
         "phase": "continuation",
         "severity": "berat",
-        "age_month_min": 0,
-        "age_month_max": 12
+        "age_month_max": 11
       },
       "claim": {
         "claim_type": "dose",
@@ -376,8 +369,7 @@
         "disease": "diare_akut",
         "phase": "continuation",
         "severity": "berat",
-        "age_month_min": 0,
-        "age_month_max": 12
+        "age_month_max": 11
       },
       "claim": {
         "claim_type": "duration",
@@ -399,8 +391,7 @@
         "disease": "diare_akut",
         "phase": "continuation",
         "severity": "berat",
-        "age_month_min": 0,
-        "age_month_max": 12
+        "age_month_max": 11
       },
       "claim": {
         "claim_type": "duration",
@@ -716,7 +707,7 @@
       "claim": {
         "claim_type": "dose",
         "medicine": "penisilin_g",
-        "value_min": 0,
+        "value_min": 4000000,
         "value_max": 4000000,
         "unit": "IU/kali"
       },
@@ -1194,8 +1185,7 @@
     {
       "rule_id": "infeksi_virus_dengue_dose_4",
       "condition": {
-        "disease": "infeksi_virus_dengue",
-        "phase": "initial"
+        "disease": "infeksi_virus_dengue"
       },
       "claim": {
         "claim_type": "dose",
@@ -1214,8 +1204,7 @@
     {
       "rule_id": "infeksi_virus_dengue_duration_2",
       "condition": {
-        "disease": "infeksi_virus_dengue",
-        "phase": "initial"
+        "disease": "infeksi_virus_dengue"
       },
       "claim": {
         "claim_type": "duration",
@@ -1733,7 +1722,28 @@
         "source": "Buku PPM IDAI Jilid I",
         "section": "Tuberkulosis",
         "page": 325,
-        "text": "TB paru berat (milier, destroyed lung) dan TB ekstra paru... fase lanjutan: 7-10 bulan"
+        "text": "TB paru berat (milier, destroyed lung) dan TB ekstra paru: 4-5 OAT selama 2 bulan fase intensif, dilanjutkan dengan INH dan rifampisin hingga genap 9-12 bulan terapi. (7-10 bulan) "
+      }
+    },
+    {
+      "rule_id": "tuberkulosis_duration_2222",
+      "condition": {
+        "disease": "tuberkulosis",
+        "phase": "continuation",
+        "severity": "berat"
+      },
+      "claim": {
+        "claim_type": "duration",
+        "medicine": "isoniazid",
+        "value_min": 7,
+        "value_max": 10,
+        "unit": "bulan"
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I",
+        "section": "Tuberkulosis",
+        "page": 325,
+        "text": "TB paru berat (milier, destroyed lung) dan TB ekstra paru: 4-5 OAT selama 2 bulan fase intensif, dilanjutkan dengan INH dan rifampisin hingga genap 9-12 bulan terapi. (7-10 bulan) "
       }
     },
     {
@@ -5221,7 +5231,6 @@
       "rule_id": "sepsis_neonatal_dose_1",
       "condition": {
         "disease": "sepsis_neonatal",
-        "age_month_min": 0,
         "age_month_max": 0.23
       },
       "claim": {
@@ -5242,7 +5251,6 @@
       "rule_id": "sepsis_neonatal_interval_3",
       "condition": {
         "disease": "sepsis_neonatal",
-        "age_month_min": 0,
         "age_month_max": 0.23
       },
       "claim": {
@@ -5387,7 +5395,6 @@
       "rule_id": "sepsis_neonatal_dose_5",
       "condition": {
         "disease": "sepsis_neonatal",
-        "age_month_min": 0,
         "age_month_max": 0.23
       },
       "claim": {
@@ -5408,7 +5415,6 @@
       "rule_id": "sepsis_neonatal_interval_7",
       "condition": {
         "disease": "sepsis_neonatal",
-        "age_month_min": 0,
         "age_month_max": 0.23
       },
       "claim": {
@@ -5469,7 +5475,6 @@
       "rule_id": "sepsis_neonatal_dose_7",
       "condition": {
         "disease": "sepsis_neonatal",
-        "age_month_min": 0,
         "age_month_max": 0.23,
         "complication": "meningitis"
       },
@@ -5492,7 +5497,6 @@
       "condition": {
         "disease": "sepsis_neonatal",
         "complication": "meningitis",
-        "age_month_min": 0,
         "age_month_max": 0.23
       },
       "claim": {
@@ -5534,7 +5538,6 @@
       "rule_id": "sepsis_neonatal_dose_8",
       "condition": {
         "disease": "sepsis_neonatal",
-        "age_month_min": 0,
         "age_month_max": 0.23,
         "weight_kg_max": 2
       },
@@ -5543,7 +5546,7 @@
         "medicine": "gentamisin",
         "value_min": 3,
         "value_max": 3,
-        "unit": "mg/kgbb"
+        "unit": "mg/kgbb/kali"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5556,7 +5559,6 @@
       "rule_id": "sepsis_neonatal_frequency_8",
       "condition": {
         "disease": "sepsis_neonatal",
-        "age_month_min": 0,
         "age_month_max": 0.23,
         "weight_kg_max": 2
       },
@@ -5578,7 +5580,6 @@
       "rule_id": "sepsis_neonatal_dose_9",
       "condition": {
         "disease": "sepsis_neonatal",
-        "age_month_min": 0,
         "age_month_max": 0.23,
         "weight_kg_min": 2.1
       },
@@ -5600,7 +5601,6 @@
       "rule_id": "sepsis_neonatal_frequency_9",
       "condition": {
         "disease": "sepsis_neonatal",
-        "age_month_min": 0,
         "age_month_max": 0.23,
         "weight_kg_min": 2.1
       },
@@ -6245,7 +6245,7 @@
       "rule_id": "sindrom_nefrotik_dose_1",
       "condition": {
         "disease": "sindrom_nefrotik",
-        "phase": "initial"
+        "phase": "intensive"
       },
       "claim": {
         "claim_type": "dose",
@@ -6265,7 +6265,7 @@
       "rule_id": "sindrom_nefrotik_dose_2",
       "condition": {
         "disease": "sindrom_nefrotik",
-        "phase": "initial"
+        "phase": "intensive"
       },
       "claim": {
         "claim_type": "dose",
@@ -6285,7 +6285,7 @@
       "rule_id": "sindrom_nefrotik_dose_3",
       "condition": {
         "disease": "sindrom_nefrotik",
-        "phase": "initial"
+        "phase": "intensive"
       },
       "claim": {
         "claim_type": "dose",
@@ -6305,7 +6305,7 @@
       "rule_id": "sindrom_nefrotik_frequency_1",
       "condition": {
         "disease": "sindrom_nefrotik",
-        "phase": "initial"
+        "phase": "intensive"
       },
       "claim": {
         "claim_type": "frequency",
@@ -6325,7 +6325,7 @@
       "rule_id": "sindrom_nefrotik_duration_1",
       "condition": {
         "disease": "sindrom_nefrotik",
-        "phase": "initial"
+        "phase": "intensive"
       },
       "claim": {
         "claim_type": "duration",
@@ -6865,7 +6865,6 @@
       "condition": {
         "disease": "gagal_jantung",
         "phase": "initial",
-        "age_month_min": 0,
         "age_month_max": 1
       },
       "claim": {
@@ -6887,7 +6886,6 @@
       "condition": {
         "disease": "gagal_jantung",
         "phase": "maintenance",
-        "age_month_min": 0,
         "age_month_max": 1
       },
       "claim": {
@@ -7828,7 +7826,6 @@
       "rule_id": "hipotiroid_kongenital_dose_1",
       "condition": {
         "disease": "hipotiroid_kongenital",
-        "age_month_min": 0,
         "age_month_max": 3
       },
       "claim": {
@@ -7969,9 +7966,49 @@
       }
     },
     {
+      "rule_id": "meningitis_tuberkulosis_dose_1tb",
+      "condition": {
+        "disease": "tuberkulosis",
+        "complication": "meningitis"
+      },
+      "claim": {
+        "claim_type": "dose",
+        "medicine": "isoniazid",
+        "value_min": 10,
+        "value_max": 20,
+        "unit": "mg/kgbb/hari"
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I",
+        "section": "Meningitis Tuberkulosis",
+        "page": 195,
+        "text": "Isoniazid (INH) 10-20 mg/kgbb/hari"
+      }
+    },
+    {
       "rule_id": "meningitis_tuberkulosis_dose_2",
       "condition": {
         "disease": "meningitis_tuberkulosis"
+      },
+      "claim": {
+        "claim_type": "dose",
+        "medicine": "isoniazid",
+        "value_min": 0,
+        "value_max": 300,
+        "unit": "mg/hari"
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I",
+        "section": "Meningitis Tuberkulosis",
+        "page": 195,
+        "text": "dosis maksimal 300 mg/hari"
+      }
+    },
+    {
+      "rule_id": "meningitis_tuberkulosis_dose_2tb",
+      "condition": {
+        "disease": "tuberkulosis",
+        "complication": "meningitis"
       },
       "claim": {
         "claim_type": "dose",
@@ -8007,9 +8044,49 @@
       }
     },
     {
+      "rule_id": "meningitis_tuberkulosis_dose_3tb",
+      "condition": {
+        "disease": "tuberkulosis",
+        "complication": "meningitis"
+      },
+      "claim": {
+        "claim_type": "dose",
+        "medicine": "rifampisin",
+        "value_min": 10,
+        "value_max": 20,
+        "unit": "mg/kgbb/hari"
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I",
+        "section": "Meningitis Tuberkulosis",
+        "page": 195,
+        "text": "Rifampisin 10-20 mg/kgbb/hari"
+      }
+    },
+    {
       "rule_id": "meningitis_tuberkulosis_dose_4",
       "condition": {
         "disease": "meningitis_tuberkulosis"
+      },
+      "claim": {
+        "claim_type": "dose",
+        "medicine": "rifampisin",
+        "value_min": 0,
+        "value_max": 600,
+        "unit": "mg/hari"
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I",
+        "section": "Meningitis Tuberkulosis",
+        "page": 195,
+        "text": "dosis maksimal 600 mg/hari"
+      }
+    },
+    {
+      "rule_id": "meningitis_tuberkulosis_dose_4tb",
+      "condition": {
+        "disease": "tuberkulosis",
+        "complication": "meningitis"
       },
       "claim": {
         "claim_type": "dose",
@@ -10297,7 +10374,6 @@
       "rule_id": "ensefalitis_herpes_simpleks_dose_1",
       "condition": {
         "disease": "ensefalitis_herpes_simpleks",
-        "age_month_min": 0,
         "age_month_max": 0.99
       },
       "claim": {
@@ -10393,7 +10469,6 @@
       "rule_id": "ensefalitis_herpes_simpleks_dose_2",
       "condition": {
         "disease": "ensefalitis_herpes_simpleks",
-        "age_month_min": 0,
         "age_month_max": 1
       },
       "claim": {
@@ -10414,7 +10489,6 @@
       "rule_id": "ensefalitis_herpes_simpleks_interval_2",
       "condition": {
         "disease": "ensefalitis_herpes_simpleks",
-        "age_month_min": 0,
         "age_month_max": 1
       },
       "claim": {
@@ -10435,7 +10509,6 @@
       "rule_id": "ensefalitis_herpes_simpleks_duration_3",
       "condition": {
         "disease": "ensefalitis_herpes_simpleks",
-        "age_month_min": 0,
         "age_month_max": 1
       },
       "claim": {
@@ -11533,8 +11606,7 @@
     {
       "rule_id": "isk_contraindication_sulfisoksazole",
       "condition": {
-        "disease": "infeksi_saluran_kemih",
-        "age_month_max": 1
+        "disease": "infeksi_saluran_kemih"
       },
       "claim": {
         "claim_type": "contraindication",
@@ -11551,8 +11623,7 @@
     {
       "rule_id": "isk_contraindication_trimetoprim",
       "condition": {
-        "disease": "infeksi_saluran_kemih",
-        "age_month_max": 1
+        "disease": "infeksi_saluran_kemih"
       },
       "claim": {
         "claim_type": "contraindication",
@@ -11564,24 +11635,6 @@
         "section": "Infeksi Saluran Kemih",
         "page": 139,
         "text": "Tidak direkomendasikan untuk neonatus dan penderita dengan insufisiensi ginjal"
-      }
-    },
-    {
-      "rule_id": "constipation_contraindication_mineral_oil",
-      "condition": {
-        "disease": "konstipasi",
-        "age_month_max": 12
-      },
-      "claim": {
-        "claim_type": "contraindication",
-        "medicine": "mineral oil",
-        "prohibited": true
-      },
-      "metadata": {
-        "source": "Buku PPM IDAI Jilid I",
-        "section": "Konstipasi",
-        "page": 177,
-        "text": "Mineral oil (parafin liquid) diberikan 1-3 ml/kgBB/hari, tetapi tidak dianjurkan untuk anak dibawah 1 tahun"
       }
     },
     {
@@ -11768,18 +11821,14 @@
       "rule_id": "failure_to_thrive_frequency_1",
       "condition": {
         "disease": "failure_to_thrive",
-        "age_month_min": 0,
         "phase": "intervention"
       },
       "claim": {
         "claim_type": "frequency",
         "medicine": "asi",
-        "constraint": {
-          "value_min": 8,
-          "value_max": 12,
-          "unit": "kali/24 jam",
-          "prohibited": false
-        }
+        "value_min": 8,
+        "value_max": 12,
+        "unit": "kali/24 jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I", "section": "Failure to Thrive", "page": 78,
@@ -11790,18 +11839,14 @@
       "rule_id": "failure_to_thrive_duration_1",
       "condition": {
         "disease": "failure_to_thrive",
-        "age_month_min": 0,
         "phase": "intervention"
       },
       "claim": {
         "claim_type": "duration",
         "medicine": "asi",
-        "constraint": {
-          "value_min": 10,
-          "value_max": 10,
-          "unit": "menit",
-          "prohibited": false
-        }
+        "value_min": 10,
+        "value_max": 10,
+        "unit": "menit"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I", "section": "Failure to Thrive", "page": 78,
@@ -11819,11 +11864,9 @@
       "claim": {
         "claim_type": "dose",
         "medicine": "susu",
-        "constraint": {
-          "value_min": 480,
-          "value_max": 960,
-          "unit": "mL/hari"
-        }
+        "value_min": 480,
+        "value_max": 960,
+        "unit": "mL/hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I", "section": "Failure to Thrive", "page": 78,
@@ -11841,11 +11884,9 @@
       "claim": {
         "claim_type": "frequency",
         "medicine": "makan_utama",
-        "constraint": {
-          "value_min": 3,
-          "value_max": 3,
-          "unit": "kali/hari"
-        }
+        "value_min": 3,
+        "value_max": 3,
+        "unit": "kali/hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I", "section": "Failure to Thrive", "page": 78,
@@ -11863,11 +11904,9 @@
       "claim": {
         "claim_type": "frequency",
         "medicine": "snack",
-        "constraint": {
-          "value_min": 2,
-          "value_max": 2,
-          "unit": "kali/hari"
-        }
+        "value_min": 2,
+        "value_max": 2,
+        "unit": "kali/hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I", "section": "Failure to Thrive", "page": 78,
@@ -11883,9 +11922,7 @@
       "claim": {
         "claim_type": "contraindication",
         "medicine": "jus_punch_soda",
-        "constraint": {
-          "prohibited": true
-        }
+        "prohibited": true
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I", "section": "Failure to Thrive", "page": 78,
@@ -11896,18 +11933,15 @@
       "rule_id": "failure_to_thrive_dose_2",
       "condition": {
         "disease": "failure_to_thrive",
-        "age_month_min": 0,
         "age_month_max": 36,
         "phase": "intervention"
       },
       "claim": {
         "claim_type": "dose",
         "medicine": "formula_bayi",
-        "constraint": {
-          "value_min": 24,
-          "value_max": 30,
-          "unit": "kkal/oz"
-        }
+        "value_min": 24,
+        "value_max": 30,
+        "unit": "kkal/oz"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I", "section": "Failure to Thrive", "page": 78,
@@ -11918,18 +11952,15 @@
       "rule_id": "infant_feeding_practice_duration_1",
       "condition": {
         "disease": "infant_feeding_practice",
-        "age_month_min": 0,
         "age_month_max": 6,
         "phase": "eksklusif"
       },
       "claim": {
         "claim_type": "duration",
         "medicine": "asi",
-        "constraint": {
-          "value_min": 6,
-          "value_max": 6,
-          "unit": "bulan"
-        }
+        "value_min": 6,
+        "value_max": 6,
+        "unit": "bulan"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I","section": "Infant Feeding Practice","page": 129,
@@ -11945,9 +11976,7 @@
       "claim": {
         "claim_type": "contraindication",
         "medicine": "asi",
-        "constraint": {
-          "prohibited": true
-        }
+        "prohibited": true
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I","section": "Infant Feeding Practice","page": 130,
@@ -11965,11 +11994,9 @@
       "claim": {
         "claim_type": "dose",
         "medicine": "energi_tambahan_mpasi",
-        "constraint": {
-          "value_min": 200,
-          "value_max": 200,
-          "unit": "kkal/hari"
-        }
+        "value_min": 200,
+        "value_max": 200,
+        "unit": "kkal/hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I","section": "Infant Feeding Practice","page": 135,
@@ -11987,11 +12014,9 @@
       "claim": {
         "claim_type": "frequency",
         "medicine": "mpasi_makan_utama",
-        "constraint": {
-          "value_min": 2,
-          "value_max": 3,
-          "unit": "kali/hari"
-        }
+        "value_min": 2,
+        "value_max": 3,
+        "unit": "kali/hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I","section": "Infant Feeding Practice","page": 135,
@@ -12009,11 +12034,9 @@
       "claim": {
         "claim_type": "dose",
         "medicine": "mpasi_volume_per_makan",
-        "constraint": {
-          "value_min": 125,
-          "value_max": 125,
-          "unit": "mL"
-        }
+        "value_min": 125,
+        "value_max": 125,
+        "unit": "mL" 
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I","section": "Infant Feeding Practice","page": 135,
@@ -12031,11 +12054,9 @@
       "claim": {
         "claim_type": "frequency",
         "medicine": "mpasi_makan_utama",
-        "constraint": {
-          "value_min": 3,
-          "value_max": 4,
-          "unit": "kali/hari"
-        }
+        "value_min": 3,
+        "value_max": 4,
+        "unit": "kali/hari" 
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I","section": "Infant Feeding Practice","page": 135,
@@ -12053,11 +12074,9 @@
       "claim": {
         "claim_type": "dose",
         "medicine": "mpasi_volume_per_makan",
-        "constraint": {
-          "value_min": 187.5,
-          "value_max": 250,
-          "unit": "mL"
-        }
+        "value_min": 187.5,
+        "value_max": 250,
+        "unit": "mL" 
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I","section": "Infant Feeding Practice","page": 135,
@@ -12073,12 +12092,9 @@
       "claim": {
         "claim_type": "duration",
         "medicine": "susu_formula_sisa",
-        "constraint": {
-          "value_min": 0,
-          "value_max": 2,
-          "unit": "jam",
-          "prohibited": true
-        }
+        "value_min": 0,
+        "value_max": 2,
+        "unit": "jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -12091,18 +12107,15 @@
       "rule_id": "asuhan_nutrisi_pediatri_dose_1",
       "condition": {
         "disease": "asuhan_nutrisi_pediatri",
-        "age_month_min": 0,
         "age_month_max": 6,
         "phase": "rumatan"
       },
       "claim": {
         "claim_type": "dose",
         "medicine": "kalori",
-        "constraint": {
-          "value_min": 108,
-          "value_max": 108,
-          "unit": "kkal/kg"
-        }
+        "value_min": 108,
+        "value_max": 108,
+        "unit": "kkal/kg"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I","section": "Asuhan Nutrisi Pediatri","page": 21,
@@ -12113,18 +12126,15 @@
       "rule_id": "asuhan_nutrisi_pediatri_dose_2",
       "condition": {
         "disease": "asuhan_nutrisi_pediatri",
-        "age_month_min": 0,
         "age_month_max": 6,
         "phase": "rumatan"
       },
       "claim": {
         "claim_type": "dose",
         "medicine": "protein",
-        "constraint": {
-          "value_min": 2.2,
-          "value_max": 2.2,
-          "unit": "g/kg"
-        }
+        "value_min": 2.2,
+        "value_max": 2.2,
+        "unit": "g/kg"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I","section": "Asuhan Nutrisi Pediatri","page": 21,
@@ -12135,18 +12145,15 @@
       "rule_id": "asuhan_nutrisi_pediatri_dose_3",
       "condition": {
         "disease": "asuhan_nutrisi_pediatri",
-        "age_month_min": 0,
         "age_month_max": 6,
         "phase": "rumatan"
       },
       "claim": {
         "claim_type": "dose",
         "medicine": "cairan",
-        "constraint": {
-          "value_min": 140,
-          "value_max": 160,
-          "unit": "ml/kg"
-        }
+        "value_min": 140,
+        "value_max": 160,
+        "unit": "ml/kg"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I","section": "Asuhan Nutrisi Pediatri","page": 21,
@@ -12164,11 +12171,9 @@
       "claim": {
         "claim_type": "dose",
         "medicine": "kalori",
-        "constraint": {
-          "value_min": 98,
-          "value_max": 98,
-          "unit": "kkal/kg"
-        }
+        "value_min": 98,
+        "value_max": 98,
+        "unit": "kkal/kg"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I","section": "Asuhan Nutrisi Pediatri","page": 21,
@@ -12186,11 +12191,9 @@
       "claim": {
         "claim_type": "dose",
         "medicine": "protein",
-        "constraint": {
-          "value_min": 1.23,
-          "value_max": 1.23,
-          "unit": "g/kg"
-        }
+        "value_min": 1.23,
+        "value_max": 1.23,
+        "unit": "g/kg"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I","section": "Asuhan Nutrisi Pediatri","page": 21,
@@ -12201,15 +12204,12 @@
       "rule_id": "asuhan_nutrisi_pediatri_contraindication_1",
       "condition": {
         "disease": "asuhan_nutrisi_pediatri",
-        "age_month_min": 0,
         "age_month_max": 120
       },
       "claim": {
         "claim_type": "contraindication",
         "medicine": "formula_enteral_dewasa",
-        "constraint": {
-          "prohibited": true
-        }
+        "prohibited": true
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I","section": "Asuhan Nutrisi Pediatri","page": 17,
@@ -12238,17 +12238,14 @@
       "rule_id": "asuhan_nutrisi_pediatri_dose_6",
       "condition": {
         "disease": "asuhan_nutrisi_pediatri",
-        "age_month_min": 0,
         "phase": "initial"
       },
       "claim": {
         "claim_type": "dose",
         "medicine": "rsl_maksimal_bayi",
-        "constraint": {
-          "value_min": 0,
-          "value_max": 33,
-          "unit": "mOsm/100 kkal"
-        }
+        "value_min": 0,
+        "value_max": 33,
+        "unit": "mOsm/100 kkal"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I","section": "Asuhan Nutrisi Pediatri","page": 18,
@@ -12259,17 +12256,14 @@
       "rule_id": "asuhan_nutrisi_pediatri_dose_7",
       "condition": {
         "disease": "asuhan_nutrisi_pediatri",
-        "age_month_min": 0,
         "phase": "initial"
       },
       "claim": {
         "claim_type": "dose",
         "medicine": "osmolalitas_maksimal_bayi",
-        "constraint": {
-          "value_min": 0,
-          "value_max": 460,
-          "unit": "mOsm"
-        }
+        "value_min": 0,
+        "value_max": 460,
+        "unit": "mOsm"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I","section": "Asuhan Nutrisi Pediatri","page": 18,
@@ -12286,11 +12280,9 @@
       "claim": {
         "claim_type": "dose",
         "medicine": "faktor_stres_energi",
-        "constraint": {
-          "value_min": 12,
-          "value_max": 12,
-          "unit": "% per derajat > 37°C"
-        }
+        "value_min": 12,
+        "value_max": 12,
+        "unit": "% per derajat > 37°C"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I","section": "Asuhan Nutrisi Pediatri","page": 20,
@@ -12306,11 +12298,9 @@
       "claim": {
         "claim_type": "dose",
         "medicine": "prednison",
-        "constraint": {
-          "value_min": 60,
-          "value_max": 60,
-          "unit": "mg/m2/hari"
-        }
+        "value_min": 60,
+        "value_max": 60,
+        "unit": "mg/m2/hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I","section": "Sindrom Nefrotik","page": 275,
@@ -12326,11 +12316,9 @@
       "claim": {
         "claim_type": "duration",
         "medicine": "prednison",
-        "constraint": {
-          "value_min": 0,
-          "value_max": 4,
-          "unit": "minggu"
-        }
+        "value_min": 0,
+        "value_max": 4,
+        "unit": "minggu"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I","section": "Sindrom Nefrotik","page": 275,
@@ -12346,11 +12334,9 @@
       "claim": {
         "claim_type": "dose",
         "medicine": "prednison",
-        "constraint": {
-          "value_min": 40,
-          "value_max": 40,
-          "unit": "mg/m2/hari"
-        }
+        "value_min": 40,
+        "value_max": 40,
+        "unit": "mg/m2/hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I","section": "Sindrom Nefrotik","page": 275,
@@ -12366,11 +12352,9 @@
       "claim": {
         "claim_type": "interval",
         "medicine": "prednison",
-        "constraint": {
-          "value_min": 48,
-          "value_max": 48,
-          "unit": "jam"
-        }
+        "value_min": 48,
+        "value_max": 48,
+        "unit": "jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I","section": "Sindrom Nefrotik","page": 275,
@@ -12386,11 +12370,9 @@
       "claim": {
         "claim_type": "duration",
         "medicine": "prednison",
-        "constraint": {
-          "value_min": 4,
-          "value_max": 4,
-          "unit": "minggu"
-        }
+        "value_min": 4,
+        "value_max": 4,
+        "unit": "minggu"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I","section": "Sindrom Nefrotik","page": 275,
