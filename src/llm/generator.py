@@ -103,12 +103,11 @@ class Generator:
         - Nilai tunggal: min = max. Nilai rentang: isi keduanya.
         - Unit wajib diisi bila ada nilai numerik.
         - contraindication → prohibited: true.
-        - Informasi mengenai fase pemberian obat, masukkan ke dalam field phase
-        - Nilai weight adalah berat badan dalam satuan kg dan nilai age adalah usia usia dalam bulan.
+        - phase wajib diisi bila ada fase pemberian obat (initial, maintenance, continuation, acute, intensive, rehabilitation, pertama, berikutnya)
+        - weight: adalah berat badan dalam satuan kg, age: adalah usia usia dalam bulan.
 
         ENUM (gunakan tepat seperti tertulis):
         - severity: ringan | ringan_sedang | sedang | berat | besar | resisten_cairan | tersangka | refrakter
-        - phase: initial | maintenance | continuation | acute | intensive | rehabilitation 
         - complication: malnutrisi | ensefalopati | bronkopneumonia | meningitis | gangguan_fungsi_jantung | hamil_trimester_akhir | hipernatremia | refraktori | krisis_hipertensi | rawat_inap | rawat_jalan | perdarahan_saluran_kemih | efusi_perikardium | diabetes_mellitus
 
         SKEMA:

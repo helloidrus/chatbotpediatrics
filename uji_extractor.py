@@ -12,7 +12,7 @@ rules = load_rules(str(rules_path))
 
 rag_text = """
 
-Beta agonis dapat diberikan pada serangan asma akut ringan anak sebanyak 1-2 dosis dalam waktu 4-6 jam.
+Dosis fase loading aminofilin IV untuk serangan asma akut berat pada anak adalah 6-8 mg/kg BB, dilarutkan dalam dekstrosa 5% atau garam fisiologis sebanyak 20 ml, diberikan dalam 20-30 menit.
 
 
 """
