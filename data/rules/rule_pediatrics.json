@@ -192,46 +192,6 @@
       }
     },
     {
-      "rule_id": "diare_akut_dose_9_rl",
-      "condition": {
-        "disease": "diare_akut",
-        "severity": "berat"
-      },
-      "claim": {
-        "claim_type": "dose",
-        "medicine": "ringer_laktat",
-        "value_min": 100,
-        "value_max": 100,
-        "unit": "mL/kgbb"
-      },
-      "metadata": {
-        "source": "Buku PPM IDAI Jilid I",
-        "section": "Diare Akut",
-        "page": 61,
-        "text": "Diberikan cairan rehidrasi parenteral dengan ringer laktat atau ringer asetat 100 mL/kgBB"
-      }
-    },
-    {
-      "rule_id": "diare_akut_dose_9_ra",
-      "condition": {
-        "disease": "diare_akut",
-        "severity": "berat"
-      },
-      "claim": {
-        "claim_type": "dose",
-        "medicine": "ringer_asetat",
-        "value_min": 100,
-        "value_max": 100,
-        "unit": "mL/kgbb"
-      },
-      "metadata": {
-        "source": "Buku PPM IDAI Jilid I",
-        "section": "Diare Akut",
-        "page": 61,
-        "text": "Diberikan cairan rehidrasi parenteral dengan ringer laktat atau ringer asetat 100 mL/kgBB"
-      }
-    },
-    {
       "rule_id": "diare_akut_dose_10_rl",
       "condition": {
         "disease": "diare_akut",
@@ -1242,7 +1202,8 @@
     {
       "rule_id": "infeksi_virus_dengue_dose_6",
       "condition": {
-        "disease": "infeksi_virus_dengue"
+        "disease": "infeksi_virus_dengue",
+        "complication": "perdarahan"
       },
       "claim": {
         "claim_type": "dose",
@@ -1303,8 +1264,7 @@
     {
       "rule_id": "infeksi_virus_dengue_dose_10",
       "condition": {
-        "disease": "infeksi_virus_dengue",
-        "phase": "acute"
+        "disease": "infeksi_virus_dengue"
       },
       "claim": {
         "claim_type": "dose",

@@ -1,0 +1,41 @@
+
+    {
+      "rule_id": "diare_akut_dose_9_rl",
+      "condition": {
+        "disease": "diare_akut",
+        "severity": "berat"
+      },
+      "claim": {
+        "claim_type": "dose",
+        "medicine": "ringer_laktat",
+        "value_min": 100,
+        "value_max": 100,
+        "unit": "mL/kgbb"
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I",
+        "section": "Diare Akut",
+        "page": 61,
+        "text": "Diberikan cairan rehidrasi parenteral dengan ringer laktat atau ringer asetat 100 mL/kgBB"
+      }
+    },
+    {
+      "rule_id": "diare_akut_dose_9_ra",
+      "condition": {
+        "disease": "diare_akut",
+        "severity": "berat"
+      },
+      "claim": {
+        "claim_type": "dose",
+        "medicine": "ringer_asetat",
+        "value_min": 100,
+        "value_max": 100,
+        "unit": "mL/kgbb"
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I",
+        "section": "Diare Akut",
+        "page": 61,
+        "text": "Diberikan cairan rehidrasi parenteral dengan ringer laktat atau ringer asetat 100 mL/kgBB"
+      }
+    },

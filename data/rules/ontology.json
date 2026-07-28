@@ -4,7 +4,7 @@
     "anemia_defisiensi_besi": [ "anemia_defisiensi_besi", "anemia_besi", "iron_deficiency_anemia", "adb" ],
     "bayi_berat_lahir_rendah": [ "bayi_berat_lahir_rendah", "bblr", "low_birth_weight", "berat_lahir_rendah" ],
     "campak": [ "campak", "measles", "rubeola" ],
-    "diare_akut": [ "diare_akut", "diare", "acute_diarrhea", "gastroenteritis_akut", "disentri", "gastroenteritis", "acute diarrhea", "mencret", "buang air besar cair" ],
+    "diare_akut": [ "diare_akut", "diare", "acute_diarrhea", "gastroenteritis_akut", "disentri", "gastroenteritis", "acute diarrhea", "mencret", "buang air besar cair", "diare_akut_berat" ],
     "demam_tifoid": [ "demam_tifoid", "tifoid", "typhoid_fever", "tipes" ],
     "infeksi_virus_dengue": [ "infeksi_virus_dengue", "dengue", "dbd", "dugaan_dbd", "dd", "ds", "demam_berdarah_dengue", "infeksi_dengue" ],
     "infeksi_saluran_kemih": [ "infeksi_saluran_kemih", "isk", "uti", "infeksi_sistesis_kidney", "insufisiensi_ginjal" ],
@@ -18,7 +18,7 @@
     "malnutrisi_energi_protein": [ "malnutrisi_energi_protein", "mep", "gizi_buruk", "gizi_kurang", "marasmus", "kwashiorkor" ],
     "defek_septum_ventrikel": [ "defek_septum_ventrikel", "dsv", "ventricular_septal_defect", "vsd" ],
     "defisiensi kompleks protrombin": [ "defisiensi kompleks protrombin", "prothrombin_complex_deficiency" ],
-    "diabetes_melitus_tipe_1": [ "diabetes_melitus_tipe_1", "type_1_diabetes", "diabetes_type_1", "t1dm", "diabetes_mellitus_tipe_1" ],
+    "diabetes_melitus_tipe_1": [ "diabetes_melitus_tipe_1", "type_1_diabetes", "diabetes_type_1", "t1dm", "diabetes_mellitus_tipe_1", "dm_tipe_1" ],
     "diabetes_melitus": [ "diabetes_melitus", "diabetes_mellitus", "diabetes", "dm", "diabetes_melitus_type_2", "diabetes_mellitus_type_2" ],
     "duktus_arteriosus_persisten": [ "duktus_arteriosus_persisten", "patent_ductus_arteriosus", "pda" ],
     "ensefalitis": [ "ensefalitis", "encephalitis" ],
@@ -60,7 +60,7 @@
   "phase": {
     "initial": [ "initial", "awal", "fase_awal", "inisial", "initial_phase", "loading", "loading_dose" ],
     "maintenance": [ "maintenance", "rumatan", "pemeliharaan", "maintenance_phase" ],
-    "acute": [ "acute", "akut", "fase_akut", "acute_phase" ],
+    "acute": [ "acute", "akut", "fase_akut", "acute_phase", "kritis" ],
     "intensive":        ["intensive", "intensif", "fase_intensif", "intensive_phase", "stabilisasi", "fase_stabilisasi", "stabilization" ],
     "transition":       ["transisi", "fase_transisi", "transition"],
     "rehabilitation":   ["rehabilitasi", "fase_rehabilitasi", "rehabilitation"], 
@@ -99,7 +99,8 @@
     "diabetes_melitus_insulin_dependent": [ "diabetes_melitus_insulin_dependent", "diabetes_mellitus_insulin_dependent", "iddm", "insulin_dependent", "tergantung_insulin" ],
     "efusi_pleura": ["efusi_pleura", "pleural_effusion"],
     "ensefalopati_dengue": ["ensefalopati_dengue", "dengue_encephalopathy"],
-    "insulin_dependent": ["insulin_dependent", "tergantung_insulin", "iddm"]
+    "insulin_dependent": ["insulin_dependent", "tergantung_insulin", "iddm"],
+    "perdarahan": ["perdarahan", "bleeding", "hemorrhage", "perdarahan_berat"]
   },
 
   "claim_type": {
