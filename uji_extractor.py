@@ -12,7 +12,15 @@ rules = load_rules(str(rules_path))
 
 rag_text = """
 
-Dosis fase loading aminofilin IV untuk serangan asma akut berat pada anak adalah 6-8 mg/kg BB, dilarutkan dalam dekstrosa 5% atau garam fisiologis sebanyak 20 ml, diberikan dalam 20-30 menit.
+"Obat malaria anak Anda harus diminum selama 14 hari karena beberapa alasan:
+
+Pertama, malaria adalah penyakit yang kompleks dan memerlukan waktu yang lama untuk diobati. Selain itu, parasit malaria dapat bersembunyi di dalam tubuh dan memerlukan waktu yang lama untuk dihancurkan oleh obat.
+
+Kedua, obat malaria yang digunakan, seperti klorokuin dan kina, memerlukan waktu yang lama untuk mencapai konsentrasi yang efektif di dalam tubuh. Jika obat hanya diminum selama beberapa hari, maka konsentrasinya mungkin tidak cukup untuk menghancurkan parasit malaria secara efektif.
+
+Ketiga, malaria dapat menyebabkan komplikasi yang serius, seperti malaria serebral, anemia berat, dan gagal ginjal. Oleh karena itu, obat malaria harus diminum selama 14 hari untuk memastikan bahwa parasit malaria dihancurkan secara efektif dan komplikasi dapat dicegah.
+
+Jadi, untuk memastikan bahwa anak Anda sembuh dari malaria secara efektif, obat harus diminum selama 14 hari."
 
 
 """

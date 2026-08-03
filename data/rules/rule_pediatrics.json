@@ -2177,6 +2177,25 @@
       }
     },
     {
+      "rule_id": "malnutrisi_energi_protein_dose_13",
+      "condition": {
+        "disease": "malnutrisi_energi_protein"
+      },
+      "claim": {
+        "claim_type": "dose",
+        "medicine": "protein",
+        "value_min": 4,
+        "value_max": 6,
+        "unit": "g/kgbb/hari"
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I",
+        "section": "Malnutrisi Energi Protein",
+        "page": 188,
+        "text": "Rehabilitasi (F100) Protein 4-6 g/kgbb/hr"
+      }
+    },
+    {
       "rule_id": "kejang_demam_dose_1",
       "condition": {
         "disease": "kejang_demam"
@@ -2204,7 +2223,7 @@
         "claim_type": "frequency",
         "medicine": "parasetamol",
         "value_min": 4,
-        "value_max": 5,
+        "value_max": 4,
         "unit": "kali/hari"
       },
       "metadata": {
@@ -10388,6 +10407,25 @@
       }
     },
     {
+      "rule_id": "ensefalitis_herpes_simpleks_frequency_1",
+      "condition": {
+        "disease": "ensefalitis_herpes_simpleks"
+      },
+      "claim": {
+        "claim_type": "frequency",
+        "medicine": "asiklovir",
+        "value_min": 3,
+        "value_max": 3,
+        "unit": "kali/hari"
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I",
+        "section": "Ensefalitis Herpes Simpleks",
+        "page": 71,
+        "text": "setiap 8 jam"
+      }
+    },
+    {
       "rule_id": "ensefalitis_herpes_simpleks_duration_1",
       "condition": {
         "disease": "ensefalitis_herpes_simpleks"
@@ -10526,32 +10564,30 @@
     {
       "rule_id": "hipoglikemia_emergency_dose_1",
       "condition": {
-        "disease": "hipoglikemia",
-        "severity": "berat"
+        "disease": "hipoglikemia"
       },
       "claim": {
         "claim_type": "dose",
         "medicine": "dekstrosa_10_persen",
         "value_min": 2,
         "value_max": 2,
-        "unit": "mL/kgbb"
+        "unit": "cc/kgbb"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Hipoglikemia",
         "page": 122,
-        "text": "Pemberian segera dengan bolus 200 mg/kg dengan dekstrosa 10% = 2 mL/kg"
+        "text": "Pemberian segera dengan bolus 200 mg/kg dengan dekstrosa 10% = 2 cc/kg"
       }
     },
     {
       "rule_id": "hipoglikemia_gir_initial_1",
       "condition": {
-        "disease": "hipoglikemia",
-        "phase": "continuation"
+        "disease": "hipoglikemia"
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "laju_infus_glukosa",
+        "medicine": "glukosa",
         "value_min": 6,
         "value_max": 8,
         "unit": "mg/kgbb/menit"
@@ -10760,21 +10796,20 @@
     {
       "rule_id": "hipoglikemia_neonatal_dose_1",
       "condition": {
-        "disease": "hipoglikemia_neonatal",
-        "age_month_max": 0.93
+        "disease": "hipoglikemia_neonatal"
       },
       "claim": {
         "claim_type": "dose",
         "medicine": "dekstrosa_10_persen",
         "value_min": 2,
         "value_max": 2,
-        "unit": "mL/kgbb"
+        "unit": "cc/kgbb"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Hipoglikemia",
         "page": 123,
-        "text": "Pemberian segera dengan bolus 200 mg/kg dengan dekstrosa 10% = 2 mL/kg"
+        "text": "Pemberian segera dengan bolus 200 mg/kg dengan dekstrosa 10% = 2 cc/kg"
       }
     },
     {
@@ -10784,7 +10819,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "laju_infus_glukosa",
+        "medicine": "glukosa",
         "value_min": 6,
         "value_max": 8,
         "unit": "mg/kgbb/menit"
@@ -10803,7 +10838,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "laju_infus_glukosa_maksimal",
+        "medicine": "glukosa",
         "value_min": 10,
         "value_max": 12,
         "unit": "mg/kgbb/menit"
@@ -11446,6 +11481,220 @@
       }
     },
     {
+      "rule_id": "asma_controller_budesonide_low_child_1",
+      "condition": {
+        "disease": "asma_episodik_sering",
+        "age_month_min": 0,
+        "age_month_max": 143,
+        "severity": "sering",
+        "phase": "controller"
+      },
+      "claim_type": "dose",
+      "medicine": "budesonide",
+      "constraint": {
+        "value_min": 100,
+        "value_max": 200,
+        "unit": "mcg"
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I",
+        "section": "Tata Laksana Jangka Panjang Asma",
+        "page": 305,
+        "text": "usia <12 tahun: Budesonide 100-200 µg (50-100 µg Flutikason)"
+      }
+    },
+    {
+      "rule_id": "asma_controller_fluticasone_low_child_1",
+      "condition": {
+        "disease": "asma_episodik_sering",
+        "age_month_min": 0,
+        "age_month_max": 143,
+        "severity": "sering",
+        "phase": "controller"
+      },
+      "claim_type": "dose",
+      "medicine": "flutikason",
+      "constraint": {
+        "value_min": 50,
+        "value_max": 100,
+        "unit": "mcg"
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I",
+        "section": "Tata Laksana Jangka Panjang Asma",
+        "page": 305,
+        "text": "usia <12 tahun: Budesonide 100-200 µg (50-100 µg Flutikason)"
+      }
+    },
+    {
+      "rule_id": "asma_controller_budesonide_low_teen_1",
+      "condition": {
+        "disease": "asma_episodik_sering",
+        "age_month_min": 144,
+        "severity": "sering",
+        "phase": "controller"
+      },
+      "claim_type": "dose",
+      "medicine": "budesonide",
+      "constraint": {
+        "value_min": 200,
+        "value_max": 400,
+        "unit": "mcg",
+        "prohibited": false
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I",
+        "section": "Tata Laksana Jangka Panjang Asma",
+        "page": 305,
+        "text": "usia >12 tahun: Budesonide 200-400 µg (100-200 µg Flutikason)"
+      }
+    },
+    {
+      "rule_id": "asma_controller_eval_duration_1",
+      "condition": {
+        "disease": "asma",
+        "phase": "evaluasi"
+      },
+      "claim_type": "duration",
+      "medicine": "steroid_hirupan",
+      "constraint": {
+        "value_min": 6,
+        "value_max": 8,
+        "unit": "minggu"
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I",
+        "section": "Tata Laksana Jangka Panjang Asma",
+        "page": 305,
+        "text": "Evaluasi setelah 6-8 minggu (klinis dan uji fungsi paru)"
+      }
+    },
+    {
+      "rule_id": "asma_controller_budesonide_med_child_1",
+      "condition": {
+        "disease": "asma_persisten",
+        "age_month_min": 0,
+        "age_month_max": 143
+      },
+      "claim_type": "dose",
+      "medicine": "budesonide",
+      "constraint": {
+        "value_min": 200,
+        "value_max": 400,
+        "unit": "mcg",
+        "prohibited": false
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I",
+        "section": "Tata Laksana Jangka Panjang Asma",
+        "page": 305,
+        "text": "Meningkatkan dosis steroid hirupan menjadi dosis medium yaitu: usia < 12 tahun: Budesonide 200-400 µg"
+      }
+    },
+    {
+      "rule_id": "asma_controller_budesonide_med_teen_1",
+      "condition": {
+        "disease": "asma_persisten",
+        "age_month_min": 144
+      },
+      "claim_type": "dose",
+      "medicine": "budesonide",
+      "constraint": {
+        "value_min": 400,
+        "value_max": 600,
+        "unit": "mcg"
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I",
+        "section": "Tata Laksana Jangka Panjang Asma",
+        "page": 305,
+        "text": "usia > 12 tahun: Budesonide 400-600 µg (200-300 µg Flutikason)"
+      }
+    },
+    {
+      "rule_id": "asma_controller_budesonide_high_child_1",
+      "condition": {
+        "disease": "asma_persisten",
+        "age_month_min": 0,
+        "age_month_max": 143
+      },
+      "claim_type": "dose",
+      "medicine": "budesonide",
+      "constraint": {
+        "value_min": 401,
+        "unit": "mcg/hr"
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I",
+        "section": "Tata Laksana Jangka Panjang Asma",
+        "page": 305,
+        "text": "Usia < 12 tahun : Budesonide > 400 µg/hr (>200 µg/hr Flutikason)"
+      }
+    },
+    {
+      "rule_id": "asma_controller_max_inhaled_threshold_1",
+      "condition": {
+        "disease": "asma",
+        "phase": "persistent",
+        "complication": "respon tetap buruk"
+      },
+      "claim_type": "dose",
+      "medicine": "steroid_hirupan",
+      "constraint": {
+        "value_min": 801,
+        "value_max": null,
+        "unit": "mcg/hr",
+        "prohibited": false
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I",
+        "section": "Tata Laksana Jangka Panjang Asma",
+        "page": 305,
+        "text": "Jika dosis steroid hirupan telah mencapai >800 µg/hr, namun respon tetap buruk, maka dipakai cara pengobatan terakhir yaitu : Steroid Oral."
+      }
+    },
+    {
+      "rule_id": "asma_reliever_terbutaline_dose_1",
+      "condition": {
+        "disease": "asma",
+        "phase": "serangan"
+      },
+      "claim_type": "dose",
+      "medicine": "terbutalin",
+      "constraint": {
+        "value_min": 0.05,
+        "value_max": 0.1,
+        "unit": "mg/kgBB/kali"
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I",
+        "section": "Tata Laksana Jangka Panjang Asma",
+        "page": 309,
+        "text": "0,05−0,1 mg/kgBB/kali"
+      }
+    },
+    {
+      "rule_id": "asma_reliever_salbutamol_dose_1",
+      "condition": {
+        "disease": "serangan_asma_akut"
+      },
+      "claim_type": "dose",
+      "medicine": "salbutamol",
+      "constraint": {
+        "value_min": 0.05,
+        "value_max": 0.1,
+        "unit": "mg/kgBB/kali"
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I",
+        "section": "Tata Laksana Jangka Panjang Asma",
+        "page": 309,
+        "text": "0,05−0,1 mg/kgBB/kali"
+      }
+    },
+
+
+    {
       "rule_id": "hipoglikemia_neonatal_dose_glukagon_infusion",
       "condition": {
         "disease": "hipoglikemia_neonatal",
@@ -11743,7 +11992,9 @@
     },
     {
       "rule_id": "demam_tanpa_penyebab_jelas_antibiotik_empirik",
-      "condition": { "disease": "demam_tanpa_penyebab_jelas" },
+      "condition": { 
+        "disease": "demam_tanpa_penyebab_jelas" 
+      },
       "claim":{
           "claim_type": "dose",
           "medicine": "seftriakson",

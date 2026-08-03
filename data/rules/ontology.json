@@ -1,343 +1,1904 @@
-﻿{
+{
   "disease": {
-    "alergi_susu_sapi": [ "alergi_susu_sapi", "cow_milk_allergy", "cma", "ass" ],
-    "anemia_defisiensi_besi": [ "anemia_defisiensi_besi", "anemia_besi", "iron_deficiency_anemia", "adb" ],
-    "bayi_berat_lahir_rendah": [ "bayi_berat_lahir_rendah", "bblr", "low_birth_weight", "berat_lahir_rendah" ],
-    "campak": [ "campak", "measles", "rubeola" ],
-    "diare_akut": [ "diare_akut", "diare", "acute_diarrhea", "gastroenteritis_akut", "disentri", "gastroenteritis", "acute diarrhea", "mencret", "buang air besar cair", "diare_akut_berat" ],
-    "demam_tifoid": [ "demam_tifoid", "tifoid", "typhoid_fever", "tipes" ],
-    "infeksi_virus_dengue": [ "infeksi_virus_dengue", "dengue", "dbd", "dugaan_dbd", "dd", "ds", "demam_berdarah_dengue", "infeksi_dengue" ],
-    "infeksi_saluran_kemih": [ "infeksi_saluran_kemih", "isk", "uti", "infeksi_sistesis_kidney", "insufisiensi_ginjal" ],
-    "pneumonia": [ "pneumonia", "pneumoni", "bronkopneumonia", "infeksi paru", "community acquired pneumonia", "cap" ],
-    "asma": [ "asma", "asthma" ],
-    "serangan_asma_akut": [ "serangan_asma_akut", "serangan_asma", "acute_asthma_attack", "asma_akut", "asma_akut_berat" ],
-    "kejang_akut": [ "kejang_akut", "kejang", "acute_seizure", "status_epileptikus" ],
-    "kejang_demam": [ "kejang_demam", "febrile_seizure", "kejang_demam_sederhana", "kejang_demam_kompleks", "febrile convulsion", "stuip", "step", "kejang_demam_berulang"  ],
-    "tuberkulosis": [ "tuberkulosis", "tb", "tbc", "tuberculosis", "TB_anak", "TB_paru" ],
-    "meningitis_tuberkulosis": [ "meningitis_tuberkulosis", "meningitis_tb", "tb_meningitis", "TB_disertai_meningitis" ],
-    "malnutrisi_energi_protein": [ "malnutrisi_energi_protein", "mep", "gizi_buruk", "gizi_kurang", "marasmus", "kwashiorkor" ],
-    "defek_septum_ventrikel": [ "defek_septum_ventrikel", "dsv", "ventricular_septal_defect", "vsd" ],
-    "defisiensi kompleks protrombin": [ "defisiensi kompleks protrombin", "prothrombin_complex_deficiency" ],
-    "diabetes_melitus_tipe_1": [ "diabetes_melitus_tipe_1", "type_1_diabetes", "diabetes_type_1", "t1dm", "diabetes_mellitus_tipe_1", "dm_tipe_1" ],
-    "diabetes_melitus": [ "diabetes_melitus", "diabetes_mellitus", "diabetes", "dm", "diabetes_melitus_type_2", "diabetes_mellitus_type_2" ],
-    "duktus_arteriosus_persisten": [ "duktus_arteriosus_persisten", "patent_ductus_arteriosus", "pda" ],
-    "ensefalitis": [ "ensefalitis", "encephalitis" ],
-    "ensefalitis_herpes_simpleks": [ "ensefalitis_herpes_simpleks", "herpes_simplex_encephalitis", "hse" ],
-    "enuresis": [ "enuresis", "nocturnal_enuresis", "bedwetting" ],
-    "gagal_jantung": [ "gagal_jantung", "heart_failure", "hf", "gagal_jantung_anak" ],
-    "gnaps": [ "gnaps", "glomerulonefritis_akut_pasca_streptokokus", "post_streptococcal_acute_glomerulonephritis", "psagn", "acute_nephritic_syndrome" ],
-    "hemofilia": [ "hemofilia", "hemophilia", "hem" ],
-    "hiperleukositosis": [ "hiperleukositosis", "leukostasis", "hyperleukocytosis" ],
-    "hipertensi": [ "hipertensi", "hypertension", "htn" ],
-    "krisis_hipertensi": [ "krisis_hipertensi", "hypertensive_crisis", "hipertensi_krisis" ],
-    "hipoglikemia": [ "hipoglikemia", "hypoglycemia", "low_blood_sugar" ],
-    "hipoglikemia_neonatal": [ "hipoglikemia_neonatal", "neonatal_hypoglycemia" ],
-    "hipotiroid_kongenital": [ "hipotiroid_kongenital", "congenital_hypothyroidism", "chd" ],
-    "ketoasidosis_diabetik": [ "ketoasidosis_diabetik", "diabetic_ketoacidosis", "dka" ],
-    "kolestasis": [ "kolestasis", "cholestasis", "cholestatic_liver_disease", "defisiensi_vitamin", "defisiensi_vitamin_d" ],
-    "konstipasi": [ "konstipasi", "constipation" ],
-    "malaria": [ "malaria", "plasmodium" ],
-    "malaria_falciparum": [ "malaria_falciparum", "pf_malaria", "falciparum_malaria", "plasmodium_falciparum", "p_falciparum", "malaria_tropikana" ],
-    "malaria_malariae": [ "malaria_malariae", "pm_malaria", "malariae_malaria" ],
-    "malaria_ovale": [ "malaria_ovale", "po_malaria", "ovale_malaria" ],
-    "malaria_vivax": [ "malaria_vivax", "pv_malaria", "vivax_malaria" ],
-    "membran_hialin": [ "membran_hialin", "hyaline_membrane", "respiratory_distress_syndrome" ],
-    "meningitis_bakterialis": [ "meningitis_bakterialis", "bacterial_meningitis" ],
-    "sepsis_neonatal": [ "sepsis_neonatal", "neonatal_sepsis" ],
-    "sindrom_nefrotik": [ "sindrom_nefrotik", "nephrotic_syndrome", "ns", "sindrom_nefrotik_resistens_steroid", "sindrom_nefrotik_idiopatik" ],
-    "syok": [ "syok", "shock", "systemic_shock" ],
-    "talasemia": [ "talasemia", "thalassemia", "mediterranean_anemia" ],
-    "tetanus_neonatorum": [ "tetanus_neonatorum", "neonatal_tetanus" ],
-    "tetralogi_fallot": [ "tetralogi_fallot", "tetralogy_of_fallot", "tof" ],
-    "urtikaria_dan_angioedema": [ "urtikaria_dan_angioedema", "urticaria_and_angioedema", "hives_angioedema", "anafilaksis", "anaphylaxis", "urtikaria", "angiodema" ],
-    "alergi_obat": ["alergi_obat", "drug_allergy"],
-    "hepatitis_akut": ["hepatitis_akut", "acute_hepatitis"],
-    "bronkiolitis": ["bronkiolitis", "bronchiolitis"],
-    "failure_to_thrive": ["failure_to_thrive", "ftt", "gagal_tumbuh"],
-    "demam_tanpa_penyebab_jelas": ["demam_tanpa_penyebab_jelas", "fever_without_source", "demam_akut_tanpa_penyebab", "fws"]
-},
-
+    "alergi_susu_sapi": [
+      "alergi_susu_sapi",
+      "cow_milk_allergy",
+      "cma",
+      "ass",
+      "alergi_protein_susu_sapi"
+    ],
+    "anemia_defisiensi_besi": [
+      "anemia_defisiensi_besi",
+      "anemia_besi",
+      "iron_deficiency_anemia",
+      "adb"
+    ],
+    "bayi_berat_lahir_rendah": [
+      "bayi_berat_lahir_rendah",
+      "bblr",
+      "low_birth_weight",
+      "berat_lahir_rendah"
+    ],
+    "campak": [
+      "campak",
+      "measles",
+      "rubeola"
+    ],
+    "diare_akut": [
+      "diare_akut",
+      "diare",
+      "acute_diarrhea",
+      "gastroenteritis_akut",
+      "disentri",
+      "gastroenteritis",
+      "acute diarrhea",
+      "mencret",
+      "buang air besar cair",
+      "diare_akut_berat"
+    ],
+    "demam_tifoid": [
+      "demam_tifoid",
+      "tifoid",
+      "typhoid_fever",
+      "tipes"
+    ],
+    "infeksi_virus_dengue": [
+      "infeksi_virus_dengue",
+      "dengue",
+      "dbd",
+      "dugaan_dbd",
+      "dd",
+      "ds",
+      "demam_berdarah_dengue",
+      "infeksi_dengue"
+    ],
+    "infeksi_saluran_kemih": [
+      "infeksi_saluran_kemih",
+      "isk",
+      "uti",
+      "infeksi_sistesis_kidney",
+      "insufisiensi_ginjal"
+    ],
+    "pneumonia": [
+      "pneumonia",
+      "pneumoni",
+      "bronkopneumonia",
+      "infeksi paru",
+      "community acquired pneumonia",
+      "cap"
+    ],
+    "serangan_asma_akut": [
+      "serangan_asma_akut",
+      "serangan_asma",
+      "acute_asthma_attack",
+      "asma_akut",
+      "asma_akut_berat"
+    ],
+    "asma_episodik_jarang": [
+      "asma_episodik_jarang",
+      "episodic_asthma",
+      "intermittent_asthma",
+      "asma_episodik"
+    ],
+    "asma_episodik_sering": [
+      "asma_episodik_sering",
+      "frequent_asthma",
+      "asma_episodik_sering"
+    ],
+    "asma_persisten": [
+      "asma_persisten",
+      "persistent_asthma",
+      "asma_persisten_ringan",
+      "asma_persisten_sedang",
+      "asma_persisten_berat"
+    ],
+    "asma": [
+      "asma",
+      "asthma",
+      "asma_anak",
+      "asma_pediatrik"
+    ],
+    "kejang_akut": [
+      "kejang_akut",
+      "kejang",
+      "acute_seizure",
+      "status_epileptikus"
+    ],
+    "kejang_demam": [
+      "kejang_demam",
+      "febrile_seizure",
+      "kejang_demam_sederhana",
+      "kejang_demam_kompleks",
+      "febrile convulsion",
+      "stuip",
+      "step",
+      "kejang_demam_berulang",
+      "demam"
+    ],
+    "tuberkulosis": [
+      "tuberkulosis",
+      "tb",
+      "tbc",
+      "tuberculosis",
+      "TB_anak",
+      "TB_paru"
+    ],
+    "meningitis_tuberkulosis": [
+      "meningitis_tuberkulosis",
+      "meningitis_tb",
+      "tb_meningitis",
+      "TB_disertai_meningitis"
+    ],
+    "malnutrisi_energi_protein": [
+      "malnutrisi_energi_protein",
+      "mep",
+      "gizi_buruk",
+      "gizi_kurang",
+      "marasmus",
+      "kwashiorkor"
+    ],
+    "defek_septum_ventrikel": [
+      "defek_septum_ventrikel",
+      "dsv",
+      "ventricular_septal_defect",
+      "vsd",
+      "bocor_jantung"
+    ],
+    "defisiensi_kompleks_protrombin": [
+      "defisiensi_kompleks_protrombin",
+      "prothrombin_complex_deficiency",
+      "vkdb",
+      "perdarahan_akibat_defisiensi_vitamin_k"
+    ],
+    "diabetes_melitus_tipe_1": [
+      "diabetes_melitus_tipe_1",
+      "type_1_diabetes",
+      "diabetes_type_1",
+      "t1dm",
+      "diabetes_mellitus_tipe_1",
+      "dm_tipe_1"
+    ],
+    "diabetes_melitus": [
+      "diabetes_melitus",
+      "diabetes_mellitus",
+      "diabetes",
+      "dm",
+      "diabetes_melitus_type_2",
+      "diabetes_mellitus_type_2",
+      "kencing_manis"
+    ],
+    "duktus_arteriosus_persisten": [
+      "duktus_arteriosus_persisten",
+      "patent_ductus_arteriosus",
+      "pda",
+      "penutupan_duktus_artersiosus_paten",
+      "penutupan_duktus_artiosus_paten",
+      "duktus_artersiosus_paten"
+    ],
+    "ensefalitis": [
+      "ensefalitis",
+      "encephalitis",
+      "ensefalitis_virus",
+      "infeksi_susunan_saraf_pusat"
+    ],
+    "ensefalitis_herpes_simpleks": [
+      "ensefalitis_herpes_simpleks",
+      "herpes_simplex_encephalitis",
+      "hse"
+    ],
+    "enuresis": [
+      "enuresis",
+      "nocturnal_enuresis",
+      "bedwetting",
+      "enuresis_nokturnal_monosimptomatik",
+      "enuresis_sekunder"
+    ],
+    "gagal_jantung": [
+      "gagal_jantung",
+      "heart_failure",
+      "hf",
+      "gagal_jantung_anak"
+    ],
+    "gnaps": [
+      "gnaps",
+      "glomerulonefritis_akut_pasca_streptokokus",
+      "post_streptococcal_acute_glomerulonephritis",
+      "psagn",
+      "acute_nephritic_syndrome"
+    ],
+    "hemofilia": [
+      "hemofilia",
+      "hemophilia",
+      "hem"
+    ],
+    "hiperleukositosis": [
+      "hiperleukositosis",
+      "leukostasis",
+      "hyperleukocytosis"
+    ],
+    "hipertensi": [
+      "hipertensi",
+      "hypertension",
+      "htn"
+    ],
+    "krisis_hipertensi": [
+      "krisis_hipertensi",
+      "hypertensive_crisis",
+      "hipertensi_krisis",
+      "hipertensi_urgensi"
+    ],
+    "hipoglikemia": [
+      "hipoglikemia",
+      "hypoglycemia",
+      "low_blood_sugar",
+      "gula_darah_rendah"
+    ],
+    "hipoglikemia_neonatal": [
+      "hipoglikemia_neonatal",
+      "neonatal_hypoglycemia"
+    ],
+    "hipotiroid_kongenital": [
+      "hipotiroid_kongenital",
+      "congenital_hypothyroidism",
+      "chd"
+    ],
+    "ketoasidosis_diabetik": [
+      "ketoasidosis_diabetik",
+      "diabetic_ketoacidosis",
+      "dka",
+      "ketoasidosis_diabetikum"
+    ],
+    "kolestasis": [
+      "kolestasis",
+      "cholestasis",
+      "cholestatic_liver_disease",
+      "defisiensi_vitamin",
+      "defisiensi_vitamin_d"
+    ],
+    "konstipasi": [
+      "konstipasi",
+      "constipation"
+    ],
+    "malaria": [
+      "malaria",
+      "plasmodium"
+    ],
+    "malaria_falciparum": [
+      "malaria_falciparum",
+      "pf_malaria",
+      "falciparum_malaria",
+      "plasmodium_falciparum",
+      "p_falciparum",
+      "malaria_tropikana"
+    ],
+    "malaria_malariae": [
+      "malaria_malariae",
+      "pm_malaria",
+      "malariae_malaria"
+    ],
+    "malaria_ovale": [
+      "malaria_ovale",
+      "po_malaria",
+      "ovale_malaria"
+    ],
+    "malaria_vivax": [
+      "malaria_vivax",
+      "pv_malaria",
+      "vivax_malaria"
+    ],
+    "membran_hialin": [
+      "membran_hialin",
+      "hyaline_membrane",
+      "respiratory_distress_syndrome",
+      "rds"
+    ],
+    "meningitis_bakterialis": [
+      "meningitis_bakterialis",
+      "bacterial_meningitis"
+    ],
+    "sepsis_neonatal": [
+      "sepsis_neonatal",
+      "neonatal_sepsis"
+    ],
+    "sindrom_nefrotik": [
+      "sindrom_nefrotik",
+      "nephrotic_syndrome",
+      "ns",
+      "sindrom_nefrotik_resistens_steroid",
+      "sindrom_nefrotik_idiopatik"
+    ],
+    "syok": [
+      "syok",
+      "shock",
+      "systemic_shock"
+    ],
+    "talasemia": [
+      "talasemia",
+      "thalassemia",
+      "mediterranean_anemia"
+    ],
+    "tetanus_neonatorum": [
+      "tetanus_neonatorum",
+      "neonatal_tetanus"
+    ],
+    "tetralogi_fallot": [
+      "tetralogi_fallot",
+      "tetralogy_of_fallot",
+      "tof"
+    ],
+    "urtikaria_dan_angioedema": [
+      "urtikaria_dan_angioedema",
+      "urticaria_and_angioedema",
+      "hives_angioedema",
+      "anafilaksis",
+      "anaphylaxis",
+      "urtikaria",
+      "angiodema"
+    ],
+    "alergi_obat": [
+      "alergi_obat",
+      "drug_allergy",
+      "reaksi_alergi_obat"
+    ],
+    "hepatitis_akut": [
+      "hepatitis_akut",
+      "acute_hepatitis",
+      "hepatitis_a"
+    ],
+    "bronkiolitis": [
+      "bronkiolitis",
+      "bronchiolitis"
+    ],
+    "failure_to_thrive": [
+      "failure_to_thrive",
+      "ftt",
+      "gagal_tumbuh"
+    ],
+    "demam_tanpa_penyebab_jelas": [
+      "demam_tanpa_penyebab_jelas",
+      "fever_without_source",
+      "demam_akut_tanpa_penyebab",
+      "fws"
+    ],
+    "syok_kardiogenik": [
+      "syok_kardiogenik",
+      "cardiogenic_shock"
+    ],
+    "serangan_sianotik": [
+      "serangan_sianotik",
+      "serangan_sianotik_akut",
+      "serangan_sianotik_akibat_kelainan_jantung_bawaan",
+      "cyanotic_spell",
+      "tet_spell"
+    ],
+    "hipertensi_emergensi": [
+      "hipertensi_emergensi",
+      "hypertensive_emergency"
+    ],
+    "perdarahan_intrakranial": [
+      "perdarahan_intrakranial",
+      "intracranial_hemorrhage",
+      "ich"
+    ],
+    "malaria_campuran": [
+      "malaria_campuran",
+      "mixed_malaria",
+      "infeksi_malaria_campuran",
+      "infeksi_majemuk"
+    ],
+    "malaria_berat": [
+      "malaria_berat",
+      "severe_malaria"
+    ],
+    "kegagalan_parasitologis": [
+      "kegagalan_parasitologis",
+      "parasitological_failure",
+      "kegagalan_terapi_malaria"
+    ],
+    "hematuria": [
+      "hematuria",
+      "blood_in_urine"
+    ],
+    "reaksi_alergi": [
+      "reaksi_alergi",
+      "allergic_reaction"
+    ],
+    "gangguan_napas": [
+      "gangguan_napas",
+      "respiratory_distress",
+      "napas_sesak",
+      "sesak_napas"
+    ],
+    "gagal_napas": [
+      "gagal_napas",
+      "respiratory_failure"
+    ],
+    "hipoksia": [
+      "hipoksia",
+      "hypoxia"
+    ],
+    "apneu_persisten": [
+      "apneu_persisten",
+      "persistent_apnea"
+    ],
+    "leukemia": [
+      "leukemia",
+      "leukemia_akut"
+    ],
+    "keganasan": [
+      "keganasan",
+      "malignancy",
+      "kanker"
+    ],
+    "tumor_lysis_syndrome": [
+      "tumor_lysis_syndrome",
+      "sindrom_tumor_lisis",
+      "tls"
+    ]
+  },
   "phase": {
-    "initial": [ "initial", "awal", "fase_awal", "inisial", "initial_phase", "loading", "loading_dose" ],
-    "maintenance": [ "maintenance", "rumatan", "pemeliharaan", "maintenance_phase" ],
-    "acute": [ "acute", "akut", "fase_akut", "acute_phase", "kritis" ],
-    "intensive":        ["intensive", "intensif", "fase_intensif", "intensive_phase", "stabilisasi", "fase_stabilisasi", "stabilization" ],
-    "transition":       ["transisi", "fase_transisi", "transition"],
-    "rehabilitation":   ["rehabilitasi", "fase_rehabilitasi", "rehabilitation"], 
-    "continuation":     ["continuation", "lanjutan", "fase_lanjutan", "continued", "follow_up" ]
+    "initial": [
+      "initial",
+      "awal",
+      "fase_awal",
+      "inisial",
+      "initial_phase",
+      "loading",
+      "loading_dose"
+    ],
+    "maintenance": [
+      "maintenance",
+      "rumatan",
+      "pemeliharaan",
+      "maintenance_phase"
+    ],
+    "acute": [
+      "acute",
+      "akut",
+      "fase_akut",
+      "acute_phase",
+      "kritis"
+    ],
+    "intensive": [
+      "intensive",
+      "intensif",
+      "fase_intensif",
+      "intensive_phase",
+      "stabilisasi",
+      "fase_stabilisasi",
+      "stabilization"
+    ],
+    "transition": [
+      "transisi",
+      "fase_transisi",
+      "transition"
+    ],
+    "rehabilitation": [
+      "rehabilitasi",
+      "fase_rehabilitasi",
+      "rehabilitation"
+    ],
+    "continuation": [
+      "continuation",
+      "lanjutan",
+      "fase_lanjutan",
+      "continued",
+      "follow_up"
+    ]
   },
-
   "severity": {
-    "ringan": [ "ringan", "mild", "derajat_ringan" ],
-    "sedang": [ "sedang", "moderate", "derajat_sedang" ],
-    "ringan_sedang": [ "ringan_sedang", "mild_moderate", "ringan_hingga_sedang", "ringan_sampai_sedang", "dehidrasi_ringan_sedang" ],
-    "berat": [ "berat", "sedang_berat", "severe", "derajat_berat", "dehidrasi_berat", "berat_sekali", "dehidrasi_berat", "ancaman_henti_napas", "status_konvulsivus", "moderate_severe" ],
-    "besar": [ "besar", "large", "pirau_besar" ],
-    "tersangka": [ "tersangka", "suspek", "suspected", "probable", "dugaan", "dd", "demam_dengue" ],
-    "refrakter": [ "refrakter", "refractory", "refraktori" ],
-    "resisten_cairan": [ "resisten_cairan", "resisten_terhadap_cairan", "tidak_respons_cairan", "fluid_refractory" ]
+    "ringan": [
+      "ringan",
+      "mild",
+      "derajat_ringan"
+    ],
+    "sedang": [
+      "sedang",
+      "moderate",
+      "derajat_sedang"
+    ],
+    "ringan_sedang": [
+      "ringan_sedang",
+      "mild_moderate",
+      "ringan_hingga_sedang",
+      "ringan_sampai_sedang",
+      "dehidrasi_ringan_sedang"
+    ],
+    "berat": [
+      "berat",
+      "sedang_berat",
+      "severe",
+      "derajat_berat",
+      "dehidrasi_berat",
+      "berat_sekali",
+      "dehidrasi_berat",
+      "ancaman_henti_napas",
+      "status_konvulsivus",
+      "moderate_severe"
+    ],
+    "besar": [
+      "besar",
+      "large",
+      "pirau_besar"
+    ],
+    "tersangka": [
+      "tersangka",
+      "suspek",
+      "suspected",
+      "probable",
+      "dugaan",
+      "dd",
+      "demam_dengue"
+    ],
+    "refrakter": [
+      "refrakter",
+      "refractory",
+      "refraktori"
+    ],
+    "resisten_cairan": [
+      "resisten_cairan",
+      "resisten_terhadap_cairan",
+      "tidak_respons_cairan",
+      "fluid_refractory"
+    ]
   },
-
   "complication": {
-    "bronkopneumonia": [ "bronkopneumonia", "bronchopneumonia", "pneumonia_bronkial" ],
-    "ensefalopati": [ "ensefalopati", "encephalopathy", "ensefalopati_tifoid" ],
-    "refraktori": [ "refraktori", "refrakter", "refractory" ],
-    "rawat_inap": [ "rawat_inap", "hospitalisasi", "inpatient" ],
-    "rawat_jalan": [ "rawat_jalan", "outpatient" ],
-    "diabetes_mellitus": [ "diabetes_mellitus", "diabetes", "dm", "diabetes_mellitus_type_2" ],
-    "efusi_perikardium": [ "efusi_perikardium", "pericardial_effusion", "effusi_perikard" ],
-    "gangguan_fungsi_jantung": [ "gangguan_fungsi_jantung", "cardiac_dysfunction", "heart_dysfunction", "gangguan_jantung" ],
-    "hamil_trimester_akhir": [ "hamil_trimester_akhir", "pregnant_third_trimester", "hamil_term", "hamil_usia_lanjut" ],
-    "hipernatremia": [ "hipernatremia", "hypernatremia", "high_sodium" ],
-    "krisis_hipertensi": [ "krisis_hipertensi", "hypertensive_crisis", "krisis_tekanan_darah" ],
-    "malnutrisi": [ "malnutrisi", "malnutrition", "kurang_gizi", "gizi_buruk" ],
-    "meningitis": [ "meningitis", "meningitis_bacterial", "meningitis_viral" ],
-    "perdarahan_saluran_kemih": [ "perdarahan_saluran_kemih", "urinary_tract_bleeding", "hematuria" ],
-    "resisten_cairan": [ "resisten_cairan", "fluid_resistant", "tidak_responsif_cairan", "resistant_to_fluid" ],
-    "komorbid_asma": ["asma komorbid", "pasien asma", "penderita asma"],
-    "gagal_jantung_komorbid": ["gagal_jantung_komorbid", "heart_failure_comorbid"],
-    "diabetes_melitus_insulin_dependent": [ "diabetes_melitus_insulin_dependent", "diabetes_mellitus_insulin_dependent", "iddm", "insulin_dependent", "tergantung_insulin" ],
-    "efusi_pleura": ["efusi_pleura", "pleural_effusion"],
-    "ensefalopati_dengue": ["ensefalopati_dengue", "dengue_encephalopathy"],
-    "insulin_dependent": ["insulin_dependent", "tergantung_insulin", "iddm"],
-    "perdarahan": ["perdarahan", "bleeding", "hemorrhage", "perdarahan_berat"]
+    "bronkopneumonia": [
+      "bronkopneumonia",
+      "bronchopneumonia",
+      "pneumonia_bronkial"
+    ],
+    "ensefalopati": [
+      "ensefalopati",
+      "encephalopathy",
+      "ensefalopati_tifoid"
+    ],
+    "refraktori": [
+      "refraktori",
+      "refrakter",
+      "refractory"
+    ],
+    "rawat_inap": [
+      "rawat_inap",
+      "hospitalisasi",
+      "inpatient"
+    ],
+    "rawat_jalan": [
+      "rawat_jalan",
+      "outpatient"
+    ],
+    "diabetes_mellitus": [
+      "diabetes_mellitus",
+      "diabetes",
+      "dm",
+      "diabetes_mellitus_type_2"
+    ],
+    "efusi_perikardium": [
+      "efusi_perikardium",
+      "pericardial_effusion",
+      "effusi_perikard"
+    ],
+    "gangguan_fungsi_jantung": [
+      "gangguan_fungsi_jantung",
+      "cardiac_dysfunction",
+      "heart_dysfunction",
+      "gangguan_jantung"
+    ],
+    "hamil_trimester_akhir": [
+      "hamil_trimester_akhir",
+      "pregnant_third_trimester",
+      "hamil_term",
+      "hamil_usia_lanjut"
+    ],
+    "hipernatremia": [
+      "hipernatremia",
+      "hypernatremia",
+      "high_sodium"
+    ],
+    "krisis_hipertensi": [
+      "krisis_hipertensi",
+      "hypertensive_crisis",
+      "krisis_tekanan_darah"
+    ],
+    "malnutrisi": [
+      "malnutrisi",
+      "malnutrition",
+      "kurang_gizi",
+      "gizi_buruk"
+    ],
+    "meningitis": [
+      "meningitis",
+      "meningitis_bacterial",
+      "meningitis_viral"
+    ],
+    "perdarahan_saluran_kemih": [
+      "perdarahan_saluran_kemih",
+      "urinary_tract_bleeding",
+      "hematuria"
+    ],
+    "resisten_cairan": [
+      "resisten_cairan",
+      "fluid_resistant",
+      "tidak_responsif_cairan",
+      "resistant_to_fluid"
+    ],
+    "komorbid_asma": [
+      "asma komorbid",
+      "pasien asma",
+      "penderita asma"
+    ],
+    "gagal_jantung_komorbid": [
+      "gagal_jantung_komorbid",
+      "heart_failure_comorbid"
+    ],
+    "diabetes_melitus_insulin_dependent": [
+      "diabetes_melitus_insulin_dependent",
+      "diabetes_mellitus_insulin_dependent",
+      "iddm",
+      "insulin_dependent",
+      "tergantung_insulin"
+    ],
+    "efusi_pleura": [
+      "efusi_pleura",
+      "pleural_effusion"
+    ],
+    "ensefalopati_dengue": [
+      "ensefalopati_dengue",
+      "dengue_encephalopathy"
+    ],
+    "insulin_dependent": [
+      "insulin_dependent",
+      "tergantung_insulin",
+      "iddm"
+    ],
+    "perdarahan": [
+      "perdarahan",
+      "bleeding",
+      "hemorrhage",
+      "perdarahan_berat"
+    ]
   },
-
   "claim_type": {
-    "dose": [ "dose", "dosage", "dosis" ],
-    "frequency": [ "frequency", "frekuensi" ],
-    "duration": [ "duration", "durasi", "lama", "selama" ],
-    "interval": [ "interval" ],
-    "contraindication": [ "contraindication", "kontraindikasi" ]
+    "dose": [
+      "dose",
+      "dosage",
+      "dosis"
+    ],
+    "frequency": [
+      "frequency",
+      "frekuensi"
+    ],
+    "duration": [
+      "duration",
+      "durasi",
+      "lama",
+      "selama"
+    ],
+    "interval": [
+      "interval"
+    ],
+    "contraindication": [
+      "contraindication",
+      "kontraindikasi"
+    ]
   },
-
   "medicine": {
-    "amoksisilin": [ "amoksisilin", "amoxicillin" ],
-    "ampisilin": [ "ampisilin", "ampicillin" ],
-    "aspirin": [ "aspirin", "acetylsalicylic_acid", "asa" ],
-    "azithromisin": [ "azithromisin", "azithromycin" ],
-    "seftriakson": ["seftriakson", "ceftriaxone", "cefriaxone", "sefriakson", "ceftriaxon", "rocephin"],
-    "sefotaksim": [ "sefotaksim", "cefotaxime" ],
-    "klindamisin": [ "klindamisin", "clindamycin", "klindamycin" ],
-    "kloramfenikol": [ "kloramfenikol", "chloramphenicol" ],
-    "kotrimoksasol": [ "kotrimoksasol", "kotrimoxazole", "cotrimoxazole" ],
-    "metronidazol": [ "metronidazol", "metronidazole" ],
-    "gentamisin": [ "gentamisin", "gentamicin" ],
-    "isoniazid": [ "isoniazid", "isoniazide" ],
-    "rifampisin": [ "rifampisin", "rifampicin", "rifampin" ],
-    "pirazinamid": [ "pirazinamid", "pyrazinamide" ],
-    "etambutol": [ "etambutol", "ethambutol" ],
-    "streptomisin": [ "streptomisin", "streptomycin" ],
-    "parasetamol": [ "parasetamol", "paracetamol", "acetaminophen" ],
-    "zink": [ "zink", "zinc", "zinc_sulfate" ],
-    "new_oralit": [ "new oralit", "ors", "oralit", "oral_rehydration_solution", "cairan_oralit", "cairan_rehidrasi_oral", "cro" ],
-    "rehidrasi_oral_hipoosmolar": [ "rehidrasi oral hipoosmolar", "larutan_rehidrasi_oral", "rho", "oralit_hipoosmolar", "cairan_rehidrasi_oral_hipoosmolar" ],
-    "ringer_laktat": [ "ringer laktat", "rl", "ringer_lactate", "ringer_laktat" ],
-    "ringer_asetat": [ "ringer asetat", "ra", "ringer_acetate", "ringer_asetat" ],
-    "nacl_0_9_persen": [ "nacl 0,9%", "normal_saline", "saline", "nacl_0.9%", "nacl_0,9" ],
-    "oksigen": [ "oksigen", "oxygen", "o2" ],
-    "kina_dihidroklorid": [ "kina dihidroklorid", "hidroklorid kina", "quinine dihydrochloride", "quinine hcl", "kinin", "chinin" ],
-    "adrenalin_1_1000": [ "adrenalin 1:1000", "adrenalin" ],
-    "albumin": [ "albumin", "albumin 20-25%", "human albumin" ],
-    "allopurinol": [ "allopurinol" ],
-    "aminofilin": [ "aminofilin", "aminophylline" ],
-    "amlodipin": [ "amlodipin", "amlodipine" ],
-    "antibiotik": [ "antibiotik", "antibiotic", "antibiotics" ],
-    "antitoksin_tetanus": [ "antitoksin tetanus", "tetanus antitoxin" ],
-    "asam_folat": [ "asam folat", "folic acid" ],
-    "asam_traneksamat": [ "asam traneksamat", "tranexamic acid" ],
-    "asam_ursodeoksikolat": [ "asam ursodeoksikolat", "ursodeoxycholic acid" ],
-    "asam_valproat": [ "asam valproat", "valproic acid", "sodium valproate", "valproat", "depakote", "asam valproik" ],
-    "asetazolamid": [ "asetazolamid", "acetazolamide" ],
-    "asiklovir": [ "asiklovir", "acyclovir" ],
-    "besi_elemental": [ "besi elemental", "elemental iron", "zat besi", "iron", "besi", "fe", "suplemen_zat_besi" ],
-    "beta_agonis": [ "beta_agonis", "beta agonist", "beta agonis" ],
-    "bikarbonas_natrikus": [ "bikarbonas natrikus", "sodium bicarbonate" ],
-    "cairan": [ "cairan", "fluid", "fluids" ],
-    "cairan_oral": [ "cairan oral", "oral fluid", "oral rehydration" ],
-    "cairan_resusitasi": [ "cairan resusitasi", "resuscitation fluid" ],
-    "cefuroxime": [ "cefuroxime", "cefuroxim" ],
-    "cisapride": [ "cisapride" ],
-    "clindamycin": [ "clindamycin", "klindamicin" ],
-    "darah_segar": [ "darah segar", "fresh blood", "transfusi_darah_segar" ],
-    "deferasirox": [ "deferasirox" ],
-    "deferiprone": [ "deferiprone" ],
-    "deksametason": [ "deksametason", "dexamethasone" ],
-    "dekstran": [ "dekstran", "dextran" ],
-    "dekstrosa_10_persen": [ "dekstrosa 10%", "dextrose 10%" ],
-    "desferioksamin": [ "desferioksamin", "deferoxamine" ],
-    "desloratadin": [ "desloratadin", "desloratadine" ],
-    "desmopresin": [ "desmopresin", "desmopressin" ],
-    "diazepam": [ "diazepam", "valium" ],
-    "diazepam_rektal": [ "diazepam rektal", "rectal diazepam" ],
-    "diazoksid": [ "diazoksid", "diazoxide" ],
-    "difenhidramin": [ "difenhidramin", "diphenhydramine" ],
-    "digoksin": [ "digoksin", "digoxin" ],
-    "diphenhydramin": [ "diphenhydramin", "diphenhydramine" ],
-    "dobutamin": [ "dobutamin", "dobutamine" ],
-    "dopamin": [ "dopamin", "dopamine" ],
-    "enema_fosfat_hipertonik": [ "enema fosfat hipertonik", "hypertonic phosphate enema" ],
-    "enema_garam_fisiologis": [ "enema garam fisiologis", "normal saline enema" ],
-    "enema_gliserin": [ "enema gliserin", "glycerin enema", "supositoria/enema gliserin" ],
-    "energi": [ "energi", "energy", "caloric support" ],
-    "epinephrine": [ "epinephrine", "epinefrin" ],
-    "eritromisin": [ "eritromisin", "erythromycin" ],
-    "fenilefrin": [ "fenilefrin", "phenylephrine" ],
-    "fenitoin": [ "fenitoin", "phenytoin" ],
-    "fenobarbital": [ "fenobarbital", "phenobarbital" ],
-    "fexofenadin": [ "fexofenadin", "fexofenadine" ],
-    "formula_asam_amino": [ "formula asam amino", "amino acid formula" ],
-    "formula_susu_terhidrolisat_ekstensif": [ "formula susu terhidrolisat ekstensif", "extensively hydrolyzed formula" ],
-    "fosfat": [ "fosfat", "phosphate", "phosphorus" ],
-    "fosfor_p": [ "fosfor (p)", "phosphorus", "phosphate" ],
-    "fresh_frozen_plasma": [ "fresh frozen plasma", "ffp" ],
-    "furosemid": [ "furosemid", "furosemide" ],
-    "glukagon": [ "glukagon", "glucagon" ],
-    "glukagon_infus_kontinu": [ "glukagon infus kontinu", "continuous glucagon infusion" ],
-    "glukosa": [ "glukosa", "glucose" ],
-    "hidrokortison": [ "hidrokortison", "hydrocortisone" ],
-    "hidroksisin": [ "hidroksisin", "hydroxyzine" ],
-    "human_tetanus_immunoglobulin": [ "human tetanus immunoglobulin", "htig" ],
-    "hydralazine": [ "hydralazine", "hidralazin" ],
-    "hydroxizine": [ "hydroxizine", "hidroksisin" ],
-    "ibuprofen": [ "ibuprofen" ],
-    "indometasin": [ "indometasin", "indomethacin" ],
-    "infus_asiklovir": [ "infus asiklovir", "acyclovir infusion" ],
-    "insulin": [ "insulin" ],
-    "kalium": [ "kalium", "potassium" ],
-    "kalori": [ "kalori", "calorie", "caloric" ],
-    "kalsium": [ "kalsium", "calcium" ],
-    "kalsium_glukonas_10_persen": [ "kalsium glukonas 10%", "calcium gluconate 10%" ],
-    "kalsium_karbonat": [ "kalsium karbonat", "calcium carbonate" ],
-    "kaptopril": [ "kaptopril", "captopril" ],
-    "kcl": [ "kcl", "potassium chloride", "kalium klorida", "kcl oral", "klor" ],
-    "ketamin": [ "ketamin", "ketamine" ],
-    "klaritromisin": [ "klaritromisin", "clarithromycin" ],
-    "klonidin": [ "klonidin", "clonidine" ],
-    "klorfeniramin_maleat": [ "klorfeniramin maleat", "chlorpheniramine maleate" ],
-    "klorokuin_sulfat": [ "klorokuin sulfat", "chloroquine sulfate" ],
-    "kolestiramin": [ "kolestiramin", "cholestyramine" ],
-    "kuinin_sulfat": [ "kuinin sulfat", "quinine sulfate", "kinin sulfat", "kuinin", "quinine" ],
-    "l_tiroksin": [ "l-tiroksin", "levothyroxine" ],
-    "labetalol": [ "labetalol" ],
-    "laktulosa": [ "laktulosa", "lactulose" ],  
-    "latihan_aerobik": [ "latihan aerobik", "aerobic exercise" ],
-    "laju_infus_glukosa": [ "laju infus glukosa", "glucose infusion rate" ],
-    "laju_infus_glukosa_maksimal": [ "laju infus glukosa maksimal", "maximum glucose infusion rate" ],
-    "loratadin": [ "loratadin", "loratadine" ],
-    "magnesium_hidroksida": [ "magnesium hidroksida", "magnesium hydroxide" ],
-    "mangan": [ "mangan", "manganese" ],
-    "manitol": [ "manitol", "mannitol" ],
-    "metil_prednisolon": [ "metil-prednisolon", "methylprednisolone", "metilprednisolon" ],
-    "midazolam": [ "midazolam" ],
-    "mineral_oil": ["mineral_oil", "parafin_liquid", "parafin_oil", "minyak_mineral", "liquid_paraffin"],
-    "morfin_sulfat": [ "morfin sulfat", "morphine sulfate" ],
-    "natrium_bikarbonat": [ "natrium bikarbonat", "sodium bicarbonate" ],
-    "nifedipin": [ "nifedipin", "nifedipine" ],
-    "nitrofurantoin": [ "nitrofurantoin", "nitrofurantoine" ],
-    "norepinephrine": [ "norepinephrine", "noradrenalin" ],
-    "oat": [ "oat" ],
-    "oksibutinin": [ "oksibutinin", "oxybutynin" ],
-    "pemberian_minum": [ "pemberian minum", "fluid administration" ],
-    "peningkatan_minum": [ "peningkatan minum", "increased fluid intake" ],
-    "penisilin_g": [ "penisilin g", "penicillin g", "benzyl penicillin" ],
-    "penisilin_procain": [ "penisilin procain", "penicillin procaine" ],
-    "pirimetamin": [ "pirimetamin", "pyrimethamine" ],
-    "pirimetamin_sulfadoksin": [ "pirimetamin sulfadoksin", "pyrimethamine sulfadoxine" ],
-    "polietilen_glikol": [ "polietilen glikol", "polyethylene glycol" ],
-    "prednison": [ "prednison", "prednisone" ],
-    "primakuin_fosfat": [ "primakuin fosfat", "primaquine phosphate" ],
-    "propranolol": [ "propanolol", "propranolol" ],
-    "protein": [ "protein" ],
-    "ranitidine": [ "ranitidine" ],
-    "rehidrasi": [ "rehidrasi", "rehydration", "cairan_rehidrasi" ],
-    "sefaleksin": [ "sefaleksin", "cephalexin" ],
-    "sefazolin": [ "sefazolin", "cefazolin" ],
-    "sefiksim": [ "sefiksim", "cefixime" ],
-    "selenium": [ "selenium" ],
-    "setirizin": [ "setirizin", "cetirizine", "cetirizin" ],
-    "siklofosfamid": [ "siklofosfamid", "cyclophosphamide" ],
-    "simetidin": [ "simetidin", "cimetidine" ],
-    "sorbitol": [ "sorbitol" ],
-    "spironolakton": [ "spironolakton", "spironolactone" ],
-    "steroid": [ "steroid", "steroids", "kortikosteroid" ],
-    "sulfametoksazole": [ "sulfametoksazole", "sulfamethoxazole" ],
-    "sulfisoksazole": [ "sulfisoksazole", "sulfisoxazole" ],
-    "surfaktan": [ "surfaktan", "surfactant" ],
-    "survanta": [ "survanta", "beractant" ],
-    "tetanus_toksoid": [ "tetanus toksoid", "tetanus toxoid" ],
-    "tetrasiklin": [ "tetrasiklin", "tetracycline" ],
-    "trimetoprim": [ "trimetoprim", "trimethoprim" ],
-    "vidarabin": [ "vidarabin", "vidarabine" ],
-    "vitamin_a": [ "vitamin a", "retinol", "retinyl" ],
-    "vitamin_c": [ "vitamin c", "ascorbic acid" ],
-    "vitamin_d_calcitriol": [ "vitamin d calcitriol", "calcitriol", "vitamin d3", "vitamin_d", "kalsitriol" ],
-    "vitamin_e": [ "vitamin e", "tocopherol" ],
-    "vitamin_k1": [ "vitamin k1", "phytomenadione", "phylloquinone" ]
+    "amoksisilin": [
+      "amoksisilin",
+      "amoxicillin"
+    ],
+    "ampisilin": [
+      "ampisilin",
+      "ampicillin"
+    ],
+    "aspirin": [
+      "aspirin",
+      "acetylsalicylic_acid",
+      "asa"
+    ],
+    "azithromisin": [
+      "azithromisin",
+      "azithromycin"
+    ],
+    "bambuterol": [
+      "bambuterol",
+      "bambuterol_hydrochloride"
+    ],
+    "seftriakson": [
+      "seftriakson",
+      "ceftriaxone",
+      "cefriaxone",
+      "sefriakson",
+      "ceftriaxon",
+      "rocephin"
+    ],
+    "sefotaksim": [
+      "sefotaksim",
+      "cefotaxime"
+    ],
+    "klindamisin": [
+      "klindamisin",
+      "clindamycin",
+      "klindamycin"
+    ],
+    "kloramfenikol": [
+      "kloramfenikol",
+      "chloramphenicol"
+    ],
+    "kotrimoksasol": [
+      "kotrimoksasol",
+      "kotrimoxazole",
+      "cotrimoxazole"
+    ],
+    "metronidazol": [
+      "metronidazol",
+      "metronidazole"
+    ],
+    "gentamisin": [
+      "gentamisin",
+      "gentamicin"
+    ],
+    "isoniazid": [
+      "isoniazid",
+      "isoniazide"
+    ],
+    "rifampisin": [
+      "rifampisin",
+      "rifampicin",
+      "rifampin"
+    ],
+    "pirazinamid": [
+      "pirazinamid",
+      "pyrazinamide"
+    ],
+    "etambutol": [
+      "etambutol",
+      "ethambutol"
+    ],
+    "streptomisin": [
+      "streptomisin",
+      "streptomycin"
+    ],
+    "parasetamol": [
+      "parasetamol",
+      "paracetamol",
+      "acetaminophen"
+    ],
+    "zink": [
+      "zink",
+      "zinc",
+      "zinc_sulfate"
+    ],
+    "new_oralit": [
+      "new oralit",
+      "ors",
+      "oralit",
+      "oral_rehydration_solution",
+      "cairan_oralit",
+      "cairan_rehidrasi_oral",
+      "cro"
+    ],
+    "rehidrasi_oral_hipoosmolar": [
+      "rehidrasi oral hipoosmolar",
+      "larutan_rehidrasi_oral",
+      "rho",
+      "oralit_hipoosmolar",
+      "cairan_rehidrasi_oral_hipoosmolar"
+    ],
+    "ringer_laktat": [
+      "ringer laktat",
+      "rl",
+      "ringer_lactate",
+      "ringer_laktat"
+    ],
+    "ringer_asetat": [
+      "ringer asetat",
+      "ra",
+      "ringer_acetate",
+      "ringer_asetat"
+    ],
+    "nacl_0_9_persen": [
+      "nacl 0,9%",
+      "normal_saline",
+      "saline",
+      "nacl_0.9%",
+      "nacl_0,9"
+    ],
+    "oksigen": [
+      "oksigen",
+      "oxygen",
+      "o2"
+    ],
+    "kina_dihidroklorid": [
+      "kina dihidroklorid",
+      "hidroklorid kina",
+      "quinine dihydrochloride",
+      "quinine hcl",
+      "kinin",
+      "chinin"
+    ],
+    "adrenalin_1_1000": [
+      "adrenalin 1:1000",
+      "adrenalin"
+    ],
+    "albumin": [
+      "albumin",
+      "albumin 20-25%",
+      "human albumin"
+    ],
+    "allopurinol": [
+      "allopurinol"
+    ],
+    "aminofilin": [
+      "aminofilin",
+      "aminophylline"
+    ],
+    "amlodipin": [
+      "amlodipin",
+      "amlodipine"
+    ],
+    "antibiotik": [
+      "antibiotik",
+      "antibiotic",
+      "antibiotics"
+    ],
+    "antitoksin_tetanus": [
+      "antitoksin tetanus",
+      "tetanus antitoxin"
+    ],
+    "asam_folat": [
+      "asam folat",
+      "folic acid"
+    ],
+    "asam_traneksamat": [
+      "asam traneksamat",
+      "tranexamic acid"
+    ],
+    "asam_ursodeoksikolat": [
+      "asam ursodeoksikolat",
+      "ursodeoxycholic acid"
+    ],
+    "asam_valproat": [
+      "asam valproat",
+      "valproic acid",
+      "sodium valproate",
+      "valproat",
+      "depakote",
+      "asam valproik"
+    ],
+    "asetazolamid": [
+      "asetazolamid",
+      "acetazolamide"
+    ],
+    "asiklovir": [
+      "asiklovir",
+      "acyclovir"
+    ],
+    "besi_elemental": [
+      "besi elemental",
+      "elemental iron",
+      "zat besi",
+      "iron",
+      "besi",
+      "fe",
+      "suplemen_zat_besi"
+    ],
+    "beta_agonis": [
+      "beta_agonis",
+      "beta agonist",
+      "beta agonis"
+    ],
+    "bikarbonas_natrikus": [
+      "bikarbonas natrikus",
+      "sodium bicarbonate"
+    ],
+    "budesonide": [
+      "budesonide",
+      "budesonid"
+    ],
+    "cairan": [
+      "cairan",
+      "fluid",
+      "fluids"
+    ],
+    "cairan_oral": [
+      "cairan oral",
+      "oral fluid",
+      "oral rehydration"
+    ],
+    "cairan_resusitasi": [
+      "cairan resusitasi",
+      "resuscitation fluid"
+    ],
+    "cefuroxime": [
+      "cefuroxime",
+      "cefuroxim"
+    ],
+    "cisapride": [
+      "cisapride"
+    ],
+    "clindamycin": [
+      "clindamycin",
+      "klindamicin"
+    ],
+    "darah_segar": [
+      "darah segar",
+      "fresh blood",
+      "transfusi_darah_segar"
+    ],
+    "deferasirox": [
+      "deferasirox"
+    ],
+    "deferiprone": [
+      "deferiprone"
+    ],
+    "deksametason": [
+      "deksametason",
+      "dexamethasone"
+    ],
+    "dekstran": [
+      "dekstran",
+      "dextran"
+    ],
+    "dekstrosa_10_persen": [
+      "dekstrosa 10%",
+      "dextrose 10%",
+      "dekstrosa_10%"
+    ],
+    "desferioksamin": [
+      "desferioksamin",
+      "deferoxamine"
+    ],
+    "desloratadin": [
+      "desloratadin",
+      "desloratadine"
+    ],
+    "desmopresin": [
+      "desmopresin",
+      "desmopressin"
+    ],
+    "diazepam": [
+      "diazepam",
+      "valium"
+    ],
+    "diazepam_rektal": [
+      "diazepam rektal",
+      "rectal diazepam"
+    ],
+    "diazoksid": [
+      "diazoksid",
+      "diazoxide",
+      "diazoxid"
+    ],
+    "difenhidramin": [
+      "difenhidramin",
+      "diphenhydramine"
+    ],
+    "digoksin": [
+      "digoksin",
+      "digoxin"
+    ],
+    "diphenhydramin": [
+      "diphenhydramin",
+      "diphenhydramine"
+    ],
+    "dobutamin": [
+      "dobutamin",
+      "dobutamine"
+    ],
+    "dopamin": [
+      "dopamin",
+      "dopamine"
+    ],
+    "enema_fosfat_hipertonik": [
+      "enema fosfat hipertonik",
+      "hypertonic phosphate enema"
+    ],
+    "enema_garam_fisiologis": [
+      "enema garam fisiologis",
+      "normal saline enema"
+    ],
+    "enema_gliserin": [
+      "enema gliserin",
+      "glycerin enema",
+      "supositoria/enema gliserin"
+    ],
+    "energi": [
+      "energi",
+      "energy",
+      "caloric support"
+    ],
+    "epinephrine": [
+      "epinephrine",
+      "epinefrin"
+    ],
+    "eritromisin": [
+      "eritromisin",
+      "erythromycin"
+    ],
+    "fenilefrin": [
+      "fenilefrin",
+      "phenylephrine"
+    ],
+    "fenitoin": [
+      "fenitoin",
+      "phenytoin"
+    ],
+    "fenobarbital": [
+      "fenobarbital",
+      "phenobarbital"
+    ],
+    "fexofenadin": [
+      "fexofenadin",
+      "fexofenadine"
+    ],
+    "formula_asam_amino": [
+      "formula asam amino",
+      "amino acid formula"
+    ],
+    "formula_susu_terhidrolisat_ekstensif": [
+      "formula susu terhidrolisat ekstensif",
+      "extensively hydrolyzed formula",
+      "susu_terhidrolisis_ekstensif"
+    ],
+    "fosfat": [
+      "fosfat",
+      "phosphate",
+      "phosphorus"
+    ],
+    "fosfor_p": [
+      "fosfor (p)",
+      "phosphorus",
+      "phosphate"
+    ],
+    "fresh_frozen_plasma": [
+      "fresh frozen plasma",
+      "ffp"
+    ],
+    "furosemid": [
+      "furosemid",
+      "furosemide"
+    ],
+    "glukagon": [
+      "glukagon",
+      "glucagon"
+    ],
+    "glukagon_infus_kontinu": [
+      "glukagon infus kontinu",
+      "continuous glucagon infusion"
+    ],
+    "glukosa": [
+      "glukosa",
+      "glucose"
+    ],
+    "flutikason": [
+      "flutikason",
+      "fluticasone"
+    ],
+    "hidrokortison": [
+      "hidrokortison",
+      "hydrocortisone"
+    ],
+    "hidroksisin": [
+      "hidroksisin",
+      "hydroxyzine"
+    ],
+    "human_tetanus_immunoglobulin": [
+      "human tetanus immunoglobulin",
+      "htig"
+    ],
+    "hydralazine": [
+      "hydralazine",
+      "hidralazin"
+    ],
+    "hydroxizine": [
+      "hydroxizine",
+      "hidroksisin"
+    ],
+    "ibuprofen": [
+      "ibuprofen"
+    ],
+    "indometasin": [
+      "indometasin",
+      "indomethacin"
+    ],
+    "infus_asiklovir": [
+      "infus asiklovir",
+      "acyclovir infusion"
+    ],
+    "insulin": [
+      "insulin"
+    ],
+    "kalium": [
+      "kalium",
+      "potassium"
+    ],
+    "kalori": [
+      "kalori",
+      "calorie",
+      "caloric"
+    ],
+    "kalsium": [
+      "kalsium",
+      "calcium"
+    ],
+    "kalsium_glukonas_10_persen": [
+      "kalsium glukonas 10%",
+      "calcium gluconate 10%"
+    ],
+    "kalsium_karbonat": [
+      "kalsium karbonat",
+      "calcium carbonate"
+    ],
+    "kaptopril": [
+      "kaptopril",
+      "captopril"
+    ],
+    "kcl": [
+      "kcl",
+      "potassium chloride",
+      "kalium klorida",
+      "kcl oral",
+      "klor"
+    ],
+    "ketamin": [
+      "ketamin",
+      "ketamine"
+    ],
+    "klaritromisin": [
+      "klaritromisin",
+      "clarithromycin"
+    ],
+    "klonidin": [
+      "klonidin",
+      "clonidine"
+    ],
+    "klorfeniramin_maleat": [
+      "klorfeniramin maleat",
+      "chlorpheniramine maleate",
+      "chlorpheniramin_maleat"
+    ],
+    "klorokuin_sulfat": [
+      "klorokuin sulfat",
+      "chloroquine sulfate",
+      "klorokuin"
+    ],
+    "kolestiramin": [
+      "kolestiramin",
+      "cholestyramine"
+    ],
+    "kuinin_sulfat": [
+      "kuinin sulfat",
+      "quinine sulfate",
+      "kinin sulfat",
+      "kuinin",
+      "quinine",
+      "kina",
+      "dihidroksokuinin"
+    ],
+    "l_tiroksin": [
+      "l-tiroksin",
+      "levothyroxine",
+      "levotiroksin"
+    ],
+    "labetalol": [
+      "labetalol"
+    ],
+    "laktulosa": [
+      "laktulosa",
+      "lactulose"
+    ],
+    "latihan_aerobik": [
+      "latihan aerobik",
+      "aerobic exercise"
+    ],
+    "loratadin": [
+      "loratadin",
+      "loratadine"
+    ],
+    "magnesium_hidroksida": [
+      "magnesium hidroksida",
+      "magnesium hydroxide"
+    ],
+    "mangan": [
+      "mangan",
+      "manganese"
+    ],
+    "manitol": [
+      "manitol",
+      "mannitol"
+    ],
+    "metil_prednisolon": [
+      "metil-prednisolon",
+      "methylprednisolone",
+      "metilprednisolon"
+    ],
+    "midazolam": [
+      "midazolam"
+    ],
+    "mineral_oil": [
+      "mineral_oil",
+      "parafin_liquid",
+      "parafin_oil",
+      "minyak_mineral",
+      "liquid_paraffin"
+    ],
+    "montelukas": [
+      "montelukas",
+      "montelukast"
+    ],
+    "morfin_sulfat": [
+      "morfin sulfat",
+      "morphine sulfate",
+      "morfin"
+    ],
+    "natrium_bikarbonat": [
+      "natrium bikarbonat",
+      "sodium bicarbonate"
+    ],
+    "nifedipin": [
+      "nifedipin",
+      "nifedipine"
+    ],
+    "nitrofurantoin": [
+      "nitrofurantoin",
+      "nitrofurantoine"
+    ],
+    "norepinephrine": [
+      "norepinephrine",
+      "noradrenalin"
+    ],
+    "oat": [
+      "oat"
+    ],
+    "oksibutinin": [
+      "oksibutinin",
+      "oxybutynin"
+    ],
+    "pemberian_minum": [
+      "pemberian minum",
+      "fluid administration"
+    ],
+    "peningkatan_minum": [
+      "peningkatan minum",
+      "increased fluid intake"
+    ],
+    "penisilin_g": [
+      "penisilin g",
+      "penicillin g",
+      "benzyl penicillin"
+    ],
+    "penisilin_procain": [
+      "penisilin procain",
+      "penicillin procaine"
+    ],
+    "pirimetamin": [
+      "pirimetamin",
+      "pyrimethamine"
+    ],
+    "pirimetamin_sulfadoksin": [
+      "pirimetamin sulfadoksin",
+      "pyrimethamine sulfadoxine"
+    ],
+    "polietilen_glikol": [
+      "polietilen glikol",
+      "polyethylene glycol"
+    ],
+    "prednison": [
+      "prednison",
+      "prednisone"
+    ],
+    "primakuin_fosfat": [
+      "primakuin fosfat",
+      "primaquine phosphate",
+      "primakuin",
+      "primaquin_fosfat"
+    ],
+    "propranolol": [
+      "propanolol",
+      "propranolol"
+    ],
+    "prokaterol": [
+      "prokaterol",
+      "procaterol"
+    ],
+    "protein": [
+      "protein"
+    ],
+    "ranitidine": [
+      "ranitidine"
+    ],
+    "rehidrasi": [
+      "rehidrasi",
+      "rehydration",
+      "cairan_rehidrasi"
+    ],
+    "salbutamol": [
+      "salbutamol",
+      "albuterol"
+    ],
+    "salmeterol": [
+      "salmeterol"
+    ],
+    "sefaleksin": [
+      "sefaleksin",
+      "cephalexin"
+    ],
+    "sefazolin": [
+      "sefazolin",
+      "cefazolin"
+    ],
+    "sefiksim": [
+      "sefiksim",
+      "cefixime"
+    ],
+    "selenium": [
+      "selenium"
+    ],
+    "setirizin": [
+      "setirizin",
+      "cetirizine",
+      "cetirizin"
+    ],
+    "siklofosfamid": [
+      "siklofosfamid",
+      "cyclophosphamide"
+    ],
+    "simetidin": [
+      "simetidin",
+      "cimetidine"
+    ],
+    "sorbitol": [
+      "sorbitol"
+    ],
+    "spironolakton": [
+      "spironolakton",
+      "spironolactone"
+    ],
+    "steroid": [
+      "steroid",
+      "steroids",
+      "kortikosteroid"
+    ],
+    "steroid_oral": [
+      "steroid oral",
+      "oral steroid"
+    ],
+    "sulfametoksazole": [
+      "sulfametoksazole",
+      "sulfamethoxazole"
+    ],
+    "sulfisoksazole": [
+      "sulfisoksazole",
+      "sulfisoxazole"
+    ],
+    "surfaktan": [
+      "surfaktan",
+      "surfactant",
+      "surfaktan_eksogen"
+    ],
+    "survanta": [
+      "survanta",
+      "beractant"
+    ],
+    "teofilin_lepas_lambat": [
+      "teofilin lepas lambat",
+      "slow release theophylline"
+    ],
+    "terbutalin": [
+      "terbutalin",
+      "terbutaline"
+    ],
+    "tetanus_toksoid": [
+      "tetanus toksoid",
+      "tetanus toxoid"
+    ],
+    "tetrasiklin": [
+      "tetrasiklin",
+      "tetracycline"
+    ],
+    "trimetoprim": [
+      "trimetoprim",
+      "trimethoprim"
+    ],
+    "vidarabin": [
+      "vidarabin",
+      "vidarabine"
+    ],
+    "vitamin_a": [
+      "vitamin a",
+      "retinol",
+      "retinyl"
+    ],
+    "vitamin_c": [
+      "vitamin c",
+      "ascorbic acid"
+    ],
+    "vitamin_d_calcitriol": [
+      "vitamin d calcitriol",
+      "calcitriol",
+      "vitamin d3",
+      "vitamin_d",
+      "kalsitriol"
+    ],
+    "vitamin_e": [
+      "vitamin e",
+      "tocopherol"
+    ],
+    "vitamin_k1": [
+      "vitamin k1",
+      "phytomenadione",
+      "phylloquinone",
+      "vitamin_k"
+    ],
+    "zafirlukas": [
+      "zafirlukas",
+      "zafirlukast"
+    ],
+    "ipratropium": [
+      "ipratropium",
+      "ipratropium_bromida",
+      "ipratropium_bromide"
+    ],
+    "antikonvulsan": [
+      "antikonvulsan",
+      "anticonvulsant"
+    ],
+    "cairan_kristaloid": [
+      "cairan_kristaloid",
+      "crystalloid_fluid",
+      "kristaloid"
+    ],
+    "cairan_koloid": [
+      "cairan_koloid",
+      "colloid_fluid",
+      "koloid"
+    ],
+    "dekstrosa_5_persen": [
+      "dekstrosa 5%",
+      "dextrose 5%",
+      "dekstrosa_5%"
+    ],
+    "ASI": [
+      "ASI",
+      "breast_milk",
+      "air_susu_ibu"
+    ],
+    "susu_formula": [
+      "susu_formula",
+      "infant_formula",
+      "formula_susu"
+    ],
+    "transfusi_prc": [
+      "transfusi_prc",
+      "packed_red_cell",
+      "prc",
+      "transfusi_packed_red_cell"
+    ],
+    "imipramine": [
+      "imipramine",
+      "imipramin"
+    ],
+    "dihydroartemisinin": [
+      "dihydroartemisinin",
+      "dihidroartemisinin"
+    ],
+    "piperaquine": [
+      "piperaquine",
+      "piperakuin"
+    ],
+    "artemether": [
+      "artemether"
+    ],
+    "lumefantrine": [
+      "lumefantrine",
+      "lumefantrin"
+    ],
+    "artesunat": [
+      "artesunat",
+      "artesunate"
+    ],
+    "susu_kedelai": [
+      "susu_kedelai",
+      "soy_milk"
+    ],
+    "susu_sapi": [
+      "susu_sapi",
+      "cow_milk"
+    ],
+    "cairan_rumatan": [
+      "cairan_rumatan",
+      "maintenance_fluid"
+    ]
   },
-
   "unit": {
-    "kali/hari": [ "kali/hari", "kali sehari", "kali per hari", "x sehari", "x per hari", "x/hari", "per hari", "times/day", "times per day", "daily" ],
-    "hari": [ "hari", "day", "days" ],
-    "jam": [ "jam", "hour", "hours", "hr", "hrs", "setiap 6 jam", "setiap 8 jam", "setiap 12 jam" ],
-    "minggu": [ "minggu", "week", "weeks" ],
-    "bulan": [ "bulan", "month", "months" ],
-    "tahun": [ "tahun", "year", "years" ],
-    "menit": [ "menit", "minute", "minutes", "min" ],
-    "kali": [ "kali", "times", "x", "pemberian", "administration", "kali pemberian" ],
-    "tablet": [ "tablet", "tab" ],
-    "mg": [ "mg", "milligram", "milligrams" ],
-    "g": [ "g", "gram", "grams" ],
-    "IU": [ "iu", "unit internasional", "international unit","unit" ],
-    "SI": [ "si" ],
-    "mL": [ "ml", "milliliter", "millilitre", "ml/diare_cair", "ml/usia", "ml per diare cair", "ml berdasarkan usia", "mlperdiarecair", "mlberdasarkanusia" ],
-    "L": [ "l", "liter", "litre" ],
-    "mg/kgbb": [ "mg/kg", "mg/kg bb", "mg per kg", "mg per kgbb", "mg/kgbb", "mg per kilogram" ],
-    "mgbasa/kgbb": ["mgbasa/kgbb","mg_basa/kgbb", "mg basa/kgbb", "mg_basa/kg", "mg base/kgbb", "mg basa/kgBB", "mg base/kg", "mg_basa/kgbb/dosis", "mg basa/kgbb/dosis", "mgbasa/kgbb/dosis"],
-    "mg/kgbb/kali": [ "mg/kg/kali", "mg/kg bb/kali", "mg/kg/dosis", "mg/kgbb/dosis", "mg/kg/dose", "mg/kgbb/dose", "mg/kgbb/", "mg/kgbb/kali", "mg per kg per dose", "mg per kg per kali", "mg/kg/d", "mg/kg/administration" ],
-    "mg/kgbb/hari": [ "mg/kg/hari", "mg/kg bb/hari", "mg/kg per hari", "mg/kg/day", "mg per kg per hari", "mg/kgbb/hari" ],
-    "mggaram/kgbb/kali": [ "mg garam/kgbb/dose", "mg garam/kg/dose", "mg garam/kg/kali", "mg garam/kgbb/kali", "mg garam/kgbb/dosis" ],
-    "mg/m2/hari": [ "mg/m2/hari", "mg/m2/day", "mg per m2 per hari" ],
-    "mg/m2": [ "mg/m2", "mg per m2" ],
-    "mL/kgbb": [ "ml/kg", "ml/kg bb", "ml/kgbb", "ml/kgBB", "secara bolus" ],
-    "mL/kgbb/kali": [ "ml/kg/kali", "ml/kg bb/kali", "ml/kgbb/kali", "ml/kg/dose", "ml/kgBB/dosis", "ml per kg per dose", "setiap diare cair" ],
-    "mL/kgbb/hari": [ "ml/kg/hari", "ml/kg bb/hari", "ml/kgbb/hari", "ml/kg/day", "ml per kg per hari" ],
-    "mL/kgbb/jam": [ "ml/kg/jam", "ml/kg bb/jam", "ml/kgbb/jam", "ml/kg/hour", "ml per kg per jam" ],
-    "mcg/kgbb/hari": [ "mcg/kgbb/hari", "mcg/kg/hari", "µg/kgbb/hari", "mcg/kgbb/day" ],
-    "mcg/kgbb/kali": [ "mcg/kgbb/kali", "mcg/kg/kali", "µg/kgbb/kali", "mcg/kgbb/dose" ],
-    "mcg/kgbb/menit": [ "mcg/kgbb/menit", "mcg/kg/menit", "µg/kg/menit", "mcg/kg/min", "µg/kgbb/menit" ],
-    "mcg/kgbb/jam": [ "mcg/kg/jam", "mcg/kgbb/jam", "µg/kg/jam", "mcg per kg per jam", "microgram/kg/jam" ],
-    "mcg": [ "mcg", "µg", "microgram" ],
-    "IU/kgbb/kali": [ "iu/kgbb/kali", "unit/kg/kali", "iu/kg/dose", "iu per kg per dose", "iu/kgbb/dose", "ui/kgbb/kali" ],
-    "IU/kali": [ "iu/kali", "iu/dose", "iu per dose", "ui/kali", "unit" ],
-    "mg/hari": [ "mg/day", "mg per hari", "mg/hari" ],
-    "mg/kali": [ "mg/dose", "mg per dose", "mg/kali" ],
-    "g/kali": [ "gram/kali", "g/dose", "gram per dose", "g/kali", "gram kali", "rule sudah dihapus"],
-    "g/kgbb/kali": [ "g/kg/kali", "g/kgbb/kali", "gram/kg/kali", "gram/kgbb/kali" ],
-    "mL/hari": [ "ml/day", "ml/hari" ],
-    "mL/jam": [ "ml/hour", "ml/jam" ],
-    "L/hari": [ "liter/hari", "liter/day", "l/day", "l/hari", "lt/hari" ],
-    "kkal/kgbb/hari": [ "kkal/kgbb/hr", "kcal/kg/day", "kkal/kg/hari", "kkal/kgbb/hari" ],
-    "g/kgbb/hari": [ "g/kg/hari", "g/kg/day", "gram/kg/day", "g/kgbb/hari" ],
-    "mEq/kgbb/hari": [ "meq/kgbb/hari", "meq/kg/hari" ],
-    "mEq/m2/hari": [ "meq/m2/hari", "meq/m2/24 jam" ],
-    "mmol/kgbb/hari": [ "mmol/kg/hari", "mmol/kgbb/hari" ],
-    "L/jam": [ "l/jam", "liter/jam", "liter per jam" ],
-    "L/menit": [ "l/menit", "liter/menit", "liter per menit" ],
-    "mL/tahun": [ "ml/tahun", "ml per tahun", "ml/tahun umur" ],
-    "g/hari": [ "g/day", "g per hari", "g/hari", "gram/hari" ],
-    "IU/hari": [ "iu/hari", "iu/day", "iu per hari" ],
-    "IU/kgbb/hari": [ "iu/kgbb/hari", "iu/kg/hari", "iu per kg per hari" ],
-    "U": [ "u", "unit insulin" ],
-    "U/kg/hari": [ "u/kg/hari", "unit/kg/hari" ],
-    "U/kgbb/jam": [ "u/kgbb/jam", "unit/kg/jam" ],
-    "mcg/hari": [ "mcg/day", "mcg per hari", "mcg/hari", "microgram/hari" ],
-    "mg/kgbb/jam": [ "mg/kg/jam", "mg/kgbb/jam", "mg per kg per jam" ],
-    "mg/kgbb/menit": [ "mg/kg/menit", "mg/kgbb/menit", "mg per kg per menit" ],
-    "mEq/500mL": [ "meq/500ml", "meq/500 ml" ],
-    "kali/minggu": [ "kali/minggu", "times per week", "kali per minggu" ],
-    "g/kgbb": [ "g/kg", "g/kg bb", "g/kgbb", "gram/kg", "gram per kg" ],
-    "kali/total": [ "kali/total", "times total", "total times", "kali total" ],
-    "nacl_0_9_persen": [ "nacl 0,9%", "nacl 0.9%", "normal saline", "ns", "saline 0,9%", "nacl 0,9 persen", "cairan nacl" ]
+    "kali/hari": [
+      "kali/hari",
+      "kali sehari",
+      "kali per hari",
+      "x sehari",
+      "x per hari",
+      "x/hari",
+      "per hari",
+      "times/day",
+      "times per day",
+      "daily",
+      "kali/24jam"
+    ],
+    "hari": [
+      "hari",
+      "day",
+      "days"
+    ],
+    "jam": [
+      "jam",
+      "hour",
+      "hours",
+      "hr",
+      "hrs",
+      "setiap 6 jam",
+      "setiap 8 jam",
+      "setiap 12 jam"
+    ],
+    "minggu": [
+      "minggu",
+      "week",
+      "weeks"
+    ],
+    "bulan": [
+      "bulan",
+      "month",
+      "months"
+    ],
+    "tahun": [
+      "tahun",
+      "year",
+      "years"
+    ],
+    "menit": [
+      "menit",
+      "minute",
+      "minutes",
+      "min"
+    ],
+    "kali": [
+      "kali",
+      "times",
+      "x",
+      "pemberian",
+      "administration",
+      "kali pemberian"
+    ],
+    "tablet": [
+      "tablet",
+      "tab"
+    ],
+    "mg": [
+      "mg",
+      "milligram",
+      "milligrams"
+    ],
+    "g": [
+      "g",
+      "gram",
+      "grams"
+    ],
+    "IU": [
+      "iu",
+      "unit internasional",
+      "international unit",
+      "unit"
+    ],
+    "SI": [
+      "si"
+    ],
+    "mL": [
+      "ml",
+      "milliliter",
+      "millilitre",
+      "ml/diare_cair",
+      "ml/usia",
+      "ml per diare cair",
+      "ml berdasarkan usia",
+      "mlperdiarecair",
+      "mlberdasarkanusia"
+    ],
+    "L": [
+      "l",
+      "liter",
+      "litre"
+    ],
+    "mg/kgbb": [
+      "mg/kg",
+      "mg/kg bb",
+      "mg per kg",
+      "mg per kgbb",
+      "mg/kgbb",
+      "mg per kilogram"
+    ],
+    "mgbasa/kgbb": [
+      "mgbasa/kgbb",
+      "mg_basa/kgbb",
+      "mg basa/kgbb",
+      "mg_basa/kg",
+      "mg base/kgbb",
+      "mg basa/kgBB",
+      "mg base/kg",
+      "mg_basa/kgbb/dosis",
+      "mg basa/kgbb/dosis",
+      "mgbasa/kgbb/dosis"
+    ],
+    "mg/kgbb/kali": [
+      "mg/kg/kali",
+      "mg/kg bb/kali",
+      "mg/kg/dosis",
+      "mg/kgbb/dosis",
+      "mg/kg/dose",
+      "mg/kgbb/dose",
+      "mg/kgbb/",
+      "mg/kgbb/kali",
+      "mg per kg per dose",
+      "mg per kg per kali",
+      "mg/kg/d",
+      "mg/kg/administration"
+    ],
+    "mg/kgbb/hari": [
+      "mg/kg/hari",
+      "mg/kg bb/hari",
+      "mg/kg per hari",
+      "mg/kg/day",
+      "mg per kg per hari",
+      "mg/kgbb/hari"
+    ],
+    "mggaram/kgbb/kali": [
+      "mg garam/kgbb/dose",
+      "mg garam/kg/dose",
+      "mg garam/kg/kali",
+      "mg garam/kgbb/kali",
+      "mg garam/kgbb/dosis"
+    ],
+    "mg/m2/hari": [
+      "mg/m2/hari",
+      "mg/m2/day",
+      "mg per m2 per hari"
+    ],
+    "mg/m2": [
+      "mg/m2",
+      "mg per m2"
+    ],
+    "mL/kgbb": [
+      "ml/kg",
+      "ml/kg bb",
+      "ml/kgbb",
+      "ml/kgBB",
+      "secara bolus"
+    ],"cc/kgbb": [
+      "cc/kg",
+      "cc/kg bb",
+      "cc/kgbb",
+      "cc/kgBB"
+    ],
+    "mL/kgbb/kali": [
+      "ml/kg/kali",
+      "ml/kg bb/kali",
+      "ml/kgbb/kali",
+      "ml/kg/dose",
+      "ml/kgBB/dosis",
+      "ml per kg per dose",
+      "setiap diare cair"
+    ],
+    "mL/kgbb/hari": [
+      "ml/kg/hari",
+      "ml/kg bb/hari",
+      "ml/kgbb/hari",
+      "ml/kg/day",
+      "ml per kg per hari"
+    ],
+    "mL/kgbb/jam": [
+      "ml/kg/jam",
+      "ml/kg bb/jam",
+      "ml/kgbb/jam",
+      "ml/kg/hour",
+      "ml per kg per jam"
+    ],
+    "mcg/kgbb/hari": [
+      "mcg/kgbb/hari",
+      "mcg/kg/hari",
+      "µg/kgbb/hari",
+      "mcg/kgbb/day"
+    ],
+    "mcg/kgbb/kali": [
+      "mcg/kgbb/kali",
+      "mcg/kg/kali",
+      "µg/kgbb/kali",
+      "mcg/kgbb/dose"
+    ],
+    "mcg/kgbb/menit": [
+      "mcg/kgbb/menit",
+      "mcg/kg/menit",
+      "µg/kg/menit",
+      "mcg/kg/min",
+      "µg/kgbb/menit"
+    ],
+    "mcg/kgbb/jam": [
+      "mcg/kg/jam",
+      "mcg/kgbb/jam",
+      "µg/kg/jam",
+      "mcg per kg per jam",
+      "microgram/kg/jam"
+    ],
+    "mcg": [
+      "mcg",
+      "µg",
+      "microgram"
+    ],
+    "IU/kgbb/kali": [
+      "iu/kgbb/kali",
+      "unit/kg/kali",
+      "iu/kg/dose",
+      "iu per kg per dose",
+      "iu/kgbb/dose",
+      "ui/kgbb/kali"
+    ],
+    "IU/kali": [
+      "iu/kali",
+      "iu/dose",
+      "iu per dose",
+      "ui/kali",
+      "unit"
+    ],
+    "mg/hari": [
+      "mg/day",
+      "mg per hari",
+      "mg/hari"
+    ],
+    "mg/kali": [
+      "mg/dose",
+      "mg per dose",
+      "mg/kali"
+    ],
+    "g/kali": [
+      "gram/kali",
+      "g/dose",
+      "gram per dose",
+      "g/kali",
+      "gram kali",
+      "rule sudah dihapus"
+    ],
+    "g/kgbb/kali": [
+      "g/kg/kali",
+      "g/kgbb/kali",
+      "gram/kg/kali",
+      "gram/kgbb/kali"
+    ],
+    "mL/hari": [
+      "ml/day",
+      "ml/hari"
+    ],
+    "mL/jam": [
+      "ml/hour",
+      "ml/jam"
+    ],
+    "L/hari": [
+      "liter/hari",
+      "liter/day",
+      "l/day",
+      "l/hari",
+      "lt/hari"
+    ],
+    "kkal/kgbb/hari": [
+      "kkal/kgbb/hr",
+      "kcal/kg/day",
+      "kkal/kg/hari",
+      "kkal/kgbb/hari"
+    ],
+    "g/kgbb/hari": [
+      "g/kg/hari",
+      "g/kg/day",
+      "gram/kg/day",
+      "g/kgbb/hari"
+    ],
+    "mEq/kgbb/hari": [
+      "meq/kgbb/hari",
+      "meq/kg/hari"
+    ],
+    "mEq/m2/hari": [
+      "meq/m2/hari",
+      "meq/m2/24 jam"
+    ],
+    "mmol/kgbb/hari": [
+      "mmol/kg/hari",
+      "mmol/kgbb/hari"
+    ],
+    "L/jam": [
+      "l/jam",
+      "liter/jam",
+      "liter per jam"
+    ],
+    "L/menit": [
+      "l/menit",
+      "liter/menit",
+      "liter per menit"
+    ],
+    "mL/tahun": [
+      "ml/tahun",
+      "ml per tahun",
+      "ml/tahun umur"
+    ],
+    "g/hari": [
+      "g/day",
+      "g per hari",
+      "g/hari",
+      "gram/hari"
+    ],
+    "IU/hari": [
+      "iu/hari",
+      "iu/day",
+      "iu per hari"
+    ],
+    "IU/kgbb/hari": [
+      "iu/kgbb/hari",
+      "iu/kg/hari",
+      "iu per kg per hari"
+    ],
+    "U": [
+      "u",
+      "unit insulin"
+    ],
+    "U/kg/hari": [
+      "u/kg/hari",
+      "unit/kg/hari"
+    ],
+    "U/kgbb/jam": [
+      "u/kgbb/jam",
+      "unit/kg/jam"
+    ],
+    "mcg/hari": [
+      "mcg/day",
+      "mcg per hari",
+      "mcg/hari",
+      "microgram/hari"
+    ],
+    "mg/kgbb/jam": [
+      "mg/kg/jam",
+      "mg/kgbb/jam",
+      "mg per kg per jam"
+    ],
+    "mg/kgbb/menit": [
+      "mg/kg/menit",
+      "mg/kgbb/menit",
+      "mg per kg per menit"
+    ],
+    "mEq/500mL": [
+      "meq/500ml",
+      "meq/500 ml"
+    ],
+    "kali/minggu": [
+      "kali/minggu",
+      "times per week",
+      "kali per minggu"
+    ],
+    "g/kgbb": [
+      "g/kg",
+      "g/kg bb",
+      "g/kgbb",
+      "gram/kg",
+      "gram per kg"
+    ],
+    "kali/total": [
+      "kali/total",
+      "times total",
+      "total times",
+      "kali total"
+    ],
+    "nacl_0_9_persen": [
+      "nacl 0,9%",
+      "nacl 0.9%",
+      "normal saline",
+      "ns",
+      "saline 0,9%",
+      "nacl 0,9 persen",
+      "cairan nacl"
+    ]
   }
 }
