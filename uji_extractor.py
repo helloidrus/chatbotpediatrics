@@ -11,16 +11,9 @@ rules_path = Path("data") / "rules" / "rule_pediatrics.json"
 rules = load_rules(str(rules_path))
 
 rag_text = """
-
-"Obat malaria anak Anda harus diminum selama 14 hari karena beberapa alasan:
-
-Pertama, malaria adalah penyakit yang kompleks dan memerlukan waktu yang lama untuk diobati. Selain itu, parasit malaria dapat bersembunyi di dalam tubuh dan memerlukan waktu yang lama untuk dihancurkan oleh obat.
-
-Kedua, obat malaria yang digunakan, seperti klorokuin dan kina, memerlukan waktu yang lama untuk mencapai konsentrasi yang efektif di dalam tubuh. Jika obat hanya diminum selama beberapa hari, maka konsentrasinya mungkin tidak cukup untuk menghancurkan parasit malaria secara efektif.
-
-Ketiga, malaria dapat menyebabkan komplikasi yang serius, seperti malaria serebral, anemia berat, dan gagal ginjal. Oleh karena itu, obat malaria harus diminum selama 14 hari untuk memastikan bahwa parasit malaria dihancurkan secara efektif dan komplikasi dapat dicegah.
-
-Jadi, untuk memastikan bahwa anak Anda sembuh dari malaria secara efektif, obat harus diminum selama 14 hari."
+"Untuk bayi di bawah 1 tahun yang mengalami diare akut berat, protokol pemberian ringer laktat adalah sebagai berikut:
+- Umur kurang dari 12 bulan: 30 mL/kgBB dalam 1 jam pertama, dilanjutkan 70 mL/kgBB dalam 5 jam berikutnya.
+Dosis dan durasi ini harus dipantau secara berkala untuk mengevaluasi status hidrasi pasien."
 
 
 """

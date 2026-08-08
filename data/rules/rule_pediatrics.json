@@ -1223,7 +1223,6 @@
       "rule_id": "infeksi_virus_dengue_dose_7",
       "condition": {
         "disease": "infeksi_virus_dengue",
-        "severity": "tersangka",
         "complication": "rawat_jalan"
       },
       "claim": {
@@ -1244,7 +1243,6 @@
       "rule_id": "infeksi_virus_dengue_dose_8",
       "condition": {
         "disease": "infeksi_virus_dengue",
-        "severity": "tersangka",
         "complication": "rawat_inap"
       },
       "claim": {
@@ -4483,7 +4481,7 @@
         "medicine": "loratadin",
         "value_min": 5,
         "value_max": 5,
-        "unit": "mg"
+        "unit": "mg/hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -8871,7 +8869,7 @@
         "medicine": "desmopresin",
         "value_min": 0.3,
         "value_max": 0.3,
-        "unit": "mcg/kgbb/hari"
+        "unit": "mcg/kgbb"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -9399,8 +9397,7 @@
     {
       "rule_id": "ketoasidosis_diabetik_dose_2",
       "condition": {
-        "disease": "ketoasidosis_diabetik",
-        "phase": "initial"
+        "disease": "ketoasidosis_diabetik"
       },
       "claim": {
         "claim_type": "dose",
@@ -9419,8 +9416,7 @@
     {
       "rule_id": "ketoasidosis_diabetik_frequency_1",
       "condition": {
-        "disease": "ketoasidosis_diabetik",
-        "phase": "maintenance"
+        "disease": "ketoasidosis_diabetik"
       },
       "claim": {
         "claim_type": "frequency",
@@ -10994,7 +10990,7 @@
       "rule_id": "kejang_akut_dose_fenitoin",
       "condition": {
         "disease": "kejang_akut",
-        "phase": "initial"
+        "severity": "severe"
       },
       "claim": {
         "claim_type": "dose",
@@ -11274,7 +11270,7 @@
         "medicine": "klonidin",
         "value_min": 0.002,
         "value_max": 0.002,
-        "unit": "mg/kgbb/kali"
+        "unit": "mg/kgbb/8jam"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",

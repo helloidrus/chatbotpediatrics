@@ -148,7 +148,8 @@
       "defisiensi_kompleks_protrombin",
       "prothrombin_complex_deficiency",
       "vkdb",
-      "perdarahan_akibat_defisiensi_vitamin_k"
+      "perdarahan_akibat_defisiensi_vitamin_k",
+      "defisiensi_kompleks_protrombin_didapat"
     ],
     "diabetes_melitus_tipe_1": [
       "diabetes_melitus_tipe_1",
@@ -173,7 +174,8 @@
       "pda",
       "penutupan_duktus_artersiosus_paten",
       "penutupan_duktus_artiosus_paten",
-      "duktus_artersiosus_paten"
+      "duktus_artersiosus_paten",
+      "duktus_arteriosus_paten"
     ],
     "ensefalitis": [
       "ensefalitis",
@@ -184,7 +186,8 @@
     "ensefalitis_herpes_simpleks": [
       "ensefalitis_herpes_simpleks",
       "herpes_simplex_encephalitis",
-      "hse"
+      "hse",
+      "kecurigaan_ensefalitis_herpes_simpleks"
     ],
     "enuresis": [
       "enuresis",
@@ -197,14 +200,16 @@
       "gagal_jantung",
       "heart_failure",
       "hf",
-      "gagal_jantung_anak"
+      "gagal_jantung_anak",
+      "gagal_jantung_kongestif_akibat_kelainan_jantung_bawaan"
     ],
     "gnaps": [
       "gnaps",
       "glomerulonefritis_akut_pasca_streptokokus",
       "post_streptococcal_acute_glomerulonephritis",
       "psagn",
-      "acute_nephritic_syndrome"
+      "acute_nephritic_syndrome",
+      "infeksi_streptokokus"
     ],
     "hemofilia": [
       "hemofilia",
@@ -333,7 +338,8 @@
       "anafilaksis",
       "anaphylaxis",
       "urtikaria",
-      "angiodema"
+      "angiodema",
+      "reaksi_alergi"
     ],
     "alergi_obat": [
       "alergi_obat",
@@ -364,27 +370,10 @@
       "syok_kardiogenik",
       "cardiogenic_shock"
     ],
-    "serangan_sianotik": [
-      "serangan_sianotik",
-      "serangan_sianotik_akut",
-      "serangan_sianotik_akibat_kelainan_jantung_bawaan",
-      "cyanotic_spell",
-      "tet_spell"
-    ],
-    "hipertensi_emergensi": [
-      "hipertensi_emergensi",
-      "hypertensive_emergency"
-    ],
     "perdarahan_intrakranial": [
       "perdarahan_intrakranial",
       "intracranial_hemorrhage",
       "ich"
-    ],
-    "malaria_campuran": [
-      "malaria_campuran",
-      "mixed_malaria",
-      "infeksi_malaria_campuran",
-      "infeksi_majemuk"
     ],
     "malaria_berat": [
       "malaria_berat",
@@ -398,10 +387,6 @@
     "hematuria": [
       "hematuria",
       "blood_in_urine"
-    ],
-    "reaksi_alergi": [
-      "reaksi_alergi",
-      "allergic_reaction"
     ],
     "gangguan_napas": [
       "gangguan_napas",
@@ -420,20 +405,6 @@
     "apneu_persisten": [
       "apneu_persisten",
       "persistent_apnea"
-    ],
-    "leukemia": [
-      "leukemia",
-      "leukemia_akut"
-    ],
-    "keganasan": [
-      "keganasan",
-      "malignancy",
-      "kanker"
-    ],
-    "tumor_lysis_syndrome": [
-      "tumor_lysis_syndrome",
-      "sindrom_tumor_lisis",
-      "tls"
     ]
   },
   "phase": {
@@ -971,8 +942,7 @@
       "diazoxid"
     ],
     "difenhidramin": [
-      "difenhidramin",
-      "diphenhydramine"
+      "difenhidramin"
     ],
     "digoksin": [
       "digoksin",
@@ -1053,7 +1023,8 @@
     ],
     "fresh_frozen_plasma": [
       "fresh frozen plasma",
-      "ffp"
+      "ffp",
+      "transfusi_fresh_frozen_plasma"
     ],
     "furosemid": [
       "furosemid",
@@ -1469,19 +1440,9 @@
       "infant_formula",
       "formula_susu"
     ],
-    "transfusi_prc": [
-      "transfusi_prc",
-      "packed_red_cell",
-      "prc",
-      "transfusi_packed_red_cell"
-    ],
     "imipramine": [
       "imipramine",
       "imipramin"
-    ],
-    "dihydroartemisinin": [
-      "dihydroartemisinin",
-      "dihidroartemisinin"
     ],
     "piperaquine": [
       "piperaquine",
@@ -1493,10 +1454,6 @@
     "lumefantrine": [
       "lumefantrine",
       "lumefantrin"
-    ],
-    "artesunat": [
-      "artesunat",
-      "artesunate"
     ],
     "susu_kedelai": [
       "susu_kedelai",
@@ -1732,6 +1689,12 @@
       "µg",
       "microgram"
     ],
+    "mcg/kgbb": [
+      "mcg/kgbb",
+      "µg/kgbb",
+      "µg/kg",
+      "microgram/kgbb"
+    ],
     "IU/kgbb/kali": [
       "iu/kgbb/kali",
       "unit/kg/kali",
@@ -1863,6 +1826,12 @@
       "mg/kg/jam",
       "mg/kgbb/jam",
       "mg per kg per jam"
+    ],
+    "mg/kgbb/8jam": [
+      "mg/kg/8jam",
+      "mg/kgbb/8jam",
+      "mg/kgbb/8 jam",
+      "mg per kg per 8 jam"
     ],
     "mg/kgbb/menit": [
       "mg/kg/menit",
