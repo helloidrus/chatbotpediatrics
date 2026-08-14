@@ -104,7 +104,7 @@ class Generator:
         - Unit wajib diisi bila ada nilai numerik.
         - contraindication → prohibited: true.
         - phase wajib diisi bila ada fase pemberian obat (initial, maintenance, continuation, acute, intensive, rehabilitation, pertama, berikutnya)
-        - weight: adalah berat badan dalam satuan kg, age: adalah usia usia dalam bulan.
+        - weight: adalah berat badan dalam satuan kg, age: adalah usia dalam bulan.
 
         ENUM (gunakan tepat seperti tertulis):
         - severity: ringan | ringan_sedang | sedang | berat | besar | resisten_cairan | tersangka | refrakter

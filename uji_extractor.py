@@ -11,9 +11,8 @@ rules_path = Path("data") / "rules" / "rule_pediatrics.json"
 rules = load_rules(str(rules_path))
 
 rag_text = """
-"Untuk bayi di bawah 1 tahun yang mengalami diare akut berat, protokol pemberian ringer laktat adalah sebagai berikut:
-- Umur kurang dari 12 bulan: 30 mL/kgBB dalam 1 jam pertama, dilanjutkan 70 mL/kgBB dalam 5 jam berikutnya.
-Dosis dan durasi ini harus dipantau secara berkala untuk mengevaluasi status hidrasi pasien."
+
+Dosis surfaktan eksogen yang diberikan pada neonatus dengan Respiratory Distress Syndrome (RDS) adalah 4 mL/kgBB intratrakea, terbagi dalam beberapa kali pemberian, biasanya 4 kali (masing-masing ¼ dosis total atau 1 ml/kg).
 
 
 """
