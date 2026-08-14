@@ -245,6 +245,31 @@ def _parse_condition(raw: Any) -> dict | None:
 
     return result
 
+# tambahan kode
+_TIME_UNIT_WORDS = re.compile(r"\bjam\b|\bmenit\b|\bhari\b|\bminggu\b|\bbulan\b|\btahun\b", re.IGNORECASE)
+_COUNT_UNIT_WORDS = re.compile(r"kali/hari|kali/minggu|x/hari|kali$|/hari$", re.IGNORECASE)
+
+
+def _sanitize_claim_type(claim_type: str | None, unit: str | None) -> tuple[str | None, str | None]:
+    """Perbaiki label claim_type yang tidak sinkron dengan unit-nya.
+    Mengembalikan (claim_type_baru, alasan_dibuang_jika_ada)."""
+    if unit is None:
+        return claim_type, None
+
+    u = unit.strip()
+
+    if claim_type == "frequency" and _TIME_UNIT_WORDS.search(u) and not _COUNT_UNIT_WORDS.search(u):
+        return "interval", None
+
+    if claim_type == "interval" and not _TIME_UNIT_WORDS.search(u):
+        return None, f"interval dengan unit non-waktu ('{u}')"
+
+    if claim_type == "dose" and u == "%":
+        return None, "'%' adalah konsentrasi formulasi, bukan dosis"
+
+    return claim_type, None
+# end of tambahan kode
+
 
 def _parse_claim(raw: Any, condition: dict) -> dict | None:
     if not isinstance(raw, dict):
@@ -265,6 +290,15 @@ def _parse_claim(raw: Any, condition: dict) -> dict | None:
     if value_min == 0 and value_max == 0:
         return None
 
+    unit_normalized = _normalize_unit(raw.get("unit"))
+
+    # === TAMBAHAN: sanitasi claim_type vs unit ===
+    claim_type, drop_reason = _sanitize_claim_type(claim_type, unit_normalized)
+    if claim_type is None:
+        logger.info("Klaim dibuang saat sanitasi: %s (medicine=%s)", drop_reason, medicine)
+        return None
+    # === akhir tambahan ===
+
     raw_prohibited = raw.get("prohibited")
     if isinstance(raw_prohibited, bool):
         prohibited = raw_prohibited
@@ -279,7 +313,7 @@ def _parse_claim(raw: Any, condition: dict) -> dict | None:
         "medicine": medicine,
         "value_min": value_min,
         "value_max": value_max,
-        "unit": _normalize_unit(raw.get("unit")),
+        "unit": unit_normalized,
         "prohibited": prohibited,
     })
 

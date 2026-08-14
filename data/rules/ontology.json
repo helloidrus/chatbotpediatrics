@@ -1599,6 +1599,12 @@
       "mg/kg/d",
       "mg/kg/administration"
     ],
+    "mg_basa/kgbb/hari": [
+      "mgbasa/kgbb/hari",
+      "mg_basa/kgbb/hari",
+      "mg basa/kgbb/hari",
+      "mg_basa/kg/hari"
+    ],
     "mg/kgbb/hari": [
       "mg/kg/hari",
       "mg/kg bb/hari",
@@ -1670,7 +1676,7 @@
       "µg/kgbb/kali",
       "mcg/kgbb/dose"
     ],
-    "mcg/kgbb/menit": [
+    "μg/kg/menit": [
       "mcg/kgbb/menit",
       "mcg/kg/menit",
       "µg/kg/menit",
@@ -1844,6 +1850,7 @@
     ],
     "kali/minggu": [
       "kali/minggu",
+      "kali/seminggu",
       "times per week",
       "kali per minggu"
     ],

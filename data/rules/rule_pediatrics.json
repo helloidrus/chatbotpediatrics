@@ -115,15 +115,15 @@
       "claim": {
         "claim_type": "dose",
         "medicine": "rehidrasi_oral_hipoosmolar",
-        "value_min": 5,
-        "value_max": 10,
-        "unit": "mL/kgbb/kali"
+        "value_min": 75,
+        "value_max": 75,
+        "unit": "mL/kgbb"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
         "section": "Diare Akut",
         "page": 59,
-        "text": "dan sebanyak 5-10 mL/ kgBB setiap diare cair."
+        "text": "Cairan rehidrasi oral (CRO) hipoosmolar diberikan sebanyak 75 mL/kgBB dalam 3 jam"
       }
     },
     {
@@ -2276,7 +2276,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "diazepam",
+        "medicine": "diazepam_oral",
         "value_min": 0.3,
         "value_max": 0.3,
         "unit": "mg/kgbb"
@@ -2295,7 +2295,7 @@
       },
       "claim": {
         "claim_type": "interval",
-        "medicine": "diazepam",
+        "medicine": "diazepam_oral",
         "value_min": 8,
         "value_max": 8,
         "unit": "jam"
@@ -2314,7 +2314,7 @@
       },
       "claim": {
         "claim_type": "dose",
-        "medicine": "diazepam_rektal",
+        "medicine": "diazepam",
         "value_min": 0.5,
         "value_max": 0.5,
         "unit": "mg/kgbb"
@@ -2333,7 +2333,7 @@
       },
       "claim": {
         "claim_type": "interval",
-        "medicine": "diazepam_rektal",
+        "medicine": "diazepam",
         "value_min": 8,
         "value_max": 8,
         "unit": "jam"
@@ -3563,7 +3563,7 @@
         "medicine": "vitamin_a",
         "value_min": 1500,
         "value_max": 1500,
-        "unit": "IU"
+        "unit": "IU/hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -4541,7 +4541,7 @@
         "medicine": "desloratadin",
         "value_min": 1,
         "value_max": 1,
-        "unit": "mg"
+        "unit": "mg/hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -5954,7 +5954,7 @@
         "medicine": "primakuin_fosfat",
         "value_min": 0.5,
         "value_max": 0.75,
-        "unit": "mgbasa/kgbb"
+        "unit": "mg_basa/kgbb/hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -6011,7 +6011,7 @@
         "medicine": "primakuin_fosfat",
         "value_min": 0.25,
         "value_max": 0.25,
-        "unit": "mg/kgbb"
+        "unit": "mg_basa/kgbb/hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -6369,7 +6369,7 @@
         "medicine": "prednison",
         "value_min": 1,
         "value_max": 1,
-        "unit": "kali"
+        "unit": "kali/hari"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -6465,7 +6465,7 @@
         "medicine": "albumin",
         "value_min": 1,
         "value_max": 1,
-        "unit": "g/kgbb/hari"
+        "unit": "g/kgbb"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -6674,7 +6674,7 @@
         "medicine": "dopamin",
         "value_min": 5,
         "value_max": 10,
-        "unit": "mcg/kgbb/menit"
+        "unit": "μg/kg/menit"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -7107,7 +7107,7 @@
         "medicine": "vitamin_e",
         "value_min": 200,
         "value_max": 200,
-        "unit": "IU"
+        "unit": "IU/kali"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
@@ -11050,7 +11050,7 @@
       "rule_id": "gnaps_dose_furosemid_krisis",
       "condition": {
         "disease": "gnaps",
-        "complication": "krisis_hipertensi"
+        "severity": "berat"
       },
       "claim": {
         "claim_type": "dose",
@@ -11070,7 +11070,7 @@
       "rule_id": "gnaps_frequency_furosemid_krisis",
       "condition": {
         "disease": "gnaps",
-        "complication": "krisis_hipertensi"
+        "severity": "berat"
       },
       "claim": {
         "claim_type": "frequency",
@@ -11427,7 +11427,7 @@
         "medicine": "dobutamin",
         "value_min": 5,
         "value_max": 20,
-        "unit": "mcg/kgbb/menit"
+        "unit": "μg/kg/menit"
       },
       "metadata": {
         "source": "Buku PPM IDAI Jilid I",
