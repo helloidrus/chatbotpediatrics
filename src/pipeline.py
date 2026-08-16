@@ -91,7 +91,7 @@ class Pipeline:
         self._debug_print("Decision application time:", time.time() - start)
 
         # Debug output
-        self._debug_print("\n=== CLAIM EXTRACTION RAW ===\n", claim_extraction)
+        self._debug_print("\n=== CLAIM EXTRACTION RAW ===\n", json.dumps(claim_extraction, indent=2, ensure_ascii=False))
         self._debug_print("\n=== EXTRACTED CLAIM ===\n", json.dumps(claim_doc, indent=2, ensure_ascii=False))
         self._debug_print("\n=== VIOLATIONS ===\n", json.dumps(violations, indent=2, ensure_ascii=False))
         self._debug_print("\n=== DECISION ===\n", json.dumps(decision, indent=2, ensure_ascii=False))

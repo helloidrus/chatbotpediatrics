@@ -12,9 +12,7 @@ rules = load_rules(str(rules_path))
 
 rag_text = """
 
-Dosis surfaktan eksogen yang diberikan pada neonatus dengan Respiratory Distress Syndrome (RDS) adalah 4 mL/kgBB intratrakea, terbagi dalam beberapa kali pemberian, biasanya 4 kali (masing-masing ¼ dosis total atau 1 ml/kg).
-
-
+Untuk anak di atas 1 tahun dengan diare akut berat, rehidrasi intravena menggunakan Ringer laktat diberikan dengan total 100 mL/kg berat badan. Pertama, 30 mL/kg diberikan dalam 30 menit, lalu 70 mL/kg diberikan dalam 2,5 jam berikutnya, sehingga seluruh volume diserap dalam sekitar 3 jam. Skema ini sesuai pedoman rehidrasi untuk dehidrasi berat pada anak.
 """
 
 claim_extraction = pipeline.generator.generate_claim_extraction(rag_text)

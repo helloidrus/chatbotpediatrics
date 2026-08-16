@@ -8,6 +8,8 @@ from openai import OpenAI
 load_dotenv()
 
 groq_api_key = os.getenv("GROQ_API_KEY","").strip()
+#groq_api_key = "***REMOVED***".strip() # api key helloidrus
+#groq_api_key = "***REMOVED***".strip() # api key soppengta
 if not groq_api_key:
     raise RuntimeError("GROQ_API_KEY environment variable is not set.")
 
@@ -18,7 +20,7 @@ client = OpenAI(
 
 
 class Generator:
-    def __init__(self, model_name="llama-3.1-8b-instant"): # "llama-3.1-8b-instant" | "llama-3.3-70b-versatile" | "qwen/qwen3-32b"
+    def __init__(self, model_name="openai/gpt-oss-20b"): # "llama-3.1-8b-instant" | "openai/gpt-oss-20b"
         self.model_name = model_name
         self._few_shot_examples = None
 
@@ -66,6 +68,7 @@ class Generator:
         Jawab pertanyaan dengan singkat, jelas, dan sesuai dengan pedoman klinis pediatri.
         Gunakan hanya informasi yang relevan dengan pertanyaan.
         Hindari penggunaan daftar poin jika memungkinkan, kecuali untuk dosis yang sangat spesifik.
+        Jika context menyebutkan kondisi/penyakit dan kriteria populasi (misalnya usia atau berat badan) yang relevan dengan pertanyaan, sebutkan kondisi dan kriteria tersebut secara eksplisit di kalimat jawaban.
         
         Context:
         {context}
@@ -96,7 +99,7 @@ class Generator:
         3. Jika tidak ada parameter terapi, kembalikan {"entries": []}.
 
         ATURAN KLAIM:
-        - Setiap kombinasi kondisi (penyakit/populasi/berat badan/usia) yang unik harus menjadi satu objek terpisah dalam array.
+        - Setiap kombinasi kondisi (disease/weight_kg/age_month/phase/severity/complication) yang unik harus menjadi satu objek terpisah dalam array.
         - Setiap kombinasi kondisi-obat yang unik = satu entry.
         - Pisahkan dosis, frekuensi, durasi, dan interval sebagai klaim terpisah.
         - "10 mg/kg 3 kali sehari" → dose: 10 mg/kgbb/kali + frequency: 3 kali/hari (JANGAN dikalikan).
