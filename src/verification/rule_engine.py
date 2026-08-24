@@ -270,6 +270,12 @@ def _verify_numeric(claim: dict, matched_rules: list[dict]) -> dict:
         rule for rule in matched_rules
         if _numeric_unit_comparable(claim, _rule_range(rule)[2], claim_unit)
     ]
+    if comparable_rules:
+        highest_specificity = _condition_specificity(comparable_rules[0])
+        comparable_rules = [
+            rule for rule in comparable_rules
+            if _condition_specificity(rule) == highest_specificity
+        ]
 
     for rule in comparable_rules:
         rule_min, rule_max, rule_unit = _rule_range(rule)

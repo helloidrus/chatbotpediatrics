@@ -8,8 +8,7 @@ from openai import OpenAI
 load_dotenv()
 
 groq_api_key = os.getenv("GROQ_API_KEY","").strip()
-#groq_api_key = "***REMOVED***".strip() # api key helloidrus
-#groq_api_key = "***REMOVED***".strip() # api key soppengta
+
 if not groq_api_key:
     raise RuntimeError("GROQ_API_KEY environment variable is not set.")
 
@@ -20,7 +19,7 @@ client = OpenAI(
 
 
 class Generator:
-    def __init__(self, model_name="openai/gpt-oss-20b"): # "llama-3.1-8b-instant" | "openai/gpt-oss-20b"
+    def __init__(self, model_name="openai/gpt-oss-20b"): # "llama-3.1-8b-instant" | "openai/gpt-oss-20b" | "openai/gpt-oss-120b"
         self.model_name = model_name
         self._few_shot_examples = None
 

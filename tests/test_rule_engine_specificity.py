@@ -56,6 +56,57 @@ class RuleEngineSpecificityTest(unittest.TestCase):
         self.assertEqual(result["status"], "compliant")
         self.assertEqual(result["rule_id"], "tuberkulosis_duration_222")
 
+    def test_specific_rule_violation_does_not_fall_back_to_generic_rule(self) -> None:
+        claim = {
+            "claim_type": "duration",
+            "medicine": "isoniazid",
+            "value_min": 6,
+            "value_max": 6,
+            "unit": "bulan",
+            "condition": {
+                "disease": "tuberkulosis",
+                "phase": "continuation",
+                "severity": "berat",
+            },
+        }
+
+        rules = [
+            {
+                "rule_id": "tuberkulosis_duration_11",
+                "condition": {
+                    "disease": "tuberkulosis",
+                    "phase": "continuation",
+                },
+                "claim": {
+                    "claim_type": "duration",
+                    "medicine": "isoniazid",
+                    "value_min": 4,
+                    "value_max": 6,
+                    "unit": "bulan",
+                },
+            },
+            {
+                "rule_id": "tuberkulosis_duration_2222",
+                "condition": {
+                    "disease": "tuberkulosis",
+                    "phase": "continuation",
+                    "severity": "berat",
+                },
+                "claim": {
+                    "claim_type": "duration",
+                    "medicine": "isoniazid",
+                    "value_min": 7,
+                    "value_max": 10,
+                    "unit": "bulan",
+                },
+            },
+        ]
+
+        result = verify_claims([claim], rules)[0]
+
+        self.assertEqual(result["status"], "violation")
+        self.assertEqual(result["rule_id"], "tuberkulosis_duration_2222")
+
     def test_normalizes_unit_with_age_suffix_to_ontology_canonical(self) -> None:
         llm_output = (
             '{"entries": [{"condition": {"disease": "konstipasi", "age_month_min": 0, '
