@@ -10,3 +10,4 @@ __pycache__/
 index/
 data/processed/
 data/raw/
+.api_key.py
