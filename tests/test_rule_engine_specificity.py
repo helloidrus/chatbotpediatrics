@@ -142,6 +142,37 @@ class RuleEngineSpecificityTest(unittest.TestCase):
 
         self.assertEqual(claims, [])
 
+    def test_preserves_care_setting_and_blocks_different_setting_rule(self) -> None:
+        llm_output = (
+            '{"entries":[{"condition":{"disease":"kejang_akut","phase":"pertama",'
+            '"care_setting":"hospital"},"claim":[{"claim_type":"dose",'
+            '"medicine":"diazepam","value_min":0.25,"value_max":0.5,'
+            '"unit":"mg/kg"}]}]}'
+        )
+        rules = [
+            {
+                "rule_id": "kejang_akut_prehospital_dose_1",
+                "condition": {
+                    "disease": "kejang_akut",
+                    "care_setting": "prehospital",
+                },
+                "claim": {
+                    "claim_type": "dose",
+                    "medicine": "diazepam",
+                    "value_min": 0.3,
+                    "value_max": 0.5,
+                    "unit": "mg/kgbb",
+                },
+            }
+        ]
+
+        claims = extract_claims(llm_output)
+        result = verify_claims(claims, rules)[0]
+
+        self.assertEqual(claims[0]["condition"]["phase"], "initial")
+        self.assertEqual(claims[0]["condition"]["care_setting"], "hospital")
+        self.assertEqual(result["status"], "uncovered")
+
 
 if __name__ == "__main__":
     unittest.main()

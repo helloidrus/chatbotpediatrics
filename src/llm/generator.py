@@ -44,7 +44,7 @@ class Generator:
         self._few_shot_examples = examples
         return self._few_shot_examples
 
-    def _chat(self, system_prompt, user_prompt, temperature=0.2, max_tokens=2048):
+    def _chat(self, system_prompt, user_prompt, temperature=0.2, max_tokens=4096):
         response = client.chat.completions.create(
             model=self.model_name,
             messages=[
@@ -98,7 +98,7 @@ class Generator:
         3. Jika tidak ada parameter terapi, kembalikan {"entries": []}.
 
         ATURAN KLAIM:
-        - Setiap kombinasi kondisi (disease/weight_kg/age_month/phase/severity/complication) yang unik harus menjadi satu objek terpisah dalam array.
+        - Setiap kombinasi kondisi (disease/weight_kg/age_month/phase/severity/complication/care_setting) yang unik harus menjadi satu objek terpisah dalam array.
         - Setiap kombinasi kondisi-obat yang unik = satu entry.
         - Pisahkan dosis, frekuensi, durasi, dan interval sebagai klaim terpisah.
         - "10 mg/kg 3 kali sehari" → dose: 10 mg/kgbb/kali + frequency: 3 kali/hari (JANGAN dikalikan).
@@ -111,9 +111,10 @@ class Generator:
         ENUM (gunakan tepat seperti tertulis):
         - severity: ringan | ringan_sedang | sedang | berat | besar | resisten_cairan | tersangka | refrakter
         - complication: malnutrisi | ensefalopati | bronkopneumonia | meningitis | gangguan_fungsi_jantung | hamil_trimester_akhir | hipernatremia | refraktori | krisis_hipertensi | rawat_inap | rawat_jalan | perdarahan_saluran_kemih | efusi_perikardium | diabetes_mellitus
+        - care_setting: hospital | prehospital
 
         SKEMA:
-        {"entries": [{"condition": {"disease": str, "age_month_min": float, "age_month_max": float, "weight_kg_min": float, "weight_kg_max": float, "phase": str, "severity": str, "complication": str}, "claim": [{"claim_type": str, "medicine": str, "value_min": float, "value_max": float, "unit": str, "prohibited": true}]}]}
+        {"entries": [{"condition": {"disease": string, "age_month_min": 0, "age_month_max": 0, "weight_kg_min": 0, "weight_kg_max": 0, "phase": string, "severity": string, "complication": string, "care_setting": string}, "claim": [{"claim_type": string, "medicine": string, "value_min": 0, "value_max": 0, "unit": string, "prohibited": false}]}]}
         
         """ + examples_str
 

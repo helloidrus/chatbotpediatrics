@@ -11,7 +11,8 @@ rules_path = Path("data") / "rules" / "rule_pediatrics.json"
 rules = load_rules(str(rules_path))
 
 rag_text = """
-Dosis adrenalin 1:1000 untuk anak dengan angioedema berat atau anafilaksis adalah 0,01 mg/kg (setara 0,01 mL/kg dari larutan 1 mg/mL).
+
+Untuk bayi dengan PDA, asupan cairan biasanya dibatasi sekitar **140–160 ml per kg berat badan per hari** pada usia 0–6 bulan. Jumlah akhir harus disesuaikan dengan berat badan, usia, dan toleransi klinis, dan dikonfirmasi oleh dokter anak atau ahli jantung anak.
 
 
 """

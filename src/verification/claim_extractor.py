@@ -177,6 +177,7 @@ PHASE_ALIASES      = _build_alias_map(ONTOLOGY.get("phase", {}))
 SEVERITY_ALIASES   = _build_alias_map(ONTOLOGY.get("severity", {}))
 PARAMETER_ALIASES  = _build_alias_map(ONTOLOGY.get("medicine", {}))
 COMPLICATION_ALIASES = _build_alias_map(ONTOLOGY.get("complication", {}))
+CARE_SETTING_ALIASES = _build_alias_map(ONTOLOGY.get("care_setting", {}))
 DISEASE_ALIASES    = _build_alias_map(ONTOLOGY.get("disease", {}))
 UNIT_ALIASES       = _build_alias_map(ONTOLOGY.get("unit", {}))
 
@@ -186,6 +187,7 @@ VALID_PHASE    = set(ONTOLOGY.get("phase", {}))
 VALID_SEVERITY = set(ONTOLOGY.get("severity", {}))
 VALID_DISEASE = set(ONTOLOGY.get("disease", {}))
 VALID_COMPLICATION = set(ONTOLOGY.get("complication", {}))
+VALID_CARE_SETTING = set(ONTOLOGY.get("care_setting", {}))
 VALID_MEDICINE = set(ONTOLOGY.get("medicine", {}))
 
 
@@ -227,6 +229,7 @@ def _parse_condition(raw: Any) -> dict | None:
         "phase": _alias(raw, "phase", PHASE_ALIASES, VALID_PHASE),
         "severity": _alias(raw, "severity", SEVERITY_ALIASES, VALID_SEVERITY),
         "complication": _alias(raw, "complication", COMPLICATION_ALIASES, VALID_COMPLICATION),
+        "care_setting": _alias(raw, "care_setting", CARE_SETTING_ALIASES, VALID_CARE_SETTING),
         "category": _canonical_text(raw.get("category")),
     }
     if disease is None and raw_disease:

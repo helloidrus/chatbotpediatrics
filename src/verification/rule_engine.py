@@ -134,7 +134,7 @@ def _condition_matches(rule: dict, claim: dict, *, strict_contraindication: bool
     # Cek field kategorikal.
     # Jika rule tidak menentukan field (None), maka dianggap cocok dengan nilai apapun di klaim (wildcard).
     # Namun jika rule menentukan nilai, maka klaim wajib memiliki nilai yang sama (setelah normalisasi).
-    for field in ("disease", "phase", "severity", "complication", "category"):
+    for field in ("disease", "phase", "severity", "complication", "care_setting", "category"):
         rule_value = rule_condition.get(field)
         if rule_value is not None and not _same_norm(rule_value, claim_condition.get(field)):
             return False
@@ -166,7 +166,7 @@ def _signature_matches(rule: dict, claim: dict, *, ignore_claim_type: bool = Fal
 def _condition_specificity(rule: dict) -> int:
     condition = rule.get("condition") or {}
     score = 0
-    for field in ("disease", "phase", "severity", "complication", "category"):
+    for field in ("disease", "phase", "severity", "complication", "care_setting", "category"):
         if condition.get(field) is not None:
             score += 1
     for field in ("age_month_min", "age_month_max", "weight_kg_min", "weight_kg_max"):
