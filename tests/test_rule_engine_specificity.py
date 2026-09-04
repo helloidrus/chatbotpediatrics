@@ -119,7 +119,7 @@ class RuleEngineSpecificityTest(unittest.TestCase):
         self.assertEqual(len(claims), 1)
         self.assertEqual(claims[0]["unit"], "mL/tahun")
 
-    def test_preserves_explicit_false_for_contraindication(self) -> None:
+    def test_drops_contraindication_claim_type_after_scope_cleanup(self) -> None:
         llm_output = (
             '{"entries": [{"condition": {"disease": "pneumonia"}, '
             '"claim": [{"claim_type": "contraindication", "medicine": "ampisilin", '
@@ -128,13 +128,12 @@ class RuleEngineSpecificityTest(unittest.TestCase):
 
         claims = extract_claims(llm_output)
 
-        self.assertEqual(len(claims), 1)
-        self.assertFalse(claims[0]["prohibited"])
+        self.assertEqual(claims, [])
 
     def test_drops_claims_with_zero_only_value_range(self) -> None:
         llm_output = (
             '{"entries": [{"condition": {"disease": "pneumonia"}, '
-            '"claim": [{"claim_type": "contraindication", "medicine": "ampisilin", '
+            '"claim": [{"claim_type": "dose", "medicine": "ampisilin", '
             '"value_min": 0, "value_max": 0}]}]}'
         )
 

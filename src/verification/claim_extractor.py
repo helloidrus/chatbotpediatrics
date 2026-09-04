@@ -229,8 +229,7 @@ def _parse_condition(raw: Any) -> dict | None:
         "phase": _alias(raw, "phase", PHASE_ALIASES, VALID_PHASE),
         "severity": _alias(raw, "severity", SEVERITY_ALIASES, VALID_SEVERITY),
         "complication": _alias(raw, "complication", COMPLICATION_ALIASES, VALID_COMPLICATION),
-        "care_setting": _alias(raw, "care_setting", CARE_SETTING_ALIASES, VALID_CARE_SETTING),
-        "category": _canonical_text(raw.get("category")),
+        "care_setting": _alias(raw, "care_setting", CARE_SETTING_ALIASES, VALID_CARE_SETTING)
     }
     if disease is None and raw_disease:
         result["disease_unresolved"] = str(raw_disease).strip()
@@ -302,14 +301,6 @@ def _parse_claim(raw: Any, condition: dict) -> dict | None:
         return None
     # === akhir tambahan ===
 
-    raw_prohibited = raw.get("prohibited")
-    if isinstance(raw_prohibited, bool):
-        prohibited = raw_prohibited
-    elif claim_type == "contraindication":
-        prohibited = True
-    else:
-        prohibited = None
-
     return _drop_none({
         "condition": condition,
         "claim_type": claim_type,
@@ -317,7 +308,6 @@ def _parse_claim(raw: Any, condition: dict) -> dict | None:
         "value_min": value_min,
         "value_max": value_max,
         "unit": unit_normalized,
-        "prohibited": prohibited,
     })
 
 

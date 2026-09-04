@@ -108,8 +108,6 @@ def _ranges_overlap(
     
     # Jika rule membatasi tapi klaim tidak menyertakan batasan
     # → kembalikan berdasarkan unknown_claim_matches_specific
-    # Untuk contraindication (safety): True (cocok aman-aman)
-    # Untuk numeric verification: False (tidak cocok, hindari false compliance)
     NARROW_AGE_RULE_THRESHOLD_MONTHS = 3
     if c_min is None and c_max is None:
         # Keep very narrow age rules from matching generic claim entries without age context.
@@ -125,16 +123,14 @@ def _ranges_overlap(
     )
 
 
-def _condition_matches(rule: dict, claim: dict, *, strict_contraindication: bool = False) -> bool:
+def _condition_matches(rule: dict, claim: dict) -> bool:
     rule_condition = rule.get("condition") or {}
     claim_condition = claim.get("condition") or {}
-    rule_claim = rule.get("claim") or {}
-    is_contraindication = strict_contraindication and rule_claim.get("prohibited") is True
 
     # Cek field kategorikal.
     # Jika rule tidak menentukan field (None), maka dianggap cocok dengan nilai apapun di klaim (wildcard).
     # Namun jika rule menentukan nilai, maka klaim wajib memiliki nilai yang sama (setelah normalisasi).
-    for field in ("disease", "phase", "severity", "complication", "care_setting", "category"):
+    for field in ("disease", "phase", "severity", "complication", "care_setting"):
         rule_value = rule_condition.get(field)
         if rule_value is not None and not _same_norm(rule_value, claim_condition.get(field)):
             return False
@@ -144,7 +140,6 @@ def _condition_matches(rule: dict, claim: dict, *, strict_contraindication: bool
         rule_condition.get("age_month_max"),
         claim_condition.get("age_month_min"),
         claim_condition.get("age_month_max"),
-        unknown_claim_matches_specific=is_contraindication,
     ) and _ranges_overlap(
         rule_condition.get("weight_kg_min"),
         rule_condition.get("weight_kg_max"),
@@ -166,7 +161,7 @@ def _signature_matches(rule: dict, claim: dict, *, ignore_claim_type: bool = Fal
 def _condition_specificity(rule: dict) -> int:
     condition = rule.get("condition") or {}
     score = 0
-    for field in ("disease", "phase", "severity", "complication", "care_setting", "category"):
+    for field in ("disease", "phase", "severity", "complication", "care_setting"):
         if condition.get(field) is not None:
             score += 1
     for field in ("age_month_min", "age_month_max", "weight_kg_min", "weight_kg_max"):
@@ -181,7 +176,6 @@ def _matching_rules(
     *,
     claim_type: str | None = None,
     ignore_claim_type: bool = False,
-    strict_contraindication: bool = False,
 ) -> list[dict]:
     matches = []
     for rule in rules:
@@ -189,7 +183,7 @@ def _matching_rules(
         if claim_type and _norm(rule_claim.get("claim_type")) != claim_type:
             continue
         if (
-            _condition_matches(rule, claim, strict_contraindication=strict_contraindication)
+            _condition_matches(rule, claim)
             and _signature_matches(rule, claim, ignore_claim_type=ignore_claim_type)
         ):
             matches.append(rule)
@@ -299,48 +293,11 @@ def _verify_numeric(claim: dict, matched_rules: list[dict]) -> dict:
     return result
 
 
-def _verify_contraindication(claim: dict, matched_rules: list[dict]) -> dict:
-    contra_rules = [
-        rule for rule in matched_rules
-        if (rule.get("claim") or {}).get("prohibited") is True
-    ]
-    if contra_rules:
-        result = _base_result("compliant", claim, contra_rules[0])
-        result["expected"] = "prohibited"
-        return result
-
-    result = _base_result("no_rule", claim)
-    result["note"] = "Tidak ada rule contraindication untuk klaim ini. Status contraindication tidak terkonfirmasi."
-    return result
-
-
 def verify_claims(claim_list: list[dict], rules: list[dict]) -> list[dict]:
     results: list[dict] = []
 
     for claim in claim_list:
-        contra_rules = [
-            rule for rule in _matching_rules(
-                claim,
-                rules,
-                claim_type="contraindication",
-                ignore_claim_type=True,
-                strict_contraindication=True,
-            )
-            if (rule.get("claim") or {}).get("prohibited") is True
-        ]
-        if contra_rules and claim.get("claim_type") != "contraindication":
-            result = _base_result("violation", claim, contra_rules[0])
-            result["expected"] = "prohibited"
-            result["claim_value"] = "recommended_or_mentioned"
-            result["note"] = "Klaim menyebut medicine yang dikontraindikasikan pada kondisi ini."
-            results.append(result)
-            continue
-
-        matched_rules = _matching_rules(
-            claim,
-            rules,
-            strict_contraindication=claim.get("claim_type") == "contraindication",
-        )
+        matched_rules = _matching_rules(claim, rules)
         if not matched_rules:
             result = _base_result("uncovered", claim)
             result["note"] = (
@@ -350,10 +307,7 @@ def verify_claims(claim_list: list[dict], rules: list[dict]) -> list[dict]:
             results.append(result)
             continue
 
-        if claim.get("claim_type") == "contraindication":
-            results.append(_verify_contraindication(claim, matched_rules))
-        else:
-            results.append(_verify_numeric(claim, matched_rules))
+        results.append(_verify_numeric(claim, matched_rules))
 
     violations = sum(1 for result in results if result["status"] == "violation")
     logger.info("Verifikasi selesai: %d klaim, %d pelanggaran.", len(results), violations)

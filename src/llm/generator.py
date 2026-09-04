@@ -104,7 +104,6 @@ class Generator:
         - "10 mg/kg 3 kali sehari" → dose: 10 mg/kgbb/kali + frequency: 3 kali/hari (JANGAN dikalikan).
         - Nilai tunggal: min = max. Nilai rentang: isi keduanya.
         - Unit wajib diisi bila ada nilai numerik.
-        - contraindication → prohibited: true.
         - phase wajib diisi bila ada fase pemberian obat (initial, maintenance, continuation, acute, intensive, rehabilitation, pertama, berikutnya)
         - weight: adalah berat badan dalam satuan kg, age: adalah usia dalam bulan.
 
@@ -114,7 +113,7 @@ class Generator:
         - care_setting: hospital | prehospital
 
         SKEMA:
-        {"entries": [{"condition": {"disease": string, "age_month_min": 0, "age_month_max": 0, "weight_kg_min": 0, "weight_kg_max": 0, "phase": string, "severity": string, "complication": string, "care_setting": string}, "claim": [{"claim_type": string, "medicine": string, "value_min": 0, "value_max": 0, "unit": string, "prohibited": false}]}]}
+        {"entries": [{"condition": {"disease": string, "age_month_min": 0, "age_month_max": 0, "weight_kg_min": 0, "weight_kg_max": 0, "phase": string, "severity": string, "complication": string, "care_setting": string}, "claim": [{"claim_type": string, "medicine": string, "value_min": 0, "value_max": 0, "unit": string }]}]}
         
         """ + examples_str
 
