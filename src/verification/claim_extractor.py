@@ -8,7 +8,7 @@ from typing import Any
 
 logger = logging.getLogger(__name__)
 
-ONTOLOGY_PATH = Path(__file__).resolve().parents[2] / "data" / "rules" / "ontology.json"
+ONTOLOGY_PATH = Path(__file__).resolve().parents[2] / "data" / "rules" / "ontology_nlm.json"
 
 
 def _canonical_text(value: Any) -> str | None:
@@ -332,7 +332,7 @@ def extract_claims(llm_json_output: str) -> list[dict]:
         raise RuntimeError(
             "ONTOLOGY tidak tersedia untuk normalisasi klaim! "
             "Ini terjadi saat module initialization. "
-            "Periksa logs untuk error saat loading ontology.json."
+            "Periksa logs untuk error saat loading ontology_nlm.json."
         )
 
     if not llm_json_output:

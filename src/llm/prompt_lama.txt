@@ -75,3 +75,34 @@
             }
         ]
         }
+
+
+
+prompt pada uji gpt oss 20b:
+"""
+        Ekstrak parameter terapi klinis dari teks pediatri ke JSON murni. Tanpa markdown.
+
+        PRINSIP:
+        1. Hanya ekstrak yang tersurat eksplisit. Jangan inferensi atau tambah informasi.
+        2. OMIT semua field yang tidak disebutkan di teks (usia, berat, fase, severity, dll).
+        3. Jika tidak ada parameter terapi, kembalikan {"entries": []}.
+
+        ATURAN KLAIM:
+        - Setiap kombinasi kondisi (disease/weight_kg/age_month/phase/severity/complication/care_setting) yang unik harus menjadi satu objek terpisah dalam array.
+        - Setiap kombinasi kondisi-obat yang unik = satu entry.
+        - Pisahkan dosis, frekuensi, durasi, dan interval sebagai klaim terpisah.
+        - "10 mg/kg 3 kali sehari" → dose: 10 mg/kgbb/kali + frequency: 3 kali/hari (JANGAN dikalikan).
+        - Nilai tunggal: min = max. Nilai rentang: isi keduanya.
+        - Unit wajib diisi bila ada nilai numerik.
+        - phase wajib diisi bila ada fase pemberian obat (initial, maintenance, continuation, acute, intensive, rehabilitation, pertama, berikutnya)
+        - weight: adalah berat badan dalam satuan kg, age: adalah usia dalam bulan.
+
+        ENUM (gunakan tepat seperti tertulis):
+        - severity: ringan | ringan_sedang | sedang | berat | besar | resisten_cairan | tersangka | refrakter
+        - complication: malnutrisi | ensefalopati | bronkopneumonia | meningitis | gangguan_fungsi_jantung | hamil_trimester_akhir | hipernatremia | refraktori | krisis_hipertensi | rawat_inap | rawat_jalan | perdarahan_saluran_kemih | efusi_perikardium | diabetes_mellitus
+        - care_setting: hospital | prehospital
+
+        SKEMA:
+        {"entries": [{"condition": {"disease": string, "age_month_min": 0, "age_month_max": 0, "weight_kg_min": 0, "weight_kg_max": 0, "phase": string, "severity": string, "complication": string, "care_setting": string}, "claim": [{"claim_type": string, "medicine": string, "value_min": 0, "value_max": 0, "unit": string }]}]}
+        
+        """ + examples_str

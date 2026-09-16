@@ -80,7 +80,7 @@ def load_rules(path: str) -> list[dict]:
         if rule_id in seen_ids:
             logger.error(
                 "Rule ID duplikat ditemukan: '%s'. "
-                "Rule kedua diabaikan — periksa rule_pediatrics.json!",
+                "Rule kedua diabaikan — periksa rule_pediatrics_nlm_bersih.json!",
                 rule_id
             )
             continue

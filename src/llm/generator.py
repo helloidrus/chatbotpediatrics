@@ -19,7 +19,7 @@ client = OpenAI(
 
 
 class Generator:
-    def __init__(self, model_name="openai/gpt-oss-20b"): # "llama-3.1-8b-instant" | "openai/gpt-oss-20b" | "openai/gpt-oss-120b"
+    def __init__(self, model_name="openai/gpt-oss-120b"): # "llama-3.1-8b-instant" | "openai/gpt-oss-20b" | "openai/gpt-oss-120b"
         self.model_name = model_name
         self._few_shot_examples = None
 
@@ -60,15 +60,15 @@ class Generator:
     # Metode utama untuk menghasilkan jawaban berdasarkan pertanyaan dan konteks
     def generate(self, query, context=""):
         system_prompt = """
-        Anda adalah asisten kesehatan anak berbasis pedoman klinis.
+        You are a clinical guideline-based pediatric medical assistant.
         """
 
         user_prompt = f"""
-        Jawab pertanyaan dengan singkat, jelas, dan sesuai dengan pedoman klinis pediatri.
-        Gunakan hanya informasi yang relevan dengan pertanyaan.
-        Hindari penggunaan daftar poin jika memungkinkan, kecuali untuk dosis yang sangat spesifik.
-        Jika context menyebutkan kondisi/penyakit dan kriteria populasi (misalnya usia atau berat badan) yang relevan dengan pertanyaan, sebutkan kondisi dan kriteria tersebut secara eksplisit di kalimat jawaban.
-        
+        Answer the question concisely, clearly, and in accordance with pediatric clinical guidelines.
+        Use only information that is directly relevant to the question.
+        Avoid using bulleted lists whenever possible, except for highly specific dosages.
+        If the context mentions conditions/diseases and population criteria (e.g., age or weight) that are relevant to the question, explicitly state those conditions and criteria in your response.
+
         Context:
         {context}
 
@@ -90,32 +90,57 @@ class Generator:
             examples_str += f"\nCONTOH {i}:\nTEXT: \"{ex['text']}\"\nJSON: {json.dumps(ex['json'], indent=2)}\n"
 
         system_prompt = """
-        Ekstrak parameter terapi klinis dari teks pediatri ke JSON murni. Tanpa markdown.
+        Role: Clinical rule extractor for pediatric medical text.
 
-        PRINSIP:
-        1. Hanya ekstrak yang tersurat eksplisit. Jangan inferensi atau tambah informasi.
-        2. OMIT semua field yang tidak disebutkan di teks (usia, berat, fase, severity, dll).
-        3. Jika tidak ada parameter terapi, kembalikan {"entries": []}.
+        Task: Extract explicit therapeutic parameters from the provided text into a pure, valid JSON output without markdown formatting. Do NOT add external knowledge or assumptions. If no therapeutic parameters exist, return {"entries": []}.
 
-        ATURAN KLAIM:
-        - Setiap kombinasi kondisi (disease/weight_kg/age_month/phase/severity/complication/care_setting) yang unik harus menjadi satu objek terpisah dalam array.
-        - Setiap kombinasi kondisi-obat yang unik = satu entry.
-        - Pisahkan dosis, frekuensi, durasi, dan interval sebagai klaim terpisah.
-        - "10 mg/kg 3 kali sehari" → dose: 10 mg/kgbb/kali + frequency: 3 kali/hari (JANGAN dikalikan).
-        - Nilai tunggal: min = max. Nilai rentang: isi keduanya.
-        - Unit wajib diisi bila ada nilai numerik.
-        - phase wajib diisi bila ada fase pemberian obat (initial, maintenance, continuation, acute, intensive, rehabilitation, pertama, berikutnya)
-        - weight: adalah berat badan dalam satuan kg, age: adalah usia dalam bulan.
+        Extraction Rules:
+        1. Extract ONLY information that is explicitly stated in the source text. Do not infer.
+        2. OMIT all fields that are not mentioned in the text (e.g., age, weight, phase, severity). Do not include fields with null values.
+        3. Each unique combination of condition (disease/weight/age/phase/severity/complication/care_setting) must become ONE separate object in the `entries` array.
+        4. Each unique condition-medicine combination equals one entry.
+        5. Separate dose, frequency, interval, and duration into distinct, INDIVIDUAL claim objects within the `claim` array. 
+        - Note: Do NOT multiply values (e.g., "10 mg/kg 3 kali sehari" must be split into -> dose: 10 mg/kgbb/kali AND frequency: 3 kali/hari).
+        6. Use numeric values (float/int) for bounds. If a single value is specified, set value_min = value_max. For a range, populate both.
+        7. Unit is mandatory if there is a numeric value.
+        8. Use lowercase and snake_case strings for disease, phase, severity, complication, care_setting, and medicine.
+        9. `weight_kg` represents weight in kilograms; `age_month` represents age in months.
+        10. `phase` is mandatory if a treatment phase is stated in the text.
 
-        ENUM (gunakan tepat seperti tertulis):
-        - severity: ringan | ringan_sedang | sedang | berat | besar | resisten_cairan | tersangka | refrakter
-        - complication: malnutrisi | ensefalopati | bronkopneumonia | meningitis | gangguan_fungsi_jantung | hamil_trimester_akhir | hipernatremia | refraktori | krisis_hipertensi | rawat_inap | rawat_jalan | perdarahan_saluran_kemih | efusi_perikardium | diabetes_mellitus
-        - care_setting: hospital | prehospital
+        Output Format (MUST BE PURE JSON, NO MARKDOWN):
+        {
+        "entries": [
+            {
+            "condition": {
+                "disease": "<string>",
+                "age_month_min": <float>,
+                "age_month_max": <float>,
+                "weight_kg_min": <float>,
+                "weight_kg_max": <float>,
+                "phase": "<MUST BE: initial|maintenance|continuation|stabilization|transition|rehabilitation|relaps_intensive|relaps_maintenance>",
+                "severity": "<MUST BE: ringan|sedang|ringan_sedang|berat|krisis>",
+                "complication": "<snake_case standard term, e.g., ensefalopati>",
+            },
+            "claim": [
+                {
+                "claim_type": "<MUST BE: dose|frequency|interval|duration>",
+                "medicine": "<string>",
+                "value_min": <float>,
+                "value_max": <float>,
+                "unit": "<string>"
+                }
+            ]
+            }
+        ]
+        }
 
-        SKEMA:
-        {"entries": [{"condition": {"disease": string, "age_month_min": 0, "age_month_max": 0, "weight_kg_min": 0, "weight_kg_max": 0, "phase": string, "severity": string, "complication": string, "care_setting": string}, "claim": [{"claim_type": string, "medicine": string, "value_min": 0, "value_max": 0, "unit": string }]}]}
-        
-        """ + examples_str
+        Examples:
+        """ + examples_str + """
+
+        Instruction:
+        Extract rules from the provided text below based on the schema and rules above.        
+
+        """
 
         user_prompt = f"TEXT:{answer_text}"
         
@@ -131,37 +156,32 @@ class Generator:
         for violation in violations:
             if "allowed_range" in violation:
                 fact = (
-                    f"{violation['rule_id']}: nilai yang benar berada pada "
+                    f"{violation['rule_id']}: the correct value is within "
                     f"{violation['allowed_range']}."
                 )
             elif "expected" in violation:
                 fact = (
-                    f"{violation['rule_id']}: nilai yang benar adalah "
+                    f"{violation['rule_id']}: the correct value is "
                     f"{violation['expected']}."
                 )
             else:
-                fact = f"{violation['rule_id']} dilanggar."
+                fact = f"{violation['rule_id']} was violated."
 
             guideline_facts.append(fact)
         guideline_facts_text = "\n".join(guideline_facts)
         user_prompt = f"""
-        Jawaban sebelumnya:
+        Previous answer:
         {original_answer}
 
-        Koreksi guideline:
+        Guideline corrections:
         {guideline_facts_text}
 
-        Tulis ulang jawaban final dalam bahasa Indonesia.
-
-        Aturan:
-        - Pertahankan singkatnya.
-        - Tanpa permintaan maaf, pembuka, penjelasan, atau proses verifikasi.
-        - Keluarkan hanya jawaban final.
+        Rewrite the final answer in Indonesian. Without explaining the verification process.
         """
         return self._chat(
             system_prompt=(
-                "Anda editor klinis pediatri."
-                "Perbaiki jawaban agar sesuai guideline dengan perubahan seminimal mungkin."
+                "You are a pediatric clinical editor."
+                "Correct the answer to comply with the guidelines using the minimal necessary changes."
             ),
             user_prompt=user_prompt,
             temperature=0,
