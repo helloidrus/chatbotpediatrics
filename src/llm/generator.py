@@ -65,7 +65,7 @@ class Generator:
 
         user_prompt = f"""
         Answer the question concisely, clearly, and in accordance with pediatric clinical guidelines.
-        Use only information that is directly relevant to the question.
+        Use only information that is directly relevant to the question and context.
         Avoid using bulleted lists whenever possible, except for highly specific dosages.
         If the context mentions conditions/diseases and population criteria (e.g., age or weight) that are relevant to the question, explicitly state those conditions and criteria in your response.
 
@@ -97,13 +97,13 @@ class Generator:
         Extraction Rules:
         1. Extract ONLY information that is explicitly stated in the source text. Do not infer.
         2. OMIT all fields that are not mentioned in the text (e.g., age, weight, phase, severity). Do not include fields with null values.
-        3. Each unique combination of condition (disease/weight/age/phase/severity/complication/care_setting) must become ONE separate object in the `entries` array.
+        3. Each unique combination of condition (disease/weight/age/phase/severity/complication) must become ONE separate object in the `entries` array.
         4. Each unique condition-medicine combination equals one entry.
         5. Separate dose, frequency, interval, and duration into distinct, INDIVIDUAL claim objects within the `claim` array. 
         - Note: Do NOT multiply values (e.g., "10 mg/kg 3 kali sehari" must be split into -> dose: 10 mg/kgbb/kali AND frequency: 3 kali/hari).
         6. Use numeric values (float/int) for bounds. If a single value is specified, set value_min = value_max. For a range, populate both.
         7. Unit is mandatory if there is a numeric value.
-        8. Use lowercase and snake_case strings for disease, phase, severity, complication, care_setting, and medicine.
+        8. Use lowercase and snake_case strings for disease, phase, severity, complication, and medicine.
         9. `weight_kg` represents weight in kilograms; `age_month` represents age in months.
         10. `phase` is mandatory if a treatment phase is stated in the text.
 
@@ -118,8 +118,8 @@ class Generator:
                 "weight_kg_min": <float>,
                 "weight_kg_max": <float>,
                 "phase": "<MUST BE: initial|maintenance|continuation|stabilization|transition|rehabilitation|relaps_intensive|relaps_maintenance>",
-                "severity": "<MUST BE: ringan|sedang|ringan_sedang|berat|krisis>",
-                "complication": "<snake_case standard term, e.g., ensefalopati>",
+                "severity": "<MUST BE: ringan|sedang|ringan_sedang|berat>",
+                "complication": "<snake_case standard term, e.g., ensefalopati, meningitis>",
             },
             "claim": [
                 {

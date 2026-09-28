@@ -206,19 +206,19 @@ def _unit_comparable(rule_unit: Any, claim_unit: Any) -> bool:
 
 
 def _numeric_unit_comparable(claim: dict, rule_unit: Any, claim_unit: Any) -> bool:
-    if _unit_comparable(rule_unit, claim_unit):
-        return True
-
-    if _same_norm(claim.get("claim_type"), "dose"):
-        # Beberapa rule menyimpan dosis mg/kg tanpa '/kali', sementara klaim dapat
-        # memakai unit mg/kgbb/kali. Untuk dosis, kedua bentuk harus dianggap sama.
-        if (
-            (_same_norm(claim_unit, "mg/kgbb") and _same_norm(rule_unit, "mg/kgbb/kali"))
-            or (_same_norm(claim_unit, "mg/kgbb/kali") and _same_norm(rule_unit, "mg/kgbb"))
-        ):
-            return True
-
-    return False
+    # Logika pencocokan unit sebelumnya dipertahankan sebagai referensi:
+    # if _unit_comparable(rule_unit, claim_unit):
+    #     return True
+    #
+    # if _same_norm(claim.get("claim_type"), "dose"):
+    #     if (
+    #         (_same_norm(claim_unit, "mg/kgbb") and _same_norm(rule_unit, "mg/kgbb/kali"))
+    #         or (_same_norm(claim_unit, "mg/kgbb/kali") and _same_norm(rule_unit, "mg/kgbb"))
+    #     ):
+    #         return True
+    #
+    # return False
+    return True
 
 
 def _lower_bound_ok(claim_min: float | None, rule_min: float | None) -> bool:

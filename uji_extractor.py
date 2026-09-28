@@ -7,13 +7,12 @@ from src.verification.decision_layer import apply_decision
 from src.verification.rule_engine import load_rules, verify_claims
 
 pipeline = Pipeline()
-rules_path = Path("data") / "rules" / "rule_pediatrics.json"
+rules_path = Path("data") / "rules" / "rule_pediatrics_nlm_bersih.json"
 rules = load_rules(str(rules_path))
 
 rag_text = """
 
-Untuk bayi dengan PDA, asupan cairan biasanya dibatasi sekitar **140–160 ml per kg berat badan per hari** pada usia 0–6 bulan. Jumlah akhir harus disesuaikan dengan berat badan, usia, dan toleransi klinis, dan dikonfirmasi oleh dokter anak atau ahli jantung anak.
-
+Untuk neonatus < 1 minggu yang mengalami sepsis sekaligus meningitis, ampisilin diberikan **100 mg/kg secara intravena setiap 12 jam** (dosis ini berlaku untuk hari 1‑7; setelah hari 8 dosis diubah menjadi tiap 8 jam).
 
 """
 
