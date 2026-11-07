@@ -19,3 +19,4 @@ data/rules/
 index/
 src/evaluation/*.csv
 src/evaluation/**/*.csv
+src/evaluation/arxiv/

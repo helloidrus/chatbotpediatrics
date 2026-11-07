@@ -1,0 +1,18 @@
+# Direct dependencies of the pipeline code, pinned to the versions used for the paper.
+# Tested with Python 3.12.10. Install with: pip install -r requirements.txt
+# The full environment (all transitive packages) is in requirements-lock.txt.
+
+# Retrieval and indexing (retriever.py)
+faiss-cpu==1.13.2
+numpy==2.4.2
+sentence-transformers==5.2.3     # loads BAAI/bge-m3; installs torch and transformers
+
+# Generation (generator.py): Groq is called through the OpenAI-compatible client
+openai==2.24.0
+python-dotenv==1.2.2
+
+# Evaluation and validation (evaluation/)
+pandas==3.0.6
+scipy==1.18.0
+jsonschema==4.26.0
+pypdf==6.7.1

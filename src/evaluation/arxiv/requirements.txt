@@ -1,7 +1,0 @@
-faiss-cpu==1.13.2
-numpy==2.4.2
-openai==2.24.0
-pandas==3.0.6
-pypdf==6.7.1
-scipy==1.18.0
-sentence-transformers==5.2.3
