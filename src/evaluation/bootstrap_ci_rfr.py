@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 from pathlib import Path
 
-CSV_PATH = Path(__file__).resolve().parent / "audit_100_aturan.csv"
+CSV_PATH = Path(__file__).resolve().parent / "rule_audit_100.csv"
 N_BOOT = 20000
 SEED = 42
 ALPHA = 0.05
