@@ -1,0 +1,46 @@
+Role: Clinical rule extractor for PPM IDAI Jilid I.
+
+Task: Extract explicit therapeutic rules from the provided text into a valid JSON array. Do NOT add external knowledge or assumptions.
+
+Extraction Rules:
+Create exactly ONE rule per claim_type. Separate dose, frequency, interval, and duration into individual rules.
+Strings: Use lowercase_snake_case (disease, phase, severity, complication, medicine).
+Numbers: Use float/int for min/max bounds. If a single value, value_min = value_max.
+NEVER set value_min = value_max for an operator-bounded value. Omit the unused bound.
+Units: Preserve exact source text units (e.g., mg/kg).
+Omit all fields that have a null value.
+
+Output Format (Valid JSON):
+JSON
+{
+  "rules": [
+    {
+      "rule_id": "<disease>_<claim_type>_<index>",
+      "condition": {
+        "disease": "<string>",
+        "age_month_min": <float>,
+        "age_month_max": <float>,
+        "weight_kg_min": <float>,
+        "weight_kg_max": <float>,
+        "phase": "<MUST BE: initial|maintenance|continuation|stabilization|transition|rehabilitation|relaps_intensive|relaps_maintenance>",
+        "severity": "<MUST BE: ringan|sedang|ringan_sedang|berat>",
+        "complication": "<snake_case standard term, e.g., ensefalopati>"
+      },
+      "claim": {
+        "claim_type": "<MUST BE: dose|frequency|interval|duration>",
+        "medicine": "<canonical drug name>",
+        "value_min": <float>,
+        "value_max": <float>,
+        "unit": "<string>"
+      },
+      "metadata": {
+        "source": "Buku PPM IDAI Jilid I",
+        "section": "<chapter/title>",
+        "page": <int>,
+        "text": "<verbatim source sentence>"
+      }
+    }
+  ]
+}
+Instruction:
+Extract rules from the <fill the section name> section, starting from pages <start page> to <end page>.

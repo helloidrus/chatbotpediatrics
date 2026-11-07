@@ -80,7 +80,7 @@ def load_rules(path: str) -> list[dict]:
         if rule_id in seen_ids:
             logger.error(
                 "Rule ID duplikat ditemukan: '%s'. "
-                "Rule kedua diabaikan — periksa rule_pediatrics_nlm_bersih.json!",
+                "Rule kedua diabaikan — periksa rule_base.json!",
                 rule_id
             )
             continue
@@ -130,7 +130,7 @@ def _condition_matches(rule: dict, claim: dict) -> bool:
     # Cek field kategorikal.
     # Jika rule tidak menentukan field (None), maka dianggap cocok dengan nilai apapun di klaim (wildcard).
     # Namun jika rule menentukan nilai, maka klaim wajib memiliki nilai yang sama (setelah normalisasi).
-    for field in ("disease", "phase", "severity", "complication", "care_setting"):
+    for field in ("disease", "phase", "severity", "complication"):
         rule_value = rule_condition.get(field)
         if rule_value is not None and not _same_norm(rule_value, claim_condition.get(field)):
             return False
@@ -161,7 +161,7 @@ def _signature_matches(rule: dict, claim: dict, *, ignore_claim_type: bool = Fal
 def _condition_specificity(rule: dict) -> int:
     condition = rule.get("condition") or {}
     score = 0
-    for field in ("disease", "phase", "severity", "complication", "care_setting"):
+    for field in ("disease", "phase", "severity", "complication"):
         if condition.get(field) is not None:
             score += 1
     for field in ("age_month_min", "age_month_max", "weight_kg_min", "weight_kg_max"):
@@ -201,26 +201,6 @@ def _rule_range(rule: dict) -> tuple[float | None, float | None, Any]:
     return _to_float(rule_claim.get("value_min")), _to_float(rule_claim.get("value_max")), rule_claim.get("unit")
 
 
-def _unit_comparable(rule_unit: Any, claim_unit: Any) -> bool:
-    return not (rule_unit and claim_unit) or _same_norm(rule_unit, claim_unit)
-
-
-def _numeric_unit_comparable(claim: dict, rule_unit: Any, claim_unit: Any) -> bool:
-    # Logika pencocokan unit sebelumnya dipertahankan sebagai referensi:
-    # if _unit_comparable(rule_unit, claim_unit):
-    #     return True
-    #
-    # if _same_norm(claim.get("claim_type"), "dose"):
-    #     if (
-    #         (_same_norm(claim_unit, "mg/kgbb") and _same_norm(rule_unit, "mg/kgbb/kali"))
-    #         or (_same_norm(claim_unit, "mg/kgbb/kali") and _same_norm(rule_unit, "mg/kgbb"))
-    #     ):
-    #         return True
-    #
-    # return False
-    return True
-
-
 def _lower_bound_ok(claim_min: float | None, rule_min: float | None) -> bool:
     if rule_min is None:
         return True
@@ -239,57 +219,58 @@ def _upper_bound_ok(claim_max: float | None, rule_max: float | None) -> bool:
 
 def _verify_numeric(claim: dict, matched_rules: list[dict]) -> dict:
     claim_min, claim_max, claim_unit = _claim_range(claim)
-    single_bound_inferred = False
-    if claim_min is not None and claim_max is None:
-        claim_max = claim_min
-        single_bound_inferred = True
-    elif claim_min is None and claim_max is not None:
-        claim_min = claim_max
-        single_bound_inferred = True
 
     if claim_min is None and claim_max is None:
         result = _base_result("no_rule", claim)
         result["note"] = "Klaim numerik tidak memiliki nilai yang bisa dibandingkan."
         return result
 
-    if single_bound_inferred:
-        logger.warning(
-            "Klaim memiliki hanya satu bound numerik (min=%r, max=%r); "
-            "diproses sebagai nilai titik untuk verifikasi.",
-            claim_min,
-            claim_max,
-        )
-
-    comparable_rules = [
-        rule for rule in matched_rules
-        if _numeric_unit_comparable(claim, _rule_range(rule)[2], claim_unit)
-    ]
-    if comparable_rules:
-        highest_specificity = _condition_specificity(comparable_rules[0])
-        comparable_rules = [
-            rule for rule in comparable_rules
-            if _condition_specificity(rule) == highest_specificity
+    if claim_min is None and claim_max is not None:
+        shape_matched_rules = [
+            rule for rule in matched_rules
+            if _rule_range(rule)[0] is None and _rule_range(rule)[1] is not None
         ]
+    elif claim_min is not None and claim_max is None:
+        shape_matched_rules = [
+            rule for rule in matched_rules
+            if _rule_range(rule)[0] is not None and _rule_range(rule)[1] is None
+        ]
+    else:
+        shape_matched_rules = matched_rules
 
-    for rule in comparable_rules:
+    if not shape_matched_rules:
+        result = _base_result("uncovered", claim)
+        result["claim_value"] = _format_range(claim_min, claim_max, claim_unit)
+        result["note"] = "Tidak ada rule dengan bentuk batas yang sesuai untuk memverifikasi klaim."
+        return result
+
+    for rule in shape_matched_rules:
         rule_min, rule_max, rule_unit = _rule_range(rule)
-        min_ok = _lower_bound_ok(claim_min, rule_min)
-        max_ok = _upper_bound_ok(claim_max, rule_max)
-        if min_ok and max_ok:
+        if claim_min is None and claim_max is not None:
+            bounds_ok = _upper_bound_ok(claim_max, rule_max)
+        elif claim_max is None and claim_min is not None:
+            bounds_ok = _lower_bound_ok(claim_min, rule_min)
+        else:
+            bounds_ok = _lower_bound_ok(claim_min, rule_min) and _upper_bound_ok(
+                claim_max, rule_max
+            )
+
+        if bounds_ok:
             result = _base_result("compliant", claim, rule)
             result["claim_value"] = _format_range(claim_min, claim_max, claim_unit)
             result["allowed_range"] = _format_range(rule_min, rule_max, rule_unit)
             return result
 
-    best = comparable_rules[0] if comparable_rules else matched_rules[0]
+    highest_specificity = _condition_specificity(shape_matched_rules[0])
+    best = next(
+        rule
+        for rule in shape_matched_rules
+        if _condition_specificity(rule) == highest_specificity
+    )
     best_min, best_max, best_unit = _rule_range(best)
     result = _base_result("violation", claim, best)
     result["claim_value"] = _format_range(claim_min, claim_max, claim_unit)
     result["allowed_range"] = _format_range(best_min, best_max, best_unit)
-    if not comparable_rules:
-        result["note"] = "Unit klaim tidak sama dengan rule yang cocok."
-    elif single_bound_inferred:
-        result["note"] = "Klaim hanya memiliki satu bound numerik; diproses sebagai nilai titik."
     return result
 
 

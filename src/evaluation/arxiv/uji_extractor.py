@@ -6,13 +6,15 @@ from src.verification.claim_extractor import extract_claims
 from src.verification.decision_layer import apply_decision
 from src.verification.rule_engine import load_rules, verify_claims
 
+ROOT_DIR = Path(__file__).resolve().parents[2]
+
 pipeline = Pipeline()
-rules_path = Path("data") / "rules" / "rule_pediatrics_nlm_bersih.json"
+rules_path = ROOT_DIR / "data" / "rules" / "rule_base.json"
 rules = load_rules(str(rules_path))
 
 rag_text = """
 
-Untuk neonatus < 1 minggu yang mengalami sepsis sekaligus meningitis, ampisilin diberikan **100 mg/kg secara intravena setiap 12 jam** (dosis ini berlaku untuk hari 1‑7; setelah hari 8 dosis diubah menjadi tiap 8 jam).
+Untuk anak yang mengalami angioedema berat atau anafilaksis, epinefrin (adrenalin) 1 : 1000 diberikan secara intramuskular dengan dosis **0,01 mg per kilogram berat badan** (setara dengan 0,1 mL per kg karena larutan 1 mg/mL). Dosis maksimum satu kali suntikan adalah **0,3 mg (0,3 mL)** pada anak ≤30 kg, atau **0,5 mg (0,5 mL)** bila berat badan >30 kg. Jika tidak ada respons klinis, dosis dapat diulang setiap 5‑10 menit dengan batas total yang sama.
 
 """
 

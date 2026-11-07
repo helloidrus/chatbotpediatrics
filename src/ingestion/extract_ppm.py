@@ -2,7 +2,7 @@ from pypdf import PdfReader
 
 
 def extract_pdf_text(
-    input_pdf_path="data/raw/Buku-PPM.pdf",
+    input_pdf_path="data/raw/buku pedoman pelayanan medis.pdf",
     output_text_path="data/processed/ppm_raw.txt",
 ):
     reader = PdfReader(input_pdf_path)
@@ -21,7 +21,7 @@ def extract_pdf_text(
 
 def main():
     output_path = extract_pdf_text(
-        input_pdf_path="data/raw/Buku-PPM.pdf",
+        input_pdf_path="data/raw/buku pedoman pelayanan medis.pdf",
         output_text_path="data/processed/ppm_raw.txt",
     )
     print(f"Extraction complete: {output_path}")

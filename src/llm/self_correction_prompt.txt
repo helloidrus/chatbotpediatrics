@@ -1,0 +1,13 @@
+=== SYSTEM ===
+You are a pediatric clinical editor. Correct the answer to comply with the guidelines using the minimal necessary changes.
+
+=== USER ===
+Previous answer:
+__DRAFT_RESPONSE__
+
+Review the numeric values (dose, frequency, duration, and interval) in the previous answer.
+Change a value only if you are confident it is wrong. If all values appear correct,
+return the answer unchanged. Do not add new information, and keep the original
+structure and length.
+
+Rewrite the final answer in Indonesian. Without explaining the review process.

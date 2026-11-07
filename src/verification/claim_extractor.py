@@ -8,7 +8,7 @@ from typing import Any
 
 logger = logging.getLogger(__name__)
 
-ONTOLOGY_PATH = Path(__file__).resolve().parents[2] / "data" / "rules" / "ontology_nlm.json"
+ONTOLOGY_PATH = Path(__file__).resolve().parents[2] / "data" / "rules" / "normalization_dictionary.json"
 
 
 def _canonical_text(value: Any) -> str | None:
@@ -177,7 +177,6 @@ PHASE_ALIASES      = _build_alias_map(ONTOLOGY.get("phase", {}))
 SEVERITY_ALIASES   = _build_alias_map(ONTOLOGY.get("severity", {}))
 PARAMETER_ALIASES  = _build_alias_map(ONTOLOGY.get("medicine", {}))
 COMPLICATION_ALIASES = _build_alias_map(ONTOLOGY.get("complication", {}))
-CARE_SETTING_ALIASES = _build_alias_map(ONTOLOGY.get("care_setting", {}))
 DISEASE_ALIASES    = _build_alias_map(ONTOLOGY.get("disease", {}))
 UNIT_ALIASES       = _build_alias_map(ONTOLOGY.get("unit", {}))
 
@@ -187,7 +186,6 @@ VALID_PHASE    = set(ONTOLOGY.get("phase", {}))
 VALID_SEVERITY = set(ONTOLOGY.get("severity", {}))
 VALID_DISEASE = set(ONTOLOGY.get("disease", {}))
 VALID_COMPLICATION = set(ONTOLOGY.get("complication", {}))
-VALID_CARE_SETTING = set(ONTOLOGY.get("care_setting", {}))
 VALID_MEDICINE = set(ONTOLOGY.get("medicine", {}))
 
 
@@ -228,8 +226,7 @@ def _parse_condition(raw: Any) -> dict | None:
         "weight_kg_max": _normalize_weight_kg(raw.get("weight_kg_max")),
         "phase": _alias(raw, "phase", PHASE_ALIASES, VALID_PHASE),
         "severity": _alias(raw, "severity", SEVERITY_ALIASES, VALID_SEVERITY),
-        "complication": _alias(raw, "complication", COMPLICATION_ALIASES, VALID_COMPLICATION),
-        "care_setting": _alias(raw, "care_setting", CARE_SETTING_ALIASES, VALID_CARE_SETTING)
+        "complication": _alias(raw, "complication", COMPLICATION_ALIASES, VALID_COMPLICATION)
     }
     if disease is None and raw_disease:
         result["disease_unresolved"] = str(raw_disease).strip()
@@ -301,14 +298,16 @@ def _parse_claim(raw: Any, condition: dict) -> dict | None:
         return None
     # === akhir tambahan ===
 
-    return _drop_none({
+    claim = {
         "condition": condition,
         "claim_type": claim_type,
         "medicine": medicine,
         "value_min": value_min,
         "value_max": value_max,
         "unit": unit_normalized,
-    })
+    }
+
+    return _drop_none(claim)
 
 
 def _parse_entry(entry: dict) -> list[dict]:
@@ -332,7 +331,7 @@ def extract_claims(llm_json_output: str) -> list[dict]:
         raise RuntimeError(
             "ONTOLOGY tidak tersedia untuk normalisasi klaim! "
             "Ini terjadi saat module initialization. "
-            "Periksa logs untuk error saat loading ontology_nlm.json."
+            "Periksa logs untuk error saat loading normalization_dictionary.json."
         )
 
     if not llm_json_output:

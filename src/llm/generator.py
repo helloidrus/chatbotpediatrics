@@ -24,11 +24,19 @@ class Generator:
         self._few_shot_examples = None
 
     # --- INTERNAL METHODS ---
+    def _load_prompt_sections(self, filename):
+        prompt_path = Path(__file__).parent / filename
+        prompt_text = prompt_path.read_text(encoding="utf-8")
+        sections = prompt_text.split("=== USER ===", maxsplit=1)
+        if len(sections) != 2 or not sections[0].startswith("=== SYSTEM ==="):
+            raise ValueError(f"Prompt must contain SYSTEM and USER sections: {prompt_path}")
+        return sections[0].removeprefix("=== SYSTEM ===").strip(), sections[1].strip()
+
     def _load_few_shot_examples(self):
         if self._few_shot_examples is not None:
             return self._few_shot_examples
 
-        few_shot_path = Path(__file__).parent / "few_shot_extractor.jsonl"
+        few_shot_path = Path(__file__).parent / "claim_extractor_fewshot.txt"
         examples = []
 
         if few_shot_path.exists():
@@ -38,7 +46,7 @@ class Generator:
                         line = line.strip()
                         if line:
                             examples.append(json.loads(line))
-            except Exception as e:
+            except (OSError, json.JSONDecodeError) as e:
                 print(f"Warning: Gagal memuat few-shot file: {e}")
 
         self._few_shot_examples = examples
@@ -59,24 +67,11 @@ class Generator:
     # --- PUBLIC METHODS ---
     # Metode utama untuk menghasilkan jawaban berdasarkan pertanyaan dan konteks
     def generate(self, query, context=""):
-        system_prompt = """
-        You are a clinical guideline-based pediatric medical assistant.
-        """
-
-        user_prompt = f"""
-        Answer the question concisely, clearly, and in accordance with pediatric clinical guidelines.
-        Use only information that is directly relevant to the question and context.
-        Avoid using bulleted lists whenever possible, except for highly specific dosages.
-        If the context mentions conditions/diseases and population criteria (e.g., age or weight) that are relevant to the question, explicitly state those conditions and criteria in your response.
-
-        Context:
-        {context}
-
-        Question:
-        {query}
-
-        Answer in Indonesian:
-        """
+        system_prompt, user_template = self._load_prompt_sections("generator_prompt.txt")
+        user_prompt = (
+            user_template.replace("__CONTEXT__", context)
+            .replace("__QUERY__", query)
+        )
         return self._chat(
             system_prompt=system_prompt,
             user_prompt=user_prompt
@@ -89,60 +84,11 @@ class Generator:
         for i, ex in enumerate(examples, 1):
             examples_str += f"\nCONTOH {i}:\nTEXT: \"{ex['text']}\"\nJSON: {json.dumps(ex['json'], indent=2)}\n"
 
-        system_prompt = """
-        Role: Clinical rule extractor for pediatric medical text.
-
-        Task: Extract explicit therapeutic parameters from the provided text into a pure, valid JSON output without markdown formatting. Do NOT add external knowledge or assumptions. If no therapeutic parameters exist, return {"entries": []}.
-
-        Extraction Rules:
-        1. Extract ONLY information that is explicitly stated in the source text. Do not infer.
-        2. OMIT all fields that are not mentioned in the text (e.g., age, weight, phase, severity). Do not include fields with null values.
-        3. Each unique combination of condition (disease/weight/age/phase/severity/complication) must become ONE separate object in the `entries` array.
-        4. Each unique condition-medicine combination equals one entry.
-        5. Separate dose, frequency, interval, and duration into distinct, INDIVIDUAL claim objects within the `claim` array. 
-        - Note: Do NOT multiply values (e.g., "10 mg/kg 3 kali sehari" must be split into -> dose: 10 mg/kgbb/kali AND frequency: 3 kali/hari).
-        6. Use numeric values (float/int) for bounds. If a single value is specified, set value_min = value_max. For a range, populate both.
-        7. Unit is mandatory if there is a numeric value.
-        8. Use lowercase and snake_case strings for disease, phase, severity, complication, and medicine.
-        9. `weight_kg` represents weight in kilograms; `age_month` represents age in months.
-        10. `phase` is mandatory if a treatment phase is stated in the text.
-
-        Output Format (MUST BE PURE JSON, NO MARKDOWN):
-        {
-        "entries": [
-            {
-            "condition": {
-                "disease": "<string>",
-                "age_month_min": <float>,
-                "age_month_max": <float>,
-                "weight_kg_min": <float>,
-                "weight_kg_max": <float>,
-                "phase": "<MUST BE: initial|maintenance|continuation|stabilization|transition|rehabilitation|relaps_intensive|relaps_maintenance>",
-                "severity": "<MUST BE: ringan|sedang|ringan_sedang|berat>",
-                "complication": "<snake_case standard term, e.g., ensefalopati, meningitis>",
-            },
-            "claim": [
-                {
-                "claim_type": "<MUST BE: dose|frequency|interval|duration>",
-                "medicine": "<string>",
-                "value_min": <float>,
-                "value_max": <float>,
-                "unit": "<string>"
-                }
-            ]
-            }
-        ]
-        }
-
-        Examples:
-        """ + examples_str + """
-
-        Instruction:
-        Extract rules from the provided text below based on the schema and rules above.        
-
-        """
-
-        user_prompt = f"TEXT:{answer_text}"
+        system_template, user_prompt = self._load_prompt_sections(
+            "claim_extraction_prompt.txt"
+        )
+        system_prompt = system_template.replace("__FEW_SHOT_EXAMPLES__", examples_str)
+        user_prompt = user_prompt.replace("__ANSWER_TEXT__", answer_text)
         
         return self._chat(
             system_prompt=system_prompt,
@@ -169,20 +115,15 @@ class Generator:
 
             guideline_facts.append(fact)
         guideline_facts_text = "\n".join(guideline_facts)
-        user_prompt = f"""
-        Previous answer:
-        {original_answer}
-
-        Guideline corrections:
-        {guideline_facts_text}
-
-        Rewrite the final answer in Indonesian. Without explaining the verification process.
-        """
+        system_prompt, user_template = self._load_prompt_sections(
+            "regeneration_prompt.txt"
+        )
+        user_prompt = (
+            user_template.replace("__ORIGINAL_ANSWER__", original_answer)
+            .replace("__GUIDELINE_CORRECTIONS__", guideline_facts_text)
+        )
         return self._chat(
-            system_prompt=(
-                "You are a pediatric clinical editor."
-                "Correct the answer to comply with the guidelines using the minimal necessary changes."
-            ),
+            system_prompt=system_prompt,
             user_prompt=user_prompt,
             temperature=0,
         )

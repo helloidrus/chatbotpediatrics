@@ -22,7 +22,7 @@ class Pipeline:
         self.debug = debug
         self.retriever = Retriever()
         self.generator = Generator()
-        rules_path = Path(__file__).resolve().parents[1] / "data" / "rules" / "rule_pediatrics_nlm_bersih.json"
+        rules_path = Path(__file__).resolve().parents[1] / "data" / "rules" / "rule_base.json"
         self.rules = load_rules(str(rules_path))
 
     ## --- DEBUGGING ---
