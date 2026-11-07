@@ -121,7 +121,7 @@ The code is released under the MIT license (see `LICENSE`). The data in the Scie
 
 > M. Idrus and Z. Tahir, "Verifying numeric claims in RAG answers with a rule base extracted from a narrative guideline: A pediatric case study," *Data Intelligence*, [year]. doi: [paper DOI]
 
-Code release: https://github.com/helloidrus/chatbotpediatrics, [vX.Y], doi: [DOI].
+Code release: https://github.com/helloidrus/chatbotpediatrics, v1.0.0, doi: 10.5281/zenodo.24025776.
 
 ## Contact
 
